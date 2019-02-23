@@ -7,7 +7,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Vape Assistant")]
-[assembly: AssemblyDescription("Made to serv you!")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Gleridis Corp")]
 [assembly: AssemblyProduct("Vape Assistant")]

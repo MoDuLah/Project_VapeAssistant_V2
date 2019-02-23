@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -24,7 +22,7 @@ namespace Vape_Assistant.Views
             if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator != ".")
             {
                 //Handler attach - will not be done if not needed
-                PreviewKeyDown += new KeyEventHandler(ShellView.ShellView_PreviewKeyDown);
+                PreviewKeyDown += new KeyEventHandler(ShellsView.ShellView_PreviewKeyDown);
             }
         }
 

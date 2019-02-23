@@ -33,7 +33,7 @@ namespace Vape_Assistant.Views
             if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator != ".")
             {
                 //Handler attach - will not be done if not needed
-                PreviewKeyDown += new KeyEventHandler(ShellView.ShellView_PreviewKeyDown);
+                PreviewKeyDown += new KeyEventHandler(ShellsView.ShellView_PreviewKeyDown);
 
             }
             cig_end_date.cmbYear.Text = Settings.Default.cig_end_year.ToString();
