@@ -38,10 +38,16 @@
         <TextBlock Grid.Row="0" Grid.Column="0" x:Name="Lang_Label" Text="{x:Static p:Resources.Lang}" Margin="0,0,5,0"
                    HorizontalAlignment="Right" VerticalAlignment="Center"  MouseLeftButtonDown="Lang_Label_MouseLeftButtonDown"/>
         <ComboBox Grid.Row="0" Grid.Column="1" Width="150" x:Name="Settings_Language" SelectionChanged="Settings_Language_SelectionChanged">
-            <ComboBoxItem Content="{x:Static p:Resources.ThemeLanguageEn}"/>
-            <ComboBoxItem Content="{x:Static p:Resources.ThemeLanguageGr}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageDe}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageEn}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageEs}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageFr}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageGr}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageIt}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageRo}"/>
+            <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageRu}"/>
         </ComboBox>
-        <Button Grid.Row="0" Grid.Column="2" x:Name="app_restart" Content="{x:Static p:Resources.ThemeRestart}" Click="app_restart_Click">
+        <Button Grid.Row="0" Grid.Column="2" x:Name="app_restart" Content="{x:Static p:Resources.settings_Restart}" Click="app_restart_Click">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
@@ -149,7 +155,7 @@
         <Separator x:Name="header_seperator" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" Background="Gray"/>
         <ComboBox x:Name="db_selector" Grid.Row="7" Grid.Column="0" LostFocus="db_selector_LostFocus" Margin="0,5">
             <ComboBoxItem Content="Purchases"/>
-            <ComboBoxItem Content="Stash"/>
+            <ComboBoxItem Content="Warehouse"/>
             <ComboBoxItem Content="Recipes"/>
             <ComboBoxItem Content="hash"/>
             <ComboBoxItem Content="Juice Log"/>

@@ -261,7 +261,45 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GridHelpers.cs" />
+    <Compile Include="Properties\Resources.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.el-GR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.el-GR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ru.resx</DependentUpon>
+    </Compile>
     <Compile Include="textboxBehaviour.cs" />
+    <Compile Include="UserControls\CommonControls.xaml.cs">
+      <DependentUpon>CommonControls.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BasesMix_ChildViewModel.cs" />
     <Compile Include="ViewModels\BoosterCost_ChildViewModel.cs" />
     <Compile Include="ViewModels\Flavors_ChildViewModel.cs" />
@@ -357,11 +395,37 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.el-GR.resx" />
-    <EmbeddedResource Include="Properties\Resources.en.resx" />
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.el-GR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.el-GR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.it.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ro.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="dataBase.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -382,10 +446,59 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <XliffResource Include="MultilingualResources\Vape Assistant.de.xlf" />
     <XliffResource Include="MultilingualResources\Vape Assistant.el-GR.xlf" />
     <XliffResource Include="MultilingualResources\Vape Assistant.en.xlf" />
+    <XliffResource Include="MultilingualResources\Vape Assistant.es.xlf" />
+    <XliffResource Include="MultilingualResources\Vape Assistant.it.xlf" />
+    <XliffResource Include="MultilingualResources\Vape Assistant.ro.xlf" />
+    <XliffResource Include="MultilingualResources\Vape Assistant.ru.xlf" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GroupBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TabControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TabItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CommonControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\BasesMix_ChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -468,34 +581,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Book_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Statistics_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\MoneyBag_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\TestTube_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Edit_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\TestΤube2_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Settings_32spx.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\About_32px.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="favicon.ico">
+    <None Include="Backup\backup.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\CloseWindow.png" />
@@ -504,10 +597,10 @@
     <Resource Include="Images\bullet_green.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Plus_32px.png" />
+    <Resource Include="Images\menuIconsDark\Plus_32px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Bottle_32px.png" />
+    <Resource Include="Images\menuIconsDark\Bottle_32px.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7">
@@ -534,9 +627,6 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Key_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="readme.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -545,8 +635,8 @@
     <Resource Include="LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Clear_32px.png" />
-    <Resource Include="Images\Submit_32px.png" />
+    <Resource Include="Images\menuIconsDark\Clear_32px.png" />
+    <Resource Include="Images\menuIconsDark\Submit_32px.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MatrixDesktop_96px.png" />
@@ -555,22 +645,10 @@
     <Resource Include="Images\Facebook_96px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\UserGroups_100px.png" />
+    <Resource Include="Images\menuIconsDark\UserGroups_100px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Shopping Cart_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Questions_100px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Stash_100px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Flavors_100px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Story_100px.png" />
+    <Resource Include="Images\menuIconsDark\Questions_100px.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\database.gif" />
@@ -579,71 +657,94 @@
     <Resource Include="Images\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\mainbg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\CloseWindow_104px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\BG2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Move_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Minimize Window_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Close Window_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\favicon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Close-Window_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Minimize-Window_96px.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Hover\Close-Window_96px.png" />
     <Resource Include="Images\Hover\Minimize-Window_96px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Save_100px.png" />
+    <Resource Include="Images\menuIconsDark\About_32px.png" />
+    <Resource Include="Images\menuIconsDark\Add_32px.png" />
+    <Resource Include="Images\menuIconsDark\Admin_32px.png" />
+    <Resource Include="Images\menuIconsDark\Close Window_32px.png" />
+    <Resource Include="Images\menuIconsDark\Copy_32px.png" />
+    <Resource Include="Images\menuIconsDark\Cut_32px.png" />
+    <Resource Include="Images\menuIconsDark\Edit File_32px.png" />
+    <Resource Include="Images\menuIconsDark\Edit_32px.png" />
+    <Resource Include="Images\menuIconsDark\Help_32px.png" />
+    <Resource Include="Images\menuIconsDark\Info_32px.png" />
+    <Resource Include="Images\menuIconsDark\Mark View As Hidden_32px.png" />
+    <Resource Include="Images\menuIconsDark\Paste_32px.png" />
+    <Resource Include="Images\menuIconsDark\Save_32px.png" />
+    <Resource Include="Images\menuIconsDark\Settings_32px.png" />
+    <Resource Include="Images\menuIconsDark\Tools_32px.png" />
+    <Resource Include="Images\menuIconsDark\Trash Can_32px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\menuIcons\About_32px.png" />
-    <Resource Include="Images\menuIcons\Add_32px.png" />
-    <Resource Include="Images\menuIcons\Admin_32px.png" />
-    <Resource Include="Images\menuIcons\Close Window_32px.png" />
-    <Resource Include="Images\menuIcons\Copy_32px.png" />
-    <Resource Include="Images\menuIcons\Cut_32px.png" />
-    <Resource Include="Images\menuIcons\Edit File_32px.png" />
-    <Resource Include="Images\menuIcons\Edit_32px.png" />
-    <Resource Include="Images\menuIcons\File_32px.png" />
-    <Resource Include="Images\menuIcons\Help_32px.png" />
-    <Resource Include="Images\menuIcons\Info_32px.png" />
-    <Resource Include="Images\menuIcons\Mark View As Hidden_32px.png" />
-    <Resource Include="Images\menuIcons\Paste_32px.png" />
-    <Resource Include="Images\menuIcons\Save_32px.png" />
-    <Resource Include="Images\menuIcons\Settings_32px.png" />
-    <Resource Include="Images\menuIcons\Tools_32px.png" />
-    <Resource Include="Images\menuIcons\Trash Can_32px.png" />
+    <None Include="Images\banners\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\banners\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Images\banners\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Perfume Bottle_32px.png" />
+    <None Include="Images\readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\banners\1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\banners\2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\banners\3.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Images\menuIconsDark\Warehouse_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menuIconsDark\Book_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menuIconsDark\Statistics_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menuIconsDark\Money Bag_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menuIconsDark\File_32px.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\menuIconsDark\Story_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menuIconsDark\Test Tube Slim_32px.png" />
+    <Resource Include="Images\menuIconsDark\Test Tube_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menuIconsLight\About_32px.png" />
+    <Resource Include="Images\menuIconsLight\Add_32px.png" />
+    <Resource Include="Images\menuIconsLight\Admin_32px.png" />
+    <Resource Include="Images\menuIconsLight\Book_32px.png" />
+    <Resource Include="Images\menuIconsLight\Bottle_32px.png" />
+    <Resource Include="Images\menuIconsLight\Close Window_32px.png" />
+    <Resource Include="Images\menuIconsLight\Copy_32px.png" />
+    <Resource Include="Images\menuIconsLight\Cut_32px.png" />
+    <Resource Include="Images\menuIconsLight\Edit File_32px.png" />
+    <Resource Include="Images\menuIconsLight\File_32px.png" />
+    <Resource Include="Images\menuIconsLight\Help_32px.png" />
+    <Resource Include="Images\menuIconsLight\Money Bag_32px.png" />
+    <Resource Include="Images\menuIconsLight\Paste_32px.png" />
+    <Resource Include="Images\menuIconsLight\Perfume Bottle_32px.png" />
+    <Resource Include="Images\menuIconsLight\Settings_32px.png" />
+    <Resource Include="Images\menuIconsLight\Statistics_32px.png" />
+    <Resource Include="Images\menuIconsLight\Story_32px.png" />
+    <Resource Include="Images\menuIconsLight\Test Tube Slim_32px.png" />
+    <Resource Include="Images\menuIconsLight\Test Tube_32px.png" />
+    <Resource Include="Images\menuIconsLight\Tools_32px.png" />
+    <Resource Include="Images\menuIconsLight\Warehouse_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />

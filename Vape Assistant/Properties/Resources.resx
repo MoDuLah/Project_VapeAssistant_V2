@@ -357,17 +357,14 @@
   <data name="SoftwareVersion" xml:space="preserve">
     <value>Version</value>
   </data>
-  <data name="ThemeLanguageEn" xml:space="preserve">
+  <data name="settings_LanguageEn" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="ThemeLanguageGr" xml:space="preserve">
-    <value>Greek</value>
+  <data name="settings_LanguageGr" xml:space="preserve">
+    <value>Ελληνικά</value>
   </data>
-  <data name="ThemeRestart" xml:space="preserve">
+  <data name="settings_Restart" xml:space="preserve">
     <value>Restart</value>
-  </data>
-  <data name="ThemeTitle" xml:space="preserve">
-    <value>Settings</value>
   </data>
   <data name="statistics_VapeDailyCost" xml:space="preserve">
     <value>Daily Vape Cost</value>
@@ -630,14 +627,14 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="flv_tab_Recipes" xml:space="preserve">
     <value>Recipes</value>
   </data>
-  <data name="flv_tab_Stash" xml:space="preserve">
-    <value>Stash</value>
+  <data name="flv_tab_Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
   </data>
   <data name="add_flv_amount" xml:space="preserve">
     <value>Amount</value>
   </data>
-  <data name="stash_header" xml:space="preserve">
-    <value>Stash</value>
+  <data name="warehouse_header" xml:space="preserve">
+    <value>Warehouse</value>
   </data>
   <data name="add_flv_amountEnter" xml:space="preserve">
     <value>Enter Amount (ml)</value>
@@ -651,7 +648,7 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="add_flv_Owned" xml:space="preserve">
     <value>Have it? </value>
   </data>
-  <data name="add_flv_StashCount" xml:space="preserve">
+  <data name="add_flv_WarehouseCount" xml:space="preserve">
     <value>Items: </value>
   </data>
   <data name="add_rec_header" xml:space="preserve">
@@ -660,8 +657,8 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="flv_tab_Craft" xml:space="preserve">
     <value>Synthesize</value>
   </data>
-  <data name="rem_Flv_fromstash" xml:space="preserve">
-    <value>Remove Flavor from Stash</value>
+  <data name="rem_Flv_fromwarehouse" xml:space="preserve">
+    <value>Remove Flavor from Warehouse</value>
   </data>
   <data name="add_rec_flavorName01" xml:space="preserve">
     <value>Flavor 1</value>
@@ -777,8 +774,8 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="mg_ml" xml:space="preserve">
     <value>mg/ml</value>
   </data>
-  <data name="mlinstash" xml:space="preserve">
-    <value>ml in Stash</value>
+  <data name="mlinwarehouse" xml:space="preserve">
+    <value>ml in Warehouse</value>
   </data>
   <data name="perc" xml:space="preserve">
     <value>Percentage</value>
@@ -828,7 +825,7 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>- Moved 'Oneshots' &amp; 'Mix Bases' into 'Alchemies' category.</value>
   </data>
   <data name="about_change_0021" xml:space="preserve">
-    <value>- Improved the flavor managment on "Stash" to speed up the use.
+    <value>- Improved the flavor managment on "Warehouse" to speed up the use.
 - Added Import/Export function from/to DataBase.
 - Added Option to delete the last Flavor of the Recipe.
 - Added a minimum (0.01%) and maximum (100%) range on Recipes at Flavors Percentages.
@@ -952,10 +949,10 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="Alch_Backup_SelectBtN" xml:space="preserve">
     <value>Select File</value>
   </data>
-  <data name="Alch_Stash_AddFlv" xml:space="preserve">
+  <data name="Alch_Warehouse_AddFlv" xml:space="preserve">
     <value>Add Flavor:</value>
   </data>
-  <data name="Alch_Stash_FlvId" xml:space="preserve">
+  <data name="Alch_Warehouse_FlvId" xml:space="preserve">
     <value>Flavor Id:</value>
   </data>
   <data name="popup_Cancel" xml:space="preserve">
@@ -964,16 +961,16 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="popup_Submit" xml:space="preserve">
     <value>Submit</value>
   </data>
-  <data name="stash_hdrAmount" xml:space="preserve">
+  <data name="warehouse_hdrAmount" xml:space="preserve">
     <value>Amount</value>
   </data>
-  <data name="stash_hdrBrand" xml:space="preserve">
+  <data name="warehouse_hdrBrand" xml:space="preserve">
     <value>Brand</value>
   </data>
-  <data name="stash_hdrFlavor" xml:space="preserve">
+  <data name="warehouse_hdrFlavor" xml:space="preserve">
     <value>Flavor</value>
   </data>
-  <data name="stash_hdrId" xml:space="preserve">
+  <data name="warehouse_hdrId" xml:space="preserve">
     <value>Id</value>
   </data>
   <data name="add_rec_deleteFlv" xml:space="preserve">
@@ -988,7 +985,7 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="Website" xml:space="preserve">
     <value>http://vape-assistant.com</value>
   </data>
-  <data name="Alch_Stash_EditFlv" xml:space="preserve">
+  <data name="Alch_Warehouse_EditFlv" xml:space="preserve">
     <value>Edit Flavor Amount:</value>
   </data>
   <data name="log_Amount" xml:space="preserve">
@@ -1039,7 +1036,7 @@ If you decline and keep the default pin-code you will be asked the next time you
   </data>
   <data name="about_change_0027" xml:space="preserve">
     <value>- Added Purchases sum to Statistics (automatic from database).
-- Added Numbers on the left of List viewers (Juice Log &amp; Stash for now).
+- Added Numbers on the left of List viewers (Juice Log &amp; Warehouse for now).
 - Fixed some calculations on Statics to avoid errors.</value>
   </data>
   <data name="EJuiceCosts" xml:space="preserve">
@@ -1111,8 +1108,8 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="menu_tools_Alchemy_Recipes" xml:space="preserve">
     <value>_Recipes</value>
   </data>
-  <data name="menu_tools_Alchemy_Stash" xml:space="preserve">
-    <value>_Stash</value>
+  <data name="menu_tools_Alchemy_Warehouse" xml:space="preserve">
+    <value>_Warehouse</value>
   </data>
   <data name="menu_tools_Alchemy_Synthesize" xml:space="preserve">
     <value>_Synthesize</value>
@@ -1194,5 +1191,23 @@ If you decline and keep the default pin-code you will be asked the next time you
   </data>
   <data name="MinimizeToTray" xml:space="preserve">
     <value>Minimize To Tray</value>
+  </data>
+  <data name="settings_LanguageDe" xml:space="preserve">
+    <value>Deutsche</value>
+  </data>
+  <data name="settings_LanguageEs" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="settings_LanguageIt" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="settings_LanguageRo" xml:space="preserve">
+    <value>Romanian</value>
+  </data>
+  <data name="settings_LanguageRu" xml:space="preserve">
+    <value>Pусский</value>
+  </data>
+  <data name="settings_LanguageFr" xml:space="preserve">
+    <value>Français</value>
   </data>
 </root>

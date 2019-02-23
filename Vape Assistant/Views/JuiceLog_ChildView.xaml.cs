@@ -13,7 +13,7 @@ using Vape_Assistant.Properties;
 namespace Vape_Assistant.Views
 {
     /// <summary>
-    /// Interaction logic for Stash_ChildView.xaml
+    /// Interaction logic for Warehouse_ChildView.xaml
     /// </summary>
     public partial class JuiceLog_ChildView : UserControl
     {

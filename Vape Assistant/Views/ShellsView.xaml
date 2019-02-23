@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:Vape_Assistant.Properties"
         xmlns:myStatusbar="clr-namespace:Vape_Assistant.Views"
+        xmlns:my="clr-namespace:CreationTemplate.UserControls" 
         Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
         FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
         mc:Ignorable="d" FontSize="18"
@@ -189,136 +190,142 @@
     <Window.Background>
         <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill" Opacity="0.99"/>
     </Window.Background>
-    <DockPanel VerticalAlignment="Top">
-        <Menu DockPanel.Dock="Top" MinHeight="25" MaxHeight="25" FontSize="17">
+    <DockPanel VerticalAlignment="Top" x:Name="LayoutRoot">
+        <Menu MaxHeight="30" MinHeight="30" DockPanel.Dock="Top" FontFamily="Tahoma" FontSize="14">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#CC747474" Offset="0"/>
+                    <GradientStop Color="#CC323230" Offset="1"/>
+                </LinearGradientBrush>
+            </Menu.Background>
             <MenuItem Header="{x:Static p:Resources.menu_file}" VerticalAlignment="Center">
                 <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/menuIcons/File_32px.png" Margin="0,0,0,0"/>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsDark/File_32px.png" Width="24"/>
                 </MenuItem.Icon>
                 <MenuItem x:Name="_exit" Header="{x:Static p:Resources.menu_file_exit}" InputGestureText="Alt + F4" Click="_exit_Click">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIcons/Close Window_32px.png" />
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Close Window_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="{x:Static p:Resources.menu_edit}" VerticalAlignment="Center">
                 <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/menuIcons/Edit File_32px.png"/>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsDark/Edit File_32px.png" Width="24"/>
                 </MenuItem.Icon>
                 <MenuItem Command="Cut">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIcons/Cut_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Cut_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Command="Copy">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIcons/Copy_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Copy_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Command="Paste">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIcons/Paste_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Paste_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="{x:Static p:Resources.menu_tools}" VerticalAlignment="Center">
                 <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/menuIcons/Tools_32px.png"/>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsDark/Tools_32px.png" Width="24"/>
                 </MenuItem.Icon>
                 <MenuItem Header="{x:Static p:Resources.menu_tools_OhmsLaw}" x:Name="Load_OhmsLaw">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/Book_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Book_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="{x:Static p:Resources.menu_tools_Statistics}" x:Name="Load_Statistics">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/Statistics_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Statistics_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="{x:Static p:Resources.menu_tools_NicotineCost}" x:Name="Load_BoosterCost">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/MoneyBag_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Money Bag_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="{x:Static p:Resources.menu_tools_Purchases}" x:Name="Load_Purchases">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/Edit_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/Edit_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="{x:Static p:Resources.menu_tools_Alchemy}" x:Name="Load_Alchemy">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/TestΤube2_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/TestΤube2_32px.png" Width="24"/>
                     </MenuItem.Icon>
                     <MenuItem x:Name="Load_OneShots" Header="{x:Static p:Resources.menu_tools_Alchemy_Oneshots}">
                         <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/Bottle_32px.png"/>
+                            <Image Source="/Vape Assistant;component/Images/Bottle_32px.png" Width="24"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
-                    <MenuItem x:Name="Load_Stash" Header="{x:Static p:Resources.menu_tools_Alchemy_Stash}">
+                    <MenuItem x:Name="Load_Warehouse" Header="{x:Static p:Resources.menu_tools_Alchemy_Warehouse}">
                         <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/Stash_100px.png" Width="16"/>
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Warehouse_32px.png" Width="24"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
                     <MenuItem x:Name="Load_JuiceLog" Header="{x:Static p:Resources.menu_tools_Alchemy_JuiceLog}">
                         <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/Story_100px.png" Width="16"/>
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Story_32px.png" Width="24"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
                     <MenuItem x:Name="Load_Recipes" Header="{x:Static p:Resources.menu_tools_Alchemy_Recipes}">
                         <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/Edit_32px.png"/>
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Edit File_32px.png" Width="24"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
                     <MenuItem x:Name="Load_Synthesize" Header="{x:Static p:Resources.menu_tools_Alchemy_Synthesize}">
                         <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/TestΤube2_32px.png"/>
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Test Tube_32px.png" Width="24"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
                     <MenuItem x:Name="Load_BasesMix" Header="{x:Static p:Resources.menu_tools_Alchemy_BasesMix}">
                         <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/TestTube_32px.png"/>
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Test Tube Slim_32px.png" Width="24"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
                     <MenuItem x:Name="Load_Flavors" Header="{x:Static p:Resources.menu_tools_Alchemy_Flavors}">
                         <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/Perfume Bottle_32px.png"/>
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Perfume Bottle_32px.png" Width="24"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="{x:Static p:Resources.LoadPageEight}" x:Name="Load_Settings">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIcons/Settings_32px.png" />
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Settings_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="{x:Static p:Resources.menu_about}">
+            <MenuItem Header="{x:Static p:Resources.menu_about}" VerticalAlignment="Center">
                 <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/About_32px.png"/>
+                    <Image Source="/Vape Assistant;component/Images/About_32px.png" Width="24"/>
                 </MenuItem.Icon>
                 <MenuItem Header="{x:Static p:Resources.Help}" x:Name="Load_Help">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIcons/Help_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Help_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator/>
                 <MenuItem Header="{x:Static p:Resources.ChildHeaderNine}" x:Name="Load_About">
                     <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/About_32px.png"/>
+                        <Image Source="/Vape Assistant;component/Images/About_32px.png" Width="24"/>
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="{x:Static p:Resources.MinimizeToTray}" Click="MenuItem_Click" FontSize="10" />
+            <MenuItem Header="{x:Static p:Resources.MinimizeToTray}" Click="MenuItem_Click" Padding="5" FontSize="14" Background="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         </Menu>
         <Border Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" BorderThickness="5,2,5,2" CornerRadius="30" Margin="10" >
             <Border.BorderBrush>

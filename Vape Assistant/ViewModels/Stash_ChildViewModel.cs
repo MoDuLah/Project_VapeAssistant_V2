@@ -2,7 +2,7 @@
 
 namespace Vape_Assistant.ViewModels
 {
-    public class Stash_ChildViewModel : Screen
+    public class Warehouse_ChildViewModel : Screen
     {
     }
 }

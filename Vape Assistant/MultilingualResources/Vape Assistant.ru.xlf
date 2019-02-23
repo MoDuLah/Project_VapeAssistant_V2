@@ -1,0 +1,1492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ru" original="VAPE ASSISTANT/PROPERTIES/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6901.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="VAPE ASSISTANT/PROPERTIES/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="BaseMixErrorMsg" translate="yes" xml:space="preserve">
+          <source>The Mixture has to be more than 0ml.</source>
+          <target state="new">The Mixture has to be more than 0ml.</target>
+        </trans-unit>
+        <trans-unit id="BaseMixNicBoosterError" translate="yes" xml:space="preserve">
+          <source>Choose Nic Booster type</source>
+          <target state="new">Choose Nic Booster type</target>
+        </trans-unit>
+        <trans-unit id="Calculate_Button" translate="yes" xml:space="preserve">
+          <source>Calculate</source>
+          <target state="new">Calculate</target>
+        </trans-unit>
+        <trans-unit id="statistics_SmokingCessationDate" translate="yes" xml:space="preserve">
+          <source>Smokin Cessation Date</source>
+          <target state="new">Smokin Cessation Date</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderEight" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="new">Settings</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderFive" translate="yes" xml:space="preserve">
+          <source>Oneshots</source>
+          <target state="new">Oneshots</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderFour" translate="yes" xml:space="preserve">
+          <source>Base Mix</source>
+          <target state="new">Base Mix</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderNine" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="new">About</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderOne" translate="yes" xml:space="preserve">
+          <source>Ohm's Law</source>
+          <target state="new">Ohm's Law</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderSeven" translate="yes" xml:space="preserve">
+          <source>Alchemy</source>
+          <target state="new">Alchemy</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderSix" translate="yes" xml:space="preserve">
+          <source>Purchases</source>
+          <target state="new">Purchases</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderThree" translate="yes" xml:space="preserve">
+          <source>Nicotine Cost</source>
+          <target state="new">Nicotine Cost</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderTwo" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <target state="new">Statistics</target>
+        </trans-unit>
+        <trans-unit id="Clear_Button" translate="yes" xml:space="preserve">
+          <source>Clear</source>
+          <target state="new">Clear</target>
+        </trans-unit>
+        <trans-unit id="statistics_CigarettesPerDay" translate="yes" xml:space="preserve">
+          <source>Cigarettes / Day</source>
+          <target state="new">Cigarettes / Day</target>
+        </trans-unit>
+        <trans-unit id="statistics_CigarettesPerPack" translate="yes" xml:space="preserve">
+          <source>Cigarettes / Pack</source>
+          <target state="new">Cigarettes / Pack</target>
+        </trans-unit>
+        <trans-unit id="ohms_Current" translate="yes" xml:space="preserve">
+          <source>Current (I)</source>
+          <target state="new">Current (I)</target>
+        </trans-unit>
+        <trans-unit id="statistics_DaysVaping" translate="yes" xml:space="preserve">
+          <source>Days Vaping</source>
+          <target state="new">Days Vaping</target>
+        </trans-unit>
+        <trans-unit id="statistics_DailySmokingCost" translate="yes" xml:space="preserve">
+          <source>Daily Smoking Cost</source>
+          <target state="new">Daily Smoking Cost</target>
+        </trans-unit>
+        <trans-unit id="statistics_DaysWithoutCigarette" translate="yes" xml:space="preserve">
+          <source>Days w/o cigarette</source>
+          <target state="new">Days w/o cigarette</target>
+        </trans-unit>
+        <trans-unit id="statistics_EjuiceMlCost" translate="yes" xml:space="preserve">
+          <source>E-Juice ml Cost</source>
+          <target state="new">E-Juice ml Cost</target>
+        </trans-unit>
+        <trans-unit id="FirstTip" translate="yes" xml:space="preserve">
+          <source>Enter any two known values and press Calculate.</source>
+          <target state="new">Enter any two known values and press Calculate.</target>
+        </trans-unit>
+        <trans-unit id="statistics_HardwareCost" translate="yes" xml:space="preserve">
+          <source>Hardware Cost</source>
+          <target state="new">Hardware Cost</target>
+        </trans-unit>
+        <trans-unit id="statistics_HardwareDailyCost" translate="yes" xml:space="preserve">
+          <source>Hardware Daily Cost</source>
+          <target state="new">Hardware Daily Cost</target>
+        </trans-unit>
+        <trans-unit id="statistics_JuicePerDay" translate="yes" xml:space="preserve">
+          <source>ml / Day</source>
+          <target state="new">ml / Day</target>
+        </trans-unit>
+        <trans-unit id="Lang" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <target state="new">Language</target>
+        </trans-unit>
+        <trans-unit id="LoadPageEight" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="new">Settings</target>
+        </trans-unit>
+        <trans-unit id="LoadPageFive" translate="yes" xml:space="preserve">
+          <source>OneShots</source>
+          <target state="new">OneShots</target>
+        </trans-unit>
+        <trans-unit id="LoadPageFour" translate="yes" xml:space="preserve">
+          <source>Bases Mix</source>
+          <target state="new">Bases Mix</target>
+        </trans-unit>
+        <trans-unit id="LoadPageNine" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="new">About</target>
+        </trans-unit>
+        <trans-unit id="LoadPageOne" translate="yes" xml:space="preserve">
+          <source>Ohm's Law</source>
+          <target state="new">Ohm's Law</target>
+        </trans-unit>
+        <trans-unit id="LoadPageSeven" translate="yes" xml:space="preserve">
+          <source>Alchemy</source>
+          <target state="new">Alchemy</target>
+        </trans-unit>
+        <trans-unit id="LoadPageSix" translate="yes" xml:space="preserve">
+          <source>Purchases</source>
+          <target state="new">Purchases</target>
+        </trans-unit>
+        <trans-unit id="LoadPageThree" translate="yes" xml:space="preserve">
+          <source>Nicotine Cost</source>
+          <target state="new">Nicotine Cost</target>
+        </trans-unit>
+        <trans-unit id="LoadPageTwo" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <target state="new">Statistics</target>
+        </trans-unit>
+        <trans-unit id="LoginPassword" translate="yes" xml:space="preserve">
+          <source>PIN</source>
+          <target state="new">PIN</target>
+        </trans-unit>
+        <trans-unit id="LoginRemember" translate="yes" xml:space="preserve">
+          <source>REMEMBER ME:</source>
+          <target state="new">REMEMBER ME:</target>
+        </trans-unit>
+        <trans-unit id="LoginTitle" translate="yes" xml:space="preserve">
+          <source>LOGIN</source>
+          <target state="new">LOGIN</target>
+        </trans-unit>
+        <trans-unit id="ChangePinTitle" translate="yes" xml:space="preserve">
+          <source>Change Pin</source>
+          <target state="new">Change Pin</target>
+        </trans-unit>
+        <trans-unit id="mixbase_baseA" translate="yes" xml:space="preserve">
+          <source>Base: A</source>
+          <target state="new">Base: A</target>
+        </trans-unit>
+        <trans-unit id="mixbase_baseB" translate="yes" xml:space="preserve">
+          <source>Base: B</source>
+          <target state="new">Base: B</target>
+        </trans-unit>
+        <trans-unit id="mixbase_baseC" translate="yes" xml:space="preserve">
+          <source>Base: C</source>
+          <target state="new">Base: C</target>
+        </trans-unit>
+        <trans-unit id="mixbase_baseD" translate="yes" xml:space="preserve">
+          <source>Base: D</source>
+          <target state="new">Base: D</target>
+        </trans-unit>
+        <trans-unit id="mb_ml_label" translate="yes" xml:space="preserve">
+          <source>ml</source>
+          <target state="new">ml</target>
+        </trans-unit>
+        <trans-unit id="mb_nicA" translate="yes" xml:space="preserve">
+          <source>Nicotine: A</source>
+          <target state="new">Nicotine: A</target>
+        </trans-unit>
+        <trans-unit id="mb_nicB" translate="yes" xml:space="preserve">
+          <source>Nicotine: B</source>
+          <target state="new">Nicotine: B</target>
+        </trans-unit>
+        <trans-unit id="mb_nicC" translate="yes" xml:space="preserve">
+          <source>Nicotine: C</source>
+          <target state="new">Nicotine: C</target>
+        </trans-unit>
+        <trans-unit id="mb_nicD" translate="yes" xml:space="preserve">
+          <source>Nicotine: D</source>
+          <target state="new">Nicotine: D</target>
+        </trans-unit>
+        <trans-unit id="mb_nic_level" translate="yes" xml:space="preserve">
+          <source>Nicotine (mg/ml)</source>
+          <target state="new">Nicotine (mg/ml)</target>
+        </trans-unit>
+        <trans-unit id="mb_pg_percent" translate="yes" xml:space="preserve">
+          <source>PG (%)</source>
+          <target state="new">PG (%)</target>
+        </trans-unit>
+        <trans-unit id="mb_result" translate="yes" xml:space="preserve">
+          <source>You need</source>
+          <target state="new">You need</target>
+        </trans-unit>
+        <trans-unit id="mb_vg_percent" translate="yes" xml:space="preserve">
+          <source>VG (%)</source>
+          <target state="new">VG (%)</target>
+        </trans-unit>
+        <trans-unit id="mb_wtm" translate="yes" xml:space="preserve">
+          <source>Want to make</source>
+          <target state="new">Want to make</target>
+        </trans-unit>
+        <trans-unit id="mixbase_HeaderBaseAmount" translate="yes" xml:space="preserve">
+          <source>Base Amount (ml)</source>
+          <target state="new">Base Amount (ml)</target>
+        </trans-unit>
+        <trans-unit id="mixbase_HeaderGrams" translate="yes" xml:space="preserve">
+          <source>Grams</source>
+          <target state="new">Grams</target>
+        </trans-unit>
+        <trans-unit id="mixbase_HeaderNicBottleAmount" translate="yes" xml:space="preserve">
+          <source>Nic Bottles Amount</source>
+          <target state="new">Nic Bottles Amount</target>
+        </trans-unit>
+        <trans-unit id="mixbase_HeaderNicLevel" translate="yes" xml:space="preserve">
+          <source>Nicotine (mg/ml)</source>
+          <target state="new">Nicotine (mg/ml)</target>
+        </trans-unit>
+        <trans-unit id="mixbase_HeaderPGPercent" translate="yes" xml:space="preserve">
+          <source>PG (%)</source>
+          <target state="new">PG (%)</target>
+        </trans-unit>
+        <trans-unit id="mixbase_HeaderVGPercent" translate="yes" xml:space="preserve">
+          <source>VG (%)</source>
+          <target state="new">VG (%)</target>
+        </trans-unit>
+        <trans-unit id="mixbase_LeftHeader" translate="yes" xml:space="preserve">
+          <source>Total Mix</source>
+          <target state="new">Total Mix</target>
+        </trans-unit>
+        <trans-unit id="mixbase_LeftMixRatioPGVG" translate="yes" xml:space="preserve">
+          <source>Mix Ratio PG / VG</source>
+          <target state="new">Mix Ratio PG / VG</target>
+        </trans-unit>
+        <trans-unit id="mixbase_LeftMixTotalVolume" translate="yes" xml:space="preserve">
+          <source>Volume</source>
+          <target state="new">Volume</target>
+        </trans-unit>
+        <trans-unit id="mixbase_LeftMixVolumePGVG" translate="yes" xml:space="preserve">
+          <source>Volume PG / VG (ml)</source>
+          <target state="new">Volume PG / VG (ml)</target>
+        </trans-unit>
+        <trans-unit id="mixbase_LeftResultmlToolTip" translate="yes" xml:space="preserve">
+          <source>Ratio is in ml</source>
+          <target state="new">Ratio is in ml</target>
+        </trans-unit>
+        <trans-unit id="mixbase_LeftResultNicLevel" translate="yes" xml:space="preserve">
+          <source>Nicotine</source>
+          <target state="new">Nicotine</target>
+        </trans-unit>
+        <trans-unit id="mixbase_LeftResultNicLevelToolTip" translate="yes" xml:space="preserve">
+          <source>Ratio is in mg/ml</source>
+          <target state="new">Ratio is in mg/ml</target>
+        </trans-unit>
+        <trans-unit id="OneShotErrorMsg1" translate="yes" xml:space="preserve">
+          <source>You need to adjust the levels of PG/VG, Nic or Flavor.</source>
+          <target state="new">You need to adjust the levels of PG/VG, Nic or Flavor.</target>
+        </trans-unit>
+        <trans-unit id="OneShotErrorMsg2" translate="yes" xml:space="preserve">
+          <source>Can not use Negative numbers. Then re-calculate.</source>
+          <target state="new">Can not use Negative numbers. Then re-calculate.</target>
+        </trans-unit>
+        <trans-unit id="OneShotErrorTitle" translate="yes" xml:space="preserve">
+          <source>Error</source>
+          <target state="new">Error</target>
+        </trans-unit>
+        <trans-unit id="OneShotHeaderAmount" translate="yes" xml:space="preserve">
+          <source>Solution (ml)</source>
+          <target state="new">Solution (ml)</target>
+        </trans-unit>
+        <trans-unit id="OneShotL_BasePG" translate="yes" xml:space="preserve">
+          <source>PG Base</source>
+          <target state="new">PG Base</target>
+        </trans-unit>
+        <trans-unit id="OneShotL_BaseVG" translate="yes" xml:space="preserve">
+          <source>VG Base</source>
+          <target state="new">VG Base</target>
+        </trans-unit>
+        <trans-unit id="OneShotL_Flavor" translate="yes" xml:space="preserve">
+          <source>Flavor</source>
+          <target state="new">Flavor</target>
+        </trans-unit>
+        <trans-unit id="OneShotL_NicBooster" translate="yes" xml:space="preserve">
+          <source>Nic Booster</source>
+          <target state="new">Nic Booster</target>
+        </trans-unit>
+        <trans-unit id="statistics_PricePerCigarette" translate="yes" xml:space="preserve">
+          <source>Price Per Cigarette</source>
+          <target state="new">Price Per Cigarette</target>
+        </trans-unit>
+        <trans-unit id="statistics_PacketPrice" translate="yes" xml:space="preserve">
+          <source>Packet Price</source>
+          <target state="new">Packet Price</target>
+        </trans-unit>
+        <trans-unit id="ohms_Resistance" translate="yes" xml:space="preserve">
+          <source>Resistance (R)</source>
+          <target state="new">Resistance (R)</target>
+        </trans-unit>
+        <trans-unit id="Save_Button" translate="yes" xml:space="preserve">
+          <source>Save</source>
+          <target state="new">Save</target>
+        </trans-unit>
+        <trans-unit id="SoftwareTitle" translate="yes" xml:space="preserve">
+          <source>Vape Assistant</source>
+          <target state="new">Vape Assistant</target>
+        </trans-unit>
+        <trans-unit id="SoftwareVersion" translate="yes" xml:space="preserve">
+          <source>Version</source>
+          <target state="new">Version</target>
+        </trans-unit>
+        <trans-unit id="statistics_VapeDailyCost" translate="yes" xml:space="preserve">
+          <source>Daily Vape Cost</source>
+          <target state="new">Daily Vape Cost</target>
+        </trans-unit>
+        <trans-unit id="ohms_Voltage" translate="yes" xml:space="preserve">
+          <source>Voltage (V)</source>
+          <target state="new">Voltage (V)</target>
+        </trans-unit>
+        <trans-unit id="statistics_VapingStartDate" translate="yes" xml:space="preserve">
+          <source>Vaping Start Date</source>
+          <target state="new">Vaping Start Date</target>
+        </trans-unit>
+        <trans-unit id="Targetbase" translate="yes" xml:space="preserve">
+          <source>Base (ml)</source>
+          <target state="new">Base (ml)</target>
+        </trans-unit>
+        <trans-unit id="TargetBoosterLevel" translate="yes" xml:space="preserve">
+          <source>Nicotine Booster Level (mg/ml)</source>
+          <target state="new">Nicotine Booster Level (mg/ml)</target>
+        </trans-unit>
+        <trans-unit id="Targetbottles" translate="yes" xml:space="preserve">
+          <source>Nicotine Bottles</source>
+          <target state="new">Nicotine Bottles</target>
+        </trans-unit>
+        <trans-unit id="Targetml" translate="yes" xml:space="preserve">
+          <source>Target ml</source>
+          <target state="new">Target ml</target>
+        </trans-unit>
+        <trans-unit id="Targetnic" translate="yes" xml:space="preserve">
+          <source>Nicotine (ml)</source>
+          <target state="new">Nicotine (ml)</target>
+        </trans-unit>
+        <trans-unit id="TargetNicLevel" translate="yes" xml:space="preserve">
+          <source>Target Nicotine Level</source>
+          <target state="new">Target Nicotine Level</target>
+        </trans-unit>
+        <trans-unit id="Targetpriceperbottle" translate="yes" xml:space="preserve">
+          <source>Price / Bottle ($)</source>
+          <target state="new">Price / Bottle ($)</target>
+        </trans-unit>
+        <trans-unit id="TargetTotalCost" translate="yes" xml:space="preserve">
+          <source>Total Cost ($)</source>
+          <target state="new">Total Cost ($)</target>
+        </trans-unit>
+        <trans-unit id="ohms_Wattage" translate="yes" xml:space="preserve">
+          <source>Wattage (W)</source>
+          <target state="new">Wattage (W)</target>
+        </trans-unit>
+        <trans-unit id="statistics_YearlySmokingCost" translate="yes" xml:space="preserve">
+          <source>Yearly Smoking Cost</source>
+          <target state="new">Yearly Smoking Cost</target>
+        </trans-unit>
+        <trans-unit id="statistics_YearlyVapingCost" translate="yes" xml:space="preserve">
+          <source>Yearly Vaping Cost</source>
+          <target state="new">Yearly Vaping Cost</target>
+        </trans-unit>
+        <trans-unit id="TooltipDateFormat" translate="yes" xml:space="preserve">
+          <source>The Format is dd/mm/yyyy (Days/Months/Years)</source>
+          <target state="new">The Format is dd/mm/yyyy (Days/Months/Years)</target>
+        </trans-unit>
+        <trans-unit id="TooltipEJuicemlCost1" translate="yes" xml:space="preserve">
+          <source>Ejuice ml cost is calculated by dividing the price of the bottle with the ml of the bottle.</source>
+          <target state="new">Ejuice ml cost is calculated by dividing the price of the bottle with the ml of the bottle.</target>
+        </trans-unit>
+        <trans-unit id="TooltipEJuicemlCost2" translate="yes" xml:space="preserve">
+          <source>For example: 15$/30ml=0.5$/ml so you type in 0.5</source>
+          <target state="new">For example: 15$/30ml=0.5$/ml so you type in 0.5</target>
+        </trans-unit>
+        <trans-unit id="daymonthyear" translate="yes" xml:space="preserve">
+          <source>dd/mm/yyyy</source>
+          <target state="new">dd/mm/yyyy</target>
+        </trans-unit>
+        <trans-unit id="purchase_DateOfPurchase" translate="yes" xml:space="preserve">
+          <source>Date of Purchase (yyyy/mm/dd)</source>
+          <target state="new">Date of Purchase (yyyy/mm/dd)</target>
+        </trans-unit>
+        <trans-unit id="purchase_OrderId" translate="yes" xml:space="preserve">
+          <source>Order Id (#)</source>
+          <target state="new">Order Id (#)</target>
+        </trans-unit>
+        <trans-unit id="purchase_VendorName" translate="yes" xml:space="preserve">
+          <source>Vendor</source>
+          <target state="new">Vendor</target>
+        </trans-unit>
+        <trans-unit id="datagridheader1" translate="yes" xml:space="preserve">
+          <source>Product</source>
+          <target state="new">Product</target>
+        </trans-unit>
+        <trans-unit id="datagridheader2" translate="yes" xml:space="preserve">
+          <source>SKU</source>
+          <target state="new">SKU</target>
+        </trans-unit>
+        <trans-unit id="datagridheader3" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <target state="new">Quantity</target>
+        </trans-unit>
+        <trans-unit id="datagridheader4" translate="yes" xml:space="preserve">
+          <source>Price</source>
+          <target state="new">Price</target>
+        </trans-unit>
+        <trans-unit id="datagridheader5" translate="yes" xml:space="preserve">
+          <source>Discount</source>
+          <target state="new">Discount</target>
+        </trans-unit>
+        <trans-unit id="datagridheader6" translate="yes" xml:space="preserve">
+          <source>Shipping Cost</source>
+          <target state="new">Shipping Cost</target>
+        </trans-unit>
+        <trans-unit id="datagridheader7" translate="yes" xml:space="preserve">
+          <source>Total Cost</source>
+          <target state="new">Total Cost</target>
+        </trans-unit>
+        <trans-unit id="vendor_Active" translate="yes" xml:space="preserve">
+          <source>Active</source>
+          <target state="new">Active</target>
+        </trans-unit>
+        <trans-unit id="vendor_Address" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <target state="new">Address</target>
+        </trans-unit>
+        <trans-unit id="vendor_City" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <target state="new">City</target>
+        </trans-unit>
+        <trans-unit id="vendor_Country" translate="yes" xml:space="preserve">
+          <source>Country*</source>
+          <target state="new">Country*</target>
+        </trans-unit>
+        <trans-unit id="vendor_Name" translate="yes" xml:space="preserve">
+          <source>Name*</source>
+          <target state="new">Name*</target>
+        </trans-unit>
+        <trans-unit id="vendor_PostCode" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <target state="new">Post Code</target>
+        </trans-unit>
+        <trans-unit id="vendor_tabitem1" translate="yes" xml:space="preserve">
+          <source>Add</source>
+          <target state="new">Add</target>
+        </trans-unit>
+        <trans-unit id="vendor_tabitem2" translate="yes" xml:space="preserve">
+          <source>Edit/Delete</source>
+          <target state="new">Edit/Delete</target>
+        </trans-unit>
+        <trans-unit id="vendor_Telephone" translate="yes" xml:space="preserve">
+          <source>Telephone</source>
+          <target state="new">Telephone</target>
+        </trans-unit>
+        <trans-unit id="vendor_Website" translate="yes" xml:space="preserve">
+          <source>Website</source>
+          <target state="new">Website</target>
+        </trans-unit>
+        <trans-unit id="Connect" translate="yes" xml:space="preserve">
+          <source>Connect</source>
+          <target state="new">Connect</target>
+        </trans-unit>
+        <trans-unit id="vendor_delete" translate="yes" xml:space="preserve">
+          <source>Delete</source>
+          <target state="new">Delete</target>
+        </trans-unit>
+        <trans-unit id="vendor_edit" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target state="new">Edit</target>
+        </trans-unit>
+        <trans-unit id="vendor_Load" translate="yes" xml:space="preserve">
+          <source>Load Table Data</source>
+          <target state="new">Load Table Data</target>
+        </trans-unit>
+        <trans-unit id="vendor_Vendor" translate="yes" xml:space="preserve">
+          <source>Vendor</source>
+          <target state="new">Vendor</target>
+        </trans-unit>
+        <trans-unit id="purchases_tabitem1" translate="yes" xml:space="preserve">
+          <source>Add</source>
+          <target state="new">Add</target>
+        </trans-unit>
+        <trans-unit id="purchases_tabitem2" translate="yes" xml:space="preserve">
+          <source>View</source>
+          <target state="new">View</target>
+        </trans-unit>
+        <trans-unit id="purchase_ViewSince" translate="yes" xml:space="preserve">
+          <source>Since</source>
+          <target state="new">Since</target>
+        </trans-unit>
+        <trans-unit id="purchase_ViewUntil" translate="yes" xml:space="preserve">
+          <source>Until</source>
+          <target state="new">Until</target>
+        </trans-unit>
+        <trans-unit id="purchase_ViewVendor" translate="yes" xml:space="preserve">
+          <source>By Vendor</source>
+          <target state="new">By Vendor</target>
+        </trans-unit>
+        <trans-unit id="vendor_TotalOrders" translate="yes" xml:space="preserve">
+          <source>Orders</source>
+          <target state="new">Orders</target>
+        </trans-unit>
+        <trans-unit id="FbPage" translate="yes" xml:space="preserve">
+          <source>Facebook Page</source>
+          <target state="new">Facebook Page</target>
+        </trans-unit>
+        <trans-unit id="ChildHeaderNine_ChangeLog" translate="yes" xml:space="preserve">
+          <source>Change Log</source>
+          <target state="new">Change Log</target>
+        </trans-unit>
+        <trans-unit id="FbGroup" translate="yes" xml:space="preserve">
+          <source>Facebook Group</source>
+          <target state="new">Facebook Group</target>
+        </trans-unit>
+        <trans-unit id="about_change_0001" translate="yes" xml:space="preserve">
+          <source>Fix in "Ohm's Law" about the decimal point.</source>
+          <target state="new">Fix in "Ohm's Law" about the decimal point.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0002" translate="yes" xml:space="preserve">
+          <source>- Added "Statistics" section.
+- Fixes in code.</source>
+          <target state="new">- Added "Statistics" section.
+- Fixes in code.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0003" translate="yes" xml:space="preserve">
+          <source>- Several visual changes. 
+- Fixes in code.</source>
+          <target state="new">- Several visual changes. 
+- Fixes in code.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0004" translate="yes" xml:space="preserve">
+          <source>- Several visual improvements.
+- Removed Currency / ml column at "Nicotine Cost".</source>
+          <target state="new">- Several visual improvements.
+- Removed Currency / ml column at "Nicotine Cost".</target>
+        </trans-unit>
+        <trans-unit id="about_change_0005" translate="yes" xml:space="preserve">
+          <source>- Added "Mix Bases" section.</source>
+          <target state="new">- Added "Mix Bases" section.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0006" translate="yes" xml:space="preserve">
+          <source>- Added Sliders in 'Ohm's Law'.</source>
+          <target state="new">- Added Sliders in 'Ohm's Law'.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0007" translate="yes" xml:space="preserve">
+          <source>- Version 2 Release.
+- Added Themes in Version 2</source>
+          <target state="new">- Version 2 Release.
+- Added Themes in Version 2</target>
+        </trans-unit>
+        <trans-unit id="about_change_0000" translate="yes" xml:space="preserve">
+          <source>Initial Release</source>
+          <target state="new">Initial Release</target>
+        </trans-unit>
+        <trans-unit id="about_change_0005a" translate="yes" xml:space="preserve">
+          <source>- #hotfix on section "Oneshot".</source>
+          <target state="new">- #hotfix on section "Oneshot".</target>
+        </trans-unit>
+        <trans-unit id="about_change_0008" translate="yes" xml:space="preserve">
+          <source>#hotfix - Proper function of "Stats" section.</source>
+          <target state="new">#hotfix - Proper function of "Stats" section.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0009" translate="yes" xml:space="preserve">
+          <source>- Added section "OneShot".
+- Multiple bugs fixed.</source>
+          <target state="new">- Added section "OneShot".
+- Multiple bugs fixed.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0010" translate="yes" xml:space="preserve">
+          <source>- Themes Improvement.</source>
+          <target state="new">- Themes Improvement.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0011" translate="yes" xml:space="preserve">
+          <source>- Added Icons for every section.
+- Added weight on section "Oneshot".
+- Added Language Selection, more themes, extended coloring options free-for-all.
+- Improved some calculation formulas.
+- Improvements in section "Base Mix".</source>
+          <target state="new">- Added Icons for every section.
+- Added weight on section "Oneshot".
+- Added Language Selection, more themes, extended coloring options free-for-all.
+- Improved some calculation formulas.
+- Improvements in section "Base Mix".</target>
+        </trans-unit>
+        <trans-unit id="about_change_0012" translate="yes" xml:space="preserve">
+          <source>- Installer method has been introduced to avoid non-unzipped user's issue.
+- "Purchase" section has been activated. 
+(The Pin-code can be found in the installer on Information section). After your first login you are asked to change the default password. 
+If you decline and keep the default pin-code you will be asked the next time you run the program.
+- Improvement on how to insert date fields with dropdowns boxes instead of textboxes.
+- Enabled textfields on "Ohm's Law" section (So you can define the exact value for example on resistance 0.235Ω)
+- Since most users at the moment are Greek the default language has been changed to Greek.</source>
+          <target state="new">- Installer method has been introduced to avoid non-unzipped user's issue.
+- "Purchase" section has been activated. 
+(The Pin-code can be found in the installer on Information section). After your first login you are asked to change the default password. 
+If you decline and keep the default pin-code you will be asked the next time you run the program.
+- Improvement on how to insert date fields with dropdowns boxes instead of textboxes.
+- Enabled textfields on "Ohm's Law" section (So you can define the exact value for example on resistance 0.235Ω)
+- Since most users at the moment are Greek the default language has been changed to Greek.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0013" translate="yes" xml:space="preserve">
+          <source>- New Installer.
+- Shortcut on Desktop.
+- Shortcut on Start Menu support and uninstall options.</source>
+          <target state="new">- New Installer.
+- Shortcut on Desktop.
+- Shortcut on Start Menu support and uninstall options.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0014" translate="yes" xml:space="preserve">
+          <source>- Small Bug Fix.
+- Fix in Database.</source>
+          <target state="new">- Small Bug Fix.
+- Fix in Database.</target>
+        </trans-unit>
+        <trans-unit id="add_flv_abbreviation" translate="yes" xml:space="preserve">
+          <source>Abbreviation: </source>
+          <target state="new">Abbreviation: </target>
+        </trans-unit>
+        <trans-unit id="add_flv_amp" translate="yes" xml:space="preserve">
+          <source>Average Mixing Percentage: </source>
+          <target state="new">Average Mixing Percentage: </target>
+        </trans-unit>
+        <trans-unit id="add_flv_brandName" translate="yes" xml:space="preserve">
+          <source>Brand Name: </source>
+          <target state="new">Brand Name: </target>
+        </trans-unit>
+        <trans-unit id="add_flv_flavorName" translate="yes" xml:space="preserve">
+          <source>Flavor Name: </source>
+          <target state="new">Flavor Name: </target>
+        </trans-unit>
+        <trans-unit id="add_flv_header" translate="yes" xml:space="preserve">
+          <source>Add a Flavor</source>
+          <target state="new">Add a Flavor</target>
+        </trans-unit>
+        <trans-unit id="add_flv_manufacturerGravity" translate="yes" xml:space="preserve">
+          <source>Manufacturer specified Gravity: </source>
+          <target state="new">Manufacturer specified Gravity: </target>
+        </trans-unit>
+        <trans-unit id="add_flv_notes" translate="yes" xml:space="preserve">
+          <source>Notes: </source>
+          <target state="new">Notes: </target>
+        </trans-unit>
+        <trans-unit id="ChrisG" translate="yes" xml:space="preserve">
+          <source>Christos Gleridis</source>
+          <target state="new">Christos Gleridis</target>
+        </trans-unit>
+        <trans-unit id="Codebehind" translate="yes" xml:space="preserve">
+          <source>Developer</source>
+          <target state="new">Developer</target>
+        </trans-unit>
+        <trans-unit id="add_flv_ComboBoxheader" translate="yes" xml:space="preserve">
+          <source>If already exists</source>
+          <target state="new">If already exists</target>
+        </trans-unit>
+        <trans-unit id="flv_Keep" translate="yes" xml:space="preserve">
+          <source>Keep?</source>
+          <target state="new">Keep?</target>
+        </trans-unit>
+        <trans-unit id="flv_tab_Flavors" translate="yes" xml:space="preserve">
+          <source>Flavors</source>
+          <target state="new">Flavors</target>
+        </trans-unit>
+        <trans-unit id="flv_tab_Recipes" translate="yes" xml:space="preserve">
+          <source>Recipes</source>
+          <target state="new">Recipes</target>
+        </trans-unit>
+        <trans-unit id="flv_tab_Warehouse" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
+          <target state="new">Warehouse</target>
+        </trans-unit>
+        <trans-unit id="add_flv_amount" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target state="new">Amount</target>
+        </trans-unit>
+        <trans-unit id="warehouse_header" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
+          <target state="new">Warehouse</target>
+        </trans-unit>
+        <trans-unit id="add_flv_amountEnter" translate="yes" xml:space="preserve">
+          <source>Enter Amount (ml)</source>
+          <target state="new">Enter Amount (ml)</target>
+        </trans-unit>
+        <trans-unit id="add_flv_brandSelect" translate="yes" xml:space="preserve">
+          <source>Choose Brand</source>
+          <target state="new">Choose Brand</target>
+        </trans-unit>
+        <trans-unit id="add_flv_flavorSelect" translate="yes" xml:space="preserve">
+          <source>Choose Flavor</source>
+          <target state="new">Choose Flavor</target>
+        </trans-unit>
+        <trans-unit id="add_flv_Owned" translate="yes" xml:space="preserve">
+          <source>Have it? </source>
+          <target state="new">Have it? </target>
+        </trans-unit>
+        <trans-unit id="add_flv_WarehouseCount" translate="yes" xml:space="preserve">
+          <source>Items: </source>
+          <target state="new">Items: </target>
+        </trans-unit>
+        <trans-unit id="add_rec_header" translate="yes" xml:space="preserve">
+          <source>Add/Edit/Delete a Recipe</source>
+          <target state="new">Add/Edit/Delete a Recipe</target>
+        </trans-unit>
+        <trans-unit id="flv_tab_Craft" translate="yes" xml:space="preserve">
+          <source>Synthesize</source>
+          <target state="new">Synthesize</target>
+        </trans-unit>
+        <trans-unit id="rem_Flv_fromwarehouse" translate="yes" xml:space="preserve">
+          <source>Remove Flavor from Warehouse</source>
+          <target state="new">Remove Flavor from Warehouse</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName01" translate="yes" xml:space="preserve">
+          <source>Flavor 1</source>
+          <target state="new">Flavor 1</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName02" translate="yes" xml:space="preserve">
+          <source>Flavor 2</source>
+          <target state="new">Flavor 2</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName03" translate="yes" xml:space="preserve">
+          <source>Flavor 3</source>
+          <target state="new">Flavor 3</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName04" translate="yes" xml:space="preserve">
+          <source>Flavor 4</source>
+          <target state="new">Flavor 4</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName05" translate="yes" xml:space="preserve">
+          <source>Flavor 5</source>
+          <target state="new">Flavor 5</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName06" translate="yes" xml:space="preserve">
+          <source>Flavor 6</source>
+          <target state="new">Flavor 6</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName07" translate="yes" xml:space="preserve">
+          <source>Flavor 7</source>
+          <target state="new">Flavor 7</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName08" translate="yes" xml:space="preserve">
+          <source>Flavor 8</source>
+          <target state="new">Flavor 8</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName09" translate="yes" xml:space="preserve">
+          <source>Flavor 9</source>
+          <target state="new">Flavor 9</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName10" translate="yes" xml:space="preserve">
+          <source>Flavor 10</source>
+          <target state="new">Flavor 10</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName11" translate="yes" xml:space="preserve">
+          <source>Flavor 11</source>
+          <target state="new">Flavor 11</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName12" translate="yes" xml:space="preserve">
+          <source>Flavor 12</source>
+          <target state="new">Flavor 12</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName13" translate="yes" xml:space="preserve">
+          <source>Flavor 13</source>
+          <target state="new">Flavor 13</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName14" translate="yes" xml:space="preserve">
+          <source>Flavor 14</source>
+          <target state="new">Flavor 14</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName15" translate="yes" xml:space="preserve">
+          <source>Flavor 15</source>
+          <target state="new">Flavor 15</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName16" translate="yes" xml:space="preserve">
+          <source>Flavor 16</source>
+          <target state="new">Flavor 16</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName17" translate="yes" xml:space="preserve">
+          <source>Flavor 17</source>
+          <target state="new">Flavor 17</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName18" translate="yes" xml:space="preserve">
+          <source>Flavor 18</source>
+          <target state="new">Flavor 18</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName19" translate="yes" xml:space="preserve">
+          <source>Flavor 19</source>
+          <target state="new">Flavor 19</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavorName20" translate="yes" xml:space="preserve">
+          <source>Flavor 20</source>
+          <target state="new">Flavor 20</target>
+        </trans-unit>
+        <trans-unit id="add_rec_recipeName" translate="yes" xml:space="preserve">
+          <source>Recipe Name</source>
+          <target state="new">Recipe Name</target>
+        </trans-unit>
+        <trans-unit id="flavour_add" translate="yes" xml:space="preserve">
+          <source>Add Flavor</source>
+          <target state="new">Add Flavor</target>
+        </trans-unit>
+        <trans-unit id="gridColumnHeader1" translate="yes" xml:space="preserve">
+          <source>Brand</source>
+          <target state="new">Brand</target>
+        </trans-unit>
+        <trans-unit id="gridColumnHeader2" translate="yes" xml:space="preserve">
+          <source>BrandShort</source>
+          <target state="new">BrandShort</target>
+        </trans-unit>
+        <trans-unit id="gridColumnHeader3" translate="yes" xml:space="preserve">
+          <source>Total Flavor</source>
+          <target state="new">Total Flavor</target>
+        </trans-unit>
+        <trans-unit id="gridColumnHeader4" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target state="new">Amount</target>
+        </trans-unit>
+        <trans-unit id="add_rec_author" translate="yes" xml:space="preserve">
+          <source>Inspider</source>
+          <target state="new">Inspider</target>
+        </trans-unit>
+        <trans-unit id="add_rec_flavquantity" translate="yes" xml:space="preserve">
+          <source>Quantity: </source>
+          <target state="new">Quantity: </target>
+        </trans-unit>
+        <trans-unit id="add_rec_TimesMade" translate="yes" xml:space="preserve">
+          <source>Times Made</source>
+          <target state="new">Times Made</target>
+        </trans-unit>
+        <trans-unit id="about_change_0015" translate="yes" xml:space="preserve">
+          <source>- Added About Section.</source>
+          <target state="new">- Added About Section.</target>
+        </trans-unit>
+        <trans-unit id="add_rec_clear" translate="yes" xml:space="preserve">
+          <source>New</source>
+          <target state="new">New</target>
+        </trans-unit>
+        <trans-unit id="add_rec_delete" translate="yes" xml:space="preserve">
+          <source>Delete Recipe</source>
+          <target state="new">Delete Recipe</target>
+        </trans-unit>
+        <trans-unit id="mixbase_HeaderML" translate="yes" xml:space="preserve">
+          <source>ml</source>
+          <target state="new">ml</target>
+        </trans-unit>
+        <trans-unit id="synth_RecipeName" translate="yes" xml:space="preserve">
+          <source>Recipe Name</source>
+          <target state="new">Recipe Name</target>
+        </trans-unit>
+        <trans-unit id="synth_TargetMl" translate="yes" xml:space="preserve">
+          <source>Target ML</source>
+          <target state="new">Target ML</target>
+        </trans-unit>
+        <trans-unit id="synth_Notes" translate="yes" xml:space="preserve">
+          <source>Notes</source>
+          <target state="new">Notes</target>
+        </trans-unit>
+        <trans-unit id="synth_percent" translate="yes" xml:space="preserve">
+          <source>Percentage</source>
+          <target state="new">Percentage</target>
+        </trans-unit>
+        <trans-unit id="mg_ml" translate="yes" xml:space="preserve">
+          <source>mg/ml</source>
+          <target state="new">mg/ml</target>
+        </trans-unit>
+        <trans-unit id="mlinwarehouse" translate="yes" xml:space="preserve">
+          <source>ml in Warehouse</source>
+          <target state="new">ml in Warehouse</target>
+        </trans-unit>
+        <trans-unit id="perc" translate="yes" xml:space="preserve">
+          <source>Percentage</source>
+          <target state="new">Percentage</target>
+        </trans-unit>
+        <trans-unit id="synth_flav_name" translate="yes" xml:space="preserve">
+          <source>Flavor Name</source>
+          <target state="new">Flavor Name</target>
+        </trans-unit>
+        <trans-unit id="flv_tab_JuiceLog" translate="yes" xml:space="preserve">
+          <source>Juice Log</source>
+          <target state="new">Juice Log</target>
+        </trans-unit>
+        <trans-unit id="Register" translate="yes" xml:space="preserve">
+          <source>Activate</source>
+          <target state="new">Activate</target>
+        </trans-unit>
+        <trans-unit id="SN" translate="yes" xml:space="preserve">
+          <source>Vape Assistant Activation</source>
+          <target state="new">Vape Assistant Activation</target>
+        </trans-unit>
+        <trans-unit id="Dtrial" translate="yes" xml:space="preserve">
+          <source>7 Days Left</source>
+          <target state="new">7 Days Left</target>
+        </trans-unit>
+        <trans-unit id="vendor_SumOrders" translate="yes" xml:space="preserve">
+          <source>Orders Sum</source>
+          <target state="new">Orders Sum</target>
+        </trans-unit>
+        <trans-unit id="about_change_0016" translate="yes" xml:space="preserve">
+          <source>- Fixed some issues with Purchases.
+- Added Alchemies Section.
+- Fixed minor bugs.</source>
+          <target state="new">- Fixed some issues with Purchases.
+- Added Alchemies Section.
+- Fixed minor bugs.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0017" translate="yes" xml:space="preserve">
+          <source>- Fixed lot of bugs.</source>
+          <target state="new">- Fixed lot of bugs.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0018" translate="yes" xml:space="preserve">
+          <source>- Added Juice Log.
+- Database Fixes</source>
+          <target state="new">- Added Juice Log.
+- Database Fixes</target>
+        </trans-unit>
+        <trans-unit id="Clear" translate="yes" xml:space="preserve">
+          <source>Clear</source>
+          <target state="new">Clear</target>
+        </trans-unit>
+        <trans-unit id="Enter" translate="yes" xml:space="preserve">
+          <source>Enter</source>
+          <target state="new">Enter</target>
+        </trans-unit>
+        <trans-unit id="about_change_0019" translate="yes" xml:space="preserve">
+          <source>- Added Alert on higher than 20A at 'Ohm's Law'.
+- Added Flavor ML at 'OneShots'.
+- Visual Improvements.</source>
+          <target state="new">- Added Alert on higher than 20A at 'Ohm's Law'.
+- Added Flavor ML at 'OneShots'.
+- Visual Improvements.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0020" translate="yes" xml:space="preserve">
+          <source>- Moved 'Oneshots' &amp; 'Mix Bases' into 'Alchemies' category.</source>
+          <target state="new">- Moved 'Oneshots' &amp; 'Mix Bases' into 'Alchemies' category.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0021" translate="yes" xml:space="preserve">
+          <source>- Improved the flavor managment on "Warehouse" to speed up the use.
+- Added Import/Export function from/to DataBase.
+- Added Option to delete the last Flavor of the Recipe.
+- Added a minimum (0.01%) and maximum (100%) range on Recipes at Flavors Percentages.
+- Fixed a calculation error on Oneshots. The cause was the lack of Target nicotine level mg/ml value.</source>
+          <target state="new">- Improved the flavor managment on "Warehouse" to speed up the use.
+- Added Import/Export function from/to DataBase.
+- Added Option to delete the last Flavor of the Recipe.
+- Added a minimum (0.01%) and maximum (100%) range on Recipes at Flavors Percentages.
+- Fixed a calculation error on Oneshots. The cause was the lack of Target nicotine level mg/ml value.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0022" translate="yes" xml:space="preserve">
+          <source>- Added 'Edit &amp; Delete' on Purchases.</source>
+          <target state="new">- Added 'Edit &amp; Delete' on Purchases.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0023" translate="yes" xml:space="preserve">
+          <source>- Program Release.</source>
+          <target state="new">- Program Release.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0024" translate="yes" xml:space="preserve">
+          <source>- Fixed number round Issue on PG in Oneshots.
+- Increase the length of Nicotine Strenght from 2 to 5 characters at Oneshots.
+- Added more booster options (30/70 &amp; 70/30).
+- Added option to save oneshots into Juice Log.</source>
+          <target state="new">- Fixed number round Issue on PG in Oneshots.
+- Increase the length of Nicotine Strenght from 2 to 5 characters at Oneshots.
+- Added more booster options (30/70 &amp; 70/30).
+- Added option to save oneshots into Juice Log.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0025" translate="yes" xml:space="preserve">
+          <source>- Changes in GUI for ease of use.
+- Many changes in code workarounds. (Improved speed)</source>
+          <target state="new">- Changes in GUI for ease of use.
+- Many changes in code workarounds. (Improved speed)</target>
+        </trans-unit>
+        <trans-unit id="AddShop" translate="yes" xml:space="preserve">
+          <source>Add</source>
+          <target state="new">Add</target>
+        </trans-unit>
+        <trans-unit id="ThemeSave" translate="yes" xml:space="preserve">
+          <source>Save</source>
+          <target state="new">Save</target>
+        </trans-unit>
+        <trans-unit id="purchase" translate="yes" xml:space="preserve">
+          <source>Purchase</source>
+          <target state="new">Purchase</target>
+        </trans-unit>
+        <trans-unit id="No" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="new">No</target>
+        </trans-unit>
+        <trans-unit id="Yes" translate="yes" xml:space="preserve">
+          <source>Yes</source>
+          <target state="new">Yes</target>
+        </trans-unit>
+        <trans-unit id="Help" translate="yes" xml:space="preserve">
+          <source>Help</source>
+          <target state="new">Help</target>
+        </trans-unit>
+        <trans-unit id="vendor_County" translate="yes" xml:space="preserve">
+          <source>County</source>
+          <target state="new">County</target>
+        </trans-unit>
+        <trans-unit id="backup" translate="yes" xml:space="preserve">
+          <source>Backup</source>
+          <target state="new">Backup</target>
+        </trans-unit>
+        <trans-unit id="EntryDate" translate="yes" xml:space="preserve">
+          <source>Enter Date: </source>
+          <target state="new">Enter Date: </target>
+        </trans-unit>
+        <trans-unit id="EntryDiscount" translate="yes" xml:space="preserve">
+          <source>Enter Discount: </source>
+          <target state="new">Enter Discount: </target>
+        </trans-unit>
+        <trans-unit id="EntryID" translate="yes" xml:space="preserve">
+          <source>Entry Id: </source>
+          <target state="new">Entry Id: </target>
+        </trans-unit>
+        <trans-unit id="EntryName" translate="yes" xml:space="preserve">
+          <source>Enter Vendor Name: </source>
+          <target state="new">Enter Vendor Name: </target>
+        </trans-unit>
+        <trans-unit id="EntryPID" translate="yes" xml:space="preserve">
+          <source>Enter Product ID (SKU): </source>
+          <target state="new">Enter Product ID (SKU): </target>
+        </trans-unit>
+        <trans-unit id="EntryPrice" translate="yes" xml:space="preserve">
+          <source>Enter Price: </source>
+          <target state="new">Enter Price: </target>
+        </trans-unit>
+        <trans-unit id="EntryProductDescription" translate="yes" xml:space="preserve">
+          <source>Enter Product Description: </source>
+          <target state="new">Enter Product Description: </target>
+        </trans-unit>
+        <trans-unit id="EntryQuantity" translate="yes" xml:space="preserve">
+          <source>Enter Quantity: </source>
+          <target state="new">Enter Quantity: </target>
+        </trans-unit>
+        <trans-unit id="EntryReference" translate="yes" xml:space="preserve">
+          <source>Enter Reference: </source>
+          <target state="new">Enter Reference: </target>
+        </trans-unit>
+        <trans-unit id="EntryShipping" translate="yes" xml:space="preserve">
+          <source>Enter Shipping: </source>
+          <target state="new">Enter Shipping: </target>
+        </trans-unit>
+        <trans-unit id="EntryTotal" translate="yes" xml:space="preserve">
+          <source>Enter Total: </source>
+          <target state="new">Enter Total: </target>
+        </trans-unit>
+        <trans-unit id="EntryVID" translate="yes" xml:space="preserve">
+          <source>Enter Vendor ID: </source>
+          <target state="new">Enter Vendor ID: </target>
+        </trans-unit>
+        <trans-unit id="EditEntry" translate="yes" xml:space="preserve">
+          <source>Edit Entry: </source>
+          <target state="new">Edit Entry: </target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_Desc1" translate="yes" xml:space="preserve">
+          <source>Includes the Flavors you have in your possession.</source>
+          <target state="new">Includes the Flavors you have in your possession.</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_Desc2" translate="yes" xml:space="preserve">
+          <source>Includes the recipes you have added. Part A.</source>
+          <target state="new">Includes the recipes you have added. Part A.</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_Desc3" translate="yes" xml:space="preserve">
+          <source>Includes the recipes you have added. Part B.</source>
+          <target state="new">Includes the recipes you have added. Part B.</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_Desc4" translate="yes" xml:space="preserve">
+          <source>Includes the history log of the recipes you have mixed.</source>
+          <target state="new">Includes the history log of the recipes you have mixed.</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_ExportBtN" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="new">Export</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_hdrDB" translate="yes" xml:space="preserve">
+          <source>Database</source>
+          <target state="new">Database</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_hdrDesc" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="new">Description</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_hdrExport" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="new">Export</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_hdrImport" translate="yes" xml:space="preserve">
+          <source>Import</source>
+          <target state="new">Import</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_PreviewBtN" translate="yes" xml:space="preserve">
+          <source>Preview</source>
+          <target state="new">Preview</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_PreviewData" translate="yes" xml:space="preserve">
+          <source>Preview your data</source>
+          <target state="new">Preview your data</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_Row3" translate="yes" xml:space="preserve">
+          <source>hash</source>
+          <target state="new">hash</target>
+        </trans-unit>
+        <trans-unit id="Alch_Backup_SelectBtN" translate="yes" xml:space="preserve">
+          <source>Select File</source>
+          <target state="new">Select File</target>
+        </trans-unit>
+        <trans-unit id="Alch_Warehouse_AddFlv" translate="yes" xml:space="preserve">
+          <source>Add Flavor:</source>
+          <target state="new">Add Flavor:</target>
+        </trans-unit>
+        <trans-unit id="Alch_Warehouse_FlvId" translate="yes" xml:space="preserve">
+          <source>Flavor Id:</source>
+          <target state="new">Flavor Id:</target>
+        </trans-unit>
+        <trans-unit id="popup_Cancel" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="new">Cancel</target>
+        </trans-unit>
+        <trans-unit id="popup_Submit" translate="yes" xml:space="preserve">
+          <source>Submit</source>
+          <target state="new">Submit</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrAmount" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target state="new">Amount</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrBrand" translate="yes" xml:space="preserve">
+          <source>Brand</source>
+          <target state="new">Brand</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrFlavor" translate="yes" xml:space="preserve">
+          <source>Flavor</source>
+          <target state="new">Flavor</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrId" translate="yes" xml:space="preserve">
+          <source>Id</source>
+          <target state="new">Id</target>
+        </trans-unit>
+        <trans-unit id="add_rec_deleteFlv" translate="yes" xml:space="preserve">
+          <source>Delete this Flavor.</source>
+          <target state="new">Delete this Flavor.</target>
+        </trans-unit>
+        <trans-unit id="purchase_Selection" translate="yes" xml:space="preserve">
+          <source>With Selection</source>
+          <target state="new">With Selection</target>
+        </trans-unit>
+        <trans-unit id="OneShotHeaderName" translate="yes" xml:space="preserve">
+          <source>Oneshot Name</source>
+          <target state="new">Oneshot Name</target>
+        </trans-unit>
+        <trans-unit id="Website" translate="yes" xml:space="preserve">
+          <source>http://vape-assistant.com</source>
+          <target state="new">http://vape-assistant.com</target>
+        </trans-unit>
+        <trans-unit id="Alch_Warehouse_EditFlv" translate="yes" xml:space="preserve">
+          <source>Edit Flavor Amount:</source>
+          <target state="new">Edit Flavor Amount:</target>
+        </trans-unit>
+        <trans-unit id="log_Amount" translate="yes" xml:space="preserve">
+          <source>Log Amount</source>
+          <target state="new">Log Amount</target>
+        </trans-unit>
+        <trans-unit id="log_Date" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <target state="new">Date</target>
+        </trans-unit>
+        <trans-unit id="log_EntryID" translate="yes" xml:space="preserve">
+          <source>Entry ID</source>
+          <target state="new">Entry ID</target>
+        </trans-unit>
+        <trans-unit id="log_Notes" translate="yes" xml:space="preserve">
+          <source>Notes</source>
+          <target state="new">Notes</target>
+        </trans-unit>
+        <trans-unit id="log_RatioPG" translate="yes" xml:space="preserve">
+          <source>Ratio PG</source>
+          <target state="new">Ratio PG</target>
+        </trans-unit>
+        <trans-unit id="log_RatioVG" translate="yes" xml:space="preserve">
+          <source>Ratio VG</source>
+          <target state="new">Ratio VG</target>
+        </trans-unit>
+        <trans-unit id="log_RecipeName" translate="yes" xml:space="preserve">
+          <source>Recipe Name</source>
+          <target state="new">Recipe Name</target>
+        </trans-unit>
+        <trans-unit id="about_change_0026" translate="yes" xml:space="preserve">
+          <source>- Fixes in Purchases section.
+- Fixes in Juice Log Add &amp; Edit section.</source>
+          <target state="new">- Fixes in Purchases section.
+- Fixes in Juice Log Add &amp; Edit section.</target>
+        </trans-unit>
+        <trans-unit id="log_Add" translate="yes" xml:space="preserve">
+          <source>Add to Juice Log</source>
+          <target state="new">Add to Juice Log</target>
+        </trans-unit>
+        <trans-unit id="log_Edit" translate="yes" xml:space="preserve">
+          <source>Edit from Juice Log</source>
+          <target state="new">Edit from Juice Log</target>
+        </trans-unit>
+        <trans-unit id="log_Nic" translate="yes" xml:space="preserve">
+          <source>Nicotine Strength</source>
+          <target state="new">Nicotine Strength</target>
+        </trans-unit>
+        <trans-unit id="menu_about" translate="yes" xml:space="preserve">
+          <source>_About</source>
+          <target state="new">_About</target>
+        </trans-unit>
+        <trans-unit id="menu_edit" translate="yes" xml:space="preserve">
+          <source>_Edit</source>
+          <target state="new">_Edit</target>
+        </trans-unit>
+        <trans-unit id="menu_file" translate="yes" xml:space="preserve">
+          <source>_File</source>
+          <target state="new">_File</target>
+        </trans-unit>
+        <trans-unit id="menu_tools" translate="yes" xml:space="preserve">
+          <source>_Tools</source>
+          <target state="new">_Tools</target>
+        </trans-unit>
+        <trans-unit id="about_change_0027" translate="yes" xml:space="preserve">
+          <source>- Added Purchases sum to Statistics (automatic from database).
+- Added Numbers on the left of List viewers (Juice Log &amp; Warehouse for now).
+- Fixed some calculations on Statics to avoid errors.</source>
+          <target state="new">- Added Purchases sum to Statistics (automatic from database).
+- Added Numbers on the left of List viewers (Juice Log &amp; Warehouse for now).
+- Fixed some calculations on Statics to avoid errors.</target>
+        </trans-unit>
+        <trans-unit id="EJuiceCosts" translate="yes" xml:space="preserve">
+          <source>E Juice ML/Cost/Nicotine Cost</source>
+          <target state="new">E Juice ML/Cost/Nicotine Cost</target>
+        </trans-unit>
+        <trans-unit id="EJuiceCosts1" translate="yes" xml:space="preserve">
+          <source>Liquid amount (ML)</source>
+          <target state="new">Liquid amount (ML)</target>
+        </trans-unit>
+        <trans-unit id="EJuiceCosts2" translate="yes" xml:space="preserve">
+          <source>Liquid Cost (No Nicotine)</source>
+          <target state="new">Liquid Cost (No Nicotine)</target>
+        </trans-unit>
+        <trans-unit id="EJuiceCosts3" translate="yes" xml:space="preserve">
+          <source>Nicotine Cost</source>
+          <target state="new">Nicotine Cost</target>
+        </trans-unit>
+        <trans-unit id="juiceLog_Amount" translate="yes" xml:space="preserve">
+          <source>Amount (ml)</source>
+          <target state="new">Amount (ml)</target>
+        </trans-unit>
+        <trans-unit id="juiceLog_Date" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <target state="new">Date</target>
+        </trans-unit>
+        <trans-unit id="juiceLog_Id" translate="yes" xml:space="preserve">
+          <source>#</source>
+          <target state="new">#</target>
+        </trans-unit>
+        <trans-unit id="juiceLog_Name" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target state="new">Name</target>
+        </trans-unit>
+        <trans-unit id="juiceLog_Nicotine" translate="yes" xml:space="preserve">
+          <source>Nicotine (mg/ml)</source>
+          <target state="new">Nicotine (mg/ml)</target>
+        </trans-unit>
+        <trans-unit id="juiceLog_Notes" translate="yes" xml:space="preserve">
+          <source>Notes</source>
+          <target state="new">Notes</target>
+        </trans-unit>
+        <trans-unit id="juiceLog_Ratio" translate="yes" xml:space="preserve">
+          <source>Ratio (PG/VG)</source>
+          <target state="new">Ratio (PG/VG)</target>
+        </trans-unit>
+        <trans-unit id="TooltipHardwareCost" translate="yes" xml:space="preserve">
+          <source>This is calculated from the Purchases tab fill your purchases to continue.</source>
+          <target state="new">This is calculated from the Purchases tab fill your purchases to continue.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0028" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="Settings_PurchasesPIN" translate="yes" xml:space="preserve">
+          <source>PIN (Purchases)</source>
+          <target state="new">PIN (Purchases)</target>
+        </trans-unit>
+        <trans-unit id="synth_Total" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <target state="new">Total</target>
+        </trans-unit>
+        <trans-unit id="GFX" translate="yes" xml:space="preserve">
+          <source>Graphics:</source>
+          <target state="new">Graphics:</target>
+        </trans-unit>
+        <trans-unit id="menu_file_exit" translate="yes" xml:space="preserve">
+          <source>_Exit</source>
+          <target state="new">_Exit</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy" translate="yes" xml:space="preserve">
+          <source>_Alchemy</source>
+          <target state="new">_Alchemy</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_BasesMix" translate="yes" xml:space="preserve">
+          <source>_Bases Mix</source>
+          <target state="new">_Bases Mix</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_Flavors" translate="yes" xml:space="preserve">
+          <source>_Flavors</source>
+          <target state="new">_Flavors</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_JuiceLog" translate="yes" xml:space="preserve">
+          <source>_Juice Log</source>
+          <target state="new">_Juice Log</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_Oneshots" translate="yes" xml:space="preserve">
+          <source>_Oneshots</source>
+          <target state="new">_Oneshots</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_Recipes" translate="yes" xml:space="preserve">
+          <source>_Recipes</source>
+          <target state="new">_Recipes</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_Synthesize" translate="yes" xml:space="preserve">
+          <source>_Synthesize</source>
+          <target state="new">_Synthesize</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_NicotineCost" translate="yes" xml:space="preserve">
+          <source>_Nicotine Cost</source>
+          <target state="new">_Nicotine Cost</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_OhmsLaw" translate="yes" xml:space="preserve">
+          <source>_Ohm's Law</source>
+          <target state="new">_Ohm's Law</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Purchases" translate="yes" xml:space="preserve">
+          <source>_Purchases</source>
+          <target state="new">_Purchases</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Settings" translate="yes" xml:space="preserve">
+          <source>_Settings</source>
+          <target state="new">_Settings</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Statistics" translate="yes" xml:space="preserve">
+          <source>_Statistics</source>
+          <target state="new">_Statistics</target>
+        </trans-unit>
+        <trans-unit id="SettingsOff" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="new">Off</target>
+        </trans-unit>
+        <trans-unit id="SettingsOn" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="new">On</target>
+        </trans-unit>
+        <trans-unit id="backup_Header_db" translate="yes" xml:space="preserve">
+          <source>Database</source>
+          <target state="new">Database</target>
+        </trans-unit>
+        <trans-unit id="backup_Header_description" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="new">Description</target>
+        </trans-unit>
+        <trans-unit id="backup_Header_export" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="new">Export</target>
+        </trans-unit>
+        <trans-unit id="backup_Header_import" translate="yes" xml:space="preserve">
+          <source>Import</source>
+          <target state="new">Import</target>
+        </trans-unit>
+        <trans-unit id="purchase_AddItem" translate="yes" xml:space="preserve">
+          <source>Add Item</source>
+          <target state="new">Add Item</target>
+        </trans-unit>
+        <trans-unit id="purchase_Clear" translate="yes" xml:space="preserve">
+          <source>Clear</source>
+          <target state="new">Clear</target>
+        </trans-unit>
+        <trans-unit id="purchase_Discount" translate="yes" xml:space="preserve">
+          <source>Discount</source>
+          <target state="new">Discount</target>
+        </trans-unit>
+        <trans-unit id="purchase_Price" translate="yes" xml:space="preserve">
+          <source>Price</source>
+          <target state="new">Price</target>
+        </trans-unit>
+        <trans-unit id="purchase_Product" translate="yes" xml:space="preserve">
+          <source>Product</source>
+          <target state="new">Product</target>
+        </trans-unit>
+        <trans-unit id="purchase_Quantity" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <target state="new">Quantity</target>
+        </trans-unit>
+        <trans-unit id="purchase_Shipping" translate="yes" xml:space="preserve">
+          <source>Shipping</source>
+          <target state="new">Shipping</target>
+        </trans-unit>
+        <trans-unit id="purchase_SKU" translate="yes" xml:space="preserve">
+          <source>SKU</source>
+          <target state="new">SKU</target>
+        </trans-unit>
+        <trans-unit id="purchase_Total" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <target state="new">Total</target>
+        </trans-unit>
+        <trans-unit id="vendor_Reference" translate="yes" xml:space="preserve">
+          <source>By Order Reference</source>
+          <target state="new">By Order Reference</target>
+        </trans-unit>
+        <trans-unit id="help_Answer" translate="yes" xml:space="preserve">
+          <source>Answer</source>
+          <target state="new">Answer</target>
+        </trans-unit>
+        <trans-unit id="help_Question" translate="yes" xml:space="preserve">
+          <source>Question</source>
+          <target state="new">Question</target>
+        </trans-unit>
+        <trans-unit id="help_Id" translate="yes" xml:space="preserve">
+          <source>#</source>
+          <target state="new">#</target>
+        </trans-unit>
+        <trans-unit id="currency" translate="yes" xml:space="preserve">
+          <source>$</source>
+          <target state="new">$</target>
+        </trans-unit>
+        <trans-unit id="MinimizeToTray" translate="yes" xml:space="preserve">
+          <source>Minimize To Tray</source>
+          <target state="new">Minimize To Tray</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageEn" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="new">English</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageGr" translate="yes" xml:space="preserve">
+          <source>Ελληνικά</source>
+          <target state="new">Ελληνικά</target>
+        </trans-unit>
+        <trans-unit id="settings_Restart" translate="yes" xml:space="preserve">
+          <source>Restart</source>
+          <target state="new">Restart</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageDe" translate="yes" xml:space="preserve">
+          <source>Deutsche</source>
+          <target state="new">Deutsche</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageEs" translate="yes" xml:space="preserve">
+          <source>Español</source>
+          <target state="new">Español</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageIt" translate="yes" xml:space="preserve">
+          <source>Italiano</source>
+          <target state="new">Italiano</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageRo" translate="yes" xml:space="preserve">
+          <source>Romanian</source>
+          <target state="new">Romanian</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageRu" translate="yes" xml:space="preserve">
+          <source>Pусский</source>
+          <target state="new">Pусский</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageFr" translate="yes" xml:space="preserve">
+          <source>Français</source>
+          <target state="new">Français</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_Warehouse" translate="yes" xml:space="preserve">
+          <source>_Warehouse</source>
+          <target state="new">_Warehouse</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

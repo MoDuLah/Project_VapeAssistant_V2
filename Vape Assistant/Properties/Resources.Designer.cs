@@ -281,7 +281,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to - Improved the flavor managment on &quot;Stash&quot; to speed up the use.
+        ///   Looks up a localized string similar to - Improved the flavor managment on &quot;Warehouse&quot; to speed up the use.
         ///- Added Import/Export function from/to DataBase.
         ///- Added Option to delete the last Flavor of the Recipe.
         ///- Added a minimum (0.01%) and maximum (100%) range on Recipes at Flavors Percentages.
@@ -345,7 +345,7 @@ namespace Vape_Assistant.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to - Added Purchases sum to Statistics (automatic from database).
-        ///- Added Numbers on the left of List viewers (Juice Log &amp; Stash for now).
+        ///- Added Numbers on the left of List viewers (Juice Log &amp; Warehouse for now).
         ///- Fixed some calculations on Statics to avoid errors..
         /// </summary>
         public static string about_change_0027 {
@@ -483,9 +483,9 @@ namespace Vape_Assistant.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Items: .
         /// </summary>
-        public static string add_flv_StashCount {
+        public static string add_flv_WarehouseCount {
             get {
-                return ResourceManager.GetString("add_flv_StashCount", resourceCulture);
+                return ResourceManager.GetString("add_flv_WarehouseCount", resourceCulture);
             }
         }
         
@@ -870,27 +870,27 @@ namespace Vape_Assistant.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Add Flavor:.
         /// </summary>
-        public static string Alch_Stash_AddFlv {
+        public static string Alch_Warehouse_AddFlv {
             get {
-                return ResourceManager.GetString("Alch_Stash_AddFlv", resourceCulture);
+                return ResourceManager.GetString("Alch_Warehouse_AddFlv", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Edit Flavor Amount:.
         /// </summary>
-        public static string Alch_Stash_EditFlv {
+        public static string Alch_Warehouse_EditFlv {
             get {
-                return ResourceManager.GetString("Alch_Stash_EditFlv", resourceCulture);
+                return ResourceManager.GetString("Alch_Warehouse_EditFlv", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Flavor Id:.
         /// </summary>
-        public static string Alch_Stash_FlvId {
+        public static string Alch_Warehouse_FlvId {
             get {
-                return ResourceManager.GetString("Alch_Stash_FlvId", resourceCulture);
+                return ResourceManager.GetString("Alch_Warehouse_FlvId", resourceCulture);
             }
         }
         
@@ -1444,11 +1444,11 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stash.
+        ///   Looks up a localized string similar to Warehouse.
         /// </summary>
-        public static string flv_tab_Stash {
+        public static string flv_tab_Warehouse {
             get {
-                return ResourceManager.GetString("flv_tab_Stash", resourceCulture);
+                return ResourceManager.GetString("flv_tab_Warehouse", resourceCulture);
             }
         }
         
@@ -1993,20 +1993,20 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Stash.
-        /// </summary>
-        public static string menu_tools_Alchemy_Stash {
-            get {
-                return ResourceManager.GetString("menu_tools_Alchemy_Stash", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to _Synthesize.
         /// </summary>
         public static string menu_tools_Alchemy_Synthesize {
             get {
                 return ResourceManager.GetString("menu_tools_Alchemy_Synthesize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Warehouse.
+        /// </summary>
+        public static string menu_tools_Alchemy_Warehouse {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_Warehouse", resourceCulture);
             }
         }
         
@@ -2236,11 +2236,11 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ml in Stash.
+        ///   Looks up a localized string similar to ml in Warehouse.
         /// </summary>
-        public static string mlinstash {
+        public static string mlinwarehouse {
             get {
-                return ResourceManager.GetString("mlinstash", resourceCulture);
+                return ResourceManager.GetString("mlinwarehouse", resourceCulture);
             }
         }
         
@@ -2578,11 +2578,11 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove Flavor from Stash.
+        ///   Looks up a localized string similar to Remove Flavor from Warehouse.
         /// </summary>
-        public static string rem_Flv_fromstash {
+        public static string rem_Flv_fromwarehouse {
             get {
-                return ResourceManager.GetString("rem_Flv_fromstash", resourceCulture);
+                return ResourceManager.GetString("rem_Flv_fromwarehouse", resourceCulture);
             }
         }
         
@@ -2596,11 +2596,92 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deutsche.
+        /// </summary>
+        public static string settings_LanguageDe {
+            get {
+                return ResourceManager.GetString("settings_LanguageDe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string settings_LanguageEn {
+            get {
+                return ResourceManager.GetString("settings_LanguageEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Español.
+        /// </summary>
+        public static string settings_LanguageEs {
+            get {
+                return ResourceManager.GetString("settings_LanguageEs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Français.
+        /// </summary>
+        public static string settings_LanguageFr {
+            get {
+                return ResourceManager.GetString("settings_LanguageFr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ελληνικά.
+        /// </summary>
+        public static string settings_LanguageGr {
+            get {
+                return ResourceManager.GetString("settings_LanguageGr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Italiano.
+        /// </summary>
+        public static string settings_LanguageIt {
+            get {
+                return ResourceManager.GetString("settings_LanguageIt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Romanian.
+        /// </summary>
+        public static string settings_LanguageRo {
+            get {
+                return ResourceManager.GetString("settings_LanguageRo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pусский.
+        /// </summary>
+        public static string settings_LanguageRu {
+            get {
+                return ResourceManager.GetString("settings_LanguageRu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PIN (Purchases).
         /// </summary>
         public static string Settings_PurchasesPIN {
             get {
                 return ResourceManager.GetString("Settings_PurchasesPIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        public static string settings_Restart {
+            get {
+                return ResourceManager.GetString("settings_Restart", resourceCulture);
             }
         }
         
@@ -2646,51 +2727,6 @@ namespace Vape_Assistant.Properties {
         public static string SoftwareVersion {
             get {
                 return ResourceManager.GetString("SoftwareVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount.
-        /// </summary>
-        public static string stash_hdrAmount {
-            get {
-                return ResourceManager.GetString("stash_hdrAmount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Brand.
-        /// </summary>
-        public static string stash_hdrBrand {
-            get {
-                return ResourceManager.GetString("stash_hdrBrand", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Flavor.
-        /// </summary>
-        public static string stash_hdrFlavor {
-            get {
-                return ResourceManager.GetString("stash_hdrFlavor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Id.
-        /// </summary>
-        public static string stash_hdrId {
-            get {
-                return ResourceManager.GetString("stash_hdrId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stash.
-        /// </summary>
-        public static string stash_header {
-            get {
-                return ResourceManager.GetString("stash_header", resourceCulture);
             }
         }
         
@@ -2965,47 +3001,11 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English.
-        /// </summary>
-        public static string ThemeLanguageEn {
-            get {
-                return ResourceManager.GetString("ThemeLanguageEn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Greek.
-        /// </summary>
-        public static string ThemeLanguageGr {
-            get {
-                return ResourceManager.GetString("ThemeLanguageGr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Restart.
-        /// </summary>
-        public static string ThemeRestart {
-            get {
-                return ResourceManager.GetString("ThemeRestart", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string ThemeSave {
             get {
                 return ResourceManager.GetString("ThemeSave", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Settings.
-        /// </summary>
-        public static string ThemeTitle {
-            get {
-                return ResourceManager.GetString("ThemeTitle", resourceCulture);
             }
         }
         
@@ -3204,6 +3204,51 @@ namespace Vape_Assistant.Properties {
         public static string vendor_Website {
             get {
                 return ResourceManager.GetString("vendor_Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string warehouse_hdrAmount {
+            get {
+                return ResourceManager.GetString("warehouse_hdrAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand.
+        /// </summary>
+        public static string warehouse_hdrBrand {
+            get {
+                return ResourceManager.GetString("warehouse_hdrBrand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor.
+        /// </summary>
+        public static string warehouse_hdrFlavor {
+            get {
+                return ResourceManager.GetString("warehouse_hdrFlavor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string warehouse_hdrId {
+            get {
+                return ResourceManager.GetString("warehouse_hdrId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warehouse.
+        /// </summary>
+        public static string warehouse_header {
+            get {
+                return ResourceManager.GetString("warehouse_header", resourceCulture);
             }
         }
         

@@ -33,16 +33,14 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static properties:Resources.ohms_Current}" FontWeight="Bold" VerticalAlignment="Bottom" FontSize="20"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static properties:Resources.ohms_Current}" FontWeight="Bold" VerticalAlignment="Bottom" FontSize="20" Margin="0,10,0,0"/>
         <TextBox Grid.Column="1" Grid.Row="0" x:Name="ampsv" 
-                 AutoWordSelection="True" MaxLength="10" MinWidth="60"
+                 AutoWordSelection="True" MaxLength="10" MinWidth="60" Margin="0,10,0,0"
                  Text="{Binding Source={x:Reference ampsslider}, Path=Value, StringFormat=0.##}"
-                 Background="{x:Null}"
                  HorizontalContentAlignment="Right" 
                  VerticalContentAlignment="Stretch" LostFocus="ampsv_LostFocus" 
-                 PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting" BorderBrush="{x:Null}"
-        />
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="A (Amperes)" VerticalAlignment="Center" />
+                 PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting"/>
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="A (Amperes)" VerticalAlignment="Center" Margin="0,10,0,0" />
         <Slider x:Name="ampsslider" Value="0" Maximum="60" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" TickPlacement="BottomRight" TickFrequency="1" MaxHeight="30">
             <Slider.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -65,12 +63,10 @@
         <TextBox   x:Name="voltv" Grid.Column="1" Grid.Row="3"
                   AutoWordSelection="True" MaxLength="10" MinWidth="60" Margin="0,10,0,0"
                   Text="{Binding Source={x:Reference voltslider}, Path=Value, StringFormat=0.##}"
-                  Background="{x:Null}"
                   HorizontalContentAlignment="Right"
-                  VerticalContentAlignment="Stretch" BorderBrush="{x:Null}" SelectionBrush="#FF0078D7" LostFocus="voltv_LostFocus"
-                  PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting" 
-        />
-        <TextBlock Grid.Column="2" Grid.Row="3" Text="V (Volts)" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                  VerticalContentAlignment="Stretch" LostFocus="voltv_LostFocus"
+                  PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting"/>
+        <TextBlock Grid.Column="2" Grid.Row="3" Text="V (Volts)" Margin="0,10,0,0" VerticalAlignment="Center"/>
         <Slider Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" x:Name="voltslider" Value="0" Maximum="16.8" TickPlacement="BottomRight"
         TickFrequency="1" MaxHeight="30">
             <Slider.Background>
@@ -95,7 +91,7 @@
                   Text="{Binding Source={x:Reference resslider}, Path=Value, StringFormat=0.##}"
                   Background="{x:Null}"
                   HorizontalContentAlignment="Right"
-                  VerticalContentAlignment="Stretch" BorderBrush="{x:Null}" SelectionBrush="#FF0078D7" 
+                  VerticalContentAlignment="Stretch"
                  LostFocus="resv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" />
         <TextBlock Grid.Column="2" Grid.Row="5" Text="Ω (Ohms)" VerticalAlignment="Center"  Margin="0,10,0,0" />
         <Slider Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" x:Name="resslider" Value="0" Minimum="0" Maximum="3" LargeChange="1" TickPlacement="BottomRight" TickFrequency="0.01">
@@ -118,10 +114,9 @@
         <TextBlock Grid.Column="0" Grid.Row="7" Text="{x:Static properties:Resources.ohms_Wattage}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
         <TextBox Grid.Column="1" Grid.Row="7" MinWidth="60" MaxLength="10" Margin="0,10,0,0"
                  Text="{Binding Source={x:Reference wattslider}, Path=Value, StringFormat=0.#}" x:Name="wattv" 
-                 Background="{x:Null}" AutoWordSelection="True" SelectionBrush="#FF0078D7"
-                 Foreground="{Binding Source={x:Static properties:Settings.Default}, Path=FGColor, Mode=TwoWay}" 
+                 Background="{x:Null}" AutoWordSelection="True"
                  HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch"
-                 LostFocus="wattv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" MaxHeight="30" BorderBrush="{x:Null}"/>
+                 LostFocus="wattv_LostFocus" PreviewTextInput="textBox_PreviewTextInput"/>
         <TextBlock Grid.Column="2" Grid.Row="7" Text="W (Watts)" VerticalAlignment="Center"  Margin="0,10,0,0"/>
         <Slider Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" x:Name="wattslider" Value="0" Minimum="0" Maximum="400" TickPlacement="BottomRight" TickFrequency="5" MaxHeight="30">
             <Slider.Background>
@@ -150,7 +145,7 @@
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Margin="10,0" Padding="10,10">
+                                    <Border Background="{TemplateBinding Background}" Margin="10,0" Padding="10,0">
                                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Border>
                                 </ControlTemplate>
@@ -166,28 +161,6 @@
                     </Style>
                 </Button.Style>
             </Button>
-        <Button Grid.Column="2" Grid.Row="10" x:Name="ohm_submit" Content="{x:Static properties:Resources.Calculate_Button}" Click="ohm_submit_Click">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Margin="10,0" Padding="10,10">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
+        <Button Grid.Column="2" Grid.Row="10" Padding="10" x:Name="ohm_submit" Content="{x:Static properties:Resources.Calculate_Button}" Click="ohm_submit_Click"/>
     </Grid>
 </UserControl>

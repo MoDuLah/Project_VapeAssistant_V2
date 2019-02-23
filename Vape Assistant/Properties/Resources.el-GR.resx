@@ -144,18 +144,6 @@
   <data name="SoftwareVersion" xml:space="preserve">
     <value>Έκδοση</value>
   </data>
-  <data name="ThemeLanguageEn" xml:space="preserve">
-    <value>Αγγλικά</value>
-  </data>
-  <data name="ThemeLanguageGr" xml:space="preserve">
-    <value>Ελληνικά</value>
-  </data>
-  <data name="ThemeRestart" xml:space="preserve">
-    <value>Επανεκκίνηση</value>
-  </data>
-  <data name="ThemeTitle" xml:space="preserve">
-    <value>Ρυθμίσεις</value>
-  </data>
   <data name="Targetbase" xml:space="preserve">
     <value>Βάση (ml)</value>
   </data>
@@ -391,13 +379,13 @@
   <data name="flv_tab_Recipes" xml:space="preserve">
     <value>Συνταγές</value>
   </data>
-  <data name="flv_tab_Stash" xml:space="preserve">
+  <data name="flv_tab_Warehouse" xml:space="preserve">
     <value>Αποθήκη</value>
   </data>
   <data name="add_flv_amount" xml:space="preserve">
     <value>Ποσότητα: </value>
   </data>
-  <data name="stash_header" xml:space="preserve">
+  <data name="warehouse_header" xml:space="preserve">
     <value>Αποθήκη</value>
   </data>
   <data name="add_flv_brandSelect" xml:space="preserve">
@@ -409,13 +397,13 @@
   <data name="add_flv_amountEnter" xml:space="preserve">
     <value>Εισαγωγή Ποσότητας (ml)</value>
   </data>
-  <data name="add_flv_StashCount" xml:space="preserve">
+  <data name="add_flv_WarehouseCount" xml:space="preserve">
     <value>Τεμάχια:</value>
   </data>
   <data name="add_flv_Owned" xml:space="preserve">
     <value>Το κατέχεις; </value>
   </data>
-  <data name="rem_Flv_fromstash" xml:space="preserve">
+  <data name="rem_Flv_fromwarehouse" xml:space="preserve">
     <value>Αφαίρεσε το Άρωμα από το μπαούλο</value>
   </data>
   <data name="flv_tab_Craft" xml:space="preserve">
@@ -535,7 +523,7 @@
   <data name="synth_percent" xml:space="preserve">
     <value>Ποσοστό</value>
   </data>
-  <data name="mlinstash" xml:space="preserve">
+  <data name="mlinwarehouse" xml:space="preserve">
     <value>ml στο Μπαούλο</value>
   </data>
   <data name="perc" xml:space="preserve">
@@ -708,22 +696,22 @@
   <data name="Alch_Backup_PreviewData" xml:space="preserve">
     <value>Προεπισκόπηση των δεδομένων σας</value>
   </data>
-  <data name="Alch_Stash_AddFlv" xml:space="preserve">
+  <data name="Alch_Warehouse_AddFlv" xml:space="preserve">
     <value>Προσθήκη Αρώματος:</value>
   </data>
-  <data name="Alch_Stash_FlvId" xml:space="preserve">
+  <data name="Alch_Warehouse_FlvId" xml:space="preserve">
     <value>Κωδ. Αρώματος:</value>
   </data>
-  <data name="stash_hdrAmount" xml:space="preserve">
+  <data name="warehouse_hdrAmount" xml:space="preserve">
     <value>Ποσότητα</value>
   </data>
-  <data name="stash_hdrBrand" xml:space="preserve">
+  <data name="warehouse_hdrBrand" xml:space="preserve">
     <value>Εταιρία</value>
   </data>
-  <data name="stash_hdrFlavor" xml:space="preserve">
+  <data name="warehouse_hdrFlavor" xml:space="preserve">
     <value>Άρωμα</value>
   </data>
-  <data name="stash_hdrId" xml:space="preserve">
+  <data name="warehouse_hdrId" xml:space="preserve">
     <value>#</value>
   </data>
   <data name="popup_Cancel" xml:space="preserve">
@@ -744,7 +732,7 @@
   <data name="Website" xml:space="preserve">
     <value>http://vape-assistant.com</value>
   </data>
-  <data name="Alch_Stash_EditFlv" xml:space="preserve">
+  <data name="Alch_Warehouse_EditFlv" xml:space="preserve">
     <value>Επεξεργασία Ποσότητας:</value>
   </data>
   <data name="ChangePinTitle" xml:space="preserve">
@@ -863,9 +851,6 @@
   </data>
   <data name="menu_tools_Alchemy_Recipes" xml:space="preserve">
     <value>_Συνταγές</value>
-  </data>
-  <data name="menu_tools_Alchemy_Stash" xml:space="preserve">
-    <value>_Μπαούλο</value>
   </data>
   <data name="menu_tools_Alchemy_Synthesize" xml:space="preserve">
     <value>_Σύνθεση</value>

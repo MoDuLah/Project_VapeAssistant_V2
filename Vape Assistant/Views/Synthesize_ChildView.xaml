@@ -171,7 +171,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="3" x:Name="flav_gr0" Visibility="Visible" Text="{x:Static p:Resources.mixbase_HeaderGrams}" MinWidth="60" Margin="10,0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                 <TextBlock Grid.Row="0" Grid.Column="3" x:Name="flv_weight0" Visibility="Collapsed" MinWidth="60" Margin="10,0" TextAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="0" Grid.Column="4" x:Name="perc0" Visibility="Visible" Text="{x:Static p:Resources.synth_percent}" MinWidth="60" Margin="10,0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
-                <TextBlock Grid.Row="0" Grid.Column="5" x:Name="mlstash0" Visibility="Visible" Text="{x:Static p:Resources.mlinstash}" MinWidth="60" Margin="10,0" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" />
+                <TextBlock Grid.Row="0" Grid.Column="5" x:Name="mlwarehouse0" Visibility="Visible" Text="{x:Static p:Resources.mlinwarehouse}" MinWidth="60" Margin="10,0" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" />
                 <TextBlock Grid.Row="1" Grid.Column="1" x:Name="totals" Text="{x:Static p:Resources.synth_Total}" TextAlignment="Right" FontFamily="AvantGarde Bk BT"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" x:Name="totalML" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="1" Grid.Column="3" x:Name="totalGr" TextAlignment="Center" HorizontalAlignment="Center" />
@@ -188,7 +188,7 @@
                 <TextBlock Grid.Row="4" Grid.Column="2" x:Name="synth_Nic_ml" Margin="0,0" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
                 <TextBlock Grid.Row="4" Grid.Column="3" x:Name="synthNic_Grams" Margin="0,0" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
                 <TextBlock Grid.Row="4" Grid.Column="4" x:Name="synth_nicperc" Margin="0,0" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
-                <TextBlock Grid.Row="4" Grid.Column="5" x:Name="synth_nicstash" Margin="0,0" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
+                <TextBlock Grid.Row="4" Grid.Column="5" x:Name="synth_nicwarehouse" Margin="0,0" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
                 <TextBlock Grid.Row="5" Grid.Column="1" Text="{x:Static p:Resources.gridColumnHeader3}" TextAlignment="Right" VerticalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" x:Name="synth_Flv_ml" Margin="0,0" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" x:Name="synthFlv_Grams" Margin="0,0" TextAlignment="Center" HorizontalAlignment="Center" FontFamily="AvantGarde Bk BT"/>
@@ -200,140 +200,140 @@
                 <TextBlock Grid.Row="7" Grid.Column="3" x:Name="flav_gr1" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="7" Grid.Column="3" x:Name="flv_weight1" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="7" Grid.Column="4" x:Name="perc1" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="7" Grid.Column="5" x:Name="mlstash1" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="7" Grid.Column="5" x:Name="mlwarehouse1" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="8" Grid.Column="0" x:Name="fl_id2" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="8" Grid.Column="1" x:Name="flav2" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="8" Grid.Column="2" x:Name="flav_ml2" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="8" Grid.Column="3" x:Name="flav_gr2" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="8" Grid.Column="3" x:Name="flv_weight2" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="8" Grid.Column="4" x:Name="perc2" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="8" Grid.Column="5" x:Name="mlstash2" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="8" Grid.Column="5" x:Name="mlwarehouse2" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="9" Grid.Column="0" x:Name="fl_id3" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="9" Grid.Column="1" x:Name="flav3" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="9" Grid.Column="2" x:Name="flav_ml3" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="9" Grid.Column="3" x:Name="flav_gr3" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="9" Grid.Column="3" x:Name="flv_weight3" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="9" Grid.Column="4" x:Name="perc3" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="9" Grid.Column="5" x:Name="mlstash3" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="9" Grid.Column="5" x:Name="mlwarehouse3" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="10" Grid.Column="0" x:Name="fl_id4" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="10" Grid.Column="1" x:Name="flav4" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="10" Grid.Column="2" x:Name="flav_ml4" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="10" Grid.Column="3" x:Name="flav_gr4" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="10" Grid.Column="3" x:Name="flv_weight4" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="10" Grid.Column="4" x:Name="perc4" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="10" Grid.Column="5" x:Name="mlstash4" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="10" Grid.Column="5" x:Name="mlwarehouse4" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="11" Grid.Column="0" x:Name="fl_id5" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="11" Grid.Column="1" x:Name="flav5" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="11" Grid.Column="2" x:Name="flav_ml5" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="11" Grid.Column="3" x:Name="flav_gr5" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="11" Grid.Column="3" x:Name="flv_weight5" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="11" Grid.Column="4" x:Name="perc5" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="11" Grid.Column="5" x:Name="mlstash5" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="11" Grid.Column="5" x:Name="mlwarehouse5" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="12" Grid.Column="0" x:Name="fl_id6" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="12" Grid.Column="1" x:Name="flav6" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="12" Grid.Column="2" x:Name="flav_ml6" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="12" Grid.Column="3" x:Name="flav_gr6" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="12" Grid.Column="3" x:Name="flv_weight6" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="12" Grid.Column="4" x:Name="perc6" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="12" Grid.Column="5" x:Name="mlstash6" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="12" Grid.Column="5" x:Name="mlwarehouse6" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="13" Grid.Column="0" x:Name="fl_id7" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="13" Grid.Column="1" x:Name="flav7" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="13" Grid.Column="2" x:Name="flav_ml7" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="13" Grid.Column="3" x:Name="flav_gr7" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="13" Grid.Column="3" x:Name="flv_weight7" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="13" Grid.Column="4" x:Name="perc7" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="13" Grid.Column="5" x:Name="mlstash7" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="13" Grid.Column="5" x:Name="mlwarehouse7" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="14" Grid.Column="0" x:Name="fl_id8" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="14" Grid.Column="1" x:Name="flav8" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="14" Grid.Column="2" x:Name="flav_ml8" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="14" Grid.Column="3" x:Name="flav_gr8" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="14" Grid.Column="3" x:Name="flv_weight8" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="14" Grid.Column="4" x:Name="perc8" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="14" Grid.Column="5" x:Name="mlstash8" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="14" Grid.Column="5" x:Name="mlwarehouse8" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="15" Grid.Column="0" x:Name="fl_id9" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="15" Grid.Column="1" x:Name="flav9" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="15" Grid.Column="2" x:Name="flav_ml9" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="15" Grid.Column="3" x:Name="flav_gr9" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="15" Grid.Column="3" x:Name="flv_weight9" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="15" Grid.Column="4" x:Name="perc9" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="15" Grid.Column="5" x:Name="mlstash9" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="15" Grid.Column="5" x:Name="mlwarehouse9" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="16" Grid.Column="0" x:Name="fl_id10" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="16" Grid.Column="1" x:Name="flav10" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="16" Grid.Column="2" x:Name="flav_ml10" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="16" Grid.Column="3" x:Name="flav_gr10" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="16" Grid.Column="3" x:Name="flv_weight10" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="16" Grid.Column="4" x:Name="perc10" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="16" Grid.Column="5" x:Name="mlstash10" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="16" Grid.Column="5" x:Name="mlwarehouse10" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="17" Grid.Column="0" x:Name="fl_id11" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="17" Grid.Column="1" x:Name="flav11" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="17" Grid.Column="2" x:Name="flav_ml11" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="17" Grid.Column="3" x:Name="flav_gr11" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="17" Grid.Column="3" x:Name="flv_weight11" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="17" Grid.Column="4" x:Name="perc11" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="17" Grid.Column="5" x:Name="mlstash11" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="17" Grid.Column="5" x:Name="mlwarehouse11" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="18" Grid.Column="0" x:Name="fl_id12" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="18" Grid.Column="1" x:Name="flav12" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="18" Grid.Column="2" x:Name="flav_ml12" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="18" Grid.Column="3" x:Name="flav_gr12" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="18" Grid.Column="3" x:Name="flv_weight12" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="18" Grid.Column="4" x:Name="perc12" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="18" Grid.Column="5" x:Name="mlstash12" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="18" Grid.Column="5" x:Name="mlwarehouse12" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="19" Grid.Column="0" x:Name="fl_id13" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="19" Grid.Column="1" x:Name="flav13" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="19" Grid.Column="2" x:Name="flav_ml13" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="19" Grid.Column="3" x:Name="flav_gr13" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="19" Grid.Column="3" x:Name="flv_weight13" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="19" Grid.Column="4" x:Name="perc13" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="19" Grid.Column="5" x:Name="mlstash13" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="19" Grid.Column="5" x:Name="mlwarehouse13" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="20" Grid.Column="0" x:Name="fl_id14" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="20" Grid.Column="1" x:Name="flav14" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="20" Grid.Column="2" x:Name="flav_ml14" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="20" Grid.Column="3" x:Name="flav_gr14" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="20" Grid.Column="3" x:Name="flv_weight14" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="20" Grid.Column="4" x:Name="perc14" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="20" Grid.Column="5" x:Name="mlstash14" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="20" Grid.Column="5" x:Name="mlwarehouse14" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="21" Grid.Column="0" x:Name="fl_id15" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="21" Grid.Column="1" x:Name="flav15" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="21" Grid.Column="2" x:Name="flav_ml15" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="21" Grid.Column="3" x:Name="flav_gr15" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="21" Grid.Column="3" x:Name="flv_weight15" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="21" Grid.Column="4" x:Name="perc15" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="21" Grid.Column="5" x:Name="mlstash15" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="21" Grid.Column="5" x:Name="mlwarehouse15" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="22" Grid.Column="0" x:Name="fl_id16" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="22" Grid.Column="1" x:Name="flav16" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="22" Grid.Column="2" x:Name="flav_ml16" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="22" Grid.Column="3" x:Name="flav_gr16" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="22" Grid.Column="3" x:Name="flv_weight16" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="22" Grid.Column="4" x:Name="perc16" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="22" Grid.Column="5" x:Name="mlstash16" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="22" Grid.Column="5" x:Name="mlwarehouse16" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="23" Grid.Column="0" x:Name="fl_id17" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="23" Grid.Column="1" x:Name="flav17" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="23" Grid.Column="2" x:Name="flav_ml17" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="23" Grid.Column="3" x:Name="flav_gr17" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="23" Grid.Column="3" x:Name="flv_weight17" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="23" Grid.Column="4" x:Name="perc17" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="23" Grid.Column="5" x:Name="mlstash17" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="23" Grid.Column="5" x:Name="mlwarehouse17" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="24" Grid.Column="0" x:Name="fl_id18" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="24" Grid.Column="1" x:Name="flav18" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="24" Grid.Column="2" x:Name="flav_ml18" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="24" Grid.Column="3" x:Name="flav_gr18" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="24" Grid.Column="3" x:Name="flv_weight18" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="24" Grid.Column="4" x:Name="perc18" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="24" Grid.Column="5" x:Name="mlstash18" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="24" Grid.Column="5" x:Name="mlwarehouse18" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="25" Grid.Column="0" x:Name="fl_id19" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="25" Grid.Column="1" x:Name="flav19" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="25" Grid.Column="2" x:Name="flav_ml19" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="25" Grid.Column="3" x:Name="flav_gr19" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="25" Grid.Column="3" x:Name="flv_weight19" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="25" Grid.Column="4" x:Name="perc19" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="25" Grid.Column="5" x:Name="mlstash19" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="25" Grid.Column="5" x:Name="mlwarehouse19" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="26" Grid.Column="0" x:Name="fl_id20" Visibility="Collapsed"/>
                 <TextBlock Grid.Row="26" Grid.Column="1" x:Name="flav20" Visibility="Visible" TextAlignment="Right" VerticalAlignment="Center" />
                 <TextBlock Grid.Row="26" Grid.Column="2" x:Name="flav_ml20" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="26" Grid.Column="3" x:Name="flav_gr20" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="26" Grid.Column="3" x:Name="flv_weight20" Visibility="Collapsed" TextAlignment="Center" HorizontalAlignment="Center" />
                 <TextBlock Grid.Row="26" Grid.Column="4" x:Name="perc20" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Grid.Row="26" Grid.Column="5" x:Name="mlstash20" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="26" Grid.Column="5" x:Name="mlwarehouse20" Visibility="Visible" TextAlignment="Center" HorizontalAlignment="Center" />
             </Grid>
         </ScrollViewer>
     </Grid>

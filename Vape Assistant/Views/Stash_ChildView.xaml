@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Vape_Assistant.Views.Stash_ChildView"
+﻿<UserControl x:Class="Vape_Assistant.Views.Warehouse_ChildView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -22,7 +22,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="stash" SelectionChanged="stash_SelectionChanged" 
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="warehouse" SelectionChanged="warehouse_SelectionChanged" 
                   LoadingRow="DataGrid_LoadingRow"
                   MinHeight="200" MaxHeight="500" MinWidth="500"
                   Background="#FF6A6A6A" IsReadOnly="True" 
@@ -65,10 +65,10 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="ItemsIdColumn"     Binding="{Binding Id}"     Header="{x:Static p:Resources.stash_hdrId}"     MinWidth="70" MaxWidth="1000"/>
-                <DataGridTextColumn x:Name="ItemsBrandColumn"  Binding="{Binding Brand}"  Header="{x:Static p:Resources.stash_hdrBrand}"  MinWidth="200" MaxWidth="1000"/>
-                <DataGridTextColumn x:Name="ItemsFlavorColumn" Binding="{Binding Flavor}" Header="{x:Static p:Resources.stash_hdrFlavor}" Width="*" MinWidth="300" MaxWidth="1000"/>
-                <DataGridTextColumn x:Name="ItemsAmountColumn" Binding="{Binding Amount}" Header="{x:Static p:Resources.stash_hdrAmount}" MinWidth="150" MaxWidth="1000">
+                <DataGridTextColumn x:Name="ItemsIdColumn"     Binding="{Binding Id}"     Header="{x:Static p:Resources.warehouse_hdrId}"     MinWidth="70" MaxWidth="1000"/>
+                <DataGridTextColumn x:Name="ItemsBrandColumn"  Binding="{Binding Brand}"  Header="{x:Static p:Resources.warehouse_hdrBrand}"  MinWidth="200" MaxWidth="1000"/>
+                <DataGridTextColumn x:Name="ItemsFlavorColumn" Binding="{Binding Flavor}" Header="{x:Static p:Resources.warehouse_hdrFlavor}" Width="*" MinWidth="300" MaxWidth="1000"/>
+                <DataGridTextColumn x:Name="ItemsAmountColumn" Binding="{Binding Amount}" Header="{x:Static p:Resources.warehouse_hdrAmount}" MinWidth="150" MaxWidth="1000">
                     <DataGridTextColumn.CellStyle>
                         <Style>
                             <Setter Property="TextBlock.TextAlignment" Value="Center" />
@@ -160,8 +160,8 @@
             </StackPanel>
         </Button>
             <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-            <TextBlock Text="{x:Static p:Resources.add_flv_StashCount}" />
-            <TextBlock x:Name="StashCount" Text="0"/>
+            <TextBlock Text="{x:Static p:Resources.add_flv_WarehouseCount}" />
+            <TextBlock x:Name="WarehouseCount" Text="0"/>
         </StackPanel>
         </StackPanel>
         <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! Visibility="Visible" -->
@@ -181,7 +181,7 @@
                             <ColumnDefinition MinWidth="120"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{x:Static p:Resources.Alch_Stash_FlvId}" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
+                        <TextBlock Text="{x:Static p:Resources.Alch_Warehouse_FlvId}" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
                         <TextBox x:Name="add_Id" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
                         <TextBlock Text="{x:Static p:Resources.add_flv_brandSelect}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
                         <ComboBox x:Name="add_Brand" Grid.Row="0" Grid.Column="1" Padding="5" MinWidth="200" IsEditable="False" IsTextSearchEnabled="True" LostFocus="add_Brand_LostFocus" SelectionChanged="add_Brand_SelectionChanged" TabIndex="0" Margin="0,0,0,5" />
@@ -230,6 +230,6 @@
             </Border>
         </Grid>
 
-        <TextBox Grid.Row="5" Grid.Column="4" x:Name="add_stashflv_id" Visibility="Hidden"/>
+        <TextBox Grid.Row="5" Grid.Column="4" x:Name="add_warehouseflv_id" Visibility="Hidden"/>
     </Grid>
 </UserControl>

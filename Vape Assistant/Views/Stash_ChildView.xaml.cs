@@ -18,9 +18,9 @@ using System.Windows.Controls.Primitives;
 namespace Vape_Assistant.Views
 {
     /// <summary>
-    /// Interaction logic for Stash_ChildView.xaml
+    /// Interaction logic for Warehouse_ChildView.xaml
     /// </summary>
-    public partial class Stash_ChildView : UserControl
+    public partial class Warehouse_ChildView : UserControl
     {
         string connectionString = Settings.Default.VaConnect;
         SQLiteDataAdapter dbAdapter;
@@ -35,12 +35,12 @@ namespace Vape_Assistant.Views
         string edititemid, edititemAmount;
 
 
-        public Stash_ChildView()
+        public Warehouse_ChildView()
         {
             InitializeComponent();
             BindComboBox(add_Brand);
             FillDataGrid();
-            Stashcount();
+            Warehousecount();
         }
         private static bool IsDecAllowed(string text)
         {
@@ -109,13 +109,13 @@ namespace Vape_Assistant.Views
 
                     dbAdapter.Fill(dbTable);
                     dbConn.Close();
-                    stash.ItemsSource = dbTable.DefaultView;
+                    warehouse.ItemsSource = dbTable.DefaultView;
                     dbAdapter.Update(dbTable);
 
-                    stash.Columns[0].Header = hdr0;
-                    stash.Columns[1].Header = hdr1;
-                    stash.Columns[2].Header = hdr2;
-                    stash.Columns[3].Header = hdr3;
+                    warehouse.Columns[0].Header = hdr0;
+                    warehouse.Columns[1].Header = hdr1;
+                    warehouse.Columns[2].Header = hdr2;
+                    warehouse.Columns[3].Header = hdr3;
 
                 }
             }
@@ -125,7 +125,7 @@ namespace Vape_Assistant.Views
             }
         }
 
-        private void Stashcount()
+        private void Warehousecount()
         {
             string query;
 
@@ -141,7 +141,7 @@ namespace Vape_Assistant.Views
                 reader = dbCmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    StashCount.Text = reader[0].ToString();
+                    WarehouseCount.Text = reader[0].ToString();
                 }
 
             }
@@ -218,16 +218,16 @@ namespace Vape_Assistant.Views
         }
 
 
-        private void stash_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void warehouse_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-                if (stash.SelectedItem != null)
+                if (warehouse.SelectedItem != null)
                 {
-                    item = stash.SelectedItem;
-                    edititemid = (stash.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+                    item = warehouse.SelectedItem;
+                    edititemid = (warehouse.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
                     edit_Id.Text = edititemid;
-                    edititemAmount = (stash.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
+                    edititemAmount = (warehouse.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
                     edit_Amount.Text = edititemAmount;
                 }
             }
@@ -245,7 +245,7 @@ namespace Vape_Assistant.Views
 
         private void edit_Item_Click(object sender, RoutedEventArgs e)
         {
-            if (stash.SelectedItem == null) { return; }
+            if (warehouse.SelectedItem == null) { return; }
             edit_Id.Text = edititemid;
             edit_Amount.Text = edititemAmount;
             edit_Popup.Visibility = Visibility.Visible;
@@ -257,7 +257,7 @@ namespace Vape_Assistant.Views
             //Save Changes
             try
             {
-                if (stash.SelectedItem != null)
+                if (warehouse.SelectedItem != null)
                 {
                     using (dbConn = new SQLiteConnection(connectionString))
                     {
@@ -286,7 +286,7 @@ namespace Vape_Assistant.Views
                             dbCmd = null;
                             //Select Command
                             FillDataGrid();
-                            Stashcount();
+                            Warehousecount();
                         }
                     }
                 }
@@ -482,8 +482,8 @@ namespace Vape_Assistant.Views
             //add_Brand.SelectedIndex = -1;
             //add_Flavor.SelectedIndex = -1;
             //add_Amount.Text = String.Empty;
-            Stashcount();
-            //checkIfStashIsNotEmpty();
+            Warehousecount();
+            //checkIfWarehouseIsNotEmpty();
         }
 
         private void edit_Cancel_Click(object sender, RoutedEventArgs e)
@@ -555,7 +555,7 @@ namespace Vape_Assistant.Views
             //edit_Amount.Text = String.Empty;
             //edititemid = String.Empty;
             //edititemAmount = String.Empty;
-            Stashcount();
+            Warehousecount();
         }
         void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {

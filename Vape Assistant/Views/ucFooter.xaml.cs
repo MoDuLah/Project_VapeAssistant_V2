@@ -32,6 +32,7 @@ namespace Vape_Assistant.Views
         public int y = 0;
         public bool clicked = false;
         public bool pause = false;
+        DirectoryInfo ch;
 
         public ucFooter()
         {
@@ -85,6 +86,9 @@ namespace Vape_Assistant.Views
                         Settings.Default.link5clickeddate = s;
                         Settings.Default.Save();
                         break;
+                    case 9999:
+                        MessageBox.Show("Error");
+                        return;
                     default:
                         MessageBox.Show("Error");
                         return;
@@ -95,12 +99,23 @@ namespace Vape_Assistant.Views
             }
             else
             {
-                e.Handled = false;
-                pause = false;
+                if (clicked == true)
+                {
+                    MessageBox.Show("Error");
+                    e.Handled = false;
+                    pause = false;
+                    return;
+                }
+                else
+                {
+                    e.Handled = false;
+                    pause = false;
+                }
             }
         }
         private void clickedToday(object sender)
         {
+            if (y == 9999) { return; }
             string date1 = Settings.Default.link1clickeddate;
             string date2 = Settings.Default.link2clickeddate;
             string date3 = Settings.Default.link3clickeddate;
@@ -129,12 +144,27 @@ namespace Vape_Assistant.Views
                 folder = Path.Combine(Environment.CurrentDirectory, folder);
             if (!Directory.Exists(folder))
             {
-                ErrorText.Text = "The specified folder does not exist: " + Environment.NewLine + folder;
+                ErrorText.Text = "The specified folder does not exist: " + Environment.NewLine + Environment.CurrentDirectory + folder;
                 ErrorText.Visibility = Visibility.Visible;
+                y = 9999;
                 return;
             }
             //Random r = new Random();
             //orderby r.Next()
+            string path = folder; // or whatever 
+            if (!Directory.Exists(path))
+            {
+                ch = Directory.CreateDirectory(path);
+                ch.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+            }
+            else
+            {
+                ch = new DirectoryInfo(path)
+                {
+                    Attributes = FileAttributes.Directory | FileAttributes.Hidden
+                };
+
+            }
             var sources = from file in new DirectoryInfo(folder).GetFiles().AsParallel()
                           where ValidImageExtensions.Contains(file.Extension, StringComparer.InvariantCultureIgnoreCase)
                           orderby file.FullName

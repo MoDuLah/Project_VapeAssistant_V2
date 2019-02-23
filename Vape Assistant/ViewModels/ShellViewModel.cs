@@ -51,9 +51,9 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new OneShots_ChildViewModel());
         }
-        public void Load_Stash()
+        public void Load_Warehouse()
         {
-            ActivateItem(new Stash_ChildViewModel());
+            ActivateItem(new Warehouse_ChildViewModel());
         }
         public void Load_JuiceLog()
         {

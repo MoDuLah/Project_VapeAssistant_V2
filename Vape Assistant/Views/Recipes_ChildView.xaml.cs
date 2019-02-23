@@ -798,7 +798,7 @@ namespace Vape_Assistant.Views
                 recipeid.Text = "";
                 Author.Text = "";
                 HideTheRest();
-                //checkIfStashIsNotEmpty();
+                //checkIfWarehouseIsNotEmpty();
             }
         }
 

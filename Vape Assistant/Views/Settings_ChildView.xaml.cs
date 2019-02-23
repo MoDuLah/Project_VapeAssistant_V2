@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
 using System.IO;
+using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -32,8 +33,16 @@ namespace Vape_Assistant.Views
         public string message, errmsg;
         public string caption;
         public string title;
-        public string eng = "en-US";
-        public string gre = "el-GR";
+        public string de = "de-DE";
+        public string en = "en-US";
+        public string es = "es-ES";
+        public string fr = "fr-FR";
+        public string gr = "el-GR";
+        public string it = "it-IT";
+        public string ro = "ro-RO";
+        public string ru = "ru-RU";
+
+        CultureInfo resourceCulture = Thread.CurrentThread.CurrentCulture;
 
         public Settings_ChildView()
         {
@@ -73,13 +82,37 @@ namespace Vape_Assistant.Views
             }
             CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
             string currentLanguage = currentCulture.ToString();
-            if (currentLanguage == eng)
+            if (currentLanguage == de)
             {
                 Settings_Language.SelectedIndex = 0;
             }
-            else
+            if (currentLanguage == en)
             {
                 Settings_Language.SelectedIndex = 1;
+            }
+            if (currentLanguage == es)
+            {
+                Settings_Language.SelectedIndex = 2;
+            }
+            if (currentLanguage == fr)
+            {
+                Settings_Language.SelectedIndex = 3;
+            }
+            if (currentLanguage == gr)
+            {
+                Settings_Language.SelectedIndex = 4;
+            }
+            if (currentLanguage == it)
+            {
+                Settings_Language.SelectedIndex = 5;
+            }
+            if (currentLanguage == ro)
+            {
+                Settings_Language.SelectedIndex = 6;
+            }
+            if (currentLanguage == ru)
+            {
+                Settings_Language.SelectedIndex = 7;
             }
         }
 
@@ -112,20 +145,79 @@ namespace Vape_Assistant.Views
             switch (i)
             {
                 case 0:
-                    if (Settings.Default.Culture != eng)
+                    if (Settings.Default.Culture != de)
                     {
-                        message = "The program has restart so changes can take effect. Press the button on the right.";
-                        Settings.Default.Culture = eng;
+                        message = "Das Programm hat einen Neustart, damit die Änderungen wirksam werden können." +
+                            " Drücken Sie die Taste rechts.";
+                        Settings.Default.Culture = de;
                         Settings.Default.CultureIndex = 0;
 
                     }
                     break;
                 case 1:
-                    if (Settings.Default.Culture != gre)
+                    if (Settings.Default.Culture != en)
                     {
-                        message = "Το πρόγραμμα πρέπει να επανεκκινήσει για να εφαρμοστούν οι αλλαγές. Πατήστε το κουμπί στα δεξιά";
-                        Settings.Default.Culture = gre;
+                        message = "The program has restart so changes can take effect." +
+                                  " Press the button on the right.";
+                        Settings.Default.Culture = en;
                         Settings.Default.CultureIndex = 1;
+
+                    }
+                    break;
+                case 2:
+                    if (Settings.Default.Culture != es)
+                    {
+                        message = "El programa se ha reiniciado para que los cambios surtan efecto." +
+                            " Presiona el botón de la derecha.";
+                        Settings.Default.Culture = es;
+                        Settings.Default.CultureIndex = 2;
+
+                    }
+                    break;
+                case 3:
+                    if (Settings.Default.Culture != fr)
+                    {
+                        message = "Le programme a redémarré pour que les modifications puissent prendre effet." +
+                            " Appuyez sur le bouton à droite.";
+                        Settings.Default.Culture = fr;
+                        Settings.Default.CultureIndex = 3;
+
+                    }
+                    break;
+                case 4:
+                    if (Settings.Default.Culture != gr)
+                    {
+                        message = "Το πρόγραμμα πρέπει να επανεκκινήσει για να εφαρμοστούν οι αλλαγές." +
+                            " Πατήστε το κουμπί στα δεξιά.";
+                        Settings.Default.Culture = gr;
+                        Settings.Default.CultureIndex = 4;
+                    }
+                    break;
+                case 5:
+                    if (Settings.Default.Culture != it)
+                    {
+                        message = "Il programma è stato riavviato in modo che le modifiche possano avere effetto." +
+                            " Premi il pulsante a destra.";
+                        Settings.Default.Culture = it;
+                        Settings.Default.CultureIndex = 5;
+                    }
+                    break;
+                case 6:
+                    if (Settings.Default.Culture != ro)
+                    {
+                        message = "Programul are o repornire, astfel încât schimbările pot intra în vigoare." +
+                            " Apăsați butonul din dreapta.";
+                        Settings.Default.Culture = ro;
+                        Settings.Default.CultureIndex = 6;
+                    }
+                    break;
+                case 7:
+                    if (Settings.Default.Culture != ru)
+                    {
+                        message = "Программа перезапустится, чтобы изменения вступили в силу." +
+                            " Нажмите кнопку справа.";
+                        Settings.Default.Culture = ru;
+                        Settings.Default.CultureIndex = 7;
                     }
                     break;
             }
@@ -149,19 +241,70 @@ namespace Vape_Assistant.Views
             if (string.IsNullOrEmpty(enablePinCode.Password))
             {
                 chpw_error_catch = chpw_error_catch + "1";
-                string message = "";
-                string title = "";
-                if (CurrentCulture == eng)
+                message = "";
+                title = "";
+                int i = Settings_Language.SelectedIndex;
+                switch (i)
                 {
-                    message = "The PIN number can not be blank.";
-                    title = "Error: ";
+                    case 0:
+                        if (Settings.Default.Culture == de)
+                        {
+                            message = "Die PIN darf nicht leer sein.";
+                            title = "Error";
+                        }
+                        break;
+                    case 1:
+                        if (Settings.Default.Culture == en)
+                        {
+                            message = "The PIN cannot be blank.";
+                            title = "Error: ";
+                        }
+                        break;
+                    case 2:
+                        if (Settings.Default.Culture == es)
+                        {
+                            message = "El número de PIN no puede estar en blanco.";
+                            title = "Error: ";
+                        }
+                        break;
+                    case 3:
+                        if (Settings.Default.Culture == fr)
+                        {
+                            message = "Le code PIN ne peut pas être vide.";
+                            title = "Erreur: ";
+                        }
+                        break;
+                    case 4:
+                        if (Settings.Default.Culture == gr)
+                        {
+                            message = "To PIN δεν μπορεί να είναι κενό.";
+                            title = "Σφάλμα: ";
+                        }
+                        break;
+                    case 5:
+                        if (Settings.Default.Culture == it)
+                        {
+                            message = "Il PIN non può essere vuoto.";
+                            title = "Errore: ";
+                        }
+                        break;
+                    case 6:
+                        if (Settings.Default.Culture == ro)
+                        {
+                            message = "Codul PIN nu poate fi gol.";
+                            title = "Eroare: ";
+                        }
+                        break;
+                    case 7:
+                        if (Settings.Default.Culture == ru)
+                        {
+                            message = "PIN-код не может быть пустым.";
+                            title = "Ошибка: ";
+                        }
+                        break;
                 }
-                if (CurrentCulture == gre)
-                {
-                    message = "Ο αριθμός PIN δεν μπορεί να είναι κενός";
-                    title = "Σφάλμα: ";
-                }
-                MessageBox.Show(message, title + chpw_error_catch, MessageBoxButton.OK);
+
+                AutoClosingMessageBox.Show(message, title + chpw_error_catch,autotimeout);
                 IsPinEnabled = false;
                 return;
             }
@@ -184,16 +327,70 @@ namespace Vape_Assistant.Views
                     dbCmd = new SQLiteCommand(query, dbConn);
 
                     int retVal = dbCmd.ExecuteNonQuery();
-
-                    if (CurrentCulture == eng)
+                    message = "";
+                    title = "";
+                    int i = Settings_Language.SelectedIndex;
+                    switch (i)
                     {
-                        MessageBox.Show("The Pin has changed successfully!");
+                        case 0:
+                            if (Settings.Default.Culture == de)
+                            {
+                                message = "Pin hat sich erfolgreich geändert!";
+                                title = "Erfolg";
+                            }
+                            break;
+                        case 1:
+                            if (Settings.Default.Culture == en)
+                            {
+                                message = "Pin has changed successfully!";
+                                title = "Success";
+                            }
+                            break;
+                        case 2:
+                            if (Settings.Default.Culture == es)
+                            {
+                                message = "Pin ha cambiado con éxito!";
+                                title = "El exito";
+                            }
+                            break;
+                        case 3:
+                            if (Settings.Default.Culture == fr)
+                            {
+                                message = "Le Pin a été changé avec succès!";
+                                title = "Le succès";
+                            }
+                            break;
+                        case 4:
+                            if (Settings.Default.Culture == gr)
+                            {
+                                message = "Το Pin έχει αλλάξει επιτυχώς!";
+                                title = "Επιτυχία";
+                            }
+                            break;
+                        case 5:
+                            if (Settings.Default.Culture == it)
+                            {
+                                message = "Il pin è cambiato con successo!";
+                                title = "Successo";
+                            }
+                            break;
+                        case 6:
+                            if (Settings.Default.Culture == ro)
+                            {
+                                message = "PIN-ul sa schimbat cu succes!";
+                                title = "Succes";
+                            }
+                            break;
+                        case 7:
+                            if (Settings.Default.Culture == ru)
+                            {
+                                message = "Пин успешно изменен!";
+                                title = "Успех";
+                            }
+                            break;
                     }
+                    AutoClosingMessageBox.Show(message, title, autotimeout);
 
-                    if (CurrentCulture == gre)
-                    {
-                        MessageBox.Show("Το Pin άλλαξε επιτυχώς!");
-                    }
                     if (dbConn.State == ConnectionState.Open)
                     {
                         dbConn.Close();
@@ -218,7 +415,7 @@ namespace Vape_Assistant.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failure: " + ex.ToString());
+                MessageBox.Show(ex.Message,title);
                 Settings.Default.isPinEnabled = false;
                 
             }
@@ -276,14 +473,70 @@ namespace Vape_Assistant.Views
                         }
                         else
                         {
-                            if (CurrentCulture == eng)
+                            message = "";
+                            title = "";
+                            int i = Settings_Language.SelectedIndex;
+                            switch (i)
                             {
-                                MessageBox.Show("The Pin is incorrect.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                case 0:
+                                    if (Settings.Default.Culture == de)
+                                    {
+                                        message = "Die PIN ist falsch.";
+                                        title = "Error";
+                                    }
+                                    break;
+                                case 1:
+                                    if (Settings.Default.Culture == en)
+                                    {
+                                        message = "The Pin is incorrect.";
+                                        title = "Error";
+                                    }
+                                    break;
+                                case 2:
+                                    if (Settings.Default.Culture == es)
+                                    {
+                                        message = "El PIN es incorrecto.";
+                                        title = "Error";
+                                    }
+                                    break;
+                                case 3:
+                                    if (Settings.Default.Culture == fr)
+                                    {
+                                        message = "Le code PIN est incorrect.";
+                                        title = "Erreur";
+                                    }
+                                    break;
+                                case 4:
+                                    if (Settings.Default.Culture == gr)
+                                    {
+                                        message = "Το Pin είναι λάθος.";
+                                        title = "Σφάλμα";
+                                    }
+                                    break;
+                                case 5:
+                                    if (Settings.Default.Culture == it)
+                                    {
+                                        message = "Il PIN non è corretto.";
+                                        title = "Errore";
+                                    }
+                                    break;
+                                case 6:
+                                    if (Settings.Default.Culture == ro)
+                                    {
+                                        message = "Codul PIN este incorect.";
+                                        title = "Eroare";
+                                    }
+                                    break;
+                                case 7:
+                                    if (Settings.Default.Culture == ru)
+                                    {
+                                        message = "PIN-код неверен.";
+                                        title = "Ошибка";
+                                    }
+                                    break;
                             }
-                            if (CurrentCulture == gre)
-                            {
-                                MessageBox.Show("Το Pin είναι λάθος.", "Σφάλμα", MessageBoxButton.OK, MessageBoxImage.Warning);
-                            }
+                            AutoClosingMessageBox.Show(message, title, autotimeout);
+
                             disablePin_Box.Password = null;
                             Settings.Default.isPinEnabled = true;
                             Settings.Default.Save();
@@ -329,7 +582,9 @@ namespace Vape_Assistant.Views
 
         private void db_selector_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (CurrentCulture == eng) { 
+
+
+            if (CurrentCulture == en) { 
                 if (db_selector.SelectedIndex < 0)
                 {
                     db_description.Text = "";
@@ -342,7 +597,7 @@ namespace Vape_Assistant.Views
                 if (db_selector.SelectedIndex == 1)
                 {
                     db_description.Text = "Includes the Flavors and amounts you have in your possession.";
-                    export.Name = "Stash";
+                    export.Name = "Warehouse";
                 }
                 if (db_selector.SelectedIndex == 2)
                 {
@@ -360,7 +615,7 @@ namespace Vape_Assistant.Views
                     export.Name = "RecipeLog";
                 }
             }
-            if (CurrentCulture == gre)
+            if (CurrentCulture == gr)
             {
                 if (db_selector.SelectedIndex < 0)
                 {
@@ -374,7 +629,7 @@ namespace Vape_Assistant.Views
                 if (db_selector.SelectedIndex == 1)
                 {
                     db_description.Text = "Περιλαμβάνει τα αρώματα που έχετε στην κατοχή σας.";
-                    export.Name = "Stash";
+                    export.Name = "Warehouse";
                 }
                 if (db_selector.SelectedIndex == 2)
                 {
@@ -407,7 +662,7 @@ namespace Vape_Assistant.Views
                     dbConn.Open();
                     if (dbConn.State == ConnectionState.Open)
                     {
-                        if (btnName == "Stash")
+                        if (btnName == "Warehouse")
                         {
                             query = $"SELECT Count(*) FROM Flavors where Owned LIKE '1' order by Brand ; ";
                         }
@@ -427,12 +682,12 @@ namespace Vape_Assistant.Views
                     if (count == 0)
                     {
                         string message = "", title = "";
-                        if (CurrentCulture == eng)
+                        if (CurrentCulture == en)
                         {
                             title = "Error";
                             message = "There are no entries in your database.\n\nExport Canceled.";
                         }
-                        if (CurrentCulture == gre)
+                        if (CurrentCulture == gr)
                         {
                             title = "Σφάλμα";
                             message = "Δεν υπάρχουν εγγραφές στη βάση δεδομένων σας.\n\nΗ εξαγωγή ακυρώθηκε.";
@@ -440,7 +695,7 @@ namespace Vape_Assistant.Views
                         AutoClosingMessageBox.Show(message, title, 2000);
                         return;
                     }
-                    if (btnName == "Stash")
+                    if (btnName == "Warehouse")
                     {
                         doCsvWrite(btnName, "Flavors");
                     }
@@ -585,7 +840,7 @@ namespace Vape_Assistant.Views
                         dbConn.Close();
                     }
 
-                    if (fName == "Stash")
+                    if (fName == "Warehouse")
                     {
                         q = 8;
                     }
@@ -668,7 +923,7 @@ namespace Vape_Assistant.Views
                                 }
                                 else
                                 { 
-                                if (fName == "Stash")
+                                if (fName == "Warehouse")
                                 {
                                     string myString = values[i]; //Can be of any length and with many '-'s
                                     string[] tagArray = line.Split('|');
@@ -797,7 +1052,7 @@ namespace Vape_Assistant.Views
                 }
 
                 //set up connection to database.
-                if (btnName == "Stash")
+                if (btnName == "Warehouse")
                 {
                     query = $"SELECT * FROM Flavors where Amount NOT LIKE '0.0' order by Brand ;";
                 }
@@ -857,12 +1112,12 @@ namespace Vape_Assistant.Views
                     }
                     string message = "";
                     string title = "";
-                    if (CurrentCulture == eng)
+                    if (CurrentCulture == en)
                     {
                         message = btnName + " exported successfully at " + newfileName;
 
                     }
-                    if (CurrentCulture == gre)
+                    if (CurrentCulture == gr)
                     {
                         message = $"Η εξαγωγή του πίνακα: {btnName} από τη βάση ήταν επιτυχής!\nΘα το βρείτε εδώ: " + newfileName;
                     }

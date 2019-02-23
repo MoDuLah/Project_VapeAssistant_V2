@@ -62,8 +62,8 @@ namespace Vape_Assistant.Views
             synthNic_Grams.Text = "";
             synth_nicperc.Visibility = Visibility.Collapsed;
             synth_nicperc.Text = "";
-            synth_nicstash.Visibility = Visibility.Collapsed;
-            synth_nicstash.Text = "";
+            synth_nicwarehouse.Visibility = Visibility.Collapsed;
+            synth_nicwarehouse.Text = "";
         }
         public ObservableCollection<item> getItems()
         {
@@ -145,7 +145,7 @@ namespace Vape_Assistant.Views
             TextBlock[] flav_ml = { flav_ml0, flav_ml1, flav_ml2, flav_ml3, flav_ml4, flav_ml5, flav_ml6, flav_ml7, flav_ml8, flav_ml9, flav_ml10, flav_ml11, flav_ml12, flav_ml13, flav_ml14, flav_ml15, flav_ml16, flav_ml17, flav_ml18, flav_ml19, flav_ml20 };
             TextBlock[] flav_gr = { flav_gr0, flav_gr1, flav_gr2, flav_gr3, flav_gr4, flav_gr5, flav_gr6, flav_gr7, flav_gr8, flav_gr9, flav_gr10, flav_gr11, flav_gr12, flav_gr13, flav_gr14, flav_gr15, flav_gr16, flav_gr17, flav_gr18, flav_gr19, flav_gr20 };
             TextBlock[] fl_id = { fl_id0, fl_id1, fl_id2, fl_id3, fl_id4, fl_id5, fl_id6, fl_id7, fl_id8, fl_id9, fl_id10, fl_id11, fl_id12, fl_id13, fl_id14, fl_id15, fl_id16, fl_id17, fl_id18, fl_id19, fl_id20 };
-            TextBlock[] mlstash = { mlstash0, mlstash1, mlstash2, mlstash3, mlstash4, mlstash5, mlstash6, mlstash7, mlstash8, mlstash9, mlstash10, mlstash11, mlstash12, mlstash13, mlstash14, mlstash15, mlstash16, mlstash17, mlstash18, mlstash19, mlstash20 };
+            TextBlock[] mlwarehouse = { mlwarehouse0, mlwarehouse1, mlwarehouse2, mlwarehouse3, mlwarehouse4, mlwarehouse5, mlwarehouse6, mlwarehouse7, mlwarehouse8, mlwarehouse9, mlwarehouse10, mlwarehouse11, mlwarehouse12, mlwarehouse13, mlwarehouse14, mlwarehouse15, mlwarehouse16, mlwarehouse17, mlwarehouse18, mlwarehouse19, mlwarehouse20 };
             TextBlock[] flv_weight = { flv_weight0, flv_weight1, flv_weight2, flv_weight3, flv_weight4, flv_weight5, flv_weight6, flv_weight7, flv_weight8, flv_weight9, flv_weight10, flv_weight11, flv_weight12, flv_weight13, flv_weight14, flv_weight15, flv_weight16, flv_weight17, flv_weight18, flv_weight19, flv_weight20 };
             Rectangle[] Recta = { rect0, rect1, rect2, rect3, rect4, rect5, rect6, rect7, rect8, rect9, rect10, rect11, rect12, rect13, rect14, rect15, rect16, rect17, rect18, rect19, rect20 };
 
@@ -160,7 +160,7 @@ namespace Vape_Assistant.Views
                 flav_ml[i].Foreground = fgbrush;
                 flav_gr[i].Foreground = fgbrush;
                 percentage[i].Foreground = fgbrush;
-                mlstash[i].Foreground = fgbrush;
+                mlwarehouse[i].Foreground = fgbrush;
             }
             flvpercent.Text = "";
             synth_RecName_Deduct.IsEnabled = false;
@@ -229,7 +229,7 @@ namespace Vape_Assistant.Views
                         percentage[i].Visibility = Visibility.Visible;
                         flav_ml[i].Visibility = Visibility.Visible;
                         flav_gr[i].Visibility = Visibility.Visible;
-                        mlstash[i].Visibility = Visibility.Visible;
+                        mlwarehouse[i].Visibility = Visibility.Visible;
                         flv[i].Height = 24;
                         fl_id[i].Text = fid;
                         percentage[i].Text = per;
@@ -255,7 +255,7 @@ namespace Vape_Assistant.Views
                             }
                             flv[i].Text = "(" + freader[2].ToString() + ") " + freader[3].ToString();
                             flv[i].ToolTip = "(" + freader[1].ToString() + ") " + freader[3].ToString(); ;
-                            mlstash[i].Text = freader[7].ToString();
+                            mlwarehouse[i].Text = freader[7].ToString();
                             flv_weight[i].Text = w8.ToString();
                             flav_gr[i].ToolTip = w8 + " gram/ml";
                             //MessageBox.Show(Id_Brand.ToString());
@@ -276,19 +276,19 @@ namespace Vape_Assistant.Views
                             flav_ml[y].Foreground = fgbrush;
                             flav_gr[y].Foreground = fgbrush;
                             percentage[y].Foreground = fgbrush;
-                            mlstash[y].Foreground = fgbrush;
+                            mlwarehouse[y].Foreground = fgbrush;
                             fl_id[y].Visibility = Visibility.Collapsed;
                             flv[y].Visibility = Visibility.Collapsed;
                             flav_ml[y].Visibility = Visibility.Collapsed;
                             flav_gr[y].Visibility = Visibility.Collapsed;
                             percentage[y].Visibility = Visibility.Collapsed;
-                            mlstash[y].Visibility = Visibility.Collapsed;
+                            mlwarehouse[y].Visibility = Visibility.Collapsed;
                             fl_id[y].Text = "";
                             flv[y].Text = "";
                             flav_ml[y].Text = "";
                             flav_gr[y].Text = "";
                             percentage[y].Text = "";
-                            mlstash[y].Text = "";
+                            mlwarehouse[y].Text = "";
                         }
                     }
                     synth_recipeid.Text = "";
@@ -409,7 +409,7 @@ namespace Vape_Assistant.Views
         private void synth_RecName_Calc_Click(object sender, RoutedEventArgs e)
         {
             TextBlock[] flv = { flav0, flav1, flav2, flav3, flav4, flav5, flav6, flav7, flav8, flav9, flav10, flav11, flav12, flav13, flav14, flav15, flav16, flav17, flav18, flav19, flav20 };
-            TextBlock[] mlstash = { mlstash0, mlstash1, mlstash2, mlstash3, mlstash4, mlstash5, mlstash6, mlstash7, mlstash8, mlstash9, mlstash10, mlstash11, mlstash12, mlstash13, mlstash14, mlstash15, mlstash16, mlstash17, mlstash18, mlstash19, mlstash20 };
+            TextBlock[] mlwarehouse = { mlwarehouse0, mlwarehouse1, mlwarehouse2, mlwarehouse3, mlwarehouse4, mlwarehouse5, mlwarehouse6, mlwarehouse7, mlwarehouse8, mlwarehouse9, mlwarehouse10, mlwarehouse11, mlwarehouse12, mlwarehouse13, mlwarehouse14, mlwarehouse15, mlwarehouse16, mlwarehouse17, mlwarehouse18, mlwarehouse19, mlwarehouse20 };
             TextBlock[] flav_ml = { flav_ml0, flav_ml1, flav_ml2, flav_ml3, flav_ml4, flav_ml5, flav_ml6, flav_ml7, flav_ml8, flav_ml9, flav_ml10, flav_ml11, flav_ml12, flav_ml13, flav_ml14, flav_ml15, flav_ml16, flav_ml17, flav_ml18, flav_ml19, flav_ml20 };
             TextBlock[] flav_gr = { flav_gr0, flav_gr1, flav_gr2, flav_gr3, flav_gr4, flav_gr5, flav_gr6, flav_gr7, flav_gr8, flav_gr9, flav_gr10, flav_gr11, flav_gr12, flav_gr13, flav_gr14, flav_gr15, flav_gr16, flav_gr17, flav_gr18, flav_gr19, flav_gr20 };
             TextBlock[] flv_weight = { flv_weight0, flv_weight1, flv_weight2, flv_weight3, flv_weight4, flv_weight5, flv_weight6, flv_weight7, flv_weight8, flv_weight9, flv_weight10, flv_weight11, flv_weight12, flv_weight13, flv_weight14, flv_weight15, flv_weight16, flv_weight17, flv_weight18, flv_weight19, flv_weight20 };
@@ -661,7 +661,7 @@ namespace Vape_Assistant.Views
                 if (CurrentCulture == "en-US")
                 {
                     caption = "Error";
-                    message = $"You don't have the following flavor(s) in your stash.\n\n";
+                    message = $"You don't have the following flavor(s) in your warehouse.\n\n";
                     messageending = $"\nThis window will close automaticaly in {autotimeout / 1000} seconds.";
                     messageless = $"You have less than the required ml of:\n\n";
                     
@@ -681,7 +681,7 @@ namespace Vape_Assistant.Views
                     weight = Convert.ToDouble(flv_weight[i].Text);
                     pert = Convert.ToDouble(percentage[i].Text);
                     flavmls = Math.Round(snv_FinalMix * (pert / 100), 2);
-                    ownml = Convert.ToDouble(mlstash[i].Text);
+                    ownml = Convert.ToDouble(mlwarehouse[i].Text);
                     
                     if (weight == 1)
                     {
@@ -693,9 +693,9 @@ namespace Vape_Assistant.Views
                     }
                     flav_ml[i].Text = Convert.ToString(flavmls);
                     flav_gr[i].Text = Convert.ToString(flavgrams);
-                    if (mlstash[i].Text == "0" || ownml < flavmls)
+                    if (mlwarehouse[i].Text == "0" || ownml < flavmls)
                     {
-                        if (mlstash[i].Text == "0")
+                        if (mlwarehouse[i].Text == "0")
                         {
                             message += $"{ flv[i].Text }\n";
 
@@ -715,7 +715,7 @@ namespace Vape_Assistant.Views
                         flav_ml[i].Foreground = fgbrush;
                         flav_gr[i].Foreground = fgbrush;
                         percentage[i].Foreground = fgbrush;
-                        mlstash[i].Foreground = fgbrush;
+                        mlwarehouse[i].Foreground = fgbrush;
                         errors = true;
                     }
                     else
@@ -729,7 +729,7 @@ namespace Vape_Assistant.Views
                         flav_ml[i].Foreground = fgbrush;
                         flav_gr[i].Foreground = fgbrush;
                         percentage[i].Foreground = fgbrush;
-                        mlstash[i].Foreground = fgbrush;
+                        mlwarehouse[i].Foreground = fgbrush;
                     }
                 }
                 if (errors == true) {
@@ -817,8 +817,8 @@ namespace Vape_Assistant.Views
                 synthNic_Grams.Text = "";
                 synth_nicperc.Visibility = Visibility.Collapsed;
                 synth_nicperc.Text = "";
-                synth_nicstash.Visibility = Visibility.Collapsed;
-                synth_nicstash.Text = "";
+                synth_nicwarehouse.Visibility = Visibility.Collapsed;
+                synth_nicwarehouse.Text = "";
             }
             else
             {
@@ -829,7 +829,7 @@ namespace Vape_Assistant.Views
                 synth_Nic_ml.Visibility = Visibility.Visible;
                 synthNic_Grams.Visibility = Visibility.Visible;
                 synth_nicperc.Visibility = Visibility.Visible;
-                synth_nicstash.Visibility = Visibility.Visible;
+                synth_nicwarehouse.Visibility = Visibility.Visible;
                 nicboosterlevel.Visibility = Visibility.Visible;
                 if (Convert.ToDouble(textBox.Text) >= Convert.ToDouble(nicboosterlevel.Text))
                 {
@@ -857,7 +857,7 @@ namespace Vape_Assistant.Views
             TextBlock[] flav_ml = { flav_ml0, flav_ml1, flav_ml2, flav_ml3, flav_ml4, flav_ml5, flav_ml6, flav_ml7, flav_ml8, flav_ml9, flav_ml10, flav_ml11, flav_ml12, flav_ml13, flav_ml14, flav_ml15, flav_ml16, flav_ml17, flav_ml18, flav_ml19, flav_ml20 };
             TextBlock[] flav_gr = { flav_gr0, flav_gr1, flav_gr2, flav_gr3, flav_gr4, flav_gr5, flav_gr6, flav_gr7, flav_gr8, flav_gr9, flav_gr10, flav_gr11, flav_gr12, flav_gr13, flav_gr14, flav_gr15, flav_gr16, flav_gr17, flav_gr18, flav_gr19, flav_gr20 };
             TextBlock[] fl_id = { fl_id0, fl_id1, fl_id2, fl_id3, fl_id4, fl_id5, fl_id6, fl_id7, fl_id8, fl_id9, fl_id10, fl_id11, fl_id12, fl_id13, fl_id14, fl_id15, fl_id16, fl_id17, fl_id18, fl_id19, fl_id20 };
-            TextBlock[] mlstash = { mlstash0, mlstash1, mlstash2, mlstash3, mlstash4, mlstash5, mlstash6, mlstash7, mlstash8, mlstash9, mlstash10, mlstash11, mlstash12, mlstash13, mlstash14, mlstash15, mlstash16, mlstash17, mlstash18, mlstash19, mlstash20 };
+            TextBlock[] mlwarehouse = { mlwarehouse0, mlwarehouse1, mlwarehouse2, mlwarehouse3, mlwarehouse4, mlwarehouse5, mlwarehouse6, mlwarehouse7, mlwarehouse8, mlwarehouse9, mlwarehouse10, mlwarehouse11, mlwarehouse12, mlwarehouse13, mlwarehouse14, mlwarehouse15, mlwarehouse16, mlwarehouse17, mlwarehouse18, mlwarehouse19, mlwarehouse20 };
 
             SQLiteConnection dbConn; // Declare the SQLiteConnection-Object
             dbConn = new SQLiteConnection(connectionString);
@@ -869,8 +869,8 @@ namespace Vape_Assistant.Views
                 for (int i = 1; i < fly; i++)
                 {
                     double flvml = Convert.ToDouble(flav_ml[i].Text);
-                    double mlsta = Convert.ToDouble(mlstash[i].Text);
-                    if ((mlstash[i].Text == "0") || (flvml > mlsta))
+                    double mlsta = Convert.ToDouble(mlwarehouse[i].Text);
+                    if ((mlwarehouse[i].Text == "0") || (flvml > mlsta))
                     {
 
                         if (CurrentCulture == "en-US")
@@ -965,20 +965,20 @@ namespace Vape_Assistant.Views
                     synth_Flv_ml.Text = "";
                     synthFlv_Grams.Text = "";
 
-                    for (int i = 1; i < mlstash.Length; i++)
+                    for (int i = 1; i < mlwarehouse.Length; i++)
                     {
                         fl_id[i].Text = "";
                         flv[i].Text = "";
                         percentage[i].Text = "";
                         flav_ml[i].Text = "";
                         flav_gr[i].Text = "";
-                        mlstash[i].Text = "";
+                        mlwarehouse[i].Text = "";
                         fl_id[i].Visibility = Visibility.Collapsed;
                         flv[i].Visibility = Visibility.Collapsed;
                         percentage[i].Visibility = Visibility.Collapsed;
                         flav_ml[i].Visibility = Visibility.Collapsed;
                         flav_gr[i].Visibility = Visibility.Collapsed;
-                        mlstash[i].Visibility = Visibility.Collapsed;
+                        mlwarehouse[i].Visibility = Visibility.Collapsed;
                     }
                     RecScroll.Visibility = Visibility.Collapsed;
                 }

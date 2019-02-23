@@ -198,22 +198,6 @@
           <source>Version</source>
           <target state="final">Έκδοση</target>
         </trans-unit>
-        <trans-unit id="ThemeLanguageEn" translate="yes" xml:space="preserve">
-          <source>English</source>
-          <target state="final">Αγγλικά</target>
-        </trans-unit>
-        <trans-unit id="ThemeLanguageGr" translate="yes" xml:space="preserve">
-          <source>Greek</source>
-          <target state="final">Ελληνικά</target>
-        </trans-unit>
-        <trans-unit id="ThemeRestart" translate="yes" xml:space="preserve">
-          <source>Restart</source>
-          <target state="final">Επανεκκίνηση</target>
-        </trans-unit>
-        <trans-unit id="ThemeTitle" translate="yes" xml:space="preserve">
-          <source>Settings</source>
-          <target state="final">Ρυθμίσεις</target>
-        </trans-unit>
         <trans-unit id="Targetbase" translate="yes" xml:space="preserve">
           <source>Base (ml)</source>
           <target state="final">Βάση (ml)</target>
@@ -544,16 +528,16 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Recipes</source>
           <target state="final">Συνταγές</target>
         </trans-unit>
-        <trans-unit id="flv_tab_Stash" translate="yes" xml:space="preserve">
-          <source>Stash</source>
+        <trans-unit id="flv_tab_Warehouse" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
           <target state="final">Αποθήκη</target>
         </trans-unit>
         <trans-unit id="add_flv_amount" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <target state="final">Ποσότητα: </target>
         </trans-unit>
-        <trans-unit id="stash_header" translate="yes" xml:space="preserve">
-          <source>Stash</source>
+        <trans-unit id="warehouse_header" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
           <target state="final">Αποθήκη</target>
         </trans-unit>
         <trans-unit id="add_flv_brandSelect" translate="yes" xml:space="preserve">
@@ -568,7 +552,7 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Enter Amount (ml)</source>
           <target state="final">Εισαγωγή Ποσότητας (ml)</target>
         </trans-unit>
-        <trans-unit id="add_flv_StashCount" translate="yes" xml:space="preserve">
+        <trans-unit id="add_flv_WarehouseCount" translate="yes" xml:space="preserve">
           <source>Items: </source>
           <target state="final">Τεμάχια:</target>
         </trans-unit>
@@ -576,8 +560,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Have it? </source>
           <target state="final">Το κατέχεις; </target>
         </trans-unit>
-        <trans-unit id="rem_Flv_fromstash" translate="yes" xml:space="preserve">
-          <source>Remove Flavor from Stash</source>
+        <trans-unit id="rem_Flv_fromwarehouse" translate="yes" xml:space="preserve">
+          <source>Remove Flavor from Warehouse</source>
           <target state="final">Αφαίρεσε το Άρωμα από το μπαούλο</target>
         </trans-unit>
         <trans-unit id="flv_tab_Craft" translate="yes" xml:space="preserve">
@@ -736,8 +720,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Percentage</source>
           <target state="final">Ποσοστό</target>
         </trans-unit>
-        <trans-unit id="mlinstash" translate="yes" xml:space="preserve">
-          <source>ml in Stash</source>
+        <trans-unit id="mlinwarehouse" translate="yes" xml:space="preserve">
+          <source>ml in Warehouse</source>
           <target state="final">ml στο Μπαούλο</target>
         </trans-unit>
         <trans-unit id="mg_ml" translate="no" xml:space="preserve">
@@ -811,7 +795,7 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">- Μετακίνηση του 'Oneshots' &amp; και του 'Μίξη Βάσεων' στην κατηγορία 'Αλχημείες'.</target>
         </trans-unit>
         <trans-unit id="about_change_0021" translate="yes" xml:space="preserve">
-          <source>- Improved the flavor managment on "Stash" to speed up the use.
+          <source>- Improved the flavor managment on "Warehouse" to speed up the use.
 - Added Import/Export function from/to DataBase.
 - Added Option to delete the last Flavor of the Recipe.
 - Added a minimum (0.01%) and maximum (100%) range on Recipes at Flavors Percentages.
@@ -983,27 +967,27 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Preview your data</source>
           <target state="final">Προεπισκόπηση των δεδομένων σας</target>
         </trans-unit>
-        <trans-unit id="Alch_Stash_AddFlv" translate="yes" xml:space="preserve">
+        <trans-unit id="Alch_Warehouse_AddFlv" translate="yes" xml:space="preserve">
           <source>Add Flavor:</source>
           <target state="final">Προσθήκη Αρώματος:</target>
         </trans-unit>
-        <trans-unit id="Alch_Stash_FlvId" translate="yes" xml:space="preserve">
+        <trans-unit id="Alch_Warehouse_FlvId" translate="yes" xml:space="preserve">
           <source>Flavor Id:</source>
           <target state="final">Κωδ. Αρώματος:</target>
         </trans-unit>
-        <trans-unit id="stash_hdrAmount" translate="yes" xml:space="preserve">
+        <trans-unit id="warehouse_hdrAmount" translate="yes" xml:space="preserve">
           <source>Amount</source>
           <target state="final">Ποσότητα</target>
         </trans-unit>
-        <trans-unit id="stash_hdrBrand" translate="yes" xml:space="preserve">
+        <trans-unit id="warehouse_hdrBrand" translate="yes" xml:space="preserve">
           <source>Brand</source>
           <target state="final">Εταιρία</target>
         </trans-unit>
-        <trans-unit id="stash_hdrFlavor" translate="yes" xml:space="preserve">
+        <trans-unit id="warehouse_hdrFlavor" translate="yes" xml:space="preserve">
           <source>Flavor</source>
           <target state="final">Άρωμα</target>
         </trans-unit>
-        <trans-unit id="stash_hdrId" translate="yes" xml:space="preserve">
+        <trans-unit id="warehouse_hdrId" translate="yes" xml:space="preserve">
           <source>Id</source>
           <target state="final">#</target>
         </trans-unit>
@@ -1031,7 +1015,7 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>http://vape-assistant.com</source>
           <target state="final">http://vape-assistant.com</target>
         </trans-unit>
-        <trans-unit id="Alch_Stash_EditFlv" translate="yes" xml:space="preserve">
+        <trans-unit id="Alch_Warehouse_EditFlv" translate="yes" xml:space="preserve">
           <source>Edit Flavor Amount:</source>
           <target state="final">Επεξεργασία Ποσότητας:</target>
         </trans-unit>
@@ -1103,7 +1087,7 @@ If you decline and keep the default pin-code you will be asked the next time you
         </trans-unit>
         <trans-unit id="about_change_0027" translate="yes" xml:space="preserve">
           <source>- Added Purchases sum to Statistics (automatic from database).
-- Added Numbers on the left of List viewers (Juice Log &amp; Stash for now).
+- Added Numbers on the left of List viewers (Juice Log &amp; Warehouse for now).
 - Fixed some calculations on Statics to avoid errors.</source>
           <target state="final">- Προσθήκη συνόλου Αγορών στα Στατιστικά (αυτόματα από τη Βάση Δεδομένων).
 - Προσθήκη αρίθμησεις στα αριστερά των λιστών (Ιστορικό Υγρών και Μπαούλο προς το παρόν).
@@ -1200,10 +1184,6 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="menu_tools_Alchemy_Recipes" translate="yes" xml:space="preserve">
           <source>_Recipes</source>
           <target state="final">_Συνταγές</target>
-        </trans-unit>
-        <trans-unit id="menu_tools_Alchemy_Stash" translate="yes" xml:space="preserve">
-          <source>_Stash</source>
-          <target state="final">_Μπαούλο</target>
         </trans-unit>
         <trans-unit id="menu_tools_Alchemy_Synthesize" translate="yes" xml:space="preserve">
           <source>_Synthesize</source>
@@ -1464,6 +1444,46 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="MinimizeToTray" translate="yes" xml:space="preserve">
           <source>Minimize To Tray</source>
           <target state="new">Minimize To Tray</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageEn" translate="yes" xml:space="preserve">
+          <source>English</source>
+          <target state="new">English</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageGr" translate="yes" xml:space="preserve">
+          <source>Ελληνικά</source>
+          <target state="new">Ελληνικά</target>
+        </trans-unit>
+        <trans-unit id="settings_Restart" translate="yes" xml:space="preserve">
+          <source>Restart</source>
+          <target state="new">Restart</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageDe" translate="yes" xml:space="preserve">
+          <source>Deutsche</source>
+          <target state="new">Deutsche</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageEs" translate="yes" xml:space="preserve">
+          <source>Español</source>
+          <target state="new">Español</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageIt" translate="yes" xml:space="preserve">
+          <source>Italiano</source>
+          <target state="new">Italiano</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageRo" translate="yes" xml:space="preserve">
+          <source>Romanian</source>
+          <target state="new">Romanian</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageRu" translate="yes" xml:space="preserve">
+          <source>Pусский</source>
+          <target state="new">Pусский</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageFr" translate="yes" xml:space="preserve">
+          <source>Français</source>
+          <target state="new">Français</target>
+        </trans-unit>
+        <trans-unit id="menu_tools_Alchemy_Warehouse" translate="yes" xml:space="preserve">
+          <source>_Warehouse</source>
+          <target state="new">_Warehouse</target>
         </trans-unit>
       </group>
     </body>
