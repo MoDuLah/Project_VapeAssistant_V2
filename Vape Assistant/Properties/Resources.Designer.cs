@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vape_Assistant.Properties
-{
-
-
+namespace Vape_Assistant.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,3209 @@ namespace Vape_Assistant.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    public class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        public static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vape_Assistant.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        public static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initial Release.
+        /// </summary>
+        public static string about_change_0000 {
+            get {
+                return ResourceManager.GetString("about_change_0000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fix in &quot;Ohm&apos;s Law&quot; about the decimal point..
+        /// </summary>
+        public static string about_change_0001 {
+            get {
+                return ResourceManager.GetString("about_change_0001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added &quot;Statistics&quot; section.
+        ///- Fixes in code..
+        /// </summary>
+        public static string about_change_0002 {
+            get {
+                return ResourceManager.GetString("about_change_0002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Several visual changes. 
+        ///- Fixes in code..
+        /// </summary>
+        public static string about_change_0003 {
+            get {
+                return ResourceManager.GetString("about_change_0003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Several visual improvements.
+        ///- Removed Currency / ml column at &quot;Nicotine Cost&quot;..
+        /// </summary>
+        public static string about_change_0004 {
+            get {
+                return ResourceManager.GetString("about_change_0004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added &quot;Mix Bases&quot; section..
+        /// </summary>
+        public static string about_change_0005 {
+            get {
+                return ResourceManager.GetString("about_change_0005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - #hotfix on section &quot;Oneshot&quot;..
+        /// </summary>
+        public static string about_change_0005a {
+            get {
+                return ResourceManager.GetString("about_change_0005a", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added Sliders in &apos;Ohm&apos;s Law&apos;..
+        /// </summary>
+        public static string about_change_0006 {
+            get {
+                return ResourceManager.GetString("about_change_0006", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Version 2 Release.
+        ///- Added Themes in Version 2.
+        /// </summary>
+        public static string about_change_0007 {
+            get {
+                return ResourceManager.GetString("about_change_0007", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #hotfix - Proper function of &quot;Stats&quot; section..
+        /// </summary>
+        public static string about_change_0008 {
+            get {
+                return ResourceManager.GetString("about_change_0008", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added section &quot;OneShot&quot;.
+        ///- Multiple bugs fixed..
+        /// </summary>
+        public static string about_change_0009 {
+            get {
+                return ResourceManager.GetString("about_change_0009", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Themes Improvement..
+        /// </summary>
+        public static string about_change_0010 {
+            get {
+                return ResourceManager.GetString("about_change_0010", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added Icons for every section.
+        ///- Added weight on section &quot;Oneshot&quot;.
+        ///- Added Language Selection, more themes, extended coloring options free-for-all.
+        ///- Improved some calculation formulas.
+        ///- Improvements in section &quot;Base Mix&quot;..
+        /// </summary>
+        public static string about_change_0011 {
+            get {
+                return ResourceManager.GetString("about_change_0011", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Installer method has been introduced to avoid non-unzipped user&apos;s issue.
+        ///- &quot;Purchase&quot; section has been activated. 
+        ///(The Pin-code can be found in the installer on Information section). After your first login you are asked to change the default password. 
+        ///If you decline and keep the default pin-code you will be asked the next time you run the program.
+        ///- Improvement on how to insert date fields with dropdowns boxes instead of textboxes.
+        ///- Enabled textfields on &quot;Ohm&apos;s Law&quot; section (So you can define the  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string about_change_0012 {
+            get {
+                return ResourceManager.GetString("about_change_0012", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - New Installer.
+        ///- Shortcut on Desktop.
+        ///- Shortcut on Start Menu support and uninstall options..
+        /// </summary>
+        public static string about_change_0013 {
+            get {
+                return ResourceManager.GetString("about_change_0013", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Small Bug Fix.
+        ///- Fix in Database..
+        /// </summary>
+        public static string about_change_0014 {
+            get {
+                return ResourceManager.GetString("about_change_0014", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added About Section..
+        /// </summary>
+        public static string about_change_0015 {
+            get {
+                return ResourceManager.GetString("about_change_0015", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Fixed some issues with Purchases.
+        ///- Added Alchemies Section.
+        ///- Fixed minor bugs..
+        /// </summary>
+        public static string about_change_0016 {
+            get {
+                return ResourceManager.GetString("about_change_0016", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Fixed lot of bugs..
+        /// </summary>
+        public static string about_change_0017 {
+            get {
+                return ResourceManager.GetString("about_change_0017", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added Juice Log.
+        ///- Database Fixes.
+        /// </summary>
+        public static string about_change_0018 {
+            get {
+                return ResourceManager.GetString("about_change_0018", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added Alert on higher than 20A at &apos;Ohm&apos;s Law&apos;.
+        ///- Added Flavor ML at &apos;OneShots&apos;.
+        ///- Visual Improvements..
+        /// </summary>
+        public static string about_change_0019 {
+            get {
+                return ResourceManager.GetString("about_change_0019", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Moved &apos;Oneshots&apos; &amp; &apos;Mix Bases&apos; into &apos;Alchemies&apos; category..
+        /// </summary>
+        public static string about_change_0020 {
+            get {
+                return ResourceManager.GetString("about_change_0020", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Improved the flavor managment on &quot;Stash&quot; to speed up the use.
+        ///- Added Import/Export function from/to DataBase.
+        ///- Added Option to delete the last Flavor of the Recipe.
+        ///- Added a minimum (0.01%) and maximum (100%) range on Recipes at Flavors Percentages.
+        ///- Fixed a calculation error on Oneshots. The cause was the lack of Target nicotine level mg/ml value..
+        /// </summary>
+        public static string about_change_0021 {
+            get {
+                return ResourceManager.GetString("about_change_0021", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added &apos;Edit &amp; Delete&apos; on Purchases..
+        /// </summary>
+        public static string about_change_0022 {
+            get {
+                return ResourceManager.GetString("about_change_0022", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Program Release..
+        /// </summary>
+        public static string about_change_0023 {
+            get {
+                return ResourceManager.GetString("about_change_0023", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Fixed number round Issue on PG in Oneshots.
+        ///- Increase the length of Nicotine Strenght from 2 to 5 characters at Oneshots.
+        ///- Added more booster options (30/70 &amp; 70/30).
+        ///- Added option to save oneshots into Juice Log..
+        /// </summary>
+        public static string about_change_0024 {
+            get {
+                return ResourceManager.GetString("about_change_0024", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Changes in GUI for ease of use.
+        ///- Many changes in code workarounds. (Improved speed).
+        /// </summary>
+        public static string about_change_0025 {
+            get {
+                return ResourceManager.GetString("about_change_0025", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Fixes in Purchases section.
+        ///- Fixes in Juice Log Add &amp; Edit section..
+        /// </summary>
+        public static string about_change_0026 {
+            get {
+                return ResourceManager.GetString("about_change_0026", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Added Purchases sum to Statistics (automatic from database).
+        ///- Added Numbers on the left of List viewers (Juice Log &amp; Stash for now).
+        ///- Fixed some calculations on Statics to avoid errors..
+        /// </summary>
+        public static string about_change_0027 {
+            get {
+                return ResourceManager.GetString("about_change_0027", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string about_change_0028 {
+            get {
+                return ResourceManager.GetString("about_change_0028", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abbreviation: .
+        /// </summary>
+        public static string add_flv_abbreviation {
+            get {
+                return ResourceManager.GetString("add_flv_abbreviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string add_flv_amount {
+            get {
+                return ResourceManager.GetString("add_flv_amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Amount (ml).
+        /// </summary>
+        public static string add_flv_amountEnter {
+            get {
+                return ResourceManager.GetString("add_flv_amountEnter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Mixing Percentage: .
+        /// </summary>
+        public static string add_flv_amp {
+            get {
+                return ResourceManager.GetString("add_flv_amp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand Name: .
+        /// </summary>
+        public static string add_flv_brandName {
+            get {
+                return ResourceManager.GetString("add_flv_brandName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Brand.
+        /// </summary>
+        public static string add_flv_brandSelect {
+            get {
+                return ResourceManager.GetString("add_flv_brandSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If already exists.
+        /// </summary>
+        public static string add_flv_ComboBoxheader {
+            get {
+                return ResourceManager.GetString("add_flv_ComboBoxheader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor Name: .
+        /// </summary>
+        public static string add_flv_flavorName {
+            get {
+                return ResourceManager.GetString("add_flv_flavorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Flavor.
+        /// </summary>
+        public static string add_flv_flavorSelect {
+            get {
+                return ResourceManager.GetString("add_flv_flavorSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add a Flavor.
+        /// </summary>
+        public static string add_flv_header {
+            get {
+                return ResourceManager.GetString("add_flv_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manufacturer specified Gravity: .
+        /// </summary>
+        public static string add_flv_manufacturerGravity {
+            get {
+                return ResourceManager.GetString("add_flv_manufacturerGravity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes: .
+        /// </summary>
+        public static string add_flv_notes {
+            get {
+                return ResourceManager.GetString("add_flv_notes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have it? .
+        /// </summary>
+        public static string add_flv_Owned {
+            get {
+                return ResourceManager.GetString("add_flv_Owned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items: .
+        /// </summary>
+        public static string add_flv_StashCount {
+            get {
+                return ResourceManager.GetString("add_flv_StashCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspider.
+        /// </summary>
+        public static string add_rec_author {
+            get {
+                return ResourceManager.GetString("add_rec_author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        public static string add_rec_clear {
+            get {
+                return ResourceManager.GetString("add_rec_clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Recipe.
+        /// </summary>
+        public static string add_rec_delete {
+            get {
+                return ResourceManager.GetString("add_rec_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete this Flavor..
+        /// </summary>
+        public static string add_rec_deleteFlv {
+            get {
+                return ResourceManager.GetString("add_rec_deleteFlv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 1.
+        /// </summary>
+        public static string add_rec_flavorName01 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 2.
+        /// </summary>
+        public static string add_rec_flavorName02 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 3.
+        /// </summary>
+        public static string add_rec_flavorName03 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 4.
+        /// </summary>
+        public static string add_rec_flavorName04 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 5.
+        /// </summary>
+        public static string add_rec_flavorName05 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName05", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 6.
+        /// </summary>
+        public static string add_rec_flavorName06 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName06", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 7.
+        /// </summary>
+        public static string add_rec_flavorName07 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName07", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 8.
+        /// </summary>
+        public static string add_rec_flavorName08 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName08", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 9.
+        /// </summary>
+        public static string add_rec_flavorName09 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName09", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 10.
+        /// </summary>
+        public static string add_rec_flavorName10 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 11.
+        /// </summary>
+        public static string add_rec_flavorName11 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 12.
+        /// </summary>
+        public static string add_rec_flavorName12 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 13.
+        /// </summary>
+        public static string add_rec_flavorName13 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 14.
+        /// </summary>
+        public static string add_rec_flavorName14 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 15.
+        /// </summary>
+        public static string add_rec_flavorName15 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 16.
+        /// </summary>
+        public static string add_rec_flavorName16 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 17.
+        /// </summary>
+        public static string add_rec_flavorName17 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 18.
+        /// </summary>
+        public static string add_rec_flavorName18 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 19.
+        /// </summary>
+        public static string add_rec_flavorName19 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor 20.
+        /// </summary>
+        public static string add_rec_flavorName20 {
+            get {
+                return ResourceManager.GetString("add_rec_flavorName20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity: .
+        /// </summary>
+        public static string add_rec_flavquantity {
+            get {
+                return ResourceManager.GetString("add_rec_flavquantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add/Edit/Delete a Recipe.
+        /// </summary>
+        public static string add_rec_header {
+            get {
+                return ResourceManager.GetString("add_rec_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipe Name.
+        /// </summary>
+        public static string add_rec_recipeName {
+            get {
+                return ResourceManager.GetString("add_rec_recipeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Times Made.
+        /// </summary>
+        public static string add_rec_TimesMade {
+            get {
+                return ResourceManager.GetString("add_rec_TimesMade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string AddShop {
+            get {
+                return ResourceManager.GetString("AddShop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Includes the Flavors you have in your possession..
+        /// </summary>
+        public static string Alch_Backup_Desc1 {
+            get {
+                return ResourceManager.GetString("Alch_Backup_Desc1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Includes the recipes you have added. Part A..
+        /// </summary>
+        public static string Alch_Backup_Desc2 {
+            get {
+                return ResourceManager.GetString("Alch_Backup_Desc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Includes the recipes you have added. Part B..
+        /// </summary>
+        public static string Alch_Backup_Desc3 {
+            get {
+                return ResourceManager.GetString("Alch_Backup_Desc3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Includes the history log of the recipes you have mixed..
+        /// </summary>
+        public static string Alch_Backup_Desc4 {
+            get {
+                return ResourceManager.GetString("Alch_Backup_Desc4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        public static string Alch_Backup_ExportBtN {
+            get {
+                return ResourceManager.GetString("Alch_Backup_ExportBtN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database.
+        /// </summary>
+        public static string Alch_Backup_hdrDB {
+            get {
+                return ResourceManager.GetString("Alch_Backup_hdrDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Alch_Backup_hdrDesc {
+            get {
+                return ResourceManager.GetString("Alch_Backup_hdrDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        public static string Alch_Backup_hdrExport {
+            get {
+                return ResourceManager.GetString("Alch_Backup_hdrExport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import.
+        /// </summary>
+        public static string Alch_Backup_hdrImport {
+            get {
+                return ResourceManager.GetString("Alch_Backup_hdrImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview.
+        /// </summary>
+        public static string Alch_Backup_PreviewBtN {
+            get {
+                return ResourceManager.GetString("Alch_Backup_PreviewBtN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview your data.
+        /// </summary>
+        public static string Alch_Backup_PreviewData {
+            get {
+                return ResourceManager.GetString("Alch_Backup_PreviewData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hash.
+        /// </summary>
+        public static string Alch_Backup_Row3 {
+            get {
+                return ResourceManager.GetString("Alch_Backup_Row3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select File.
+        /// </summary>
+        public static string Alch_Backup_SelectBtN {
+            get {
+                return ResourceManager.GetString("Alch_Backup_SelectBtN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Flavor:.
+        /// </summary>
+        public static string Alch_Stash_AddFlv {
+            get {
+                return ResourceManager.GetString("Alch_Stash_AddFlv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Flavor Amount:.
+        /// </summary>
+        public static string Alch_Stash_EditFlv {
+            get {
+                return ResourceManager.GetString("Alch_Stash_EditFlv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor Id:.
+        /// </summary>
+        public static string Alch_Stash_FlvId {
+            get {
+                return ResourceManager.GetString("Alch_Stash_FlvId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        public static string backup {
+            get {
+                return ResourceManager.GetString("backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database.
+        /// </summary>
+        public static string backup_Header_db {
+            get {
+                return ResourceManager.GetString("backup_Header_db", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string backup_Header_description {
+            get {
+                return ResourceManager.GetString("backup_Header_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        public static string backup_Header_export {
+            get {
+                return ResourceManager.GetString("backup_Header_export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import.
+        /// </summary>
+        public static string backup_Header_import {
+            get {
+                return ResourceManager.GetString("backup_Header_import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Mixture has to be more than 0ml..
+        /// </summary>
+        public static string BaseMixErrorMsg {
+            get {
+                return ResourceManager.GetString("BaseMixErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Nic Booster type.
+        /// </summary>
+        public static string BaseMixNicBoosterError {
+            get {
+                return ResourceManager.GetString("BaseMixNicBoosterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculate.
+        /// </summary>
+        public static string Calculate_Button {
+            get {
+                return ResourceManager.GetString("Calculate_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Pin.
+        /// </summary>
+        public static string ChangePinTitle {
+            get {
+                return ResourceManager.GetString("ChangePinTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string ChildHeaderEight {
+            get {
+                return ResourceManager.GetString("ChildHeaderEight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oneshots.
+        /// </summary>
+        public static string ChildHeaderFive {
+            get {
+                return ResourceManager.GetString("ChildHeaderFive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base Mix.
+        /// </summary>
+        public static string ChildHeaderFour {
+            get {
+                return ResourceManager.GetString("ChildHeaderFour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string ChildHeaderNine {
+            get {
+                return ResourceManager.GetString("ChildHeaderNine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Log.
+        /// </summary>
+        public static string ChildHeaderNine_ChangeLog {
+            get {
+                return ResourceManager.GetString("ChildHeaderNine_ChangeLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ohm&apos;s Law.
+        /// </summary>
+        public static string ChildHeaderOne {
+            get {
+                return ResourceManager.GetString("ChildHeaderOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alchemy.
+        /// </summary>
+        public static string ChildHeaderSeven {
+            get {
+                return ResourceManager.GetString("ChildHeaderSeven", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchases.
+        /// </summary>
+        public static string ChildHeaderSix {
+            get {
+                return ResourceManager.GetString("ChildHeaderSix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine Cost.
+        /// </summary>
+        public static string ChildHeaderThree {
+            get {
+                return ResourceManager.GetString("ChildHeaderThree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string ChildHeaderTwo {
+            get {
+                return ResourceManager.GetString("ChildHeaderTwo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Christos Gleridis.
+        /// </summary>
+        public static string ChrisG {
+            get {
+                return ResourceManager.GetString("ChrisG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Clear {
+            get {
+                return ResourceManager.GetString("Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Clear_Button {
+            get {
+                return ResourceManager.GetString("Clear_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Developer.
+        /// </summary>
+        public static string Codebehind {
+            get {
+                return ResourceManager.GetString("Codebehind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect.
+        /// </summary>
+        public static string Connect {
+            get {
+                return ResourceManager.GetString("Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to $.
+        /// </summary>
+        public static string currency {
+            get {
+                return ResourceManager.GetString("currency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string datagridheader1 {
+            get {
+                return ResourceManager.GetString("datagridheader1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKU.
+        /// </summary>
+        public static string datagridheader2 {
+            get {
+                return ResourceManager.GetString("datagridheader2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string datagridheader3 {
+            get {
+                return ResourceManager.GetString("datagridheader3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string datagridheader4 {
+            get {
+                return ResourceManager.GetString("datagridheader4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount.
+        /// </summary>
+        public static string datagridheader5 {
+            get {
+                return ResourceManager.GetString("datagridheader5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping Cost.
+        /// </summary>
+        public static string datagridheader6 {
+            get {
+                return ResourceManager.GetString("datagridheader6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Cost.
+        /// </summary>
+        public static string datagridheader7 {
+            get {
+                return ResourceManager.GetString("datagridheader7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dd/mm/yyyy.
+        /// </summary>
+        public static string daymonthyear {
+            get {
+                return ResourceManager.GetString("daymonthyear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 7 Days Left.
+        /// </summary>
+        public static string Dtrial {
+            get {
+                return ResourceManager.GetString("Dtrial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Entry: .
+        /// </summary>
+        public static string EditEntry {
+            get {
+                return ResourceManager.GetString("EditEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E Juice ML/Cost/Nicotine Cost.
+        /// </summary>
+        public static string EJuiceCosts {
+            get {
+                return ResourceManager.GetString("EJuiceCosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liquid amount (ML).
+        /// </summary>
+        public static string EJuiceCosts1 {
+            get {
+                return ResourceManager.GetString("EJuiceCosts1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liquid Cost (No Nicotine).
+        /// </summary>
+        public static string EJuiceCosts2 {
+            get {
+                return ResourceManager.GetString("EJuiceCosts2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine Cost.
+        /// </summary>
+        public static string EJuiceCosts3 {
+            get {
+                return ResourceManager.GetString("EJuiceCosts3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter.
+        /// </summary>
+        public static string Enter {
+            get {
+                return ResourceManager.GetString("Enter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Date: .
+        /// </summary>
+        public static string EntryDate {
+            get {
+                return ResourceManager.GetString("EntryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Discount: .
+        /// </summary>
+        public static string EntryDiscount {
+            get {
+                return ResourceManager.GetString("EntryDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entry Id: .
+        /// </summary>
+        public static string EntryID {
+            get {
+                return ResourceManager.GetString("EntryID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Vendor Name: .
+        /// </summary>
+        public static string EntryName {
+            get {
+                return ResourceManager.GetString("EntryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Product ID (SKU): .
+        /// </summary>
+        public static string EntryPID {
+            get {
+                return ResourceManager.GetString("EntryPID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Price: .
+        /// </summary>
+        public static string EntryPrice {
+            get {
+                return ResourceManager.GetString("EntryPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Product Description: .
+        /// </summary>
+        public static string EntryProductDescription {
+            get {
+                return ResourceManager.GetString("EntryProductDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Quantity: .
+        /// </summary>
+        public static string EntryQuantity {
+            get {
+                return ResourceManager.GetString("EntryQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Reference: .
+        /// </summary>
+        public static string EntryReference {
+            get {
+                return ResourceManager.GetString("EntryReference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Shipping: .
+        /// </summary>
+        public static string EntryShipping {
+            get {
+                return ResourceManager.GetString("EntryShipping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Total: .
+        /// </summary>
+        public static string EntryTotal {
+            get {
+                return ResourceManager.GetString("EntryTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Vendor ID: .
+        /// </summary>
+        public static string EntryVID {
+            get {
+                return ResourceManager.GetString("EntryVID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facebook Group.
+        /// </summary>
+        public static string FbGroup {
+            get {
+                return ResourceManager.GetString("FbGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facebook Page.
+        /// </summary>
+        public static string FbPage {
+            get {
+                return ResourceManager.GetString("FbPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter any two known values and press Calculate..
+        /// </summary>
+        public static string FirstTip {
+            get {
+                return ResourceManager.GetString("FirstTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Flavor.
+        /// </summary>
+        public static string flavour_add {
+            get {
+                return ResourceManager.GetString("flavour_add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep?.
+        /// </summary>
+        public static string flv_Keep {
+            get {
+                return ResourceManager.GetString("flv_Keep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synthesize.
+        /// </summary>
+        public static string flv_tab_Craft {
+            get {
+                return ResourceManager.GetString("flv_tab_Craft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavors.
+        /// </summary>
+        public static string flv_tab_Flavors {
+            get {
+                return ResourceManager.GetString("flv_tab_Flavors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Juice Log.
+        /// </summary>
+        public static string flv_tab_JuiceLog {
+            get {
+                return ResourceManager.GetString("flv_tab_JuiceLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipes.
+        /// </summary>
+        public static string flv_tab_Recipes {
+            get {
+                return ResourceManager.GetString("flv_tab_Recipes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stash.
+        /// </summary>
+        public static string flv_tab_Stash {
+            get {
+                return ResourceManager.GetString("flv_tab_Stash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graphics:.
+        /// </summary>
+        public static string GFX {
+            get {
+                return ResourceManager.GetString("GFX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand.
+        /// </summary>
+        public static string gridColumnHeader1 {
+            get {
+                return ResourceManager.GetString("gridColumnHeader1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BrandShort.
+        /// </summary>
+        public static string gridColumnHeader2 {
+            get {
+                return ResourceManager.GetString("gridColumnHeader2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Flavor.
+        /// </summary>
+        public static string gridColumnHeader3 {
+            get {
+                return ResourceManager.GetString("gridColumnHeader3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string gridColumnHeader4 {
+            get {
+                return ResourceManager.GetString("gridColumnHeader4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Answer.
+        /// </summary>
+        public static string help_Answer {
+            get {
+                return ResourceManager.GetString("help_Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #.
+        /// </summary>
+        public static string help_Id {
+            get {
+                return ResourceManager.GetString("help_Id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string help_Question {
+            get {
+                return ResourceManager.GetString("help_Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount (ml).
+        /// </summary>
+        public static string juiceLog_Amount {
+            get {
+                return ResourceManager.GetString("juiceLog_Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string juiceLog_Date {
+            get {
+                return ResourceManager.GetString("juiceLog_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #.
+        /// </summary>
+        public static string juiceLog_Id {
+            get {
+                return ResourceManager.GetString("juiceLog_Id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string juiceLog_Name {
+            get {
+                return ResourceManager.GetString("juiceLog_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine (mg/ml).
+        /// </summary>
+        public static string juiceLog_Nicotine {
+            get {
+                return ResourceManager.GetString("juiceLog_Nicotine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes.
+        /// </summary>
+        public static string juiceLog_Notes {
+            get {
+                return ResourceManager.GetString("juiceLog_Notes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ratio (PG/VG).
+        /// </summary>
+        public static string juiceLog_Ratio {
+            get {
+                return ResourceManager.GetString("juiceLog_Ratio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Lang {
+            get {
+                return ResourceManager.GetString("Lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string LoadPageEight {
+            get {
+                return ResourceManager.GetString("LoadPageEight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OneShots.
+        /// </summary>
+        public static string LoadPageFive {
+            get {
+                return ResourceManager.GetString("LoadPageFive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bases Mix.
+        /// </summary>
+        public static string LoadPageFour {
+            get {
+                return ResourceManager.GetString("LoadPageFour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string LoadPageNine {
+            get {
+                return ResourceManager.GetString("LoadPageNine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ohm&apos;s Law.
+        /// </summary>
+        public static string LoadPageOne {
+            get {
+                return ResourceManager.GetString("LoadPageOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alchemy.
+        /// </summary>
+        public static string LoadPageSeven {
+            get {
+                return ResourceManager.GetString("LoadPageSeven", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchases.
+        /// </summary>
+        public static string LoadPageSix {
+            get {
+                return ResourceManager.GetString("LoadPageSix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine Cost.
+        /// </summary>
+        public static string LoadPageThree {
+            get {
+                return ResourceManager.GetString("LoadPageThree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string LoadPageTwo {
+            get {
+                return ResourceManager.GetString("LoadPageTwo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add to Juice Log.
+        /// </summary>
+        public static string log_Add {
+            get {
+                return ResourceManager.GetString("log_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log Amount.
+        /// </summary>
+        public static string log_Amount {
+            get {
+                return ResourceManager.GetString("log_Amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string log_Date {
+            get {
+                return ResourceManager.GetString("log_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit from Juice Log.
+        /// </summary>
+        public static string log_Edit {
+            get {
+                return ResourceManager.GetString("log_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entry ID.
+        /// </summary>
+        public static string log_EntryID {
+            get {
+                return ResourceManager.GetString("log_EntryID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine Strength.
+        /// </summary>
+        public static string log_Nic {
+            get {
+                return ResourceManager.GetString("log_Nic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes.
+        /// </summary>
+        public static string log_Notes {
+            get {
+                return ResourceManager.GetString("log_Notes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ratio PG.
+        /// </summary>
+        public static string log_RatioPG {
+            get {
+                return ResourceManager.GetString("log_RatioPG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ratio VG.
+        /// </summary>
+        public static string log_RatioVG {
+            get {
+                return ResourceManager.GetString("log_RatioVG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipe Name.
+        /// </summary>
+        public static string log_RecipeName {
+            get {
+                return ResourceManager.GetString("log_RecipeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PIN.
+        /// </summary>
+        public static string LoginPassword {
+            get {
+                return ResourceManager.GetString("LoginPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REMEMBER ME:.
+        /// </summary>
+        public static string LoginRemember {
+            get {
+                return ResourceManager.GetString("LoginRemember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LOGIN.
+        /// </summary>
+        public static string LoginTitle {
+            get {
+                return ResourceManager.GetString("LoginTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ml.
+        /// </summary>
+        public static string mb_ml_label {
+            get {
+                return ResourceManager.GetString("mb_ml_label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine (mg/ml).
+        /// </summary>
+        public static string mb_nic_level {
+            get {
+                return ResourceManager.GetString("mb_nic_level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine: A.
+        /// </summary>
+        public static string mb_nicA {
+            get {
+                return ResourceManager.GetString("mb_nicA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine: B.
+        /// </summary>
+        public static string mb_nicB {
+            get {
+                return ResourceManager.GetString("mb_nicB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine: C.
+        /// </summary>
+        public static string mb_nicC {
+            get {
+                return ResourceManager.GetString("mb_nicC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine: D.
+        /// </summary>
+        public static string mb_nicD {
+            get {
+                return ResourceManager.GetString("mb_nicD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PG (%).
+        /// </summary>
+        public static string mb_pg_percent {
+            get {
+                return ResourceManager.GetString("mb_pg_percent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need.
+        /// </summary>
+        public static string mb_result {
+            get {
+                return ResourceManager.GetString("mb_result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VG (%).
+        /// </summary>
+        public static string mb_vg_percent {
+            get {
+                return ResourceManager.GetString("mb_vg_percent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Want to make.
+        /// </summary>
+        public static string mb_wtm {
+            get {
+                return ResourceManager.GetString("mb_wtm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _About.
+        /// </summary>
+        public static string menu_about {
+            get {
+                return ResourceManager.GetString("menu_about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Edit.
+        /// </summary>
+        public static string menu_edit {
+            get {
+                return ResourceManager.GetString("menu_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _File.
+        /// </summary>
+        public static string menu_file {
+            get {
+                return ResourceManager.GetString("menu_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Exit.
+        /// </summary>
+        public static string menu_file_exit {
+            get {
+                return ResourceManager.GetString("menu_file_exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Tools.
+        /// </summary>
+        public static string menu_tools {
+            get {
+                return ResourceManager.GetString("menu_tools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Alchemy.
+        /// </summary>
+        public static string menu_tools_Alchemy {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Bases Mix.
+        /// </summary>
+        public static string menu_tools_Alchemy_BasesMix {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_BasesMix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Flavors.
+        /// </summary>
+        public static string menu_tools_Alchemy_Flavors {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_Flavors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Juice Log.
+        /// </summary>
+        public static string menu_tools_Alchemy_JuiceLog {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_JuiceLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Oneshots.
+        /// </summary>
+        public static string menu_tools_Alchemy_Oneshots {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_Oneshots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Recipes.
+        /// </summary>
+        public static string menu_tools_Alchemy_Recipes {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_Recipes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Stash.
+        /// </summary>
+        public static string menu_tools_Alchemy_Stash {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_Stash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Synthesize.
+        /// </summary>
+        public static string menu_tools_Alchemy_Synthesize {
+            get {
+                return ResourceManager.GetString("menu_tools_Alchemy_Synthesize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Nicotine Cost.
+        /// </summary>
+        public static string menu_tools_NicotineCost {
+            get {
+                return ResourceManager.GetString("menu_tools_NicotineCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Ohm&apos;s Law.
+        /// </summary>
+        public static string menu_tools_OhmsLaw {
+            get {
+                return ResourceManager.GetString("menu_tools_OhmsLaw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Purchases.
+        /// </summary>
+        public static string menu_tools_Purchases {
+            get {
+                return ResourceManager.GetString("menu_tools_Purchases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Settings.
+        /// </summary>
+        public static string menu_tools_Settings {
+            get {
+                return ResourceManager.GetString("menu_tools_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Statistics.
+        /// </summary>
+        public static string menu_tools_Statistics {
+            get {
+                return ResourceManager.GetString("menu_tools_Statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mg/ml.
+        /// </summary>
+        public static string mg_ml {
+            get {
+                return ResourceManager.GetString("mg_ml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimize To Tray.
+        /// </summary>
+        public static string MinimizeToTray {
+            get {
+                return ResourceManager.GetString("MinimizeToTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base: A.
+        /// </summary>
+        public static string mixbase_baseA {
+            get {
+                return ResourceManager.GetString("mixbase_baseA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base: B.
+        /// </summary>
+        public static string mixbase_baseB {
+            get {
+                return ResourceManager.GetString("mixbase_baseB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base: C.
+        /// </summary>
+        public static string mixbase_baseC {
+            get {
+                return ResourceManager.GetString("mixbase_baseC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base: D.
+        /// </summary>
+        public static string mixbase_baseD {
+            get {
+                return ResourceManager.GetString("mixbase_baseD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base Amount (ml).
+        /// </summary>
+        public static string mixbase_HeaderBaseAmount {
+            get {
+                return ResourceManager.GetString("mixbase_HeaderBaseAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grams.
+        /// </summary>
+        public static string mixbase_HeaderGrams {
+            get {
+                return ResourceManager.GetString("mixbase_HeaderGrams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ml.
+        /// </summary>
+        public static string mixbase_HeaderML {
+            get {
+                return ResourceManager.GetString("mixbase_HeaderML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nic Bottles Amount.
+        /// </summary>
+        public static string mixbase_HeaderNicBottleAmount {
+            get {
+                return ResourceManager.GetString("mixbase_HeaderNicBottleAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine (mg/ml).
+        /// </summary>
+        public static string mixbase_HeaderNicLevel {
+            get {
+                return ResourceManager.GetString("mixbase_HeaderNicLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PG (%).
+        /// </summary>
+        public static string mixbase_HeaderPGPercent {
+            get {
+                return ResourceManager.GetString("mixbase_HeaderPGPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VG (%).
+        /// </summary>
+        public static string mixbase_HeaderVGPercent {
+            get {
+                return ResourceManager.GetString("mixbase_HeaderVGPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Mix.
+        /// </summary>
+        public static string mixbase_LeftHeader {
+            get {
+                return ResourceManager.GetString("mixbase_LeftHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mix Ratio PG / VG.
+        /// </summary>
+        public static string mixbase_LeftMixRatioPGVG {
+            get {
+                return ResourceManager.GetString("mixbase_LeftMixRatioPGVG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume.
+        /// </summary>
+        public static string mixbase_LeftMixTotalVolume {
+            get {
+                return ResourceManager.GetString("mixbase_LeftMixTotalVolume", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume PG / VG (ml).
+        /// </summary>
+        public static string mixbase_LeftMixVolumePGVG {
+            get {
+                return ResourceManager.GetString("mixbase_LeftMixVolumePGVG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ratio is in ml.
+        /// </summary>
+        public static string mixbase_LeftResultmlToolTip {
+            get {
+                return ResourceManager.GetString("mixbase_LeftResultmlToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine.
+        /// </summary>
+        public static string mixbase_LeftResultNicLevel {
+            get {
+                return ResourceManager.GetString("mixbase_LeftResultNicLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ratio is in mg/ml.
+        /// </summary>
+        public static string mixbase_LeftResultNicLevelToolTip {
+            get {
+                return ResourceManager.GetString("mixbase_LeftResultNicLevelToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ml in Stash.
+        /// </summary>
+        public static string mlinstash {
+            get {
+                return ResourceManager.GetString("mlinstash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current (I).
+        /// </summary>
+        public static string ohms_Current {
+            get {
+                return ResourceManager.GetString("ohms_Current", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resistance (R).
+        /// </summary>
+        public static string ohms_Resistance {
+            get {
+                return ResourceManager.GetString("ohms_Resistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voltage (V).
+        /// </summary>
+        public static string ohms_Voltage {
+            get {
+                return ResourceManager.GetString("ohms_Voltage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wattage (W).
+        /// </summary>
+        public static string ohms_Wattage {
+            get {
+                return ResourceManager.GetString("ohms_Wattage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to adjust the levels of PG/VG, Nic or Flavor..
+        /// </summary>
+        public static string OneShotErrorMsg1 {
+            get {
+                return ResourceManager.GetString("OneShotErrorMsg1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can not use Negative numbers. Then re-calculate..
+        /// </summary>
+        public static string OneShotErrorMsg2 {
+            get {
+                return ResourceManager.GetString("OneShotErrorMsg2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string OneShotErrorTitle {
+            get {
+                return ResourceManager.GetString("OneShotErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solution (ml).
+        /// </summary>
+        public static string OneShotHeaderAmount {
+            get {
+                return ResourceManager.GetString("OneShotHeaderAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oneshot Name.
+        /// </summary>
+        public static string OneShotHeaderName {
+            get {
+                return ResourceManager.GetString("OneShotHeaderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PG Base.
+        /// </summary>
+        public static string OneShotL_BasePG {
+            get {
+                return ResourceManager.GetString("OneShotL_BasePG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VG Base.
+        /// </summary>
+        public static string OneShotL_BaseVG {
+            get {
+                return ResourceManager.GetString("OneShotL_BaseVG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor.
+        /// </summary>
+        public static string OneShotL_Flavor {
+            get {
+                return ResourceManager.GetString("OneShotL_Flavor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nic Booster.
+        /// </summary>
+        public static string OneShotL_NicBooster {
+            get {
+                return ResourceManager.GetString("OneShotL_NicBooster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percentage.
+        /// </summary>
+        public static string perc {
+            get {
+                return ResourceManager.GetString("perc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string popup_Cancel {
+            get {
+                return ResourceManager.GetString("popup_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string popup_Submit {
+            get {
+                return ResourceManager.GetString("popup_Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase.
+        /// </summary>
+        public static string purchase {
+            get {
+                return ResourceManager.GetString("purchase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Item.
+        /// </summary>
+        public static string purchase_AddItem {
+            get {
+                return ResourceManager.GetString("purchase_AddItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string purchase_Clear {
+            get {
+                return ResourceManager.GetString("purchase_Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date of Purchase (yyyy/mm/dd).
+        /// </summary>
+        public static string purchase_DateOfPurchase {
+            get {
+                return ResourceManager.GetString("purchase_DateOfPurchase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount.
+        /// </summary>
+        public static string purchase_Discount {
+            get {
+                return ResourceManager.GetString("purchase_Discount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Id (#).
+        /// </summary>
+        public static string purchase_OrderId {
+            get {
+                return ResourceManager.GetString("purchase_OrderId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string purchase_Price {
+            get {
+                return ResourceManager.GetString("purchase_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        public static string purchase_Product {
+            get {
+                return ResourceManager.GetString("purchase_Product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string purchase_Quantity {
+            get {
+                return ResourceManager.GetString("purchase_Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With Selection.
+        /// </summary>
+        public static string purchase_Selection {
+            get {
+                return ResourceManager.GetString("purchase_Selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping.
+        /// </summary>
+        public static string purchase_Shipping {
+            get {
+                return ResourceManager.GetString("purchase_Shipping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKU.
+        /// </summary>
+        public static string purchase_SKU {
+            get {
+                return ResourceManager.GetString("purchase_SKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string purchase_Total {
+            get {
+                return ResourceManager.GetString("purchase_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor.
+        /// </summary>
+        public static string purchase_VendorName {
+            get {
+                return ResourceManager.GetString("purchase_VendorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Since.
+        /// </summary>
+        public static string purchase_ViewSince {
+            get {
+                return ResourceManager.GetString("purchase_ViewSince", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Until.
+        /// </summary>
+        public static string purchase_ViewUntil {
+            get {
+                return ResourceManager.GetString("purchase_ViewUntil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By Vendor.
+        /// </summary>
+        public static string purchase_ViewVendor {
+            get {
+                return ResourceManager.GetString("purchase_ViewVendor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string purchases_tabitem1 {
+            get {
+                return ResourceManager.GetString("purchases_tabitem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        public static string purchases_tabitem2 {
+            get {
+                return ResourceManager.GetString("purchases_tabitem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activate.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Flavor from Stash.
+        /// </summary>
+        public static string rem_Flv_fromstash {
+            get {
+                return ResourceManager.GetString("rem_Flv_fromstash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save_Button {
+            get {
+                return ResourceManager.GetString("Save_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PIN (Purchases).
+        /// </summary>
+        public static string Settings_PurchasesPIN {
+            get {
+                return ResourceManager.GetString("Settings_PurchasesPIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Off.
+        /// </summary>
+        public static string SettingsOff {
+            get {
+                return ResourceManager.GetString("SettingsOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On.
+        /// </summary>
+        public static string SettingsOn {
+            get {
+                return ResourceManager.GetString("SettingsOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vape Assistant Activation.
+        /// </summary>
+        public static string SN {
+            get {
+                return ResourceManager.GetString("SN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vape Assistant.
+        /// </summary>
+        public static string SoftwareTitle {
+            get {
+                return ResourceManager.GetString("SoftwareTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        public static string SoftwareVersion {
+            get {
+                return ResourceManager.GetString("SoftwareVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string stash_hdrAmount {
+            get {
+                return ResourceManager.GetString("stash_hdrAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brand.
+        /// </summary>
+        public static string stash_hdrBrand {
+            get {
+                return ResourceManager.GetString("stash_hdrBrand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor.
+        /// </summary>
+        public static string stash_hdrFlavor {
+            get {
+                return ResourceManager.GetString("stash_hdrFlavor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string stash_hdrId {
+            get {
+                return ResourceManager.GetString("stash_hdrId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stash.
+        /// </summary>
+        public static string stash_header {
+            get {
+                return ResourceManager.GetString("stash_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cigarettes / Day.
+        /// </summary>
+        public static string statistics_CigarettesPerDay {
+            get {
+                return ResourceManager.GetString("statistics_CigarettesPerDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cigarettes / Pack.
+        /// </summary>
+        public static string statistics_CigarettesPerPack {
+            get {
+                return ResourceManager.GetString("statistics_CigarettesPerPack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily Smoking Cost.
+        /// </summary>
+        public static string statistics_DailySmokingCost {
+            get {
+                return ResourceManager.GetString("statistics_DailySmokingCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days Vaping.
+        /// </summary>
+        public static string statistics_DaysVaping {
+            get {
+                return ResourceManager.GetString("statistics_DaysVaping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days w/o cigarette.
+        /// </summary>
+        public static string statistics_DaysWithoutCigarette {
+            get {
+                return ResourceManager.GetString("statistics_DaysWithoutCigarette", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Juice ml Cost.
+        /// </summary>
+        public static string statistics_EjuiceMlCost {
+            get {
+                return ResourceManager.GetString("statistics_EjuiceMlCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hardware Cost.
+        /// </summary>
+        public static string statistics_HardwareCost {
+            get {
+                return ResourceManager.GetString("statistics_HardwareCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hardware Daily Cost.
+        /// </summary>
+        public static string statistics_HardwareDailyCost {
+            get {
+                return ResourceManager.GetString("statistics_HardwareDailyCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ml / Day.
+        /// </summary>
+        public static string statistics_JuicePerDay {
+            get {
+                return ResourceManager.GetString("statistics_JuicePerDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Packet Price.
+        /// </summary>
+        public static string statistics_PacketPrice {
+            get {
+                return ResourceManager.GetString("statistics_PacketPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price Per Cigarette.
+        /// </summary>
+        public static string statistics_PricePerCigarette {
+            get {
+                return ResourceManager.GetString("statistics_PricePerCigarette", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Smokin Cessation Date.
+        /// </summary>
+        public static string statistics_SmokingCessationDate {
+            get {
+                return ResourceManager.GetString("statistics_SmokingCessationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily Vape Cost.
+        /// </summary>
+        public static string statistics_VapeDailyCost {
+            get {
+                return ResourceManager.GetString("statistics_VapeDailyCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vaping Start Date.
+        /// </summary>
+        public static string statistics_VapingStartDate {
+            get {
+                return ResourceManager.GetString("statistics_VapingStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Smoking Cost.
+        /// </summary>
+        public static string statistics_YearlySmokingCost {
+            get {
+                return ResourceManager.GetString("statistics_YearlySmokingCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Vaping Cost.
+        /// </summary>
+        public static string statistics_YearlyVapingCost {
+            get {
+                return ResourceManager.GetString("statistics_YearlyVapingCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor Name.
+        /// </summary>
+        public static string synth_flav_name {
+            get {
+                return ResourceManager.GetString("synth_flav_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes.
+        /// </summary>
+        public static string synth_Notes {
+            get {
+                return ResourceManager.GetString("synth_Notes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percentage.
+        /// </summary>
+        public static string synth_percent {
+            get {
+                return ResourceManager.GetString("synth_percent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recipe Name.
+        /// </summary>
+        public static string synth_RecipeName {
+            get {
+                return ResourceManager.GetString("synth_RecipeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target ML.
+        /// </summary>
+        public static string synth_TargetMl {
+            get {
+                return ResourceManager.GetString("synth_TargetMl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string synth_Total {
+            get {
+                return ResourceManager.GetString("synth_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base (ml).
+        /// </summary>
+        public static string Targetbase {
+            get {
+                return ResourceManager.GetString("Targetbase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine Booster Level (mg/ml).
+        /// </summary>
+        public static string TargetBoosterLevel {
+            get {
+                return ResourceManager.GetString("TargetBoosterLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine Bottles.
+        /// </summary>
+        public static string Targetbottles {
+            get {
+                return ResourceManager.GetString("Targetbottles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target ml.
+        /// </summary>
+        public static string Targetml {
+            get {
+                return ResourceManager.GetString("Targetml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nicotine (ml).
+        /// </summary>
+        public static string Targetnic {
+            get {
+                return ResourceManager.GetString("Targetnic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target Nicotine Level.
+        /// </summary>
+        public static string TargetNicLevel {
+            get {
+                return ResourceManager.GetString("TargetNicLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price / Bottle ($).
+        /// </summary>
+        public static string Targetpriceperbottle {
+            get {
+                return ResourceManager.GetString("Targetpriceperbottle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Cost ($).
+        /// </summary>
+        public static string TargetTotalCost {
+            get {
+                return ResourceManager.GetString("TargetTotalCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string ThemeLanguageEn {
+            get {
+                return ResourceManager.GetString("ThemeLanguageEn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greek.
+        /// </summary>
+        public static string ThemeLanguageGr {
+            get {
+                return ResourceManager.GetString("ThemeLanguageGr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        public static string ThemeRestart {
+            get {
+                return ResourceManager.GetString("ThemeRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string ThemeSave {
+            get {
+                return ResourceManager.GetString("ThemeSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string ThemeTitle {
+            get {
+                return ResourceManager.GetString("ThemeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Format is dd/mm/yyyy (Days/Months/Years).
+        /// </summary>
+        public static string TooltipDateFormat {
+            get {
+                return ResourceManager.GetString("TooltipDateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ejuice ml cost is calculated by dividing the price of the bottle with the ml of the bottle..
+        /// </summary>
+        public static string TooltipEJuicemlCost1 {
+            get {
+                return ResourceManager.GetString("TooltipEJuicemlCost1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For example: 15$/30ml=0.5$/ml so you type in 0.5.
+        /// </summary>
+        public static string TooltipEJuicemlCost2 {
+            get {
+                return ResourceManager.GetString("TooltipEJuicemlCost2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is calculated from the Purchases tab fill your purchases to continue..
+        /// </summary>
+        public static string TooltipHardwareCost {
+            get {
+                return ResourceManager.GetString("TooltipHardwareCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string vendor_Active {
+            get {
+                return ResourceManager.GetString("vendor_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string vendor_Address {
+            get {
+                return ResourceManager.GetString("vendor_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string vendor_City {
+            get {
+                return ResourceManager.GetString("vendor_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country*.
+        /// </summary>
+        public static string vendor_Country {
+            get {
+                return ResourceManager.GetString("vendor_Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to County.
+        /// </summary>
+        public static string vendor_County {
+            get {
+                return ResourceManager.GetString("vendor_County", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string vendor_delete {
+            get {
+                return ResourceManager.GetString("vendor_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string vendor_edit {
+            get {
+                return ResourceManager.GetString("vendor_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load Table Data.
+        /// </summary>
+        public static string vendor_Load {
+            get {
+                return ResourceManager.GetString("vendor_Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name*.
+        /// </summary>
+        public static string vendor_Name {
+            get {
+                return ResourceManager.GetString("vendor_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Post Code.
+        /// </summary>
+        public static string vendor_PostCode {
+            get {
+                return ResourceManager.GetString("vendor_PostCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By Order Reference.
+        /// </summary>
+        public static string vendor_Reference {
+            get {
+                return ResourceManager.GetString("vendor_Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders Sum.
+        /// </summary>
+        public static string vendor_SumOrders {
+            get {
+                return ResourceManager.GetString("vendor_SumOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string vendor_tabitem1 {
+            get {
+                return ResourceManager.GetString("vendor_tabitem1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit/Delete.
+        /// </summary>
+        public static string vendor_tabitem2 {
+            get {
+                return ResourceManager.GetString("vendor_tabitem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone.
+        /// </summary>
+        public static string vendor_Telephone {
+            get {
+                return ResourceManager.GetString("vendor_Telephone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders.
+        /// </summary>
+        public static string vendor_TotalOrders {
+            get {
+                return ResourceManager.GetString("vendor_TotalOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor.
+        /// </summary>
+        public static string vendor_Vendor {
+            get {
+                return ResourceManager.GetString("vendor_Vendor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website.
+        /// </summary>
+        public static string vendor_Website {
+            get {
+                return ResourceManager.GetString("vendor_Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://vape-assistant.com.
+        /// </summary>
+        public static string Website {
+            get {
+                return ResourceManager.GetString("Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

@@ -1,0 +1,369 @@
+﻿<UserControl x:Class="Vape_Assistant.Views.JuiceLog_ChildView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Vape_Assistant.Views"
+             xmlns:p="clr-namespace:Vape_Assistant.Properties"
+             xmlns:myCalendar="clr-namespace:Vape_Assistant"
+             mc:Ignorable="d" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+             Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
+             FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
+             BorderBrush="{x:Null}"
+             Padding="20">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" MinWidth="500"/>
+            <ColumnDefinition Width="*" MaxWidth="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" x:Name="JuiceLogList" SelectionChanged="JuiceLogList_SelectionChanged"
+                 LoadingRow="DataGrid_LoadingRow"
+                  MinHeight="200" MaxHeight="500" MinWidth="500"
+                  Background="#FF6A6A6A" IsReadOnly="True" 
+                  AlternatingRowBackground="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"
+                  AlternationCount="-1"
+                  AutoGenerateColumns="False" 
+                  ColumnWidth="*"
+                  SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  CanUserReorderColumns="False"
+                  CanUserResizeRows="True"
+                  BorderBrush="{x:Null}"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  Padding="0" EnableColumnVirtualization="True">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <!--<Setter Property="Background" Value="#FF606060" />-->
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Margin" Value="2,0,0,0"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <!--<Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,0"/>-->
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="0,0,0,0"/>
+                    <Setter Property="Padding" Value="5,0"/>
+                    <!--<Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,0"/>-->
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type DataGridRow}}" TargetType="{x:Type DataGridRow}">
+                    <!--<Setter Property="Background" Value="#FF2B2B2B"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0,0,0,1"/>-->
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="LogIdColumn" Binding="{Binding id}" Header="{x:Static p:Resources.juiceLog_Id}" MinWidth="40" MaxWidth="40"/>
+                <DataGridTextColumn x:Name="LogNameColumn"     Binding="{Binding Name}"     Header="{x:Static p:Resources.juiceLog_Name}" MinWidth="120" MaxWidth="300"/>
+                <DataGridTextColumn x:Name="LogAmountColumn"   Binding="{Binding Amount}"   Header="{x:Static p:Resources.juiceLog_Amount}" MinWidth="150" MaxWidth="150">
+                    <DataGridTextColumn.CellStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="LogRatioColumn"    Binding="{Binding Ratio}"    Header="{x:Static p:Resources.juiceLog_Ratio}" MinWidth="150" MaxWidth="150">
+                    <DataGridTextColumn.CellStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="LogNicotineColumn" Binding="{Binding Nic}"      Header="{x:Static p:Resources.juiceLog_Nicotine}" MinWidth="145" MaxWidth="145">
+                    <DataGridTextColumn.CellStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="LogDateColumn"     Binding="{Binding Date}"     Header="{x:Static p:Resources.juiceLog_Date}" MinWidth="100" MaxWidth="100">
+                    <DataGridTextColumn.CellStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn x:Name="LogNotesColumn"    Binding="{Binding Notes}"    Header="{x:Static p:Resources.juiceLog_Notes}" MinWidth="120" MaxWidth="300"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" Grid.RowSpan="3">
+            <Button x:Name="log_Add" Cursor="Hand" HorizontalContentAlignment="Center" Click="Log_Add_Click" VerticalAlignment="Bottom" Margin="10,5">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" Padding="20,10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Vape Assistant;component/Images/Plus_32px.png" VerticalAlignment="Center" Width="20"/>
+                    <TextBlock Text="{x:Static p:Resources.AddShop}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="Log_Edit" Cursor="Hand" Click="Log_Edit_Click" VerticalAlignment="Center" Margin="10,5">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" Padding="20,10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Vape Assistant;component/Images/Edit_32px.png" VerticalAlignment="Center" Width="20"/>
+                    <TextBlock Text="{x:Static p:Resources.vendor_edit}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="Log_Delete" Cursor="Hand" Click="Log_Delete_Click" VerticalAlignment="Top" Margin="10,5">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" Padding="20,10">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Vape Assistant;component/Images/CloseWindow.png" VerticalAlignment="Center" Width="20"/>
+                    <TextBlock Text="{x:Static p:Resources.vendor_delete}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! Visibility="Visible" -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="AddLogElementInputBox" Visibility="Collapsed">
+            <Grid Background="Black" Opacity="0.6"/>
+            <Border MinWidth="300" Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
+                       BorderBrush="Black" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Margin="20">
+                    <TextBlock Margin="0,0,0,0" Text="{x:Static p:Resources.log_Add}" FontWeight="Bold" FontSize="20"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="120"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{x:Static p:Resources.log_RecipeName}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                        <TextBox x:Name="Add_LogRecipeName" Grid.Row="0" Grid.Column="1" Padding="5" TabIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+                        <TextBlock Text="{x:Static p:Resources.log_Amount}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,6"/>
+                        <TextBox x:Name="Add_LogAmount" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="5" TabIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="Add_LogAmount_PreviewTextInput" MaxLength="5"/>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0">
+                            <TextBlock Text="{x:Static p:Resources.log_RatioPG}" VerticalAlignment="Center" />
+                            <TextBlock Text="/" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.log_RatioVG}" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                            <TextBox x:Name="Add_LogPGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2" PreviewTextInput="Add_LogPGRatio_PreviewTextInput" MaxLength="5" TextChanged="Add_LogPGRatio_TextChanged"/>
+                            <TextBlock Text="/" VerticalAlignment="Center" FontSize="20" />
+                            <TextBox x:Name="Add_LogVGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="3" PreviewTextInput="Add_LogVGRatio_PreviewTextInput" MaxLength="5" TextChanged="Add_LogVGRatio_TextChanged"/>
+                        </StackPanel>
+
+                        <TextBlock Text="{x:Static p:Resources.log_Nic}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="Add_LogNic" Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="4" PreviewTextInput="Add_LogNic_PreviewTextInput" MaxLength="4"/>
+
+                        <TextBlock Text="{x:Static p:Resources.log_Date}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <myCalendar:ucCalendar Grid.Row="4" Grid.Column="1" x:Name="log_date" Width="Auto" TabIndex="5" IsTabStop="True" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Static p:Resources.log_Notes}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="Add_LogNotes" Grid.Row="5" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" MaxLength="128" TextChanged="Add_LogNotes_TextChanged"/>
+                        <TextBlock x:Name="Add_LogNotesLimit" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" FontSize="12" Text="(128)"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="LogCancelButton" Margin="5" Padding="10,5" 
+                                IsCancel="True" TabIndex="8" Click="LogCancelButton_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}" Padding="20,10" Margin="10,5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Vape Assistant;component/Images/Clear_32px.png" VerticalAlignment="Center" Width="20"/>
+                                <TextBlock Text="{x:Static p:Resources.popup_Cancel}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="LogSubmitButton" Margin="5" Padding="10,5"
+                                IsDefault="True" TabIndex="7" Click="LogSubmitButton_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}" Padding="20,10" Margin="10,5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Vape Assistant;component/Images/Submit_32px.png" VerticalAlignment="Center" Width="20"/>
+                                <TextBlock Text="{x:Static p:Resources.popup_Submit}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <!-- Edit/Update Form Starts Here Visibility="Visible"-->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="EditLogElementInputBox" Visibility="Collapsed">
+            <Grid Background="Black" Opacity="0.6"/>
+            <Border
+                                    MinWidth="300"
+                                    Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
+                                    BorderBrush="Black" 
+                                    BorderThickness="2" 
+                                    CornerRadius="20" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center">
+                <StackPanel Margin="20">
+                    <TextBlock Margin="0,0,0,0" Text="{x:Static p:Resources.log_Edit}" FontWeight="Bold" FontSize="20"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                            <RowDefinition MinHeight="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="120"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Enter Id:" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
+                        <TextBox x:Name="EditItemIdBox" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
+                        <TextBlock Text="{x:Static p:Resources.log_RecipeName}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                        <TextBox x:Name="Edit_LogRecipeName" Grid.Row="1" Grid.Column="1" AutoWordSelection="True" TabIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                        <TextBlock Text="{x:Static p:Resources.log_Amount}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                        <TextBox x:Name="Edit_LogAmount" Grid.Row="2" Grid.Column="1" AutoWordSelection="True" TabIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="Edit_LogAmount_PreviewTextInput" />
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0">
+                            <TextBlock Text="{x:Static p:Resources.log_RatioPG}" VerticalAlignment="Center" />
+                            <TextBlock Text="/" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.log_RatioVG}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                            <TextBox x:Name="Edit_LogPGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2" MaxLength="5" PreviewTextInput="Edit_LogPGRatio_PreviewTextInput" TextChanged="Edit_LogPGRatio_TextChanged" Height="30" VerticalAlignment="Bottom"/>
+                            <TextBlock Text="/" VerticalAlignment="Center" FontSize="20" />
+                            <TextBox x:Name="Edit_LogVGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="3" MaxLength="5" TextChanged="Edit_LogVGRatio_TextChanged" PreviewTextInput="Edit_LogVGRatio_PreviewTextInput" />
+                        </StackPanel>
+                        <TextBlock Text="{x:Static p:Resources.log_Nic}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="Edit_LogNic" Grid.Row="4" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="4" PreviewTextInput="Edit_LogNic_PreviewTextInput" MaxLength="4"/>
+                        <TextBlock Text="{x:Static p:Resources.log_Date}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <myCalendar:ucCalendar Grid.Row="5" Grid.Column="1" x:Name="editlog_date" Width="Auto" TabIndex="5" IsTabStop="True" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{x:Static p:Resources.log_Notes}" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="Edit_LogNotes" Grid.Row="6" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" MaxLength="128" TextChanged="Edit_LogNotes_TextChanged"/>
+                        <TextBlock x:Name="Edit_LogNotesLimit" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" FontSize="12" Text="(128)"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="EditLogCancelButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="EditLogCancelButton_Click"/>
+                        <Button x:Name="EditLogUpdateButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="EditLogUpdateButton_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+        <ComboBox x:Name="y0" Visibility="Hidden" Width="0"/>
+        <ComboBox x:Name="y1" Visibility="Hidden" Width="0"/>
+        <ComboBox x:Name="y2" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x0" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x1" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x2" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x3" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x4" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x5" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x6" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x7" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x8" Visibility="Hidden" Width="0"/>
+        <TextBox x:Name="x9" Visibility="Hidden" Width="0"/>
+    </Grid>
+
+</UserControl>

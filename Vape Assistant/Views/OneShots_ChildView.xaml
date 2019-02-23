@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="Vape_Assistant.Views.OneShots_ChildView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vape_Assistant.Views"
+             xmlns:myCalendar="clr-namespace:Vape_Assistant"
+             xmlns:p="clr-namespace:Vape_Assistant.Properties"
+             Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
+             FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
+             mc:Ignorable="d">
+    <Grid MinWidth="500" Margin="20" x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--Row 1-->
+        <TextBlock Grid.Row="0" Grid.Column="2" x:Name="TotalMix_label" TextAlignment="Center" VerticalAlignment="Bottom" Text="{x:Static p:Resources.OneShotHeaderAmount}" Margin="5,0"/>
+        <TextBlock Grid.Row="0" Grid.Column="3" x:Name="TotalPG_label" TextAlignment="Center" VerticalAlignment="Bottom" Text="{x:Static p:Resources.mixbase_HeaderPGPercent}" Margin="5,0"/>
+        <TextBlock Grid.Row="0" Grid.Column="4" x:Name="TotalVG_label" TextAlignment="Center" VerticalAlignment="Bottom" Text="{x:Static p:Resources.mixbase_HeaderVGPercent}" Margin="5,0"/>
+        <TextBlock Grid.Row="0" Grid.Column="5" TextAlignment="Center" VerticalAlignment="Bottom" Text="{x:Static p:Resources.mixbase_HeaderGrams}" Margin="5,0"/>
+        <TextBlock Grid.Row="0" Grid.Column="6" x:Name="TotalNic_label" TextAlignment="Center" VerticalAlignment="Bottom" Text="{x:Static p:Resources.mixbase_HeaderNicLevel}" Margin="5,0"/>
+        <!--Row 2-->
+        <TextBox x:Name="snvFinalMix" Grid.Row="1" Grid.Column="2" TextAlignment="Center" Margin="5,2" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" TabIndex="0" SelectionBrush="#FF0078D7" LostFocus="snvFinalMix_LostFocus" MinHeight="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="snvFinal_PG" Grid.Row="1" Grid.Column="3" TextAlignment="Center" Margin="5,2" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" MaxLength="2" TextChanged="snvFinal_PG_TextChanged" TabIndex="1" SelectionBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="snvFinal_VG" Grid.Row="1" Grid.Column="4" TextAlignment="Center" Margin="5,2" IsReadOnly="True" IsTabStop="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="snvFinal_Grams" Grid.Row="1" Grid.Column="5" TextAlignment="Center" Margin="5,2" IsReadOnly="True" IsTabStop="False" Text="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden"/>
+        <TextBox x:Name="snvFinal_Nic" Grid.Row="1" Grid.Column="6" TextAlignment="Center" Margin="5,2" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" MaxLength="5" TabIndex="2" PreviewTextInput="snvFinal_Nic_PreviewTextInput" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="snvFinal_Nic_TextChanged"/>
+
+        <!--Row 3-->
+        <TextBlock x:Name="pgBase_label" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Right" VerticalAlignment="Center" Text="{x:Static p:Resources.OneShotL_BasePG}" Visibility="Collapsed"/>
+        <TextBox x:Name="snvBasPG_ml" Grid.Row="2" Grid.Column="2" TextAlignment="Center" Margin="5,2,5,0" IsReadOnly="True" Text="0" IsTabStop="False" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <TextBox x:Name="BasPG_PGpercent" Grid.Row="2" Grid.Column="3" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="100" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="BasPG_VGpercent" Grid.Row="2" Grid.Column="4" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="BasPG_Grams" Grid.Row="2" Grid.Column="5" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <!--Row 4-->
+        <TextBlock x:Name="vgBase_label" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Right" VerticalAlignment="Center" Text="{x:Static p:Resources.OneShotL_BaseVG}" Visibility="Collapsed" />
+        <TextBox x:Name="snvBasVG_ml" Grid.Row="3" Grid.Column="2" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="BasVG_PGpercent" Grid.Row="3" Grid.Column="3" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="BasVG_VGpercent" Grid.Row="3" Grid.Column="4" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="100" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="BasVG_Grams" Grid.Row="3" Grid.Column="5" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <!--Row 5-->
+        <TextBlock x:Name="nicBooster_label" Grid.Row="4" Grid.Column="0" TextAlignment="Right" VerticalAlignment="Center" Text="{x:Static p:Resources.OneShotL_NicBooster}" Visibility="Collapsed" />
+        <ComboBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" x:Name="nic_style" MinWidth="95" Margin="4,0,0,0" SelectionChanged="nic_style_SelectionChanged" TabIndex="3" MaxWidth="140" Visibility="Collapsed">
+            <ComboBoxItem Content="PG 100-0 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
+            <ComboBoxItem Content="PG 70-30 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
+            <ComboBoxItem Content="PG 50-50 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
+            <ComboBoxItem Content="PG 30-70 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
+            <ComboBoxItem Content="PG 0-100 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
+        </ComboBox>
+        <Separator x:Name="nicotine_seperator" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Background="#FF363636" Visibility="Visible"/>
+        <TextBox x:Name="snvNic_ml" Grid.Row="4" Grid.Column="2" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="snvNic_PGpercent" Grid.Row="4" Grid.Column="3" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="snvNic_VGpercent" Grid.Row="4" Grid.Column="4" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="snvNic_Grams" Grid.Row="4" Grid.Column="5" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Collapsed"/>
+        <TextBox x:Name="snvNicLevel" Grid.Row="4" Grid.Column="6" TextAlignment="Center" Margin="5,2" Text="20" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" MaxLength="3" TabIndex="4" MinHeight="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Collapsed"/>
+        <!--Row 6-->
+        <TextBlock x:Name="snvFinalFlv_label" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1" TextAlignment="Right" VerticalAlignment="Center" Text="{x:Static p:Resources.OneShotL_Flavor}" />
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Margin="5,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="snvMlFlv" TextAlignment="Center" MaxWidth="50" MinWidth="50" Margin="0,0,10,0" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" MaxLength="5" TabIndex="5" TextChanged="snvMlFlv_TextChanged" SelectionBrush="#FF0078D7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinHeight="24"/>
+            <TextBox x:Name="snvFinalFlv" TextAlignment="Center" Margin="0,0,0,0" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" MaxLength="5" TabIndex="6" TextChanged="snvFinalFlv_TextChanged" SelectionBrush="#FF0078D7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinHeight="24" MinWidth="50"/>
+        </StackPanel>
+        <TextBox x:Name="snvFlv_ml" Grid.Row="5" Grid.Column="2" Text="0" TextAlignment="Center" Margin="5,2" IsReadOnly="True" IsTabStop="False" Visibility="Hidden"/>
+        <TextBox x:Name="snvFlv_PG" Grid.Row="5" Grid.Column="3" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="100" IsTabStop="False" Visibility="Hidden"/>
+        <TextBox x:Name="snvFlv_VG" Grid.Row="5" Grid.Column="4" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Hidden"/>
+        <TextBox x:Name="snvFlv_Grams" Grid.Row="5" Grid.Column="5" TextAlignment="Center" Margin="5,2" IsReadOnly="True" Text="0" IsTabStop="False" Visibility="Hidden"/>
+        <!--Row 8-->
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" MaxWidth="100" Margin="5,0,0,0">
+            <TextBlock Text="ml" TextAlignment="Center" VerticalAlignment="Top" MaxWidth="45" HorizontalAlignment="Left" MinWidth="45" Margin="-1,0,10,0" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
+            <TextBlock Text="%" TextAlignment="Center" VerticalAlignment="Top" MaxWidth="45" HorizontalAlignment="Right" MinWidth="45" Margin="0,0,0,0"  Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
+        </StackPanel>
+        <TextBox x:Name="errorcatcher" Visibility="Hidden" />
+        <Button x:Name="calc_ShakeNVape_reset" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Content="{x:Static p:Resources.Clear_Button}" Click="calc_ShakeNVape_reset_Click" TabIndex="7" Margin="10,5">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="0,0,0,0" Padding="5">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                            <!-- -->
+                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="calc_ShakeNVape" Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="2" Content="{x:Static p:Resources.Calculate_Button}" Click="calc_ShakeNVape_Click" TabIndex="6" Margin="10,5" MaxWidth="205" MaxHeight="40">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="0,0,0,0" Padding="5" >
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                            <!-- -->
+                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="OS_Name_label" TextAlignment="Right" VerticalAlignment="Center" Text="{x:Static p:Resources.OneShotHeaderName}" Margin="5,0"/>
+        <TextBox Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="3" x:Name="OS_Name" TextAlignment="Center" VerticalAlignment="Center" Margin="5,0" MinHeight="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="insert_ShakeNVape" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="2" Content="{x:Static p:Resources.Save_Button}" TabIndex="7" Margin="10,5" Click="insert_ShakeNVape_Click" IsEnabled="False" MaxWidth="205" MaxHeight="40">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
+                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="0,0,0,0" Padding="5" >
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                            <!-- -->
+                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <TextBox x:Name="errorcatch" Visibility="Collapsed"/>
+    </Grid>
+</UserControl>

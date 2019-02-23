@@ -1,12 +1,339 @@
-﻿<Window x:Class="Vape_Assistant.Views.ShellView"
+﻿<Window x:Name="VapeAssistant" x:Class="Vape_Assistant.Views.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Vape_Assistant.Views"
-        mc:Ignorable="d"
-        Title="ShellView" Height="300" Width="300" WindowStartupLocation="CenterScreen" Topmost="True">
-    <Grid>
-        
-    </Grid>
+        xmlns:p="clr-namespace:Vape_Assistant.Properties"
+        Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
+        FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
+        mc:Ignorable="d" FontSize="18"
+        VerticalContentAlignment="Stretch"
+        HorizontalContentAlignment="Stretch"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight" 
+        ScrollViewer.HorizontalScrollBarVisibility="Visible"
+        ScrollViewer.CanContentScroll="True"
+        Closing="VapeAssistant_Closing"
+        ResizeMode="NoResize" WindowStyle="ToolWindow">
+    <Window.Resources>
+        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Border
+                  x:Name="Border" 
+                  Grid.ColumnSpan="2"
+                  CornerRadius="0"
+                  Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
+                  BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"
+                  BorderThickness="1" />
+                <Border 
+                  Grid.Column="0"
+                  CornerRadius="0" 
+                  Margin="1" 
+                  Background="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" 
+                  BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
+                  BorderThickness="0,0,1,0" />
+                <Path 
+                  x:Name="Arrow"
+                  Grid.Column="1"     
+                  Fill="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
+                />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="ToggleButton.IsMouseOver" Value="true">
+                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
+                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="true">
+                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
+                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
+                    <Setter TargetName="Border" Property="BorderBrush" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
+                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
+                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
+        </ControlTemplate>
+
+        <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <!--<Setter Property="MinWidth" Value="120"/>-->
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <ToggleButton 
+                            Name="ToggleButton" 
+                            Template="{StaticResource ComboBoxToggleButton}" 
+                            Grid.Column="2" 
+                            Focusable="false"
+                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                            ClickMode="Press">
+                            </ToggleButton>
+                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                            Margin="3,3,23,3"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left" />
+                            <TextBox x:Name="PART_EditableTextBox"
+                            Style="{x:Null}" 
+                            Template="{StaticResource ComboBoxTextBox}" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" 
+                            Margin="3,3,23,3"
+                            Focusable="True" 
+                            Background="Transparent"
+                            Foreground="White"
+                            SelectionBrush="Red"
+                            Visibility="Hidden"
+                            IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                            <Popup 
+                            Name="Popup"
+                            Placement="Bottom"
+                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                            AllowsTransparency="True" 
+                            Focusable="False"
+                            PopupAnimation="Slide">
+                                <Grid Name="DropDown"
+                              SnapsToDevicePixels="True"                
+                              MinWidth="{TemplateBinding ActualWidth}"
+                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border 
+                                x:Name="DropDownBorder"
+                                Background="#FF3F3F3F"
+
+                                BorderThickness="1"
+                                BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                            </Trigger>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+                            </Trigger>
+                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
+                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsEditable"  Value="true">
+                                <Setter Property="IsTabStop" Value="false"/>
+                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+            </Style.Triggers>
+        </Style>
+
+        <!-- SimpleStyles: ComboBoxItem -->
+        <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                        <Border Name="Border"
+                              Padding="2"
+                              SnapsToDevicePixels="true">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill" Opacity="0.99"/>
+    </Window.Background>
+    <DockPanel VerticalAlignment="Top">
+        <Menu DockPanel.Dock="Top" MinHeight="25" MaxHeight="25" FontSize="17">
+            <MenuItem Header="{x:Static p:Resources.menu_file}" VerticalAlignment="Center">
+                <MenuItem.Icon>
+                    <Image Source="/Vape Assistant;component/Images/menuIcons/File_32px.png" Margin="0,0,0,0"/>
+                </MenuItem.Icon>
+                <!--<MenuItem x:Name="_save" Command="Save">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/menuIcons/Save_32px.png" />
+                    </MenuItem.Icon>
+                </MenuItem>-->
+                <!--<Separator />-->
+                <MenuItem x:Name="_exit" Header="{x:Static p:Resources.menu_file_exit}" InputGestureText="Alt + F4" Click="_exit_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/menuIcons/Close Window_32px.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.menu_edit}" VerticalAlignment="Center">
+                <MenuItem.Icon>
+                    <Image Source="/Vape Assistant;component/Images/menuIcons/Edit File_32px.png"/>
+                </MenuItem.Icon>
+                <MenuItem Command="Cut">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/menuIcons/Cut_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="Copy">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/menuIcons/Copy_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="Paste">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/menuIcons/Paste_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.menu_tools}" VerticalAlignment="Center">
+                <MenuItem.Icon>
+                    <Image Source="/Vape Assistant;component/Images/menuIcons/Tools_32px.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="{x:Static p:Resources.menu_tools_OhmsLaw}" x:Name="Load_OhmsLaw">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/Book_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.menu_tools_Statistics}" x:Name="Load_Statistics">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/Statistics_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.menu_tools_NicotineCost}" x:Name="Load_BoosterCost">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/MoneyBag_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.menu_tools_Purchases}" x:Name="Load_Purchases">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/Edit_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.menu_tools_Alchemy}" x:Name="Load_Alchemy">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/TestΤube2_32px.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="Load_OneShots" Header="{x:Static p:Resources.menu_tools_Alchemy_Oneshots}">
+                        <MenuItem.Icon>
+                            <Image Source="/Vape Assistant;component/Images/Bottle_32px.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="Load_Stash" Header="{x:Static p:Resources.menu_tools_Alchemy_Stash}">
+                        <MenuItem.Icon>
+                            <Image Source="/Vape Assistant;component/Images/Stash_100px.png" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="Load_JuiceLog" Header="{x:Static p:Resources.menu_tools_Alchemy_JuiceLog}">
+                        <MenuItem.Icon>
+                            <Image Source="/Vape Assistant;component/Images/Story_100px.png" Width="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="Load_Recipes" Header="{x:Static p:Resources.menu_tools_Alchemy_Recipes}">
+                        <MenuItem.Icon>
+                            <Image Source="/Vape Assistant;component/Images/Edit_32px.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="Load_Synthesize" Header="{x:Static p:Resources.menu_tools_Alchemy_Synthesize}">
+                        <MenuItem.Icon>
+                            <Image Source="/Vape Assistant;component/Images/TestΤube2_32px.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="Load_BasesMix" Header="{x:Static p:Resources.menu_tools_Alchemy_BasesMix}">
+                        <MenuItem.Icon>
+                            <Image Source="/Vape Assistant;component/Images/TestTube_32px.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="Load_Flavors" Header="{x:Static p:Resources.menu_tools_Alchemy_Flavors}">
+                        <MenuItem.Icon>
+                            <Image Source="/Vape Assistant;component/Images/Perfume Bottle_32px.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="{x:Static p:Resources.LoadPageEight}" x:Name="Load_Settings">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/menuIcons/Settings_32px.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.menu_about}">
+                <MenuItem.Icon>
+                    <Image Source="/Vape Assistant;component/Images/About_32px.png"/>
+                </MenuItem.Icon>
+                <MenuItem Header="{x:Static p:Resources.Help}" x:Name="Load_Help">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/menuIcons/Help_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="{x:Static p:Resources.ChildHeaderNine}" x:Name="Load_About">
+                    <MenuItem.Icon>
+                        <Image Source="/Vape Assistant;component/Images/About_32px.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Null}">
+                
+            </MenuItem>
+        </Menu>
+    <ScrollViewer x:Name="MainW" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Visibility="Visible" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" MouseDown="MainW_MouseDown" Margin="20,10,20,10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="7" x:Name="ActiveItem" IsTabStop="False" Margin="0,10" MinHeight="300" MinWidth="800" AllowDrop="True" MouseDown="ActiveItem_MouseDown" />
+        </Grid>
+    </ScrollViewer>
+    </DockPanel>
 </Window>

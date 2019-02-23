@@ -1,7 +1,129 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Vape_Assistant.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="cig_end_date" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2004-01-01</Value>
+    </Setting>
+    <Setting Name="vap_start_date" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2004-01-01</Value>
+    </Setting>
+    <Setting Name="cig_quantity_pack" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="cig_price" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="cig_per_day" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="vap_hardware_cost" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="vap_ejuiceml_cost" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="vap_juice_consumption" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BGColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#99FFFFFF</Value>
+    </Setting>
+    <Setting Name="FGColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF000000</Value>
+    </Setting>
+    <Setting Name="FontFam" Type="System.String" Scope="User">
+      <Value Profile="(Default)">AvantGarde Bk BT</Value>
+    </Setting>
+    <Setting Name="innerBGColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#99FBFCFE</Value>
+    </Setting>
+    <Setting Name="costBGColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF8BFF00</Value>
+    </Setting>
+    <Setting Name="CultureIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="ErrorBG" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFAA0000</Value>
+    </Setting>
+    <Setting Name="VaConnect" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=|DataDirectory|dataBase.db;Version=3;</Value>
+    </Setting>
+    <Setting Name="Run" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LoginSuccess" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="cig_end_year" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2004</Value>
+    </Setting>
+    <Setting Name="cig_end_month" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="cig_end_day" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="vap_start_year" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2004</Value>
+    </Setting>
+    <Setting Name="vap_start_month" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="vap_start_day" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Culture" Type="System.String" Scope="User">
+      <Value Profile="(Default)">en-US</Value>
+    </Setting>
+    <Setting Name="vap_liq_ml" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="vap_liq_cost" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="vap_nic_cost" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="isPinEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ButtonBGColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFDDDDDD</Value>
+    </Setting>
+    <Setting Name="ButtonBGColorHover" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFA12B2B</Value>
+    </Setting>
+    <Setting Name="ButtonFGColorHover" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFFFFF</Value>
+    </Setting>
+    <Setting Name="ButtonFGColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF000000</Value>
+    </Setting>
+    <Setting Name="IntervalTime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="ImagePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Images\banners</Value>
+    </Setting>
+    <Setting Name="link1clickeddate" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="link2clickeddate" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="link3clickeddate" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="link4clickeddate" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="link5clickeddate" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
 </SettingsFile>

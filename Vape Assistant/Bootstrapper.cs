@@ -13,7 +13,7 @@ namespace Vape_Assistant
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<ShellViewModel>();
+            DisplayRootViewFor<ShellsViewModel>();
         }
     }
 }

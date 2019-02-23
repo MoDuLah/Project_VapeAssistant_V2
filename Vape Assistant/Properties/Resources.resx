@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,1087 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BaseMixErrorMsg" xml:space="preserve">
+    <value>The Mixture has to be more than 0ml.</value>
+  </data>
+  <data name="BaseMixNicBoosterError" xml:space="preserve">
+    <value>Choose Nic Booster type</value>
+  </data>
+  <data name="Calculate_Button" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="statistics_SmokingCessationDate" xml:space="preserve">
+    <value>Smokin Cessation Date</value>
+  </data>
+  <data name="ChildHeaderEight" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ChildHeaderFive" xml:space="preserve">
+    <value>Oneshots</value>
+  </data>
+  <data name="ChildHeaderFour" xml:space="preserve">
+    <value>Base Mix</value>
+  </data>
+  <data name="ChildHeaderNine" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ChildHeaderOne" xml:space="preserve">
+    <value>Ohm's Law</value>
+  </data>
+  <data name="ChildHeaderSeven" xml:space="preserve">
+    <value>Alchemy</value>
+  </data>
+  <data name="ChildHeaderSix" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="ChildHeaderThree" xml:space="preserve">
+    <value>Nicotine Cost</value>
+  </data>
+  <data name="ChildHeaderTwo" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Clear_Button" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="statistics_CigarettesPerDay" xml:space="preserve">
+    <value>Cigarettes / Day</value>
+  </data>
+  <data name="statistics_CigarettesPerPack" xml:space="preserve">
+    <value>Cigarettes / Pack</value>
+  </data>
+  <data name="ohms_Current" xml:space="preserve">
+    <value>Current (I)</value>
+  </data>
+  <data name="statistics_DaysVaping" xml:space="preserve">
+    <value>Days Vaping</value>
+  </data>
+  <data name="statistics_DailySmokingCost" xml:space="preserve">
+    <value>Daily Smoking Cost</value>
+  </data>
+  <data name="statistics_DaysWithoutCigarette" xml:space="preserve">
+    <value>Days w/o cigarette</value>
+  </data>
+  <data name="statistics_EjuiceMlCost" xml:space="preserve">
+    <value>E-Juice ml Cost</value>
+  </data>
+  <data name="FirstTip" xml:space="preserve">
+    <value>Enter any two known values and press Calculate.</value>
+  </data>
+  <data name="statistics_HardwareCost" xml:space="preserve">
+    <value>Hardware Cost</value>
+  </data>
+  <data name="statistics_HardwareDailyCost" xml:space="preserve">
+    <value>Hardware Daily Cost</value>
+  </data>
+  <data name="statistics_JuicePerDay" xml:space="preserve">
+    <value>ml / Day</value>
+  </data>
+  <data name="Lang" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LoadPageEight" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="LoadPageFive" xml:space="preserve">
+    <value>OneShots</value>
+  </data>
+  <data name="LoadPageFour" xml:space="preserve">
+    <value>Bases Mix</value>
+  </data>
+  <data name="LoadPageNine" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="LoadPageOne" xml:space="preserve">
+    <value>Ohm's Law</value>
+  </data>
+  <data name="LoadPageSeven" xml:space="preserve">
+    <value>Alchemy</value>
+  </data>
+  <data name="LoadPageSix" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="LoadPageThree" xml:space="preserve">
+    <value>Nicotine Cost</value>
+  </data>
+  <data name="LoadPageTwo" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="LoginPassword" xml:space="preserve">
+    <value>PIN</value>
+  </data>
+  <data name="LoginRemember" xml:space="preserve">
+    <value>REMEMBER ME:</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="ChangePinTitle" xml:space="preserve">
+    <value>Change Pin</value>
+  </data>
+  <data name="mixbase_baseA" xml:space="preserve">
+    <value>Base: A</value>
+  </data>
+  <data name="mixbase_baseB" xml:space="preserve">
+    <value>Base: B</value>
+  </data>
+  <data name="mixbase_baseC" xml:space="preserve">
+    <value>Base: C</value>
+  </data>
+  <data name="mixbase_baseD" xml:space="preserve">
+    <value>Base: D</value>
+  </data>
+  <data name="mb_ml_label" xml:space="preserve">
+    <value>ml</value>
+  </data>
+  <data name="mb_nicA" xml:space="preserve">
+    <value>Nicotine: A</value>
+  </data>
+  <data name="mb_nicB" xml:space="preserve">
+    <value>Nicotine: B</value>
+  </data>
+  <data name="mb_nicC" xml:space="preserve">
+    <value>Nicotine: C</value>
+  </data>
+  <data name="mb_nicD" xml:space="preserve">
+    <value>Nicotine: D</value>
+  </data>
+  <data name="mb_nic_level" xml:space="preserve">
+    <value>Nicotine (mg/ml)</value>
+  </data>
+  <data name="mb_pg_percent" xml:space="preserve">
+    <value>PG (%)</value>
+  </data>
+  <data name="mb_result" xml:space="preserve">
+    <value>You need</value>
+  </data>
+  <data name="mb_vg_percent" xml:space="preserve">
+    <value>VG (%)</value>
+  </data>
+  <data name="mb_wtm" xml:space="preserve">
+    <value>Want to make</value>
+  </data>
+  <data name="mixbase_HeaderBaseAmount" xml:space="preserve">
+    <value>Base Amount (ml)</value>
+  </data>
+  <data name="mixbase_HeaderGrams" xml:space="preserve">
+    <value>Grams</value>
+  </data>
+  <data name="mixbase_HeaderNicBottleAmount" xml:space="preserve">
+    <value>Nic Bottles Amount</value>
+  </data>
+  <data name="mixbase_HeaderNicLevel" xml:space="preserve">
+    <value>Nicotine (mg/ml)</value>
+  </data>
+  <data name="mixbase_HeaderPGPercent" xml:space="preserve">
+    <value>PG (%)</value>
+  </data>
+  <data name="mixbase_HeaderVGPercent" xml:space="preserve">
+    <value>VG (%)</value>
+  </data>
+  <data name="mixbase_LeftHeader" xml:space="preserve">
+    <value>Total Mix</value>
+  </data>
+  <data name="mixbase_LeftMixRatioPGVG" xml:space="preserve">
+    <value>Mix Ratio PG / VG</value>
+  </data>
+  <data name="mixbase_LeftMixTotalVolume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="mixbase_LeftMixVolumePGVG" xml:space="preserve">
+    <value>Volume PG / VG (ml)</value>
+  </data>
+  <data name="mixbase_LeftResultmlToolTip" xml:space="preserve">
+    <value>Ratio is in ml</value>
+  </data>
+  <data name="mixbase_LeftResultNicLevel" xml:space="preserve">
+    <value>Nicotine</value>
+  </data>
+  <data name="mixbase_LeftResultNicLevelToolTip" xml:space="preserve">
+    <value>Ratio is in mg/ml</value>
+  </data>
+  <data name="OneShotErrorMsg1" xml:space="preserve">
+    <value>You need to adjust the levels of PG/VG, Nic or Flavor.</value>
+  </data>
+  <data name="OneShotErrorMsg2" xml:space="preserve">
+    <value>Can not use Negative numbers. Then re-calculate.</value>
+  </data>
+  <data name="OneShotErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="OneShotHeaderAmount" xml:space="preserve">
+    <value>Solution (ml)</value>
+  </data>
+  <data name="OneShotL_BasePG" xml:space="preserve">
+    <value>PG Base</value>
+  </data>
+  <data name="OneShotL_BaseVG" xml:space="preserve">
+    <value>VG Base</value>
+  </data>
+  <data name="OneShotL_Flavor" xml:space="preserve">
+    <value>Flavor</value>
+  </data>
+  <data name="OneShotL_NicBooster" xml:space="preserve">
+    <value>Nic Booster</value>
+  </data>
+  <data name="statistics_PricePerCigarette" xml:space="preserve">
+    <value>Price Per Cigarette</value>
+  </data>
+  <data name="statistics_PacketPrice" xml:space="preserve">
+    <value>Packet Price</value>
+  </data>
+  <data name="ohms_Resistance" xml:space="preserve">
+    <value>Resistance (R)</value>
+  </data>
+  <data name="Save_Button" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SoftwareTitle" xml:space="preserve">
+    <value>Vape Assistant</value>
+  </data>
+  <data name="SoftwareVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="ThemeLanguageEn" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="ThemeLanguageGr" xml:space="preserve">
+    <value>Greek</value>
+  </data>
+  <data name="ThemeRestart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="ThemeTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="statistics_VapeDailyCost" xml:space="preserve">
+    <value>Daily Vape Cost</value>
+  </data>
+  <data name="ohms_Voltage" xml:space="preserve">
+    <value>Voltage (V)</value>
+  </data>
+  <data name="statistics_VapingStartDate" xml:space="preserve">
+    <value>Vaping Start Date</value>
+  </data>
+  <data name="Targetbase" xml:space="preserve">
+    <value>Base (ml)</value>
+  </data>
+  <data name="TargetBoosterLevel" xml:space="preserve">
+    <value>Nicotine Booster Level (mg/ml)</value>
+  </data>
+  <data name="Targetbottles" xml:space="preserve">
+    <value>Nicotine Bottles</value>
+  </data>
+  <data name="Targetml" xml:space="preserve">
+    <value>Target ml</value>
+  </data>
+  <data name="Targetnic" xml:space="preserve">
+    <value>Nicotine (ml)</value>
+  </data>
+  <data name="TargetNicLevel" xml:space="preserve">
+    <value>Target Nicotine Level</value>
+  </data>
+  <data name="Targetpriceperbottle" xml:space="preserve">
+    <value>Price / Bottle ($)</value>
+  </data>
+  <data name="TargetTotalCost" xml:space="preserve">
+    <value>Total Cost ($)</value>
+  </data>
+  <data name="ohms_Wattage" xml:space="preserve">
+    <value>Wattage (W)</value>
+  </data>
+  <data name="statistics_YearlySmokingCost" xml:space="preserve">
+    <value>Yearly Smoking Cost</value>
+  </data>
+  <data name="statistics_YearlyVapingCost" xml:space="preserve">
+    <value>Yearly Vaping Cost</value>
+  </data>
+  <data name="TooltipDateFormat" xml:space="preserve">
+    <value>The Format is dd/mm/yyyy (Days/Months/Years)</value>
+  </data>
+  <data name="TooltipEJuicemlCost1" xml:space="preserve">
+    <value>Ejuice ml cost is calculated by dividing the price of the bottle with the ml of the bottle.</value>
+  </data>
+  <data name="TooltipEJuicemlCost2" xml:space="preserve">
+    <value>For example: 15$/30ml=0.5$/ml so you type in 0.5</value>
+  </data>
+  <data name="daymonthyear" xml:space="preserve">
+    <value>dd/mm/yyyy</value>
+  </data>
+  <data name="purchase_DateOfPurchase" xml:space="preserve">
+    <value>Date of Purchase (yyyy/mm/dd)</value>
+  </data>
+  <data name="purchase_OrderId" xml:space="preserve">
+    <value>Order Id (#)</value>
+  </data>
+  <data name="purchase_VendorName" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="datagridheader1" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="datagridheader2" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="datagridheader3" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="datagridheader4" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="datagridheader5" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="datagridheader6" xml:space="preserve">
+    <value>Shipping Cost</value>
+  </data>
+  <data name="datagridheader7" xml:space="preserve">
+    <value>Total Cost</value>
+  </data>
+  <data name="vendor_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="vendor_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="vendor_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="vendor_Country" xml:space="preserve">
+    <value>Country*</value>
+  </data>
+  <data name="vendor_Name" xml:space="preserve">
+    <value>Name*</value>
+  </data>
+  <data name="vendor_PostCode" xml:space="preserve">
+    <value>Post Code</value>
+  </data>
+  <data name="vendor_tabitem1" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="vendor_tabitem2" xml:space="preserve">
+    <value>Edit/Delete</value>
+  </data>
+  <data name="vendor_Telephone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="vendor_Website" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="vendor_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="vendor_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="vendor_Load" xml:space="preserve">
+    <value>Load Table Data</value>
+  </data>
+  <data name="vendor_Vendor" xml:space="preserve">
+    <value>Vendor</value>
+  </data>
+  <data name="purchases_tabitem1" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="purchases_tabitem2" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="purchase_ViewSince" xml:space="preserve">
+    <value>Since</value>
+  </data>
+  <data name="purchase_ViewUntil" xml:space="preserve">
+    <value>Until</value>
+  </data>
+  <data name="purchase_ViewVendor" xml:space="preserve">
+    <value>By Vendor</value>
+  </data>
+  <data name="vendor_TotalOrders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="FbPage" xml:space="preserve">
+    <value>Facebook Page</value>
+  </data>
+  <data name="ChildHeaderNine_ChangeLog" xml:space="preserve">
+    <value>Change Log</value>
+  </data>
+  <data name="FbGroup" xml:space="preserve">
+    <value>Facebook Group</value>
+  </data>
+  <data name="about_change_0001" xml:space="preserve">
+    <value>Fix in "Ohm's Law" about the decimal point.</value>
+  </data>
+  <data name="about_change_0002" xml:space="preserve">
+    <value>- Added "Statistics" section.
+- Fixes in code.</value>
+  </data>
+  <data name="about_change_0003" xml:space="preserve">
+    <value>- Several visual changes. 
+- Fixes in code.</value>
+  </data>
+  <data name="about_change_0004" xml:space="preserve">
+    <value>- Several visual improvements.
+- Removed Currency / ml column at "Nicotine Cost".</value>
+  </data>
+  <data name="about_change_0005" xml:space="preserve">
+    <value>- Added "Mix Bases" section.</value>
+  </data>
+  <data name="about_change_0006" xml:space="preserve">
+    <value>- Added Sliders in 'Ohm's Law'.</value>
+  </data>
+  <data name="about_change_0007" xml:space="preserve">
+    <value>- Version 2 Release.
+- Added Themes in Version 2</value>
+  </data>
+  <data name="about_change_0000" xml:space="preserve">
+    <value>Initial Release</value>
+  </data>
+  <data name="about_change_0005a" xml:space="preserve">
+    <value>- #hotfix on section "Oneshot".</value>
+  </data>
+  <data name="about_change_0008" xml:space="preserve">
+    <value>#hotfix - Proper function of "Stats" section.</value>
+  </data>
+  <data name="about_change_0009" xml:space="preserve">
+    <value>- Added section "OneShot".
+- Multiple bugs fixed.</value>
+  </data>
+  <data name="about_change_0010" xml:space="preserve">
+    <value>- Themes Improvement.</value>
+  </data>
+  <data name="about_change_0011" xml:space="preserve">
+    <value>- Added Icons for every section.
+- Added weight on section "Oneshot".
+- Added Language Selection, more themes, extended coloring options free-for-all.
+- Improved some calculation formulas.
+- Improvements in section "Base Mix".</value>
+  </data>
+  <data name="about_change_0012" xml:space="preserve">
+    <value>- Installer method has been introduced to avoid non-unzipped user's issue.
+- "Purchase" section has been activated. 
+(The Pin-code can be found in the installer on Information section). After your first login you are asked to change the default password. 
+If you decline and keep the default pin-code you will be asked the next time you run the program.
+- Improvement on how to insert date fields with dropdowns boxes instead of textboxes.
+- Enabled textfields on "Ohm's Law" section (So you can define the exact value for example on resistance 0.235Ω)
+- Since most users at the moment are Greek the default language has been changed to Greek.</value>
+  </data>
+  <data name="about_change_0013" xml:space="preserve">
+    <value>- New Installer.
+- Shortcut on Desktop.
+- Shortcut on Start Menu support and uninstall options.</value>
+  </data>
+  <data name="about_change_0014" xml:space="preserve">
+    <value>- Small Bug Fix.
+- Fix in Database.</value>
+  </data>
+  <data name="add_flv_abbreviation" xml:space="preserve">
+    <value>Abbreviation: </value>
+  </data>
+  <data name="add_flv_amp" xml:space="preserve">
+    <value>Average Mixing Percentage: </value>
+  </data>
+  <data name="add_flv_brandName" xml:space="preserve">
+    <value>Brand Name: </value>
+  </data>
+  <data name="add_flv_flavorName" xml:space="preserve">
+    <value>Flavor Name: </value>
+  </data>
+  <data name="add_flv_header" xml:space="preserve">
+    <value>Add a Flavor</value>
+  </data>
+  <data name="add_flv_manufacturerGravity" xml:space="preserve">
+    <value>Manufacturer specified Gravity: </value>
+  </data>
+  <data name="add_flv_notes" xml:space="preserve">
+    <value>Notes: </value>
+  </data>
+  <data name="ChrisG" xml:space="preserve">
+    <value>Christos Gleridis</value>
+  </data>
+  <data name="Codebehind" xml:space="preserve">
+    <value>Developer</value>
+  </data>
+  <data name="add_flv_ComboBoxheader" xml:space="preserve">
+    <value>If already exists</value>
+  </data>
+  <data name="flv_Keep" xml:space="preserve">
+    <value>Keep?</value>
+  </data>
+  <data name="flv_tab_Flavors" xml:space="preserve">
+    <value>Flavors</value>
+  </data>
+  <data name="flv_tab_Recipes" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="flv_tab_Stash" xml:space="preserve">
+    <value>Stash</value>
+  </data>
+  <data name="add_flv_amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="stash_header" xml:space="preserve">
+    <value>Stash</value>
+  </data>
+  <data name="add_flv_amountEnter" xml:space="preserve">
+    <value>Enter Amount (ml)</value>
+  </data>
+  <data name="add_flv_brandSelect" xml:space="preserve">
+    <value>Choose Brand</value>
+  </data>
+  <data name="add_flv_flavorSelect" xml:space="preserve">
+    <value>Choose Flavor</value>
+  </data>
+  <data name="add_flv_Owned" xml:space="preserve">
+    <value>Have it? </value>
+  </data>
+  <data name="add_flv_StashCount" xml:space="preserve">
+    <value>Items: </value>
+  </data>
+  <data name="add_rec_header" xml:space="preserve">
+    <value>Add/Edit/Delete a Recipe</value>
+  </data>
+  <data name="flv_tab_Craft" xml:space="preserve">
+    <value>Synthesize</value>
+  </data>
+  <data name="rem_Flv_fromstash" xml:space="preserve">
+    <value>Remove Flavor from Stash</value>
+  </data>
+  <data name="add_rec_flavorName01" xml:space="preserve">
+    <value>Flavor 1</value>
+  </data>
+  <data name="add_rec_flavorName02" xml:space="preserve">
+    <value>Flavor 2</value>
+  </data>
+  <data name="add_rec_flavorName03" xml:space="preserve">
+    <value>Flavor 3</value>
+  </data>
+  <data name="add_rec_flavorName04" xml:space="preserve">
+    <value>Flavor 4</value>
+  </data>
+  <data name="add_rec_flavorName05" xml:space="preserve">
+    <value>Flavor 5</value>
+  </data>
+  <data name="add_rec_flavorName06" xml:space="preserve">
+    <value>Flavor 6</value>
+  </data>
+  <data name="add_rec_flavorName07" xml:space="preserve">
+    <value>Flavor 7</value>
+  </data>
+  <data name="add_rec_flavorName08" xml:space="preserve">
+    <value>Flavor 8</value>
+  </data>
+  <data name="add_rec_flavorName09" xml:space="preserve">
+    <value>Flavor 9</value>
+  </data>
+  <data name="add_rec_flavorName10" xml:space="preserve">
+    <value>Flavor 10</value>
+  </data>
+  <data name="add_rec_flavorName11" xml:space="preserve">
+    <value>Flavor 11</value>
+  </data>
+  <data name="add_rec_flavorName12" xml:space="preserve">
+    <value>Flavor 12</value>
+  </data>
+  <data name="add_rec_flavorName13" xml:space="preserve">
+    <value>Flavor 13</value>
+  </data>
+  <data name="add_rec_flavorName14" xml:space="preserve">
+    <value>Flavor 14</value>
+  </data>
+  <data name="add_rec_flavorName15" xml:space="preserve">
+    <value>Flavor 15</value>
+  </data>
+  <data name="add_rec_flavorName16" xml:space="preserve">
+    <value>Flavor 16</value>
+  </data>
+  <data name="add_rec_flavorName17" xml:space="preserve">
+    <value>Flavor 17</value>
+  </data>
+  <data name="add_rec_flavorName18" xml:space="preserve">
+    <value>Flavor 18</value>
+  </data>
+  <data name="add_rec_flavorName19" xml:space="preserve">
+    <value>Flavor 19</value>
+  </data>
+  <data name="add_rec_flavorName20" xml:space="preserve">
+    <value>Flavor 20</value>
+  </data>
+  <data name="add_rec_recipeName" xml:space="preserve">
+    <value>Recipe Name</value>
+  </data>
+  <data name="flavour_add" xml:space="preserve">
+    <value>Add Flavor</value>
+  </data>
+  <data name="gridColumnHeader1" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="gridColumnHeader2" xml:space="preserve">
+    <value>BrandShort</value>
+  </data>
+  <data name="gridColumnHeader3" xml:space="preserve">
+    <value>Total Flavor</value>
+  </data>
+  <data name="gridColumnHeader4" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="add_rec_author" xml:space="preserve">
+    <value>Inspider</value>
+  </data>
+  <data name="add_rec_flavquantity" xml:space="preserve">
+    <value>Quantity: </value>
+  </data>
+  <data name="add_rec_TimesMade" xml:space="preserve">
+    <value>Times Made</value>
+  </data>
+  <data name="about_change_0015" xml:space="preserve">
+    <value>- Added About Section.</value>
+  </data>
+  <data name="add_rec_clear" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="add_rec_delete" xml:space="preserve">
+    <value>Delete Recipe</value>
+  </data>
+  <data name="mixbase_HeaderML" xml:space="preserve">
+    <value>ml</value>
+  </data>
+  <data name="synth_RecipeName" xml:space="preserve">
+    <value>Recipe Name</value>
+  </data>
+  <data name="synth_TargetMl" xml:space="preserve">
+    <value>Target ML</value>
+  </data>
+  <data name="synth_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="synth_percent" xml:space="preserve">
+    <value>Percentage</value>
+  </data>
+  <data name="mg_ml" xml:space="preserve">
+    <value>mg/ml</value>
+  </data>
+  <data name="mlinstash" xml:space="preserve">
+    <value>ml in Stash</value>
+  </data>
+  <data name="perc" xml:space="preserve">
+    <value>Percentage</value>
+  </data>
+  <data name="synth_flav_name" xml:space="preserve">
+    <value>Flavor Name</value>
+  </data>
+  <data name="flv_tab_JuiceLog" xml:space="preserve">
+    <value>Juice Log</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="SN" xml:space="preserve">
+    <value>Vape Assistant Activation</value>
+  </data>
+  <data name="Dtrial" xml:space="preserve">
+    <value>7 Days Left</value>
+  </data>
+  <data name="vendor_SumOrders" xml:space="preserve">
+    <value>Orders Sum</value>
+  </data>
+  <data name="about_change_0016" xml:space="preserve">
+    <value>- Fixed some issues with Purchases.
+- Added Alchemies Section.
+- Fixed minor bugs.</value>
+  </data>
+  <data name="about_change_0017" xml:space="preserve">
+    <value>- Fixed lot of bugs.</value>
+  </data>
+  <data name="about_change_0018" xml:space="preserve">
+    <value>- Added Juice Log.
+- Database Fixes</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="about_change_0019" xml:space="preserve">
+    <value>- Added Alert on higher than 20A at 'Ohm's Law'.
+- Added Flavor ML at 'OneShots'.
+- Visual Improvements.</value>
+  </data>
+  <data name="about_change_0020" xml:space="preserve">
+    <value>- Moved 'Oneshots' &amp; 'Mix Bases' into 'Alchemies' category.</value>
+  </data>
+  <data name="about_change_0021" xml:space="preserve">
+    <value>- Improved the flavor managment on "Stash" to speed up the use.
+- Added Import/Export function from/to DataBase.
+- Added Option to delete the last Flavor of the Recipe.
+- Added a minimum (0.01%) and maximum (100%) range on Recipes at Flavors Percentages.
+- Fixed a calculation error on Oneshots. The cause was the lack of Target nicotine level mg/ml value.</value>
+  </data>
+  <data name="about_change_0022" xml:space="preserve">
+    <value>- Added 'Edit &amp; Delete' on Purchases.</value>
+  </data>
+  <data name="about_change_0023" xml:space="preserve">
+    <value>- Program Release.</value>
+  </data>
+  <data name="about_change_0024" xml:space="preserve">
+    <value>- Fixed number round Issue on PG in Oneshots.
+- Increase the length of Nicotine Strenght from 2 to 5 characters at Oneshots.
+- Added more booster options (30/70 &amp; 70/30).
+- Added option to save oneshots into Juice Log.</value>
+  </data>
+  <data name="about_change_0025" xml:space="preserve">
+    <value>- Changes in GUI for ease of use.
+- Many changes in code workarounds. (Improved speed)</value>
+  </data>
+  <data name="AddShop" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ThemeSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="purchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="vendor_County" xml:space="preserve">
+    <value>County</value>
+  </data>
+  <data name="backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Enter Date: </value>
+  </data>
+  <data name="EntryDiscount" xml:space="preserve">
+    <value>Enter Discount: </value>
+  </data>
+  <data name="EntryID" xml:space="preserve">
+    <value>Entry Id: </value>
+  </data>
+  <data name="EntryName" xml:space="preserve">
+    <value>Enter Vendor Name: </value>
+  </data>
+  <data name="EntryPID" xml:space="preserve">
+    <value>Enter Product ID (SKU): </value>
+  </data>
+  <data name="EntryPrice" xml:space="preserve">
+    <value>Enter Price: </value>
+  </data>
+  <data name="EntryProductDescription" xml:space="preserve">
+    <value>Enter Product Description: </value>
+  </data>
+  <data name="EntryQuantity" xml:space="preserve">
+    <value>Enter Quantity: </value>
+  </data>
+  <data name="EntryReference" xml:space="preserve">
+    <value>Enter Reference: </value>
+  </data>
+  <data name="EntryShipping" xml:space="preserve">
+    <value>Enter Shipping: </value>
+  </data>
+  <data name="EntryTotal" xml:space="preserve">
+    <value>Enter Total: </value>
+  </data>
+  <data name="EntryVID" xml:space="preserve">
+    <value>Enter Vendor ID: </value>
+  </data>
+  <data name="EditEntry" xml:space="preserve">
+    <value>Edit Entry: </value>
+  </data>
+  <data name="Alch_Backup_Desc1" xml:space="preserve">
+    <value>Includes the Flavors you have in your possession.</value>
+  </data>
+  <data name="Alch_Backup_Desc2" xml:space="preserve">
+    <value>Includes the recipes you have added. Part A.</value>
+  </data>
+  <data name="Alch_Backup_Desc3" xml:space="preserve">
+    <value>Includes the recipes you have added. Part B.</value>
+  </data>
+  <data name="Alch_Backup_Desc4" xml:space="preserve">
+    <value>Includes the history log of the recipes you have mixed.</value>
+  </data>
+  <data name="Alch_Backup_ExportBtN" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Alch_Backup_hdrDB" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="Alch_Backup_hdrDesc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Alch_Backup_hdrExport" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Alch_Backup_hdrImport" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Alch_Backup_PreviewBtN" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Alch_Backup_PreviewData" xml:space="preserve">
+    <value>Preview your data</value>
+  </data>
+  <data name="Alch_Backup_Row3" xml:space="preserve">
+    <value>hash</value>
+  </data>
+  <data name="Alch_Backup_SelectBtN" xml:space="preserve">
+    <value>Select File</value>
+  </data>
+  <data name="Alch_Stash_AddFlv" xml:space="preserve">
+    <value>Add Flavor:</value>
+  </data>
+  <data name="Alch_Stash_FlvId" xml:space="preserve">
+    <value>Flavor Id:</value>
+  </data>
+  <data name="popup_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="popup_Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="stash_hdrAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="stash_hdrBrand" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="stash_hdrFlavor" xml:space="preserve">
+    <value>Flavor</value>
+  </data>
+  <data name="stash_hdrId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="add_rec_deleteFlv" xml:space="preserve">
+    <value>Delete this Flavor.</value>
+  </data>
+  <data name="purchase_Selection" xml:space="preserve">
+    <value>With Selection</value>
+  </data>
+  <data name="OneShotHeaderName" xml:space="preserve">
+    <value>Oneshot Name</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>http://vape-assistant.com</value>
+  </data>
+  <data name="Alch_Stash_EditFlv" xml:space="preserve">
+    <value>Edit Flavor Amount:</value>
+  </data>
+  <data name="log_Amount" xml:space="preserve">
+    <value>Log Amount</value>
+  </data>
+  <data name="log_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="log_EntryID" xml:space="preserve">
+    <value>Entry ID</value>
+  </data>
+  <data name="log_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="log_RatioPG" xml:space="preserve">
+    <value>Ratio PG</value>
+  </data>
+  <data name="log_RatioVG" xml:space="preserve">
+    <value>Ratio VG</value>
+  </data>
+  <data name="log_RecipeName" xml:space="preserve">
+    <value>Recipe Name</value>
+  </data>
+  <data name="about_change_0026" xml:space="preserve">
+    <value>- Fixes in Purchases section.
+- Fixes in Juice Log Add &amp; Edit section.</value>
+  </data>
+  <data name="log_Add" xml:space="preserve">
+    <value>Add to Juice Log</value>
+  </data>
+  <data name="log_Edit" xml:space="preserve">
+    <value>Edit from Juice Log</value>
+  </data>
+  <data name="log_Nic" xml:space="preserve">
+    <value>Nicotine Strength</value>
+  </data>
+  <data name="menu_about" xml:space="preserve">
+    <value>_About</value>
+  </data>
+  <data name="menu_edit" xml:space="preserve">
+    <value>_Edit</value>
+  </data>
+  <data name="menu_file" xml:space="preserve">
+    <value>_File</value>
+  </data>
+  <data name="menu_tools" xml:space="preserve">
+    <value>_Tools</value>
+  </data>
+  <data name="about_change_0027" xml:space="preserve">
+    <value>- Added Purchases sum to Statistics (automatic from database).
+- Added Numbers on the left of List viewers (Juice Log &amp; Stash for now).
+- Fixed some calculations on Statics to avoid errors.</value>
+  </data>
+  <data name="EJuiceCosts" xml:space="preserve">
+    <value>E Juice ML/Cost/Nicotine Cost</value>
+  </data>
+  <data name="EJuiceCosts1" xml:space="preserve">
+    <value>Liquid amount (ML)</value>
+  </data>
+  <data name="EJuiceCosts2" xml:space="preserve">
+    <value>Liquid Cost (No Nicotine)</value>
+  </data>
+  <data name="EJuiceCosts3" xml:space="preserve">
+    <value>Nicotine Cost</value>
+  </data>
+  <data name="juiceLog_Amount" xml:space="preserve">
+    <value>Amount (ml)</value>
+  </data>
+  <data name="juiceLog_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="juiceLog_Id" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="juiceLog_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="juiceLog_Nicotine" xml:space="preserve">
+    <value>Nicotine (mg/ml)</value>
+  </data>
+  <data name="juiceLog_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="juiceLog_Ratio" xml:space="preserve">
+    <value>Ratio (PG/VG)</value>
+  </data>
+  <data name="TooltipHardwareCost" xml:space="preserve">
+    <value>This is calculated from the Purchases tab fill your purchases to continue.</value>
+  </data>
+  <data name="about_change_0028" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Settings_PurchasesPIN" xml:space="preserve">
+    <value>PIN (Purchases)</value>
+  </data>
+  <data name="synth_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="GFX" xml:space="preserve">
+    <value>Graphics:</value>
+  </data>
+  <data name="menu_file_exit" xml:space="preserve">
+    <value>_Exit</value>
+  </data>
+  <data name="menu_tools_Alchemy" xml:space="preserve">
+    <value>_Alchemy</value>
+  </data>
+  <data name="menu_tools_Alchemy_BasesMix" xml:space="preserve">
+    <value>_Bases Mix</value>
+  </data>
+  <data name="menu_tools_Alchemy_Flavors" xml:space="preserve">
+    <value>_Flavors</value>
+  </data>
+  <data name="menu_tools_Alchemy_JuiceLog" xml:space="preserve">
+    <value>_Juice Log</value>
+  </data>
+  <data name="menu_tools_Alchemy_Oneshots" xml:space="preserve">
+    <value>_Oneshots</value>
+  </data>
+  <data name="menu_tools_Alchemy_Recipes" xml:space="preserve">
+    <value>_Recipes</value>
+  </data>
+  <data name="menu_tools_Alchemy_Stash" xml:space="preserve">
+    <value>_Stash</value>
+  </data>
+  <data name="menu_tools_Alchemy_Synthesize" xml:space="preserve">
+    <value>_Synthesize</value>
+  </data>
+  <data name="menu_tools_NicotineCost" xml:space="preserve">
+    <value>_Nicotine Cost</value>
+  </data>
+  <data name="menu_tools_OhmsLaw" xml:space="preserve">
+    <value>_Ohm's Law</value>
+  </data>
+  <data name="menu_tools_Purchases" xml:space="preserve">
+    <value>_Purchases</value>
+  </data>
+  <data name="menu_tools_Settings" xml:space="preserve">
+    <value>_Settings</value>
+  </data>
+  <data name="menu_tools_Statistics" xml:space="preserve">
+    <value>_Statistics</value>
+  </data>
+  <data name="SettingsOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="SettingsOn" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="backup_Header_db" xml:space="preserve">
+    <value>Database</value>
+  </data>
+  <data name="backup_Header_description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="backup_Header_export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="backup_Header_import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="purchase_AddItem" xml:space="preserve">
+    <value>Add Item</value>
+  </data>
+  <data name="purchase_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="purchase_Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="purchase_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="purchase_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="purchase_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="purchase_Shipping" xml:space="preserve">
+    <value>Shipping</value>
+  </data>
+  <data name="purchase_SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="purchase_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="vendor_Reference" xml:space="preserve">
+    <value>By Order Reference</value>
+  </data>
+  <data name="help_Answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="help_Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="help_Id" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="currency" xml:space="preserve">
+    <value>$</value>
+  </data>
+  <data name="MinimizeToTray" xml:space="preserve">
+    <value>Minimize To Tray</value>
+  </data>
 </root>

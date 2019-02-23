@@ -1,0 +1,1053 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BaseMixErrorMsg" xml:space="preserve">
+    <value>Το μείγμα πρέπει να είναι μεγαλύτερο των 0ml.</value>
+  </data>
+  <data name="BaseMixNicBoosterError" xml:space="preserve">
+    <value>Επιλέξτε τύπο Booster Νικοτίνης.</value>
+  </data>
+  <data name="Calculate_Button" xml:space="preserve">
+    <value>Υπολογισμός</value>
+  </data>
+  <data name="ChildHeaderEight" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="ChildHeaderFive" xml:space="preserve">
+    <value>Oneshots</value>
+  </data>
+  <data name="ChildHeaderFour" xml:space="preserve">
+    <value>Μίξη Βάσεων</value>
+  </data>
+  <data name="ChildHeaderNine" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="ChildHeaderOne" xml:space="preserve">
+    <value>Ο νόμος του Ωμ</value>
+  </data>
+  <data name="ChildHeaderSeven" xml:space="preserve">
+    <value>Αλχημείες</value>
+  </data>
+  <data name="ChildHeaderSix" xml:space="preserve">
+    <value>Αγορές</value>
+  </data>
+  <data name="ChildHeaderThree" xml:space="preserve">
+    <value>Κόστος Νικοτίνης</value>
+  </data>
+  <data name="ChildHeaderTwo" xml:space="preserve">
+    <value>Στατιστικά</value>
+  </data>
+  <data name="Clear_Button" xml:space="preserve">
+    <value>Εκκαθάριση</value>
+  </data>
+  <data name="FirstTip" xml:space="preserve">
+    <value>Εισάγετε οποιεσδοίποτε δύο γνωστές τιμές και πατήστε Υπολογισμός.</value>
+  </data>
+  <data name="Lang" xml:space="preserve">
+    <value>Γλώσσα</value>
+  </data>
+  <data name="LoadPageEight" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="LoadPageFour" xml:space="preserve">
+    <value>Μίξη Βάσεων</value>
+  </data>
+  <data name="LoadPageNine" xml:space="preserve">
+    <value>Σχετικά</value>
+  </data>
+  <data name="LoadPageOne" xml:space="preserve">
+    <value>Ο Νόμος του Ώμ</value>
+  </data>
+  <data name="LoadPageSeven" xml:space="preserve">
+    <value>Αλχημείες</value>
+  </data>
+  <data name="LoadPageSix" xml:space="preserve">
+    <value>Αγορές</value>
+  </data>
+  <data name="LoadPageThree" xml:space="preserve">
+    <value>Κόστος Νικοτίνης</value>
+  </data>
+  <data name="LoadPageTwo" xml:space="preserve">
+    <value>Στατιστικά</value>
+  </data>
+  <data name="LoginPassword" xml:space="preserve">
+    <value>PIN</value>
+  </data>
+  <data name="LoginRemember" xml:space="preserve">
+    <value>Απομνημόνευση Στοιχείων:</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>ΕΙΣΟΔΟΣ</value>
+  </data>
+  <data name="mb_nicA" xml:space="preserve">
+    <value>Νικοτίνη: Α</value>
+  </data>
+  <data name="mb_nicB" xml:space="preserve">
+    <value>Νικοτίνη: Β</value>
+  </data>
+  <data name="mb_nicC" xml:space="preserve">
+    <value>Νικοτίνη: Γ</value>
+  </data>
+  <data name="mb_nicD" xml:space="preserve">
+    <value>Νικοτίνη: Δ</value>
+  </data>
+  <data name="mb_nic_level" xml:space="preserve">
+    <value>Νικοτίνη (mg/ml)</value>
+  </data>
+  <data name="mb_result" xml:space="preserve">
+    <value>Απαιτούνται</value>
+  </data>
+  <data name="mb_wtm" xml:space="preserve">
+    <value>Θέλω να φτιάξω</value>
+  </data>
+  <data name="OneShotErrorMsg1" xml:space="preserve">
+    <value>Πρέπει να ρυθμίσετε τα επίπεδα PG / VG, Νικοτίνης ή Αρώματος.</value>
+  </data>
+  <data name="OneShotErrorMsg2" xml:space="preserve">
+    <value>Δεν είναι δυνατή η χρήση Αρνητικών αριθμών. Στη συνέχεια, υπολογίστε ξανά.</value>
+  </data>
+  <data name="OneShotErrorTitle" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="OneShotHeaderAmount" xml:space="preserve">
+    <value>Διάλυμα (ml)</value>
+  </data>
+  <data name="OneShotL_BasePG" xml:space="preserve">
+    <value>Βάση PG</value>
+  </data>
+  <data name="OneShotL_BaseVG" xml:space="preserve">
+    <value>Βάση VG</value>
+  </data>
+  <data name="OneShotL_Flavor" xml:space="preserve">
+    <value>Περιεκτικότητα Αρώματος</value>
+  </data>
+  <data name="OneShotL_NicBooster" xml:space="preserve">
+    <value>Booster Νικοτίνης</value>
+  </data>
+  <data name="Save_Button" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="SoftwareTitle" xml:space="preserve">
+    <value>Βοηθός Ατμιστή</value>
+  </data>
+  <data name="SoftwareVersion" xml:space="preserve">
+    <value>Έκδοση</value>
+  </data>
+  <data name="ThemeLanguageEn" xml:space="preserve">
+    <value>Αγγλικά</value>
+  </data>
+  <data name="ThemeLanguageGr" xml:space="preserve">
+    <value>Ελληνικά</value>
+  </data>
+  <data name="ThemeRestart" xml:space="preserve">
+    <value>Επανεκκίνηση</value>
+  </data>
+  <data name="ThemeTitle" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="Targetbase" xml:space="preserve">
+    <value>Βάση (ml)</value>
+  </data>
+  <data name="TargetBoosterLevel" xml:space="preserve">
+    <value>Booster Νικοτίνης (mg/ml)</value>
+  </data>
+  <data name="Targetbottles" xml:space="preserve">
+    <value>Νικοτινούχα Μπουκάλια</value>
+  </data>
+  <data name="Targetml" xml:space="preserve">
+    <value>Επιθυμητά ml</value>
+  </data>
+  <data name="Targetnic" xml:space="preserve">
+    <value>Νικοτίνη (ml)</value>
+  </data>
+  <data name="TargetNicLevel" xml:space="preserve">
+    <value>Επιθυμητό επίπεδο Νικοτίνης</value>
+  </data>
+  <data name="Targetpriceperbottle" xml:space="preserve">
+    <value>Τιμή / Φιάλη (€)</value>
+  </data>
+  <data name="TargetTotalCost" xml:space="preserve">
+    <value>Τελικό Κόστος (€)</value>
+  </data>
+  <data name="TooltipDateFormat" xml:space="preserve">
+    <value>Η μορφή είναι ηη/μμ/εεεε (Ημέρα/Μήνας/Έτος)</value>
+  </data>
+  <data name="TooltipEJuicemlCost1" xml:space="preserve">
+    <value>Το κόστος του υγρού υπολογίζεται διαιρόντας τη τιμή της φιάλης με τα ml της.</value>
+  </data>
+  <data name="TooltipEJuicemlCost2" xml:space="preserve">
+    <value>Για παράδειγμα 8€/10ml=0.8€/ml οπότε γράφετε 0.8</value>
+  </data>
+  <data name="purchase_DateOfPurchase" xml:space="preserve">
+    <value>Ημερομηνία Αγοράς (εεεε/μμ/ηη)</value>
+  </data>
+  <data name="purchase_VendorName" xml:space="preserve">
+    <value>Επωνυμία</value>
+  </data>
+  <data name="purchase_OrderId" xml:space="preserve">
+    <value>Αριθμός Παραγγελίας (#)</value>
+  </data>
+  <data name="daymonthyear" xml:space="preserve">
+    <value>ηη/μμ/εεεε</value>
+  </data>
+  <data name="vendor_Active" xml:space="preserve">
+    <value>Ενεργός</value>
+  </data>
+  <data name="vendor_Address" xml:space="preserve">
+    <value>Διεύθυνση</value>
+  </data>
+  <data name="vendor_City" xml:space="preserve">
+    <value>Πόλη</value>
+  </data>
+  <data name="vendor_Country" xml:space="preserve">
+    <value>Χώρα*</value>
+  </data>
+  <data name="vendor_Name" xml:space="preserve">
+    <value>Επωνυμία*</value>
+  </data>
+  <data name="vendor_PostCode" xml:space="preserve">
+    <value>Ταχ. Κώδικας</value>
+  </data>
+  <data name="vendor_Telephone" xml:space="preserve">
+    <value>Τηλέφωνο</value>
+  </data>
+  <data name="vendor_Website" xml:space="preserve">
+    <value>Ιστοσελίδα</value>
+  </data>
+  <data name="vendor_tabitem1" xml:space="preserve">
+    <value>Προσθήκη</value>
+  </data>
+  <data name="vendor_tabitem2" xml:space="preserve">
+    <value>Επεξεργασία / Διαγραφή</value>
+  </data>
+  <data name="datagridheader1" xml:space="preserve">
+    <value>Προϊόν</value>
+  </data>
+  <data name="datagridheader3" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="datagridheader4" xml:space="preserve">
+    <value>Τιμή</value>
+  </data>
+  <data name="datagridheader5" xml:space="preserve">
+    <value>Έκπτωση</value>
+  </data>
+  <data name="datagridheader6" xml:space="preserve">
+    <value>Μεταφορικά Έξοδα</value>
+  </data>
+  <data name="datagridheader7" xml:space="preserve">
+    <value>Συνολικό Κόστος</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Σύνδεση</value>
+  </data>
+  <data name="vendor_delete" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
+  <data name="vendor_edit" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
+  <data name="vendor_Vendor" xml:space="preserve">
+    <value>Επωνυμία</value>
+  </data>
+  <data name="vendor_Load" xml:space="preserve">
+    <value>Φόρτωση πίνακα δεδομένων</value>
+  </data>
+  <data name="purchases_tabitem1" xml:space="preserve">
+    <value>Προσθήκη</value>
+  </data>
+  <data name="purchases_tabitem2" xml:space="preserve">
+    <value>Προβολή</value>
+  </data>
+  <data name="purchase_ViewSince" xml:space="preserve">
+    <value>Από</value>
+  </data>
+  <data name="purchase_ViewUntil" xml:space="preserve">
+    <value>Έως</value>
+  </data>
+  <data name="purchase_ViewVendor" xml:space="preserve">
+    <value>Ανά πωλητή</value>
+  </data>
+  <data name="vendor_TotalOrders" xml:space="preserve">
+    <value>Παραγγελίες</value>
+  </data>
+  <data name="FbPage" xml:space="preserve">
+    <value>Σελίδα στο Facebook</value>
+  </data>
+  <data name="FbGroup" xml:space="preserve">
+    <value>Ομάδα υποστήριξης: Facebook</value>
+  </data>
+  <data name="ChildHeaderNine_ChangeLog" xml:space="preserve">
+    <value>Αρχείο Αλλαγών</value>
+  </data>
+  <data name="about_change_0001" xml:space="preserve">
+    <value>Διορθώση στο "Νόμος του Ohm" σχετικά με την υποδιαστολή.</value>
+  </data>
+  <data name="about_change_0002" xml:space="preserve">
+    <value>- Προστέθηκε ο τομέας "Στατιστικά".
+- Διορθώσεις στον κώδικα.</value>
+  </data>
+  <data name="about_change_0003" xml:space="preserve">
+    <value>- Αρκετές οπτικές αλλαγές.
+- Διορθώσεις στον κώδικα.</value>
+  </data>
+  <data name="about_change_0004" xml:space="preserve">
+    <value>- Πολλές οπτικές βελτιώσεις.
+- Αφαίρεση στήλης Ευρώ / ml στο '"Κόστος Νικοτίνης".</value>
+  </data>
+  <data name="about_change_0005" xml:space="preserve">
+    <value>- Προσθήκη τομέα "Μίξη Βάσεων"</value>
+  </data>
+  <data name="about_change_0006" xml:space="preserve">
+    <value>- Προστέθηκαν Sliders στο "Νόμο του Ohm".</value>
+  </data>
+  <data name="about_change_0007" xml:space="preserve">
+    <value>- Κυκλοφορία 2ής έκδοσης.
+- Προστέθηκαν Θέματα στην έκδοση 2.</value>
+  </data>
+  <data name="about_change_0000" xml:space="preserve">
+    <value>Αρχική έκδοση</value>
+  </data>
+  <data name="about_change_0005a" xml:space="preserve">
+    <value>#hotfix στα "Oneshot".</value>
+  </data>
+  <data name="about_change_0008" xml:space="preserve">
+    <value>#hotfix - Η σωστή λειτουργία στα "Στατιστικά".</value>
+  </data>
+  <data name="about_change_0009" xml:space="preserve">
+    <value>- Προστέθηκε ο τομέας 'OneShot'.
+- Πολλα σφάλματα έχουν διορθωθεί.</value>
+  </data>
+  <data name="about_change_0010" xml:space="preserve">
+    <value>- Βελτίωση των θεμάτων.</value>
+  </data>
+  <data name="about_change_0011" xml:space="preserve">
+    <value>- Προστέθηκαν εικονίδια για κάθε ενότητα.
+- Προστέθηκε βάρος στα Oneshot.
+- Προστέθηκε επιλογή γλώσσας (Ελληνικά, Αγγλικά), περισσότερα θέματα, εκτεταμένες επιλογές χρωματισμού ελεύθερες για όλους.
+- Βελτίωση ορισμένων τύπων υπολογισμού.
+- Βελτιώσεις στην ενότητα "Μίξη βάσης".</value>
+  </data>
+  <data name="about_change_0012" xml:space="preserve">
+    <value>- Εισαγωγή νέας μεθόδου εγκατάστασης για να αποφευχθούν προβλήματα από μεριάς χρήστη.
+- Η ενότητα "Αγορές" έχει ενεργοποιηθεί.(Ο κωδικός Pin μπορεί να βρεθεί κατα την εγκατάσταση στη καρτέλα "Πληροφορίες"). Μετά την πρώτη σύνδεσή σας θα σας ζητηθεί να αλλάξετε τον προεπιλεγμένο κωδικό πρόσβασης. Εάν το απορρίψετε και διατηρήσετε τον προεπιλεγμένο κωδικό PIN, θα σας ζητηθεί την επόμενη φορά που θα εκτελέσετε το πρόγραμμα.
+- Βελτίωση του τρόπου εισαγωγής των πεδίων ημερομηνίας με αναπτυσσόμενα πλαίσια αντί για πεδία κειμένου.
+- Ενεργοποιηση των πεδίων κειμένου στον νόμο του Ohm. (Έτσι μπορείτε να ορίσετε την ακριβή τιμή για παράδειγμα στην αντίσταση 0.235Ω)
+- Επειδή οι περισσότεροι χρήστες είναι αυτή τη στιγμή ελληνικά, η προεπιλεγμένη γλώσσα έχει αλλάξει στα ελληνικά.</value>
+  </data>
+  <data name="about_change_0013" xml:space="preserve">
+    <value>- Νέος τρόπος εγκαταστάσης.
+- Συντόμευση στην επιφάνεια εργασίας.
+- Συντόμευση στις επιλογές υποστήριξης και απεγκατάστασης του μενού "Έναρξη".</value>
+  </data>
+  <data name="about_change_0014" xml:space="preserve">
+    <value>- Μικρή διόρθωση σφαλμάτων.
+- Επιδιόρθωση στη βάση δεδομένων.</value>
+  </data>
+  <data name="Codebehind" xml:space="preserve">
+    <value>Προγραμματιστής</value>
+  </data>
+  <data name="ChrisG" xml:space="preserve">
+    <value>Γλερίδης Χρήστος</value>
+  </data>
+  <data name="add_flv_header" xml:space="preserve">
+    <value>Προσθήκη Αρώματος</value>
+  </data>
+  <data name="add_flv_abbreviation" xml:space="preserve">
+    <value>Συντομογραφία:</value>
+  </data>
+  <data name="add_flv_amp" xml:space="preserve">
+    <value>Ποσοστό ανάμιξης κατα μέσο όρο:</value>
+  </data>
+  <data name="add_flv_brandName" xml:space="preserve">
+    <value>Όνομα Εταιρίας:</value>
+  </data>
+  <data name="add_flv_flavorName" xml:space="preserve">
+    <value>Ονομασία Αρώματος:</value>
+  </data>
+  <data name="add_flv_manufacturerGravity" xml:space="preserve">
+    <value>Ειδικό Βάρος (Κατασκευαστή)</value>
+  </data>
+  <data name="add_flv_notes" xml:space="preserve">
+    <value>Σημειώσεις</value>
+  </data>
+  <data name="flv_Keep" xml:space="preserve">
+    <value>Διατήρηση;</value>
+  </data>
+  <data name="flv_tab_Flavors" xml:space="preserve">
+    <value>Αρώματα</value>
+  </data>
+  <data name="flv_tab_Recipes" xml:space="preserve">
+    <value>Συνταγές</value>
+  </data>
+  <data name="flv_tab_Stash" xml:space="preserve">
+    <value>Αποθήκη</value>
+  </data>
+  <data name="add_flv_amount" xml:space="preserve">
+    <value>Ποσότητα: </value>
+  </data>
+  <data name="stash_header" xml:space="preserve">
+    <value>Αποθήκη</value>
+  </data>
+  <data name="add_flv_brandSelect" xml:space="preserve">
+    <value>Επέλεξε Εταιρία</value>
+  </data>
+  <data name="add_flv_flavorSelect" xml:space="preserve">
+    <value>Επέλεξε Άρωμα</value>
+  </data>
+  <data name="add_flv_amountEnter" xml:space="preserve">
+    <value>Εισαγωγή Ποσότητας (ml)</value>
+  </data>
+  <data name="add_flv_StashCount" xml:space="preserve">
+    <value>Τεμάχια:</value>
+  </data>
+  <data name="add_flv_Owned" xml:space="preserve">
+    <value>Το κατέχεις; </value>
+  </data>
+  <data name="rem_Flv_fromstash" xml:space="preserve">
+    <value>Αφαίρεσε το Άρωμα από το μπαούλο</value>
+  </data>
+  <data name="flv_tab_Craft" xml:space="preserve">
+    <value>Σύνθεση</value>
+  </data>
+  <data name="add_rec_header" xml:space="preserve">
+    <value>Προσθήκη/Επεξεργασία/Διαγραφή μιας Συνταγής</value>
+  </data>
+  <data name="add_rec_flavorName01" xml:space="preserve">
+    <value>Άρωμα 1</value>
+  </data>
+  <data name="add_rec_flavorName02" xml:space="preserve">
+    <value>Άρωμα 2</value>
+  </data>
+  <data name="add_rec_flavorName03" xml:space="preserve">
+    <value>Άρωμα 3</value>
+  </data>
+  <data name="add_rec_flavorName04" xml:space="preserve">
+    <value>Άρωμα 4</value>
+  </data>
+  <data name="add_rec_flavorName05" xml:space="preserve">
+    <value>Άρωμα 5</value>
+  </data>
+  <data name="add_rec_flavorName06" xml:space="preserve">
+    <value>Άρωμα 6</value>
+  </data>
+  <data name="add_rec_flavorName07" xml:space="preserve">
+    <value>Άρωμα 7</value>
+  </data>
+  <data name="add_rec_flavorName08" xml:space="preserve">
+    <value>Άρωμα 8</value>
+  </data>
+  <data name="add_rec_flavorName09" xml:space="preserve">
+    <value>Άρωμα 9</value>
+  </data>
+  <data name="add_rec_flavorName10" xml:space="preserve">
+    <value>Άρωμα 10</value>
+  </data>
+  <data name="add_rec_flavorName11" xml:space="preserve">
+    <value>Άρωμα 11</value>
+  </data>
+  <data name="add_rec_flavorName12" xml:space="preserve">
+    <value>Άρωμα 12</value>
+  </data>
+  <data name="add_rec_flavorName13" xml:space="preserve">
+    <value>Άρωμα 13</value>
+  </data>
+  <data name="add_rec_flavorName14" xml:space="preserve">
+    <value>Άρωμα 14</value>
+  </data>
+  <data name="add_rec_flavorName15" xml:space="preserve">
+    <value>Άρωμα 15</value>
+  </data>
+  <data name="add_rec_flavorName16" xml:space="preserve">
+    <value>Άρωμα 16</value>
+  </data>
+  <data name="add_rec_flavorName17" xml:space="preserve">
+    <value>Άρωμα 17</value>
+  </data>
+  <data name="add_rec_flavorName18" xml:space="preserve">
+    <value>Άρωμα 18</value>
+  </data>
+  <data name="add_rec_flavorName19" xml:space="preserve">
+    <value>Άρωμα 19</value>
+  </data>
+  <data name="add_rec_flavorName20" xml:space="preserve">
+    <value>Άρωμα 20</value>
+  </data>
+  <data name="add_rec_recipeName" xml:space="preserve">
+    <value>Ονομασία Συνταγής</value>
+  </data>
+  <data name="add_flv_ComboBoxheader" xml:space="preserve">
+    <value>Εάν υπάρχει ήδη</value>
+  </data>
+  <data name="flavour_add" xml:space="preserve">
+    <value>Πρόσθεσε Άρωμα</value>
+  </data>
+  <data name="gridColumnHeader1" xml:space="preserve">
+    <value>Εταιρία</value>
+  </data>
+  <data name="gridColumnHeader2" xml:space="preserve">
+    <value>Συντόμευση Εταιρίας</value>
+  </data>
+  <data name="gridColumnHeader3" xml:space="preserve">
+    <value>Συνολικό Άρωμα</value>
+  </data>
+  <data name="gridColumnHeader4" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="add_rec_author" xml:space="preserve">
+    <value>Εμπνευστής</value>
+  </data>
+  <data name="add_rec_flavquantity" xml:space="preserve">
+    <value>Ποσότητα: </value>
+  </data>
+  <data name="add_rec_TimesMade" xml:space="preserve">
+    <value>Κατασκευάστηκε</value>
+  </data>
+  <data name="add_rec_clear" xml:space="preserve">
+    <value>Νέα</value>
+  </data>
+  <data name="add_rec_delete" xml:space="preserve">
+    <value>Διαγραφή Συνταγής</value>
+  </data>
+  <data name="about_change_0015" xml:space="preserve">
+    <value>- Προστέθηκε ο τομέας "Σχετικά".</value>
+  </data>
+  <data name="synth_TargetMl" xml:space="preserve">
+    <value>Επιθυμητά ML</value>
+  </data>
+  <data name="synth_RecipeName" xml:space="preserve">
+    <value>Ονομα Συνταγής</value>
+  </data>
+  <data name="synth_Notes" xml:space="preserve">
+    <value>Σημειώσεις</value>
+  </data>
+  <data name="synth_percent" xml:space="preserve">
+    <value>Ποσοστό</value>
+  </data>
+  <data name="mlinstash" xml:space="preserve">
+    <value>ml στο Μπαούλο</value>
+  </data>
+  <data name="perc" xml:space="preserve">
+    <value>Ποσοστό</value>
+  </data>
+  <data name="synth_flav_name" xml:space="preserve">
+    <value>Άρωμα</value>
+  </data>
+  <data name="flv_tab_JuiceLog" xml:space="preserve">
+    <value>Ιστορικό Υγρών</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Ενεργοποίηση</value>
+  </data>
+  <data name="SN" xml:space="preserve">
+    <value>Ενεργοποίηση Βοηθού Ατμιστή</value>
+  </data>
+  <data name="Dtrial" xml:space="preserve">
+    <value>Απομένουν 7 ημέρες </value>
+  </data>
+  <data name="vendor_SumOrders" xml:space="preserve">
+    <value>Σύνολο Παραγγελιών</value>
+  </data>
+  <data name="about_change_0016" xml:space="preserve">
+    <value>- Διόρθωση σφαλμάτων στις "Αγορές".
+- Προστέθηκε ο τομέας "Αλχημείες".
+- Fixed minor bugs.</value>
+  </data>
+  <data name="about_change_0017" xml:space="preserve">
+    <value>- Διόρθωση σφαλμάτων.</value>
+  </data>
+  <data name="about_change_0018" xml:space="preserve">
+    <value>- Προσθήκη υπο-τομέα 'Ιστορικό Υγρών'.
+- Διορθώσεις στη Βάση Δεδομένων.</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="about_change_0019" xml:space="preserve">
+    <value>- Προσθήκη ειδοποίησης όταν ξεπερνάει ο υπολογισμός τα 20A στο 'Νόμος του Ωμ'.
+- Προσθήκη ml αρωμάτων στα 'OneShots'.
+- Οπτικές Βελτιώσεις.</value>
+  </data>
+  <data name="about_change_0020" xml:space="preserve">
+    <value>- Μετακίνηση του 'Oneshots' &amp; και του 'Μίξη Βάσεων' στην κατηγορία 'Αλχημείες'.</value>
+  </data>
+  <data name="about_change_0021" xml:space="preserve">
+    <value>- Μετονομασία του τομέα "Μπαούλο" σε "Αποθήκη".
+- Σημαντική βελτίωση στους τρόπους διαχείρισης των αρωμάτων στην "Αποθήκη".
+- Προστέθηκε η δυνατότητα Εισαγωγής / Εξαγωγής στοιχείων από/προς τη Βάση Δεδομένων. (#Βackup)
+- Προστέθηκε η δυνατότητα διαγραφής της τελευταίας γεύσης στις Συνταγές.
+- Προστέθηκε ένα ελάχιστο (0.01%) και μέγιστο (100%) εύρος στις Συνταγές στα Ποσοστά Αρωμάτων.
+- Διορθώθηκε σφάλμα υπολογισμού στα #Oneshots. Το αίτιο ήταν η πιιθανή έλλειψη τιμής στο επιθυμητό επίπεδο νικοτίνης.</value>
+  </data>
+  <data name="about_change_0022" xml:space="preserve">
+    <value>- Προσθήκη 'Επεξεργασίας &amp; Διαγραφή' στις Αγορές.</value>
+  </data>
+  <data name="about_change_0023" xml:space="preserve">
+    <value>- Δημοσίευση Προγράμματος</value>
+  </data>
+  <data name="about_change_0024" xml:space="preserve">
+    <value>- Διόρθωση στη στρογγυλοποίηση της PG στα Oneshot.
+- Αύξηση του πεδίου Νικοτίνη mg/ml από 2 σε 5 χαρακτήρες στα Oneshot.
+- Προσθήκη περισσοτέρων επιλογών στα Booster νικοτίνης (30/70 &amp; 70/30).
+- Προσθήκη επιλογής αποθήκευσης του Oneshot στο Ιστορικό Υγρών.</value>
+  </data>
+  <data name="about_change_0025" xml:space="preserve">
+    <value>- Αλλαγές στο ΓΠΕ (Γραφικό Περιβάλλον Διεπαφής)
+- Αρκετές αλλαγές στον κώδικα. (Βελτίωση ταχύτητας)</value>
+  </data>
+  <data name="AddShop" xml:space="preserve">
+    <value>Προσθήκη</value>
+  </data>
+  <data name="ThemeSave" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="purchase" xml:space="preserve">
+    <value>Αγορά</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Όχι</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ναί</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Βοήθεια</value>
+  </data>
+  <data name="vendor_County" xml:space="preserve">
+    <value>Νομός</value>
+  </data>
+  <data name="backup" xml:space="preserve">
+    <value>Αντίγραφα Ασφαλείας</value>
+  </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Ημ/νία Παραγγελίας: </value>
+  </data>
+  <data name="EntryDiscount" xml:space="preserve">
+    <value>Έκπτωση (€): </value>
+  </data>
+  <data name="EntryName" xml:space="preserve">
+    <value>Επων. Εταιρίας: </value>
+  </data>
+  <data name="EntryPID" xml:space="preserve">
+    <value>Κωδ. Προϊόντος (SKU): </value>
+  </data>
+  <data name="EntryPrice" xml:space="preserve">
+    <value>Τιμή (€): </value>
+  </data>
+  <data name="EntryProductDescription" xml:space="preserve">
+    <value>Περ. Προϊόντος: </value>
+  </data>
+  <data name="EntryQuantity" xml:space="preserve">
+    <value>Ποσότητα: </value>
+  </data>
+  <data name="EntryReference" xml:space="preserve">
+    <value>Αρ. Παραστατικού: </value>
+  </data>
+  <data name="EntryShipping" xml:space="preserve">
+    <value>Έξοδα Μεταφοράς (€): </value>
+  </data>
+  <data name="EntryTotal" xml:space="preserve">
+    <value>Τελικό Κόστος (€): </value>
+  </data>
+  <data name="EntryVID" xml:space="preserve">
+    <value>Κωδ. Εταίριας: </value>
+  </data>
+  <data name="EntryID" xml:space="preserve">
+    <value>Αρ. Αγοράς: </value>
+  </data>
+  <data name="EditEntry" xml:space="preserve">
+    <value>Επεξεργασία Εισαγωγής: </value>
+  </data>
+  <data name="Alch_Backup_hdrDB" xml:space="preserve">
+    <value>Βάση Δεδ/νων</value>
+  </data>
+  <data name="Alch_Backup_hdrDesc" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="Alch_Backup_hdrExport" xml:space="preserve">
+    <value>Εξαγωγή</value>
+  </data>
+  <data name="Alch_Backup_hdrImport" xml:space="preserve">
+    <value>Εισαγωγή</value>
+  </data>
+  <data name="Alch_Backup_Desc1" xml:space="preserve">
+    <value>Περιλαμβάνει τα αρώματα που έχετε στην κατοχή σας.</value>
+  </data>
+  <data name="Alch_Backup_Desc2" xml:space="preserve">
+    <value>Περιλαμβάνει τις συνταγές που έχετε προσθέσει. Μέρος Α.</value>
+  </data>
+  <data name="Alch_Backup_Desc3" xml:space="preserve">
+    <value>Περιλαμβάνει τις συνταγές που έχετε προσθέσει. Μέρος Β.</value>
+  </data>
+  <data name="Alch_Backup_Desc4" xml:space="preserve">
+    <value>Περιλαμβάνει το αρχείο καταγραφής ιστορικού των συνταγών που έχουν αναμειχθεί.</value>
+  </data>
+  <data name="Alch_Backup_ExportBtN" xml:space="preserve">
+    <value>Εξαγωγή</value>
+  </data>
+  <data name="Alch_Backup_SelectBtN" xml:space="preserve">
+    <value>Επιλογή Αρχείου</value>
+  </data>
+  <data name="Alch_Backup_PreviewBtN" xml:space="preserve">
+    <value>Προεπισκόπηση</value>
+  </data>
+  <data name="Alch_Backup_PreviewData" xml:space="preserve">
+    <value>Προεπισκόπηση των δεδομένων σας</value>
+  </data>
+  <data name="Alch_Stash_AddFlv" xml:space="preserve">
+    <value>Προσθήκη Αρώματος:</value>
+  </data>
+  <data name="Alch_Stash_FlvId" xml:space="preserve">
+    <value>Κωδ. Αρώματος:</value>
+  </data>
+  <data name="stash_hdrAmount" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="stash_hdrBrand" xml:space="preserve">
+    <value>Εταιρία</value>
+  </data>
+  <data name="stash_hdrFlavor" xml:space="preserve">
+    <value>Άρωμα</value>
+  </data>
+  <data name="stash_hdrId" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="popup_Cancel" xml:space="preserve">
+    <value>Άκυρο</value>
+  </data>
+  <data name="popup_Submit" xml:space="preserve">
+    <value>Καταχώρηση</value>
+  </data>
+  <data name="add_rec_deleteFlv" xml:space="preserve">
+    <value>Διαγραφή αυτού του αρώματος.</value>
+  </data>
+  <data name="purchase_Selection" xml:space="preserve">
+    <value>Επιλεγμένο</value>
+  </data>
+  <data name="OneShotHeaderName" xml:space="preserve">
+    <value>Ονομασία Oneshot</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>http://vape-assistant.com</value>
+  </data>
+  <data name="Alch_Stash_EditFlv" xml:space="preserve">
+    <value>Επεξεργασία Ποσότητας:</value>
+  </data>
+  <data name="ChangePinTitle" xml:space="preserve">
+    <value>Αλλαγή PIN</value>
+  </data>
+  <data name="log_Amount" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="log_RatioPG" xml:space="preserve">
+    <value>Αναλογία PG</value>
+  </data>
+  <data name="log_RatioVG" xml:space="preserve">
+    <value>Αναλογία VG</value>
+  </data>
+  <data name="log_RecipeName" xml:space="preserve">
+    <value>Ονομασία Συνταγής</value>
+  </data>
+  <data name="log_Date" xml:space="preserve">
+    <value>Ημερομηνία</value>
+  </data>
+  <data name="log_Notes" xml:space="preserve">
+    <value>Σημειώσεις</value>
+  </data>
+  <data name="log_Nic" xml:space="preserve">
+    <value>Ένταση Νικοτίνης</value>
+  </data>
+  <data name="log_Add" xml:space="preserve">
+    <value>Προσθήκη στο Αρχείο Καταγραφής Υγρών</value>
+  </data>
+  <data name="log_Edit" xml:space="preserve">
+    <value>Επεξεργασία Αρχείου Καταγραφής Υγρών</value>
+  </data>
+  <data name="about_change_0026" xml:space="preserve">
+    <value>- Διορθώσεις στον τομέα των Αγορών.
+- Διορθώσεις στο Ιστορικό Υγρών.</value>
+  </data>
+  <data name="menu_about" xml:space="preserve">
+    <value>_Σχετικά</value>
+  </data>
+  <data name="menu_edit" xml:space="preserve">
+    <value>_Επεξεργασία</value>
+  </data>
+  <data name="menu_file" xml:space="preserve">
+    <value>_Αρχείο</value>
+  </data>
+  <data name="menu_tools" xml:space="preserve">
+    <value>_Εργαλεία</value>
+  </data>
+  <data name="about_change_0027" xml:space="preserve">
+    <value>- Προσθήκη συνόλου Αγορών στα Στατιστικά (αυτόματα από τη Βάση Δεδομένων).
+- Προσθήκη αρίθμησεις στα αριστερά των λιστών (Ιστορικό Υγρών και Μπαούλο προς το παρόν).
+- Διόθρωση κάποιων υπολογισμών για την αποφυγή λαθών.</value>
+  </data>
+  <data name="juiceLog_Amount" xml:space="preserve">
+    <value>Ποσότητα (ml)</value>
+  </data>
+  <data name="juiceLog_Date" xml:space="preserve">
+    <value>Ημ/νία</value>
+  </data>
+  <data name="juiceLog_Name" xml:space="preserve">
+    <value>Ονομασία</value>
+  </data>
+  <data name="juiceLog_Nicotine" xml:space="preserve">
+    <value>Νικοτίνη (mg/ml)</value>
+  </data>
+  <data name="juiceLog_Notes" xml:space="preserve">
+    <value>Σημειώσεις</value>
+  </data>
+  <data name="juiceLog_Ratio" xml:space="preserve">
+    <value>Αναλογία (PG/VG)</value>
+  </data>
+  <data name="TooltipHardwareCost" xml:space="preserve">
+    <value>Αυτό υπολογίζεται από την καρτέλα Αγορές. </value>
+  </data>
+  <data name="EJuiceCosts" xml:space="preserve">
+    <value>ML Υγρού/ Κόστος Υγρού / Κόστος Νικοτίνης</value>
+  </data>
+  <data name="EJuiceCosts1" xml:space="preserve">
+    <value>Ποσότητα υγρού (ML)</value>
+  </data>
+  <data name="EJuiceCosts2" xml:space="preserve">
+    <value>Κόστος Υγρού (Χωρίς νικοτίνη)</value>
+  </data>
+  <data name="EJuiceCosts3" xml:space="preserve">
+    <value>Κόστος Νικοτίνης</value>
+  </data>
+  <data name="about_change_0028" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="synth_Total" xml:space="preserve">
+    <value>Σύνολο</value>
+  </data>
+  <data name="SettingsOff" xml:space="preserve">
+    <value>Ανενεργό</value>
+  </data>
+  <data name="SettingsOn" xml:space="preserve">
+    <value>Ενεργό</value>
+  </data>
+  <data name="Settings_PurchasesPIN" xml:space="preserve">
+    <value>PIN (Αγορών)</value>
+  </data>
+  <data name="menu_tools_Alchemy" xml:space="preserve">
+    <value>_Αλχημείες</value>
+  </data>
+  <data name="menu_tools_Alchemy_BasesMix" xml:space="preserve">
+    <value>_Μίξη Βάσεων</value>
+  </data>
+  <data name="menu_tools_Alchemy_Flavors" xml:space="preserve">
+    <value>_Αρώματα</value>
+  </data>
+  <data name="menu_tools_Alchemy_JuiceLog" xml:space="preserve">
+    <value>_Ιστορικό Υγρών</value>
+  </data>
+  <data name="menu_tools_Alchemy_Oneshots" xml:space="preserve">
+    <value>_Oneshots</value>
+  </data>
+  <data name="menu_tools_Alchemy_Recipes" xml:space="preserve">
+    <value>_Συνταγές</value>
+  </data>
+  <data name="menu_tools_Alchemy_Stash" xml:space="preserve">
+    <value>_Μπαούλο</value>
+  </data>
+  <data name="menu_tools_Alchemy_Synthesize" xml:space="preserve">
+    <value>_Σύνθεση</value>
+  </data>
+  <data name="menu_tools_NicotineCost" xml:space="preserve">
+    <value>_Κόστος Νικοτίνης</value>
+  </data>
+  <data name="menu_tools_OhmsLaw" xml:space="preserve">
+    <value>_Ο νόμος του Ώμ</value>
+  </data>
+  <data name="menu_tools_Purchases" xml:space="preserve">
+    <value>_Αγορές</value>
+  </data>
+  <data name="menu_tools_Settings" xml:space="preserve">
+    <value>_Ρυθμίσεις</value>
+  </data>
+  <data name="menu_tools_Statistics" xml:space="preserve">
+    <value>_Στατιστικά</value>
+  </data>
+  <data name="menu_file_exit" xml:space="preserve">
+    <value>_Έξοδος</value>
+  </data>
+  <data name="GFX" xml:space="preserve">
+    <value>Γραφικά:</value>
+  </data>
+  <data name="backup_Header_db" xml:space="preserve">
+    <value>Β.Δεδομένων</value>
+  </data>
+  <data name="backup_Header_description" xml:space="preserve">
+    <value>Περιγραφή</value>
+  </data>
+  <data name="backup_Header_export" xml:space="preserve">
+    <value>Εξαγωγή</value>
+  </data>
+  <data name="backup_Header_import" xml:space="preserve">
+    <value>Εισαγωγή</value>
+  </data>
+  <data name="purchase_Discount" xml:space="preserve">
+    <value>Έκπτωση</value>
+  </data>
+  <data name="purchase_Price" xml:space="preserve">
+    <value>Τιμή</value>
+  </data>
+  <data name="purchase_Product" xml:space="preserve">
+    <value>Προϊόν</value>
+  </data>
+  <data name="purchase_Quantity" xml:space="preserve">
+    <value>Ποσότητα</value>
+  </data>
+  <data name="purchase_Shipping" xml:space="preserve">
+    <value>Μεταφορικά</value>
+  </data>
+  <data name="purchase_SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="purchase_Total" xml:space="preserve">
+    <value>Σύνολο</value>
+  </data>
+  <data name="purchase_AddItem" xml:space="preserve">
+    <value>Προσθήκη Αντικειμένου</value>
+  </data>
+  <data name="purchase_Clear" xml:space="preserve">
+    <value>Εκκαθάριση</value>
+  </data>
+  <data name="vendor_Reference" xml:space="preserve">
+    <value>Κατά Αριθμό Παραγγελίας</value>
+  </data>
+  <data name="statistics_CigarettesPerDay" xml:space="preserve">
+    <value>Τσιγάρα / Ημέρα</value>
+  </data>
+  <data name="statistics_CigarettesPerPack" xml:space="preserve">
+    <value>Τσιγάρα / Πακέτο</value>
+  </data>
+  <data name="statistics_DaysVaping" xml:space="preserve">
+    <value>Ημέρες Ατμίσματος</value>
+  </data>
+  <data name="statistics_DailySmokingCost" xml:space="preserve">
+    <value>Ημερήσιο Κόστος Καπνίσματος</value>
+  </data>
+  <data name="statistics_DaysWithoutCigarette" xml:space="preserve">
+    <value>Ημέρες χωρίς τσιγάρο</value>
+  </data>
+  <data name="statistics_EjuiceMlCost" xml:space="preserve">
+    <value>Κόστος ml Υγρού</value>
+  </data>
+  <data name="statistics_HardwareCost" xml:space="preserve">
+    <value>Κόστος Υλικών</value>
+  </data>
+  <data name="statistics_HardwareDailyCost" xml:space="preserve">
+    <value>Ημερήσιο Κόστος Υλικών</value>
+  </data>
+  <data name="statistics_JuicePerDay" xml:space="preserve">
+    <value>ml / Ημέρα</value>
+  </data>
+  <data name="statistics_PricePerCigarette" xml:space="preserve">
+    <value>Τιμή / Τσιγάρο</value>
+  </data>
+  <data name="statistics_PacketPrice" xml:space="preserve">
+    <value>Τιμή Πακέτου</value>
+  </data>
+  <data name="statistics_VapeDailyCost" xml:space="preserve">
+    <value>Ημερήσιο Κόστος Ατμίσματος</value>
+  </data>
+  <data name="statistics_YearlySmokingCost" xml:space="preserve">
+    <value>Ετήσιο Κόστος Καπνίσματος</value>
+  </data>
+  <data name="statistics_YearlyVapingCost" xml:space="preserve">
+    <value>Ετήσιο Κόστος Ατμίσματος</value>
+  </data>
+  <data name="statistics_SmokingCessationDate" xml:space="preserve">
+    <value>Ημ/νία Διακοπής Καπνίσματος</value>
+  </data>
+  <data name="statistics_VapingStartDate" xml:space="preserve">
+    <value>Ημ/νία Έναρξης Ατμίσματος</value>
+  </data>
+  <data name="ohms_Voltage" xml:space="preserve">
+    <value>Ένταση (V)</value>
+  </data>
+  <data name="ohms_Wattage" xml:space="preserve">
+    <value>Watt (W)</value>
+  </data>
+  <data name="ohms_Current" xml:space="preserve">
+    <value>Τάση (I)</value>
+  </data>
+  <data name="ohms_Resistance" xml:space="preserve">
+    <value>Αντίσταση (R)</value>
+  </data>
+  <data name="mixbase_baseA" xml:space="preserve">
+    <value>Βάση: Α</value>
+  </data>
+  <data name="mixbase_baseB" xml:space="preserve">
+    <value>Βάση: Β</value>
+  </data>
+  <data name="mixbase_baseC" xml:space="preserve">
+    <value>Βάση: Γ</value>
+  </data>
+  <data name="mixbase_baseD" xml:space="preserve">
+    <value>Βάση: Δ</value>
+  </data>
+  <data name="mixbase_HeaderBaseAmount" xml:space="preserve">
+    <value>Ποσότητα Βάσης (ml)</value>
+  </data>
+  <data name="mixbase_HeaderGrams" xml:space="preserve">
+    <value>Γραμ.</value>
+  </data>
+  <data name="mixbase_HeaderNicBottleAmount" xml:space="preserve">
+    <value>Ποσότητα Νικοτινούχων Μπουκαλιών</value>
+  </data>
+  <data name="mixbase_HeaderNicLevel" xml:space="preserve">
+    <value>Νικοτίνη (mg/ml)</value>
+  </data>
+  <data name="mixbase_HeaderPGPercent" xml:space="preserve">
+    <value>PG (%)</value>
+  </data>
+  <data name="mixbase_HeaderVGPercent" xml:space="preserve">
+    <value>VG (%)</value>
+  </data>
+  <data name="mixbase_LeftHeader" xml:space="preserve">
+    <value>Συνολικό Μείγμα</value>
+  </data>
+  <data name="mixbase_LeftMixRatioPGVG" xml:space="preserve">
+    <value>Αναλογία PG / VG</value>
+  </data>
+  <data name="mixbase_LeftMixTotalVolume" xml:space="preserve">
+    <value>Όγκος</value>
+  </data>
+  <data name="mixbase_LeftMixVolumePGVG" xml:space="preserve">
+    <value>Όγκος PG / VG (ml)</value>
+  </data>
+  <data name="mixbase_LeftResultmlToolTip" xml:space="preserve">
+    <value>Η αναλογία είναι σε ml</value>
+  </data>
+  <data name="mixbase_LeftResultNicLevel" xml:space="preserve">
+    <value>Νικοτίνη</value>
+  </data>
+  <data name="mixbase_LeftResultNicLevelToolTip" xml:space="preserve">
+    <value>Η αναλογία είναι σε mg/ml</value>
+  </data>
+  <data name="mixbase_HeaderML" xml:space="preserve">
+    <value>ml</value>
+  </data>
+  <data name="help_Id" xml:space="preserve">
+    <value>#</value>
+  </data>
+</root>
