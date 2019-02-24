@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using Vape_Assistant.Properties;
 
 namespace Vape_Assistant.Views
 {
@@ -10,23 +13,22 @@ namespace Vape_Assistant.Views
     /// </summary>
     public partial class BoosterCost_ChildView : UserControl
     {
+        public string title,message;
+        public int autotimeout = 5000;
+
         public BoosterCost_ChildView()
         {
             InitializeComponent();
-            lbl_base.Visibility = Visibility.Collapsed;
-            lbl_nicml.Visibility = Visibility.Collapsed;
-            lbl_nicbtl.Visibility = Visibility.Collapsed;
-            lbl_totcost.Visibility = Visibility.Collapsed;
-            tbl_Baseml.Visibility = Visibility.Collapsed;
-            tbl_NicotineMl.Visibility = Visibility.Collapsed;
-            tbl_NicotineBottles.Visibility = Visibility.Collapsed;
-            tbl_BoosterCost.Visibility = Visibility.Collapsed;
+            gb_base.Visibility = Visibility.Collapsed;
+            gb_nicml.Visibility = Visibility.Collapsed;
+            gb_nicbtl.Visibility = Visibility.Collapsed;
+            gb_totcost.Visibility = Visibility.Collapsed;
         }
         private static string fixdec(string value)
         {
             string input = value;
-            string pattern = ".";
-            string replacement = ",";
+            string pattern = ",";
+            string replacement = ".";
             Regex rgx = new Regex(pattern);
             string result = rgx.Replace(input, replacement);
             return result;
@@ -38,14 +40,10 @@ namespace Vape_Assistant.Views
             cost_nic_level.Text = "0";
             nic_booster_level.Text = "0";
             cost_booster_bottle.Text = "0";
-            lbl_base.Visibility = Visibility.Collapsed;
-            lbl_nicml.Visibility = Visibility.Collapsed;
-            lbl_nicbtl.Visibility = Visibility.Collapsed;
-            lbl_totcost.Visibility = Visibility.Collapsed;
-            tbl_Baseml.Visibility = Visibility.Collapsed;
-            tbl_NicotineMl.Visibility = Visibility.Collapsed;
-            tbl_NicotineBottles.Visibility = Visibility.Collapsed;
-            tbl_BoosterCost.Visibility = Visibility.Collapsed;
+            gb_base.Visibility = Visibility.Collapsed;
+            gb_nicml.Visibility = Visibility.Collapsed;
+            gb_nicbtl.Visibility = Visibility.Collapsed;
+            gb_totcost.Visibility = Visibility.Collapsed;
             tbl_Baseml.Text = null;
             tbl_NicotineMl.Text = null;
             tbl_NicotineBottles.Text = null;
@@ -55,21 +53,60 @@ namespace Vape_Assistant.Views
         private void calc_cost_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             #region 10c
+            cost_nic_level.Text = cost_nic_level.Text.Replace(",", ".");
+            cost_booster_bottle.Text = cost_booster_bottle.Text.Replace(",", ".");
             double Targetml, Targetlvl, boosterlvl, cost_bottle;
-            Targetml = Convert.ToDouble(cost_Target_ml.Text);
-            Targetlvl = Convert.ToDouble(cost_nic_level.Text);
-            boosterlvl = Convert.ToDouble(nic_booster_level.Text);
-            cost_bottle = Convert.ToDouble(cost_booster_bottle.Text);
+            try
+            {
+                Targetml = Convert.ToDouble(cost_Target_ml.Text);
+            }
+            catch (Exception ex)
+            {
+                title = "Error";
+                AutoClosingMessageBox.Show(cost_Target_ml + "\n" + ex.Message, title, autotimeout);
+                return;
+            }
+            try
+            {
+                Targetlvl = Convert.ToDouble(cost_nic_level.Text);
+            }
+            catch (Exception ex)
+            {
+                title = "Error";
+                AutoClosingMessageBox.Show(cost_nic_level + "\n" + ex.Message, title, autotimeout);
+                return;
+            }
+            try
+            {
+                boosterlvl = Convert.ToDouble(nic_booster_level.Text);
+            }
+            catch (Exception ex)
+            {
+                title = "Error ";
+                AutoClosingMessageBox.Show(nic_booster_level.Text + "\n" + ex.Message, title, autotimeout);
+                return;
+            }
+            try
+            {
+                cost_bottle = Convert.ToDouble(cost_booster_bottle.Text);
+            }
+            catch (Exception ex)
+            {
+                title = "Error";
+                AutoClosingMessageBox.Show(cost_booster_bottle.Text + "\n"+ ex.Message, title, autotimeout);
+                return;
+            }
             if (Targetml == 0 || Targetlvl == 0 || boosterlvl == 0 || cost_bottle == 0) return;
-            if (Targetlvl > boosterlvl) { return; }
-            lbl_base.Visibility = Visibility.Visible;
-            lbl_nicml.Visibility = Visibility.Visible;
-            lbl_nicbtl.Visibility = Visibility.Visible;
-            lbl_totcost.Visibility = Visibility.Visible;
-            tbl_Baseml.Visibility = Visibility.Visible;
-            tbl_NicotineMl.Visibility = Visibility.Visible;
-            tbl_NicotineBottles.Visibility = Visibility.Visible;
-            tbl_BoosterCost.Visibility = Visibility.Visible;
+            if (Targetlvl > boosterlvl) {
+                title = "Error";
+                message = $"{Targetlvl} < {boosterlvl}";
+                AutoClosingMessageBox.Show(message, title, autotimeout);
+                return;
+            }
+            gb_base.Visibility = Visibility.Visible;
+            gb_nicml.Visibility = Visibility.Visible;
+            gb_nicbtl.Visibility = Visibility.Visible;
+            gb_totcost.Visibility = Visibility.Visible;
             double tbl_10b, tbl_10c, tbl_10e, tbl_10f;
                                  
             if ((cost_nic_level.Text != "") && (nic_booster_level.Text != ""))
@@ -112,10 +149,25 @@ namespace Vape_Assistant.Views
         private void txtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text)) { return; }
+            int count = 0;
+            string test = textBox.Text;
+            if (test.Contains(".")) { 
+                count = test.Split('.').Length - 1;
+            }
+            if (test.Contains(","))
+            {
+                count = test.Split(',').Length - 1;
+            }
+            if (count > 1)
+            {
+                AutoClosingMessageBox.Show("There are too many decimal points.", "Error", autotimeout);
+                return;
+            }
             int start = textBox.SelectionStart;
             int length = textBox.SelectionLength;
             string value = textBox.Text;
-            if (textBox.SelectionLength > 3)
+            if (textBox.SelectionLength >= 2)
             {
                 textBox.Text = fixdec(value);
             }
@@ -124,6 +176,47 @@ namespace Vape_Assistant.Views
             textBox.Select(start, length);
         }
 
+        private static bool IsTextAllowed(string text)
+        {
+            int count = 0;
+            int autotimeout = 5000;
+
+
+
+            string CurrentCulture = Settings.Default.Culture;
+            if (CurrentCulture == "en-US")
+            {
+                Regex regex = new Regex(@"[^0-9.$]+"); //regex that matches disallowed text
+                if (text.Contains("."))
+                {
+                    count = text.Split('.').Length - 1;
+                }
+                if (count > 1)
+                {
+                    AutoClosingMessageBox.Show("There are too many decimal points.", "Error", autotimeout);
+                    return regex.IsMatch(text);
+                }
+                return !regex.IsMatch(text);
+            }
+            else
+            {
+                Regex regex = new Regex("[^0-9,$]+"); //regex that matches disallowed text
+                if (text.Contains(","))
+                {
+                    count = text.Split(',').Length - 1;
+                }
+                if (count > 1)
+                {
+                    AutoClosingMessageBox.Show("There are too many decimal points.", "Error", autotimeout);
+                    return regex.IsMatch(text);
+                }
+                return !regex.IsMatch(text);
+            }
+        }
+
+        private void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
     }
 }
-

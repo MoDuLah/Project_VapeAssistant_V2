@@ -10,14 +10,15 @@
 	<SolidColorBrush x:Key="NormalBackround" Color="#424242"/>
     <SolidColorBrush x:Key="FocusedBorder" Color="#A12B2B"/>
     <SolidColorBrush x:Key="Hover" Color="#A12B2B"/>
-	
-	<Style BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
-		<Setter Property="Foreground" Value="LightGray"/>
+    <SolidColorBrush x:Key="Foreground" Color="#FFD3D3D3"/>
+
+    <Style BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="{StaticResource Foreground}"/>
 		<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
 		<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
         <Setter Property="SelectionBrush" Value="{StaticResource Hover}"/>
         <Setter Property="BorderThickness" Value="0"/>
-		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Padding" Value="5,2"/>
 		<Setter Property="AllowDrop" Value="true"/>
 		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
 		<!--<Setter Property="Height" Value="22"/>-->

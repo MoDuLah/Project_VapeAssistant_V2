@@ -610,7 +610,7 @@ namespace Vape_Assistant
             catch (Exception ex)
             {
                 caption = "Error";
-                AutoClosingMessageBox.Show(ex.ToString(),caption,autotimeout);
+                AutoClosingMessageBox.Show(ex.Message,caption,autotimeout);
                 if (dbConn.State == ConnectionState.Open)
                 {
                     dbConn.Close();

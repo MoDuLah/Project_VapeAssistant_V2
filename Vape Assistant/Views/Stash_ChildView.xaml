@@ -10,7 +10,7 @@
              Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
              ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
-    <Grid Margin="20">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" MinWidth="120"/>
             <ColumnDefinition Width="*" MaxWidth="300"/>
@@ -22,48 +22,17 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="warehouse" SelectionChanged="warehouse_SelectionChanged" 
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="warehouse"
+                  SelectionChanged="warehouse_SelectionChanged" 
                   LoadingRow="DataGrid_LoadingRow"
-                  MinHeight="200" MaxHeight="500" MinWidth="500"
-                  Background="#FF6A6A6A" IsReadOnly="True" 
-                  AlternatingRowBackground="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"
-                  AlternationCount="-1"
-                  AutoGenerateColumns="False" 
-                  ColumnWidth="*"
+                  EnableColumnVirtualization="True" 
                   SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                  CanUserReorderColumns="False"
-                  CanUserResizeRows="True"
-                  BorderBrush="{x:Null}"
-                  HorizontalContentAlignment="Stretch"
-                  VerticalContentAlignment="Stretch"
-                  Padding="0" EnableColumnVirtualization="True">
+                  IsReadOnly="True"
+                  Background="#FF242424"
+                  AlternatingRowBackground="#FF424242"  AlternationCount="-1" AutoGenerateColumns="False"
+                  FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101"
+                  >
             <!--MaxWidth="550" -->
-            <DataGrid.Resources>
-                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                    <!--<Setter Property="Background" Value="#FF606060" />-->
-                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                    <Setter Property="Margin" Value="2,0,0,0"/>
-                    <Setter Property="Padding" Value="5"/>
-                    <!--<Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,0"/>-->
-                </Style>
-                <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="Margin" Value="0,0,0,0"/>
-                    <Setter Property="Padding" Value="5,0"/>
-                    <!--<Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,0"/>-->
-                </Style>
-                <Style BasedOn="{StaticResource {x:Type DataGridRow}}" TargetType="{x:Type DataGridRow}">
-                    <!--<Setter Property="Background" Value="#FF2B2B2B"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="0,0,0,1"/>-->
-                </Style>
-                <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                </Style>
-            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="ItemsIdColumn"     Binding="{Binding Id}"     Header="{x:Static p:Resources.warehouse_hdrId}"     MinWidth="70" MaxWidth="1000"/>
                 <DataGridTextColumn x:Name="ItemsBrandColumn"  Binding="{Binding Brand}"  Header="{x:Static p:Resources.warehouse_hdrBrand}"  MinWidth="200" MaxWidth="1000"/>
@@ -79,83 +48,20 @@
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="4">
             <Button x:Name="add_Item" Click="add_Item_Click" Cursor="Hand">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Padding="20,10" Margin="10,5">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source="/Vape Assistant;component/Images/Plus_32px.png" VerticalAlignment="Center" Width="20"/>
+                <Image Source="/Vape Assistant;component/Images/menuIconsLight/Add_32px.png" VerticalAlignment="Center" Width="20"/>
                 <TextBlock Text="{x:Static p:Resources.AddShop}" VerticalAlignment="Center"/>
                 </StackPanel>
-        </Button>
+            </Button>
             <Button x:Name="Edit_Item" Click="edit_Item_Click" Cursor="Hand">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Padding="20,10" Margin="10,5">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
                 <StackPanel Orientation="Horizontal">
-                <Image Source="/Vape Assistant;component/Images/Edit_32px.png" VerticalAlignment="Center" Width="20"/>
+                <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" VerticalAlignment="Center" Width="20"/>
                 <TextBlock Text="{x:Static p:Resources.vendor_edit}" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
             <Button x:Name="Delete_Item" Click="Delete_Item_Click" Cursor="Hand">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Padding="20,10" Margin="10,5">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
                 <StackPanel Orientation="Horizontal">
-                <Image Source="/Vape Assistant;component/Images/CloseWindow.png" VerticalAlignment="Center" Width="20"/>
+                <Image Source="/Vape Assistant;component/Images/menuIconsLight/Close Window_32px.png" VerticalAlignment="Center" Width="20"/>
                 <TextBlock Text="{x:Static p:Resources.vendor_delete}" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>

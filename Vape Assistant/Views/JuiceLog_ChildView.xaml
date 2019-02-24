@@ -9,8 +9,7 @@
              mc:Ignorable="d" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
              Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
-             BorderBrush="{x:Null}"
-             Padding="20">
+             BorderBrush="{x:Null}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" MinWidth="500"/>
@@ -21,20 +20,11 @@
         </Grid.RowDefinitions>
 
         <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" x:Name="JuiceLogList" SelectionChanged="JuiceLogList_SelectionChanged"
-                 LoadingRow="DataGrid_LoadingRow"
-                  MinHeight="200" MaxHeight="500" MinWidth="500"
-                  Background="#FF6A6A6A" IsReadOnly="True" 
-                  AlternatingRowBackground="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"
-                  AlternationCount="-1"
-                  AutoGenerateColumns="False" 
-                  ColumnWidth="*"
-                  SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                  CanUserReorderColumns="False"
-                  CanUserResizeRows="True"
-                  BorderBrush="{x:Null}"
-                  HorizontalContentAlignment="Stretch"
-                  VerticalContentAlignment="Stretch"
-                  Padding="0" EnableColumnVirtualization="True">
+                  LoadingRow="DataGrid_LoadingRow" SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  EnableColumnVirtualization="True" IsReadOnly="True"
+                  Background="#FF242424"
+                  AlternatingRowBackground="#FF424242"  AlternationCount="-1" AutoGenerateColumns="False"
+                  FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101"                  >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <!--<Setter Property="Background" Value="#FF606060" />-->
@@ -97,83 +87,20 @@
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" Grid.RowSpan="3">
             <Button x:Name="log_Add" Cursor="Hand" HorizontalContentAlignment="Center" Click="Log_Add_Click" VerticalAlignment="Bottom" Margin="10,5">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Padding="20,10">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Vape Assistant;component/Images/Plus_32px.png" VerticalAlignment="Center" Width="20"/>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsDark/Add_32px.png" VerticalAlignment="Center" Width="20"/>
                     <TextBlock Text="{x:Static p:Resources.AddShop}" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button x:Name="Log_Edit" Cursor="Hand" Click="Log_Edit_Click" VerticalAlignment="Center" Margin="10,5">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Padding="20,10">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Vape Assistant;component/Images/Edit_32px.png" VerticalAlignment="Center" Width="20"/>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsDark/Edit_32px.png" VerticalAlignment="Center" Width="20"/>
                     <TextBlock Text="{x:Static p:Resources.vendor_edit}" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
             <Button x:Name="Log_Delete" Cursor="Hand" Click="Log_Delete_Click" VerticalAlignment="Top" Margin="10,5">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Padding="20,10">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Vape Assistant;component/Images/CloseWindow.png" VerticalAlignment="Center" Width="20"/>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Close Window_32px.png" VerticalAlignment="Center" Width="20"/>
                     <TextBlock Text="{x:Static p:Resources.vendor_delete}" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>

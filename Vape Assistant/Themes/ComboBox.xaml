@@ -99,10 +99,10 @@
 
         <Style x:Key="{x:Type ComboBox}" TargetType="ComboBox">
             <Setter Property="Width" Value="Auto"/>
-            <Setter Property="Height" Value="18"/>
-            <Setter Property="FontFamily" Value="Calibri"/>
-            <Setter Property="FontSize" Value="11"/>
-            <Setter Property="Padding" Value="4,0,0,0"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <!--<Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontSize" Value="11"/>-->
+            <Setter Property="Padding" Value="10"/> <!--4,0,0,0-->
             <Setter Property="Margin" Value="0"/>
             <Setter Property="Foreground" Value="{StaticResource BorderBrush}"/>
             <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
@@ -213,7 +213,7 @@
                     <ControlTemplate TargetType="ComboBoxItem">
                         <Border 
             Name="Border"
-            Padding="2"
+            Padding="10"
 			BorderThickness="1"
             SnapsToDevicePixels="true">
                             <ContentPresenter />

@@ -203,12 +203,12 @@
           <target state="final">Βάση (ml)</target>
         </trans-unit>
         <trans-unit id="TargetBoosterLevel" translate="yes" xml:space="preserve">
-          <source>Nicotine Booster Level (mg/ml)</source>
-          <target state="final">Booster Νικοτίνης (mg/ml)</target>
+          <source>Booster Level (mg/ml)</source>
+          <target state="final">Επίπεδο Νικοτίνης (mg/ml)</target>
         </trans-unit>
         <trans-unit id="Targetbottles" translate="yes" xml:space="preserve">
-          <source>Nicotine Bottles</source>
-          <target state="final">Νικοτινούχα Μπουκάλια</target>
+          <source>Bottles</source>
+          <target state="final">Μπουκάλια</target>
         </trans-unit>
         <trans-unit id="Targetml" translate="yes" xml:space="preserve">
           <source>Target ml</source>
@@ -1157,10 +1157,6 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>On</source>
           <target state="final">Ενεργό</target>
         </trans-unit>
-        <trans-unit id="Settings_PurchasesPIN" translate="yes" xml:space="preserve">
-          <source>PIN (Purchases)</source>
-          <target state="final">PIN (Αγορών)</target>
-        </trans-unit>
         <trans-unit id="menu_tools_Alchemy" translate="yes" xml:space="preserve">
           <source>_Alchemy</source>
           <target state="final">_Αλχημείες</target>
@@ -1484,6 +1480,14 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="menu_tools_Alchemy_Warehouse" translate="yes" xml:space="preserve">
           <source>_Warehouse</source>
           <target state="new">_Warehouse</target>
+        </trans-unit>
+        <trans-unit id="settings_PurchasesPIN" translate="yes" xml:space="preserve">
+          <source>PIN (Purchases)</source>
+          <target state="new">PIN (Purchases)</target>
+        </trans-unit>
+        <trans-unit id="settings_Setpin" translate="yes" xml:space="preserve">
+          <source>Set Pin</source>
+          <target state="new">Set Pin</target>
         </trans-unit>
       </group>
     </body>

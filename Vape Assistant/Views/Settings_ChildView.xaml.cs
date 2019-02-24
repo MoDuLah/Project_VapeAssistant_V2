@@ -54,11 +54,7 @@ namespace Vape_Assistant.Views
                 disablingPin.Visibility = Visibility.Visible;
                 enablingPin.Visibility = Visibility.Collapsed;
                 pin_Slider.IsEnabled = false;
-                header_db.Visibility = Visibility.Collapsed;
-                header_desc.Visibility = Visibility.Collapsed;
-                header_export.Visibility = Visibility.Collapsed;
-                header_import.Visibility = Visibility.Collapsed;
-                header_seperator.Visibility = Visibility.Collapsed;
+                GroupBoxer.Visibility = Visibility.Collapsed;
                 db_selector.Visibility = Visibility.Collapsed;
                 db_description.Visibility = Visibility.Collapsed;
                 export.Visibility = Visibility.Collapsed;
@@ -69,11 +65,7 @@ namespace Vape_Assistant.Views
             {
                 pin_Slider.Value = 0;
                 pin_Slider.IsEnabled = true;
-                header_db.Visibility = Visibility.Visible;
-                header_desc.Visibility = Visibility.Visible;
-                header_export.Visibility = Visibility.Visible;
-                header_import.Visibility = Visibility.Visible;
-                header_seperator.Visibility = Visibility.Visible;
+                GroupBoxer.Visibility = Visibility.Visible;
                 db_selector.Visibility = Visibility.Visible;
                 db_description.Visibility = Visibility.Visible;
                 export.Visibility = Visibility.Visible;
@@ -400,11 +392,7 @@ namespace Vape_Assistant.Views
                     pin_Slider.Value = 1;
                     disablingPin.Visibility = Visibility.Visible;
                     enablingPin.Visibility = Visibility.Collapsed;
-                    header_db.Visibility = Visibility.Collapsed;
-                    header_desc.Visibility = Visibility.Collapsed;
-                    header_export.Visibility = Visibility.Collapsed;
-                    header_import.Visibility = Visibility.Collapsed;
-                    header_seperator.Visibility = Visibility.Collapsed;
+                    GroupBoxer.Visibility = Visibility.Collapsed;
                     db_selector.Visibility = Visibility.Collapsed;
                     db_description.Visibility = Visibility.Collapsed;
                     export.Visibility = Visibility.Collapsed;
@@ -459,11 +447,7 @@ namespace Vape_Assistant.Views
                             createCommand.Dispose();
                             disablingPin.Visibility = Visibility.Collapsed;
                             enablingPin.Visibility = Visibility.Visible;
-                            header_db.Visibility = Visibility.Visible;
-                            header_desc.Visibility = Visibility.Visible;
-                            header_export.Visibility = Visibility.Visible;
-                            header_import.Visibility = Visibility.Visible;
-                            header_seperator.Visibility = Visibility.Visible;
+                            GroupBoxer.Visibility = Visibility.Visible;
                             db_selector.Visibility = Visibility.Visible;
                             db_description.Visibility = Visibility.Visible;
                             export.Visibility = Visibility.Visible;

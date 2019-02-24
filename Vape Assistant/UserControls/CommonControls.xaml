@@ -8,7 +8,10 @@
     <Grid x:Name="LayoutRoot">
         <StackPanel>
             <GroupBox Header="GroupBox">
-                This is a GroupBox
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="23232"/>
+                    <TextBlock Text="23232" Margin="10,0"/>
+                </StackPanel>
             </GroupBox>
 
             <Grid>

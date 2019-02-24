@@ -379,10 +379,10 @@
     <value>Base (ml)</value>
   </data>
   <data name="TargetBoosterLevel" xml:space="preserve">
-    <value>Nicotine Booster Level (mg/ml)</value>
+    <value>Booster Level (mg/ml)</value>
   </data>
   <data name="Targetbottles" xml:space="preserve">
-    <value>Nicotine Bottles</value>
+    <value>Bottles</value>
   </data>
   <data name="Targetml" xml:space="preserve">
     <value>Target ml</value>
@@ -1078,7 +1078,7 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="about_change_0028" xml:space="preserve">
     <value />
   </data>
-  <data name="Settings_PurchasesPIN" xml:space="preserve">
+  <data name="settings_PurchasesPIN" xml:space="preserve">
     <value>PIN (Purchases)</value>
   </data>
   <data name="synth_Total" xml:space="preserve">
@@ -1209,5 +1209,8 @@ If you decline and keep the default pin-code you will be asked the next time you
   </data>
   <data name="settings_LanguageFr" xml:space="preserve">
     <value>Français</value>
+  </data>
+  <data name="settings_Setpin" xml:space="preserve">
+    <value>Set Pin</value>
   </data>
 </root>

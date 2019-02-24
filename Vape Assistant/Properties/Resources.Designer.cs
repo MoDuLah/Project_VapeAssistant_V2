@@ -2670,9 +2670,9 @@ namespace Vape_Assistant.Properties {
         /// <summary>
         ///   Looks up a localized string similar to PIN (Purchases).
         /// </summary>
-        public static string Settings_PurchasesPIN {
+        public static string settings_PurchasesPIN {
             get {
-                return ResourceManager.GetString("Settings_PurchasesPIN", resourceCulture);
+                return ResourceManager.GetString("settings_PurchasesPIN", resourceCulture);
             }
         }
         
@@ -2682,6 +2682,15 @@ namespace Vape_Assistant.Properties {
         public static string settings_Restart {
             get {
                 return ResourceManager.GetString("settings_Restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Pin.
+        /// </summary>
+        public static string settings_Setpin {
+            get {
+                return ResourceManager.GetString("settings_Setpin", resourceCulture);
             }
         }
         
@@ -2938,7 +2947,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nicotine Booster Level (mg/ml).
+        ///   Looks up a localized string similar to Booster Level (mg/ml).
         /// </summary>
         public static string TargetBoosterLevel {
             get {
@@ -2947,7 +2956,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nicotine Bottles.
+        ///   Looks up a localized string similar to Bottles.
         /// </summary>
         public static string Targetbottles {
             get {

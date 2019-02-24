@@ -5,10 +5,9 @@
              xmlns:properties="clr-namespace:Vape_Assistant.Properties"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:p="clr-namespace:Vape_Assistant.Properties"
-             Foreground="{Binding Source={x:Static properties:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static properties:Settings.Default}, Path=FontFam, Mode=TwoWay}"
              mc:Ignorable="d">
-    <Grid Margin="20" HorizontalAlignment="Center">
+    <Grid HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -32,16 +31,17 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static properties:Resources.ohms_Current}" FontWeight="Bold" VerticalAlignment="Bottom" FontSize="20" Margin="0,10,0,0"/>
-        <TextBox Grid.Column="1" Grid.Row="0" x:Name="ampsv" 
-                 AutoWordSelection="True" MaxLength="10" MinWidth="60" Margin="0,10,0,0"
-                 Text="{Binding Source={x:Reference ampsslider}, Path=Value, StringFormat=0.##}"
-                 HorizontalContentAlignment="Right" 
-                 VerticalContentAlignment="Stretch" LostFocus="ampsv_LostFocus" 
-                 PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting"/>
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="A (Amperes)" VerticalAlignment="Center" Margin="0,10,0,0" />
-        <Slider x:Name="ampsslider" Value="0" Maximum="60" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" TickPlacement="BottomRight" TickFrequency="1" MaxHeight="30">
+        <GroupBox Header="{x:Static properties:Resources.ohms_Current}"  FontWeight="Bold"  Grid.ColumnSpan="3">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="ampsv" 
+                            AutoWordSelection="True" MaxLength="10" MinWidth="100"
+                            Text="{Binding Source={x:Reference ampsslider}, Path=Value, StringFormat=0.##}"
+                            HorizontalContentAlignment="Right" 
+                            LostFocus="ampsv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting"/>
+                    <TextBlock Text="A (Amperes)" TextAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Slider x:Name="ampsslider" Value="0" Maximum="60" TickPlacement="BottomRight" TickFrequency="1">
             <Slider.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <LinearGradientBrush.RelativeTransform>
@@ -57,110 +57,104 @@
                 </LinearGradientBrush>
             </Slider.Background>
         </Slider>
+            </StackPanel>
+        </GroupBox>
 
         <!--Volts-->
-        <TextBlock Grid.Column="0" Grid.Row="3" Text="{x:Static properties:Resources.ohms_Voltage}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
-        <TextBox   x:Name="voltv" Grid.Column="1" Grid.Row="3"
-                  AutoWordSelection="True" MaxLength="10" MinWidth="60" Margin="0,10,0,0"
+        <GroupBox Header="{x:Static properties:Resources.ohms_Voltage}" Grid.Column="0" Grid.Row="3" FontWeight="Bold"  Grid.ColumnSpan="3">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="voltv" Grid.Column="1" Grid.Row="3"
+                  AutoWordSelection="True" MaxLength="10" MinWidth="100" 
                   Text="{Binding Source={x:Reference voltslider}, Path=Value, StringFormat=0.##}"
                   HorizontalContentAlignment="Right"
                   VerticalContentAlignment="Stretch" LostFocus="voltv_LostFocus"
                   PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting"/>
-        <TextBlock Grid.Column="2" Grid.Row="3" Text="V (Volts)" Margin="0,10,0,0" VerticalAlignment="Center"/>
-        <Slider Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" x:Name="voltslider" Value="0" Maximum="16.8" TickPlacement="BottomRight"
+                    <TextBlock Text="V (Volts)" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Slider Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" x:Name="voltslider" Value="0" Maximum="16.8" TickPlacement="BottomRight"
         TickFrequency="1" MaxHeight="30">
-            <Slider.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <LinearGradientBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5" />
-                            <SkewTransform CenterY="0.5" CenterX="0.5" />
-                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5" />
-                            <TranslateTransform />
-                        </TransformGroup>
-                    </LinearGradientBrush.RelativeTransform>
-                    <GradientStop Color="#00000000" Offset="0" />
-                    <GradientStop Color="{Binding Source={x:Static properties:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Offset="0.955" />
-                </LinearGradientBrush>
-            </Slider.Background>
-        </Slider>
+                <Slider.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" />
+                                <SkewTransform CenterY="0.5" CenterX="0.5" />
+                                <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5" />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#00000000" Offset="0" />
+                        <GradientStop Color="{Binding Source={x:Static properties:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Offset="0.955" />
+                    </LinearGradientBrush>
+                </Slider.Background>
+            </Slider>
+            </StackPanel>
+        </GroupBox>
         <!--Ohms-->
-        <TextBlock Grid.Column="0" Grid.Row="5" Text="{x:Static properties:Resources.ohms_Resistance}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
-        <TextBox Grid.Column="1" Grid.Row="5" x:Name="resv" 
-                 AutoWordSelection="True" MaxLength="10" MinWidth="60" Margin="0,10,0,0"
+        <GroupBox Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Header="{x:Static properties:Resources.ohms_Resistance}" FontWeight="Bold" >
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Grid.Column="1" Grid.Row="5" x:Name="resv" 
+                 AutoWordSelection="True" MaxLength="10" MinWidth="100"
                   Text="{Binding Source={x:Reference resslider}, Path=Value, StringFormat=0.##}"
                   Background="{x:Null}"
                   HorizontalContentAlignment="Right"
                   VerticalContentAlignment="Stretch"
                  LostFocus="resv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" />
-        <TextBlock Grid.Column="2" Grid.Row="5" Text="Ω (Ohms)" VerticalAlignment="Center"  Margin="0,10,0,0" />
-        <Slider Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" x:Name="resslider" Value="0" Minimum="0" Maximum="3" LargeChange="1" TickPlacement="BottomRight" TickFrequency="0.01">
-            <Slider.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <LinearGradientBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5" />
-                            <SkewTransform CenterY="0.5" CenterX="0.5" />
-                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5" />
-                            <TranslateTransform />
-                        </TransformGroup>
-                    </LinearGradientBrush.RelativeTransform>
-                    <GradientStop Color="#00000000" Offset="0" />
-                    <GradientStop Color="{Binding Source={x:Static properties:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Offset="0.955" />
-                </LinearGradientBrush>
-            </Slider.Background>
-        </Slider>
+                    <TextBlock Text="Ω (Ohms)" VerticalAlignment="Center" />
+                </StackPanel>
+                <Slider Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" x:Name="resslider" Value="0" Minimum="0" Maximum="3" LargeChange="1" TickPlacement="BottomRight" TickFrequency="0.01">
+                        <Slider.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5" />
+                                        <SkewTransform CenterY="0.5" CenterX="0.5" />
+                                        <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5" />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#00000000" Offset="0" />
+                                <GradientStop Color="{Binding Source={x:Static properties:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Offset="0.955" />
+                            </LinearGradientBrush>
+                        </Slider.Background>
+                    </Slider>
+            </StackPanel>
+        </GroupBox>
         <!--Watts-->
-        <TextBlock Grid.Column="0" Grid.Row="7" Text="{x:Static properties:Resources.ohms_Wattage}" FontWeight="Bold" FontSize="20" Margin="0,10,0,0"/>
-        <TextBox Grid.Column="1" Grid.Row="7" MinWidth="60" MaxLength="10" Margin="0,10,0,0"
+        <GroupBox Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="3" Header="{x:Static properties:Resources.ohms_Wattage}" FontWeight="Bold" >
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Grid.Column="1" Grid.Row="7" MinWidth="100" MaxLength="10"
                  Text="{Binding Source={x:Reference wattslider}, Path=Value, StringFormat=0.#}" x:Name="wattv" 
                  Background="{x:Null}" AutoWordSelection="True"
                  HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch"
                  LostFocus="wattv_LostFocus" PreviewTextInput="textBox_PreviewTextInput"/>
-        <TextBlock Grid.Column="2" Grid.Row="7" Text="W (Watts)" VerticalAlignment="Center"  Margin="0,10,0,0"/>
-        <Slider Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" x:Name="wattslider" Value="0" Minimum="0" Maximum="400" TickPlacement="BottomRight" TickFrequency="5" MaxHeight="30">
-            <Slider.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <LinearGradientBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5" />
-                            <SkewTransform CenterY="0.5" CenterX="0.5" />
-                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5" />
-                            <TranslateTransform />
-                        </TransformGroup>
-                    </LinearGradientBrush.RelativeTransform>
-                    <GradientStop Color="#00000000" Offset="0" />
-                    <GradientStop Color="{Binding Source={x:Static properties:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Offset="0.90" />
-                </LinearGradientBrush>
-            </Slider.Background>
-        </Slider>
+                    <TextBlock Grid.Column="2" Grid.Row="7" Text="W (Watts)"  VerticalAlignment="Center"/>
+                </StackPanel>
+                <Slider Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" x:Name="wattslider" Value="0" Minimum="0" Maximum="400" TickPlacement="BottomRight" TickFrequency="5" MaxHeight="30">
+                    <Slider.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" />
+                                    <SkewTransform CenterY="0.5" CenterX="0.5" />
+                                    <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5" />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#00000000" Offset="0" />
+                            <GradientStop Color="{Binding Source={x:Static properties:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Offset="0.90" />
+                        </LinearGradientBrush>
+                    </Slider.Background>
+                </Slider>
+            </StackPanel>
+        </GroupBox>
 
         <TextBlock Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="3" Text="{x:Static properties:Resources.FirstTip}" Margin="10" HorizontalAlignment="Center" MaxHeight="20" />
 
-        <Button Grid.Column="0" Grid.Row="10" x:Name="ohm_reset" Content="{x:Static properties:Resources.Clear_Button}" Click="ohm_reset_Click" MaxWidth="205" MaxHeight="39" IsEnabled="False">
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Margin="10,0" Padding="10,0">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                <!-- -->
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-            </Button>
+        <Button Grid.Column="0" Grid.Row="10" Padding="10" x:Name="ohm_reset" Content="{x:Static properties:Resources.Clear_Button}" Click="ohm_reset_Click" IsEnabled="False"/>
         <Button Grid.Column="2" Grid.Row="10" Padding="10" x:Name="ohm_submit" Content="{x:Static properties:Resources.Calculate_Button}" Click="ohm_submit_Click"/>
     </Grid>
 </UserControl>

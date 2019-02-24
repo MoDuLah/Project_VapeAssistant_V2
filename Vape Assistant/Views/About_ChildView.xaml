@@ -36,7 +36,7 @@
             <!--Row 0-->
             <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="99"/>
             <TextBlock Grid.Row="0" Grid.Column="0" TextAlignment="Right" Margin="0,5,0,0" HorizontalAlignment="Left">
-                <Image Source="/Vape Assistant;component/Images/MatrixDesktop_96px.png" Width="12" Margin="0,0,0,0" VerticalAlignment="Bottom"/>
+                <Image Source="/Vape Assistant;component/Images/MatrixDesktop_96px.png" Width="16" Margin="0,0,0,0" VerticalAlignment="Bottom"/>
                 <Run Text="{x:Static p:Resources.Codebehind}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
             <Hyperlink NavigateUri="https://www.facebook.com/Chr.Gleridis" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
                 <Run Text="{x:Static p:Resources.ChrisG}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
@@ -44,101 +44,105 @@
             </TextBlock>
             <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Versioned_Text" Margin="0,5,0,0" FontWeight="Bold" TextAlignment="Right" />
             <TextBlock Grid.Row="5" Grid.Column="1" Margin="0,0,0,0">
-                <Image Source="/Vape Assistant;component/Images/UserGroups_100px.png" Width="12" Margin="0,0,0,0"/>
+                <Image Source="/Vape Assistant;component/Images/menuIconsDark/UserGroups_100px.png" Width="16" Margin="0,0,0,0"/>
                 <Run Text="{x:Static p:Resources.vendor_Website}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
                     <Hyperlink NavigateUri="https://vape-assistant.com" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
                 <Run Text="{x:Static p:Resources.Website}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
                 </Hyperlink>
             </TextBlock>
             <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Padding="0,5,0,0" FontWeight="Bold" Text="{x:Static p:Resources.ChildHeaderNine_ChangeLog}" TextAlignment="Center" HorizontalAlignment="Right" />
-            <TreeView Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" ItemContainerStyle="{StaticResource myLBStyle}"
-                      MinWidth="800" MaxWidth="1000" ScrollViewer.CanContentScroll="True" MaxHeight="250" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,0,20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
+            <TreeView Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
+                      MinWidth="800" MaxWidth="1000"
+                      MaxHeight="250" 
+                      ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,0,20"
+                      HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
+                
                 <TreeViewItem Header="2019/01/26 - 2.3.6965">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0027}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0027}" TextWrapping="Wrap"/>
                 </TreeViewItem>
                 <TreeViewItem Header="2019/01/25 - 2.3.6964">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0026}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0026}" TextWrapping="Wrap"/>
                 </TreeViewItem>
                 <TreeViewItem Header="2019/01/23 - 2.3.6962">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0025}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0025}" TextWrapping="Wrap"/>
                 </TreeViewItem>
                 <TreeViewItem Header="2018/04/05 - 2.2.6669">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0024}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0024}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/04/02 - 2.2.6666">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0023}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0023}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/03/31 - 2.2.6664">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0022}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0022}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/03/26 - 2.2.6659">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0021}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0021}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/03/17 - 2.2.6650">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0020}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0020}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/03/14 - 2.2.6647">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0019}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0019}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/03/12 - 2.2.6645">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0018}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0018}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/03/11 - 2.2.6644">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0017}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0017}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2018/03/10 - 2.2.6643">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0016}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0016}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/11/24 - 2.1">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0015}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0015}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/30 - 2.0.6512">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0014}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0014}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/29 - 2.0.6511r">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0013}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0013}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/28 - 2.0.6511">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0012}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0012}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/24 - 2.0.6506">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0011}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0011}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/14 - 2.0.6493b">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0010}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0010}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/13 - 2.0.6493">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0009}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0009}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/11 - 2.0.6490">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0008}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0008}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/10/08 - 2.0">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0007}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0007}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/18 - 1.0.6471">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0006}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0006}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/17 - 1.0.6470b">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0005a}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0005a}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/17 - 1.0.6470">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0005}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0005}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/14 - 1.0.6467">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0004}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0004}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/13 - 1.0.6466">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0003}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0003}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/12 - 1.0.6462">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0002}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0002}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/10 - 1.0.6460">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0001}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0001}" TextWrapping="Wrap" />
                 </TreeViewItem>
                 <TreeViewItem Header="2017/09/08 - 1.0">
-                    <TextBlock FontSize="12" Text="{x:Static p:Resources.about_change_0000}" TextWrapping="Wrap" Background="White"/>
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0000}" TextWrapping="Wrap" />
                 </TreeViewItem>
             </TreeView>
         </Grid>

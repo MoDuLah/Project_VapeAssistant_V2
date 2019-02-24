@@ -80,7 +80,6 @@ public Purchases_ChildView()
                 //Handler attach - will not be done if not needed
                 PreviewKeyDown += new KeyEventHandler(ShellView_PreviewKeyDown);
             }
-            MessageBox.Show(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
             BindComboBox(purchase_vendor_add);
             BindComboBox(purchase_vendor_view);
             BindComboBox(EditNameBox);
@@ -1732,7 +1731,7 @@ public Purchases_ChildView()
             if (i <= 19)
             {
                 i++;
-                if (i <= 9)
+                if (i <= 8)
                 {
                     ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Hidden);
                 }

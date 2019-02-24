@@ -148,10 +148,10 @@
     <value>Βάση (ml)</value>
   </data>
   <data name="TargetBoosterLevel" xml:space="preserve">
-    <value>Booster Νικοτίνης (mg/ml)</value>
+    <value>Επίπεδο Νικοτίνης (mg/ml)</value>
   </data>
   <data name="Targetbottles" xml:space="preserve">
-    <value>Νικοτινούχα Μπουκάλια</value>
+    <value>Μπουκάλια</value>
   </data>
   <data name="Targetml" xml:space="preserve">
     <value>Επιθυμητά ml</value>
@@ -830,9 +830,6 @@
   </data>
   <data name="SettingsOn" xml:space="preserve">
     <value>Ενεργό</value>
-  </data>
-  <data name="Settings_PurchasesPIN" xml:space="preserve">
-    <value>PIN (Αγορών)</value>
   </data>
   <data name="menu_tools_Alchemy" xml:space="preserve">
     <value>_Αλχημείες</value>
