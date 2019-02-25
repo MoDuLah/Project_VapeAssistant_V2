@@ -52,14 +52,12 @@ namespace Vape_Assistant.Views
             {
                 pin_Slider.Value = 1;
                 disablingPin.Visibility = Visibility.Visible;
-                enablingPin.Visibility = Visibility.Collapsed;
+                enablingPin.Visibility = Visibility.Hidden;
                 pin_Slider.IsEnabled = false;
                 GroupBoxer.Visibility = Visibility.Collapsed;
                 db_selector.Visibility = Visibility.Collapsed;
                 db_description.Visibility = Visibility.Collapsed;
-                export.Visibility = Visibility.Collapsed;
-                fileSelect.Visibility = Visibility.Collapsed;
-                filePreview.Visibility = Visibility.Collapsed;
+                GroupImport.Visibility = Visibility.Collapsed;
             }
             else
             {
@@ -68,9 +66,7 @@ namespace Vape_Assistant.Views
                 GroupBoxer.Visibility = Visibility.Visible;
                 db_selector.Visibility = Visibility.Visible;
                 db_description.Visibility = Visibility.Visible;
-                export.Visibility = Visibility.Visible;
-                fileSelect.Visibility = Visibility.Visible;
-                filePreview.Visibility = Visibility.Visible;
+                GroupImport.Visibility = Visibility.Visible;
             }
             CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
             string currentLanguage = currentCulture.ToString();
@@ -119,12 +115,12 @@ namespace Vape_Assistant.Views
             if (pin_Slider.Value == 1)
             {
                 enablingPin.Visibility = Visibility.Visible;
-                disablingPin.Visibility = Visibility.Collapsed;
+                disablingPin.Visibility = Visibility.Hidden;
                 pin_Slider.IsEnabled = false;
             }
             else
             {
-                enablingPin.Visibility = Visibility.Collapsed;
+                enablingPin.Visibility = Visibility.Hidden;
                 disablingPin.Visibility = Visibility.Visible;
                 pin_Slider.IsEnabled = false;
             }
@@ -391,13 +387,12 @@ namespace Vape_Assistant.Views
                     pin_Slider.IsEnabled = false;
                     pin_Slider.Value = 1;
                     disablingPin.Visibility = Visibility.Visible;
-                    enablingPin.Visibility = Visibility.Collapsed;
+                    enablingPin.Visibility = Visibility.Hidden;
                     GroupBoxer.Visibility = Visibility.Collapsed;
+                    GroupImport.Visibility = Visibility.Collapsed;
                     db_selector.Visibility = Visibility.Collapsed;
                     db_description.Visibility = Visibility.Collapsed;
-                    export.Visibility = Visibility.Collapsed;
-                    fileSelect.Visibility = Visibility.Collapsed;
-                    filePreview.Visibility = Visibility.Collapsed;
+
                 }
                 dbCmd.Dispose();
             }
@@ -445,14 +440,12 @@ namespace Vape_Assistant.Views
                             Settings.Default.Save();
                             dr.Dispose();
                             createCommand.Dispose();
-                            disablingPin.Visibility = Visibility.Collapsed;
+                            disablingPin.Visibility = Visibility.Hidden;
                             enablingPin.Visibility = Visibility.Visible;
                             GroupBoxer.Visibility = Visibility.Visible;
                             db_selector.Visibility = Visibility.Visible;
                             db_description.Visibility = Visibility.Visible;
-                            export.Visibility = Visibility.Visible;
-                            fileSelect.Visibility = Visibility.Visible;
-                            filePreview.Visibility = Visibility.Visible;
+                            GroupImport.Visibility = Visibility.Visible;
                             GC.Collect();
                         }
                         else
@@ -1099,11 +1092,12 @@ namespace Vape_Assistant.Views
                     if (CurrentCulture == en)
                     {
                         message = btnName + " exported successfully at " + newfileName;
-
+                        title = "Success!";
                     }
                     if (CurrentCulture == gr)
                     {
                         message = $"Η εξαγωγή του πίνακα: {btnName} από τη βάση ήταν επιτυχής!\nΘα το βρείτε εδώ: " + newfileName;
+                        title = "Επιτυχία!";
                     }
                     AutoClosingMessageBox.Show(message, title, autotimeout);
                 }

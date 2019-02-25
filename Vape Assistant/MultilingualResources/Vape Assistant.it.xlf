@@ -151,8 +151,8 @@
           <target state="new">PIN</target>
         </trans-unit>
         <trans-unit id="LoginRemember" translate="yes" xml:space="preserve">
-          <source>REMEMBER ME:</source>
-          <target state="new">REMEMBER ME:</target>
+          <source>Remember Me:</source>
+          <target state="new">Remember Me:</target>
         </trans-unit>
         <trans-unit id="LoginTitle" translate="yes" xml:space="preserve">
           <source>LOGIN</source>
@@ -399,8 +399,8 @@
           <target state="new">dd/mm/yyyy</target>
         </trans-unit>
         <trans-unit id="purchase_DateOfPurchase" translate="yes" xml:space="preserve">
-          <source>Date of Purchase (yyyy/mm/dd)</source>
-          <target state="new">Date of Purchase (yyyy/mm/dd)</target>
+          <source>Date of Purchase</source>
+          <target state="new">Date of Purchase</target>
         </trans-unit>
         <trans-unit id="purchase_OrderId" translate="yes" xml:space="preserve">
           <source>Order Id (#)</source>
@@ -491,8 +491,8 @@
           <target state="new">Edit</target>
         </trans-unit>
         <trans-unit id="vendor_Load" translate="yes" xml:space="preserve">
-          <source>Load Table Data</source>
-          <target state="new">Load Table Data</target>
+          <source>Load</source>
+          <target state="new">Load</target>
         </trans-unit>
         <trans-unit id="vendor_Vendor" translate="yes" xml:space="preserve">
           <source>Vendor</source>
@@ -1489,6 +1489,26 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="settings_Setpin" translate="yes" xml:space="preserve">
           <source>Set Pin</source>
           <target state="new">Set Pin</target>
+        </trans-unit>
+        <trans-unit id="required" translate="yes" xml:space="preserve">
+          <source>Required</source>
+          <target state="new">Required</target>
+        </trans-unit>
+        <trans-unit id="purchases_amountInCurrency" translate="yes" xml:space="preserve">
+          <source>Amount in </source>
+          <target state="new">Amount in </target>
+        </trans-unit>
+        <trans-unit id="settings_CurrentPin" translate="yes" xml:space="preserve">
+          <source>Current PIN</source>
+          <target state="new">Current PIN</target>
+        </trans-unit>
+        <trans-unit id="purchases_Items" translate="yes" xml:space="preserve">
+          <source>Items</source>
+          <target state="new">Items</target>
+        </trans-unit>
+        <trans-unit id="purchases_TotalCost" translate="yes" xml:space="preserve">
+          <source>Total Cost ($)</source>
+          <target state="new">Total Cost ($)</target>
         </trans-unit>
       </group>
     </body>

@@ -1786,7 +1786,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to REMEMBER ME:.
+        ///   Looks up a localized string similar to Remember Me:.
         /// </summary>
         public static string LoginRemember {
             get {
@@ -2425,7 +2425,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date of Purchase (yyyy/mm/dd).
+        ///   Looks up a localized string similar to Date of Purchase.
         /// </summary>
         public static string purchase_DateOfPurchase {
             get {
@@ -2551,6 +2551,24 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount in .
+        /// </summary>
+        public static string purchases_amountInCurrency {
+            get {
+                return ResourceManager.GetString("purchases_amountInCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        public static string purchases_Items {
+            get {
+                return ResourceManager.GetString("purchases_Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
         public static string purchases_tabitem1 {
@@ -2565,6 +2583,15 @@ namespace Vape_Assistant.Properties {
         public static string purchases_tabitem2 {
             get {
                 return ResourceManager.GetString("purchases_tabitem2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Cost ($).
+        /// </summary>
+        public static string purchases_TotalCost {
+            get {
+                return ResourceManager.GetString("purchases_TotalCost", resourceCulture);
             }
         }
         
@@ -2587,11 +2614,29 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Required.
+        /// </summary>
+        public static string required {
+            get {
+                return ResourceManager.GetString("required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save_Button {
             get {
                 return ResourceManager.GetString("Save_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current PIN.
+        /// </summary>
+        public static string settings_CurrentPin {
+            get {
+                return ResourceManager.GetString("settings_CurrentPin", resourceCulture);
             }
         }
         
@@ -3118,7 +3163,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Load Table Data.
+        ///   Looks up a localized string similar to Load.
         /// </summary>
         public static string vendor_Load {
             get {

@@ -226,7 +226,7 @@
     <value>PIN</value>
   </data>
   <data name="LoginRemember" xml:space="preserve">
-    <value>REMEMBER ME:</value>
+    <value>Remember Me:</value>
   </data>
   <data name="LoginTitle" xml:space="preserve">
     <value>LOGIN</value>
@@ -421,7 +421,7 @@
     <value>dd/mm/yyyy</value>
   </data>
   <data name="purchase_DateOfPurchase" xml:space="preserve">
-    <value>Date of Purchase (yyyy/mm/dd)</value>
+    <value>Date of Purchase</value>
   </data>
   <data name="purchase_OrderId" xml:space="preserve">
     <value>Order Id (#)</value>
@@ -490,7 +490,7 @@
     <value>Edit</value>
   </data>
   <data name="vendor_Load" xml:space="preserve">
-    <value>Load Table Data</value>
+    <value>Load</value>
   </data>
   <data name="vendor_Vendor" xml:space="preserve">
     <value>Vendor</value>
@@ -1212,5 +1212,20 @@ If you decline and keep the default pin-code you will be asked the next time you
   </data>
   <data name="settings_Setpin" xml:space="preserve">
     <value>Set Pin</value>
+  </data>
+  <data name="purchases_amountInCurrency" xml:space="preserve">
+    <value>Amount in </value>
+  </data>
+  <data name="purchases_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="purchases_TotalCost" xml:space="preserve">
+    <value>Total Cost ($)</value>
+  </data>
+  <data name="required" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="settings_CurrentPin" xml:space="preserve">
+    <value>Current PIN</value>
   </data>
 </root>

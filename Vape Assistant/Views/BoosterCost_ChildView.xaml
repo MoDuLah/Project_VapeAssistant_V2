@@ -40,14 +40,14 @@
         <!--Row 0-->
         <GroupBox Grid.Column="0" Header="{x:Static p:Resources.Targetml}" Margin="4,25,4,4">
             <TextBox x:Name="cost_Target_ml" AutoWordSelection="True" Text="0" HorizontalContentAlignment="Right"
-                     GotFocus="txtBox_GotFocus" LostFocus="txtBox_LostFocus" TextChanged="txtBox_TextChanged" MaxHeight="28" VerticalAlignment="Bottom" PreviewTextInput="textBox_PreviewTextInput" />
+                     GotFocus="txtBox_GotFocus" LostFocus="txtBox_LostFocus" TextChanged="txtBox_TextChanged" MaxHeight="28" VerticalAlignment="Center" PreviewTextInput="textBox_PreviewTextInput" />
         </GroupBox>
         <GroupBox Grid.Column="1">
             <GroupBox.Header>
                 <TextBlock Width="120" TextAlignment="Center" Text="{x:Static p:Resources.TargetNicLevel}" TextWrapping="Wrap"/>
             </GroupBox.Header>
             <TextBox x:Name="cost_nic_level" AutoWordSelection="True" Text="0" HorizontalContentAlignment="Right"
-                     GotFocus="txtBox_GotFocus" LostFocus="txtBox_LostFocus" TextChanged="txtBox_TextChanged" VerticalAlignment="Bottom" PreviewTextInput="textBox_PreviewTextInput"  />
+                     GotFocus="txtBox_GotFocus" LostFocus="txtBox_LostFocus" TextChanged="txtBox_TextChanged" VerticalAlignment="Center" PreviewTextInput="textBox_PreviewTextInput"  />
         </GroupBox>
         <GroupBox Grid.Column="2">
             <GroupBox.Header>
@@ -61,7 +61,7 @@
         <GroupBox Grid.Column="3" Header="{x:Static p:Resources.Targetpriceperbottle}" Margin="4,25,4,4">
         <TextBox x:Name="cost_booster_bottle" AutoWordSelection="True" Text="0" 
                  GotFocus="txtBox_GotFocus" LostFocus="txtBox_LostFocus" TextChanged="txtBox_TextChanged"
-                 HorizontalContentAlignment="Right" VerticalAlignment="Bottom" PreviewTextInput="textBox_PreviewTextInput" />
+                 HorizontalContentAlignment="Right" VerticalAlignment="Center" PreviewTextInput="textBox_PreviewTextInput" />
         </GroupBox>
         <!--Row 2-->
         <GroupBox  x:Name="gb_base" Grid.Row="2" Grid.RowSpan="2" Header="{x:Static p:Resources.Targetbase}">

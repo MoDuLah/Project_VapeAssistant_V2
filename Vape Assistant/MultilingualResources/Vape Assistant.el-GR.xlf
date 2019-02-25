@@ -107,8 +107,9 @@
           <target state="final">PIN</target>
         </trans-unit>
         <trans-unit id="LoginRemember" translate="yes" xml:space="preserve">
-          <source>REMEMBER ME:</source>
-          <target state="final">Απομνημόνευση Στοιχείων:</target>
+          <source>Remember Me:</source>
+          <target state="needs-review-translation">Απομνημόνευση Στοιχείων:</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="LoginTitle" translate="yes" xml:space="preserve">
           <source>LOGIN</source>
@@ -243,8 +244,9 @@
           <target state="final">Για παράδειγμα 8€/10ml=0.8€/ml οπότε γράφετε 0.8</target>
         </trans-unit>
         <trans-unit id="purchase_DateOfPurchase" translate="yes" xml:space="preserve">
-          <source>Date of Purchase (yyyy/mm/dd)</source>
-          <target state="final">Ημερομηνία Αγοράς (εεεε/μμ/ηη)</target>
+          <source>Date of Purchase</source>
+          <target state="needs-review-translation">Ημερομηνία Αγοράς (εεεε/μμ/ηη)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="purchase_VendorName" translate="yes" xml:space="preserve">
           <source>Vendor</source>
@@ -343,8 +345,9 @@
           <target state="final">Επωνυμία</target>
         </trans-unit>
         <trans-unit id="vendor_Load" translate="yes" xml:space="preserve">
-          <source>Load Table Data</source>
-          <target state="final">Φόρτωση πίνακα δεδομένων</target>
+          <source>Load</source>
+          <target state="needs-review-translation">Φόρτωση πίνακα δεδομένων</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="purchases_tabitem1" translate="yes" xml:space="preserve">
           <source>Add</source>
@@ -1488,6 +1491,26 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="settings_Setpin" translate="yes" xml:space="preserve">
           <source>Set Pin</source>
           <target state="new">Set Pin</target>
+        </trans-unit>
+        <trans-unit id="required" translate="yes" xml:space="preserve">
+          <source>Required</source>
+          <target state="new">Required</target>
+        </trans-unit>
+        <trans-unit id="purchases_amountInCurrency" translate="yes" xml:space="preserve">
+          <source>Amount in </source>
+          <target state="new">Amount in </target>
+        </trans-unit>
+        <trans-unit id="settings_CurrentPin" translate="yes" xml:space="preserve">
+          <source>Current PIN</source>
+          <target state="new">Current PIN</target>
+        </trans-unit>
+        <trans-unit id="purchases_Items" translate="yes" xml:space="preserve">
+          <source>Items</source>
+          <target state="new">Items</target>
+        </trans-unit>
+        <trans-unit id="purchases_TotalCost" translate="yes" xml:space="preserve">
+          <source>Total Cost ($)</source>
+          <target state="new">Total Cost ($)</target>
         </trans-unit>
       </group>
     </body>

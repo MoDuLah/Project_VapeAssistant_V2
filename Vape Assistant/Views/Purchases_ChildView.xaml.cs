@@ -43,35 +43,36 @@ public Purchases_ChildView()
         {
             if (CurrentCulture == "en-US")
             {
-                hdr0 = "#";
-                hdr1 = "Order Date";
-                hdr2 = "Order Ref.";
-                hdr3 = "Company";
-                hdr4 = "Company ID";
-                hdr5 = "Product Desc.";
-                hdr6 = "Product ID (SKU)";
-                hdr7 = "Quantity";
-                hdr8 = "Price ($)";
-                hdr9 = "Discount ($)";
-                hdr10 = "Shipping ($)";
-                hdr11 = "Total Cost ($)";
+                hdr0 = " # ";
+                hdr1 = " Order Date ";
+                hdr2 = " Order Ref. ";
+                hdr3 = " Company ";
+                hdr4 = " Company ID ";
+                hdr5 = " Product Desc. ";
+                hdr6 = " Product ID (SKU) ";
+                hdr7 = " Quantity ";
+                hdr8 = " Price ($) ";
+                hdr9 = " Discount ($) ";
+                hdr10 = " Shipping ($) ";
+                hdr11 = " Total Cost ($) ";
             }
+
             if (CurrentCulture == "el-GR")
             {
-                hdr0 = "#";
-                hdr1 = "Ημ/νία Παραγγελίας";
-                hdr2 = "Αρ. Παραστατικού";
-                hdr3 = "Επων. Εταιρίας";
-                hdr4 = "Κωδ. Εταίριας";
-                hdr5 = "Περ. Προϊόντος";
-                hdr6 = "Κωδ. Προϊόντος (SKU)";
-                hdr7 = "Ποσότητα";
-                hdr8 = "Τιμή (€)";
-                hdr9 = "Έκπτωση (€)";
-                hdr10 = "Μεταφορικά (€)";
-                hdr11 = "Τελικό Κόστος (€)";
-
+                hdr0 = " # ";
+                hdr1 = " Ημ/νία Παραγγελίας ";
+                hdr2 = " Αρ. Παραστατικού ";
+                hdr3 = " Επων. Εταιρίας ";
+                hdr4 = " Κωδ. Εταίριας ";
+                hdr5 = " Περ. Προϊόντος ";
+                hdr6 = " Κωδ. Προϊόντος (SKU) ";
+                hdr7 = " Ποσότητα ";
+                hdr8 = " Τιμή (€) ";
+                hdr9 = " Έκπτωση (€) ";
+                hdr10 = " Μεταφορικά (€) ";
+                hdr11 = " Τελικό Κόστος (€) ";
             }
+
             InitializeComponent();
 
             if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator != "." ||
@@ -340,6 +341,7 @@ public Purchases_ChildView()
                 }
 
             }
+            purchase_error_catch.Text = "";
 
             if (string.IsNullOrEmpty(sDate) || purchase_vendor_add.SelectedIndex < 0)
             {
@@ -364,13 +366,13 @@ public Purchases_ChildView()
                     switch (Convert.ToInt32(purchase_error_catch.Text))
                     {
                         case 01:
-                            MessageBox.Show("The following field is empty:\n- " + purchase_vendor_lbl.Text, "Error: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            MessageBox.Show("The following field is empty:\n- " + purchase_vendor_lbl.Header, "Error: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         case 10:
-                            MessageBox.Show("The following field is empty:\n- " + purchase_date_lbl.Text, "Error: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            MessageBox.Show("The following field is empty:\n- " + purchase_date_lbl.Header, "Error: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         case 11:
-                            MessageBox.Show("The following fields are empty:\n- " + purchase_date_lbl.Text + "\n- " + purchase_vendor_lbl.Text, "Error: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            MessageBox.Show("The following fields are empty:\n- " + purchase_date_lbl.Header + "\n- " + purchase_vendor_lbl.Header, "Error: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         default:
                             MessageBox.Show("Some required field has not been filled up.", "Error");
@@ -382,13 +384,13 @@ public Purchases_ChildView()
                     switch (Convert.ToInt32(purchase_error_catch.Text))
                     {
                         case 01:
-                            MessageBox.Show("Το παρακάτω πεδίο είναι κενό:\n- " + purchase_vendor_lbl.Text, "Σφάλμα: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            MessageBox.Show("Το παρακάτω πεδίο είναι κενό:\n- " + purchase_vendor_lbl.Header, "Σφάλμα: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         case 100:
-                            MessageBox.Show("Το παρακάτω πεδίο είναι κενό:\n- " + purchase_date_lbl.Text, "Σφάλμα: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            MessageBox.Show("Το παρακάτω πεδίο είναι κενό:\n- " + purchase_date_lbl.Header, "Σφάλμα: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         case 11:
-                            MessageBox.Show("Τα παρακάτω πεδία είναι κενά:\n- " + purchase_date_lbl.Text + "\n- " + purchase_vendor_lbl.Text, "Σφάλμα: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            MessageBox.Show("Τα παρακάτω πεδία είναι κενά:\n- " + purchase_date_lbl.Header + "\n- " + purchase_vendor_lbl.Header, "Σφάλμα: " + purchase_error_catch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             break;
                         default:
                             MessageBox.Show("Κάποια από τις απαραίτητες τιμές δεν έχει συμπληρωθεί", "Σφάλμα");

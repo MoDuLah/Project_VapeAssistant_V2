@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Vape_Assistant.Views"
              Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
-             mc:Ignorable="d" Padding="20">
+             mc:Ignorable="d">
     <UserControl.Resources>
         <Style x:Key="myLBStyle" TargetType="{x:Type TreeViewItem}">
             <Style.Resources>
