@@ -174,6 +174,17 @@ namespace Vape_Assistant.Views
             sw.Stop();
             Console.WriteLine("Total time to load {0} images: {1}ms", Images.Count, sw.ElapsedMilliseconds);
         }
+
+        private void UserControl_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            pause = true;
+        }
+
+        private void UserControl_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            pause = false;
+        }
+
         public static string TruncateLongString(string str, int maxLength)
         {
             return str.Substring(0, Math.Min(str.Length, maxLength));

@@ -144,7 +144,7 @@ namespace Vape_Assistant.Views
                     string fid = reader.GetInt32(2).ToString();
                     string per = reader.GetDouble(3).ToString();
                     flv[i].Visibility = Visibility.Visible;
-                    flv[i].Height = 24;
+                    //flv[i].Height = 24;
                     flavor_id[i].Text = fid;
                     percentage[i].Text = per;
                     string fuery = $"Select BrandShort, Flavor from [Flavors] Where Id = '{ flavor_id[i].Text }'";
@@ -473,6 +473,7 @@ namespace Vape_Assistant.Views
         private void delflv_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Image img = (Image)sender;
+            MessageBox.Show(img.Name);
             StackPanel[] flv = { flv0, flv1, flv2, flv3, flv4, flv5, flv6, flv7, flv8, flv9, flv10, flv11, flv12, flv13, flv14, flv15, flv16, flv17, flv18, flv19, flv20 };
             Image[] delflv = { delflv0, delflv1, delflv2, delflv3, delflv4, delflv5, delflv6, delflv7, delflv8, delflv9, delflv10, delflv11, delflv12, delflv13, delflv14, delflv15, delflv16, delflv17, delflv18, delflv19, delflv20 };
             ComboBox[] brnd = { brand0, brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20 };
@@ -480,11 +481,31 @@ namespace Vape_Assistant.Views
             TextBox[] prc = { percentage0, percentage1, percentage2, percentage3, percentage4, percentage5, percentage6, percentage7, percentage8, percentage9, percentage10, percentage11, percentage12, percentage13, percentage14, percentage15, percentage16, percentage17, percentage18, percentage19, percentage20 };
             TextBox[] fid = { flavor_id0, flavor_id1, flavor_id2, flavor_id3, flavor_id4, flavor_id5, flavor_id6, flavor_id7, flavor_id8, flavor_id9, flavor_id10, flavor_id11, flavor_id12, flavor_id13, flavor_id14, flavor_id15, flavor_id16, flavor_id17, flavor_id18, flavor_id19, flavor_id20 };
             int i = Convert.ToInt32(img.Name.Remove(0, 6));
-            flv[i].Visibility = Visibility.Collapsed;
-            brnd[i].SelectedIndex = -1;
-            flname[i].SelectedIndex = -1;
-            prc[i].Text = null;
-            fid[i].Text = null;
+            for (int y = i; y < prc.Length; y++)
+            {
+                try { 
+                if (flv[y + 1].Visibility == Visibility.Visible) { 
+                    brnd[y].SelectedIndex = brnd[y + 1].SelectedIndex;
+                    TakeBrandGiveFlavor(brnd[y] as ComboBox);
+                    flname[y].SelectedIndex = flname[y + 1].SelectedIndex;
+                    prc[y].Text = prc[y + 1].Text;
+                    fid[y].Text = fid[y + 1].Text;
+                }
+                else
+                {
+                    brnd[y].SelectedIndex = -1;
+                    flname[y].SelectedIndex = -1;
+                    prc[y].Text = null;
+                    fid[y].Text = null;
+                    flv[y].Visibility = Visibility.Collapsed;
+                    break;
+                }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
             int z = flv.Length;
             int xyz = 0;
             for (int y = 0; y < z; y++)
@@ -947,11 +968,99 @@ namespace Vape_Assistant.Views
         private void Adder_flv_Click(object sender, RoutedEventArgs e)
         {
             int i = Convert.ToInt32(flavors_shown.Text);
+            #region Switch
+            switch (i)
+            {
+                case 0:
+                    flv1.Visibility = Visibility.Visible;
+                    //flv1.Height = 24;
+                    break;
+                case 1:
+                    flv2.Visibility = Visibility.Visible;
+                    //flv2.Height = 24;
+                    break;
+                case 2:
+                    flv3.Visibility = Visibility.Visible;
+                    //flv3.Height = 24;
+                    break;
+                case 3:
+                    flv4.Visibility = Visibility.Visible;
+                    //flv4.Height = 24;
+                    break;
+                case 4:
+                    flv5.Visibility = Visibility.Visible;
+                    //flv5.Height = 24;
+                    break;
+                case 5:
+                    flv6.Visibility = Visibility.Visible;
+                    //flv6.Height = 24;
+                    break;
+                case 6:
+                    flv7.Visibility = Visibility.Visible;
+                    //flv7.Height = 24;
+                    break;
+                case 7:
+                    flv8.Visibility = Visibility.Visible;
+                    //flv8.Height = 24;
+                    break;
+                case 8:
+                    flv9.Visibility = Visibility.Visible;
+                    //flv9.Height = 24;
+                    break;
+                case 9:
+                    flv10.Visibility = Visibility.Visible;
+                    //flv10.Height = 24;
+                    break;
+                case 10:
+                    flv11.Visibility = Visibility.Visible;
+                    //flv11.Height = 24;
+                    break;
+                case 11:
+                    flv12.Visibility = Visibility.Visible;
+                    //flv12.Height = 24;
+                    break;
+                case 12:
+                    flv13.Visibility = Visibility.Visible;
+                    //flv13.Height = 24;
+                    break;
+                case 13:
+                    flv14.Visibility = Visibility.Visible;
+                    //flv14.Height = 24;
+                    break;
+                case 14:
+                    flv15.Visibility = Visibility.Visible;
+                    //flv15.Height = 24;
+                    break;
+                case 15:
+                    flv16.Visibility = Visibility.Visible;
+                    //flv16.Height = 24;
+                    break;
+                case 16:
+                    flv17.Visibility = Visibility.Visible;
+                    //flv17.Height = 24;
+                    break;
+                case 17:
+                    flv18.Visibility = Visibility.Visible;
+                    //flv18.Height = 24;
+                    break;
+                case 18:
+                    flv19.Visibility = Visibility.Visible;
+                    //flv19.Height = 24;
+                    break;
+                case 19:
+                    flv20.Visibility = Visibility.Visible;
+                    //flv20.Height = 24;
+                    break;
+                default:
+                    //                    MessageBox.Show(Properties.Resources.BaseMixNicBoosterError);
+                    break;
+            }
+            #endregion
             if (i <= 19)
             {
                 i++;
                 flavors_shown.Text = Convert.ToString(i);
-                if (i <= 8)
+                if (i <= 5)
                 {
                     ScrollViewer.SetVerticalScrollBarVisibility(FlavorScroller, ScrollBarVisibility.Hidden);
                 }
@@ -966,94 +1075,6 @@ namespace Vape_Assistant.Views
                 flavors_shown.IsEnabled = false;
                 return;
             }
-            #region Switch
-            switch (i)
-            {
-                case 0:
-                    flv1.Visibility = Visibility.Visible;
-                    flv1.Height = 24;
-                    break;
-                case 1:
-                    flv2.Visibility = Visibility.Visible;
-                    flv2.Height = 24;
-                    break;
-                case 2:
-                    flv3.Visibility = Visibility.Visible;
-                    flv3.Height = 24;
-                    break;
-                case 3:
-                    flv4.Visibility = Visibility.Visible;
-                    flv4.Height = 24;
-                    break;
-                case 4:
-                    flv5.Visibility = Visibility.Visible;
-                    flv5.Height = 24;
-                    break;
-                case 5:
-                    flv6.Visibility = Visibility.Visible;
-                    flv6.Height = 24;
-                    break;
-                case 6:
-                    flv7.Visibility = Visibility.Visible;
-                    flv7.Height = 24;
-                    break;
-                case 7:
-                    flv8.Visibility = Visibility.Visible;
-                    flv8.Height = 24;
-                    break;
-                case 8:
-                    flv9.Visibility = Visibility.Visible;
-                    flv9.Height = 24;
-                    break;
-                case 9:
-                    flv10.Visibility = Visibility.Visible;
-                    flv10.Height = 24;
-                    break;
-                case 10:
-                    flv11.Visibility = Visibility.Visible;
-                    flv11.Height = 24;
-                    break;
-                case 11:
-                    flv12.Visibility = Visibility.Visible;
-                    flv12.Height = 24;
-                    break;
-                case 12:
-                    flv13.Visibility = Visibility.Visible;
-                    flv13.Height = 24;
-                    break;
-                case 13:
-                    flv14.Visibility = Visibility.Visible;
-                    flv14.Height = 24;
-                    break;
-                case 14:
-                    flv15.Visibility = Visibility.Visible;
-                    flv15.Height = 24;
-                    break;
-                case 15:
-                    flv16.Visibility = Visibility.Visible;
-                    flv16.Height = 24;
-                    break;
-                case 16:
-                    flv17.Visibility = Visibility.Visible;
-                    flv17.Height = 24;
-                    break;
-                case 17:
-                    flv18.Visibility = Visibility.Visible;
-                    flv18.Height = 24;
-                    break;
-                case 18:
-                    flv19.Visibility = Visibility.Visible;
-                    flv19.Height = 24;
-                    break;
-                case 19:
-                    flv20.Visibility = Visibility.Visible;
-                    flv20.Height = 24;
-                    break;
-                default:
-                    //                    MessageBox.Show(Properties.Resources.BaseMixNicBoosterError);
-                    break;
-            }
-            #endregion
         }
 
 

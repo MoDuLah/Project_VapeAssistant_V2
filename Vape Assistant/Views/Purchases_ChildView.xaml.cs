@@ -38,8 +38,7 @@ namespace Vape_Assistant.Views
         int editId;
         string hdr0 = "", hdr1 = "", hdr2 = "", hdr3 = "", hdr4 = "", hdr5 = "", hdr6 = "", hdr7 = "", hdr8 = "", hdr9 = "", hdr10 = "", hdr11 = "";
 
-
-public Purchases_ChildView()
+         public Purchases_ChildView()
         {
             if (CurrentCulture == "en-US")
             {
@@ -74,6 +73,7 @@ public Purchases_ChildView()
             }
 
             InitializeComponent();
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
 
             if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator != "." ||
                 CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator != ",")
@@ -89,6 +89,13 @@ public Purchases_ChildView()
             FillDataGrid();
             RetrieveOrders();
             HideTheRest();
+        }
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+
+            if (textBox != null && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
         }
 
         public void HideTheRest()
@@ -1319,6 +1326,75 @@ public Purchases_ChildView()
             }
         }
 
+        private void Change_Total(object sender, KeyEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            if (string.IsNullOrEmpty(textBox.Text)) { return; }
+            //if (Convert.ToDouble(textBox.Text) < 0.01) { return; }
+            TextBox[] quantityArray = { quantity1, quantity2, quantity3, quantity4, quantity5, quantity6, quantity7, quantity8, quantity9, quantity10, quantity11, quantity12, quantity13, quantity14, quantity15, quantity16, quantity17, quantity18, quantity19, quantity20 };
+            TextBox[] priceArray = { price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, price11, price12, price13, price14, price15, price16, price17, price18, price19, price20 };
+            TextBox[] discountArray = { discount1, discount2, discount3, discount4, discount5, discount6, discount7, discount8, discount9, discount10, discount11, discount12, discount13, discount14, discount15, discount16, discount17, discount18, discount19, discount20 };
+            TextBox[] shippingArray = { shipping1, shipping2, shipping3, shipping4, shipping5, shipping6, shipping7, shipping8, shipping9, shipping10, shipping11, shipping12, shipping13, shipping14, shipping15, shipping16, shipping17, shipping18, shipping19, shipping20 };
+            TextBox[] totalArray = { total1, total2, total3, total4, total5, total6, total7, total8, total9, total10, total11, total12, total13, total14, total15, total16, total17, total18, total19, total20 };
+            int i = textBox.Name.Length;
+            int RemoveCount = 0;
+            if (i == 9 || i == 6)
+            {
+                RemoveCount = i - 1;
+            }
+            else if (i == 10 || i == 7)
+            {
+                RemoveCount = i - 2;
+            }
+            else
+            {
+                AutoClosingMessageBox.Show(i.ToString(), "Error", autotimeout);
+            }
+            int y = Convert.ToInt32(textBox.Name.Remove(0, RemoveCount)) - 1;
+            string name = textBox.Name;
+            decimal QuantityValue = 0.0M;
+            decimal PriceValue = 0.0M;
+            decimal DiscountValue = 0.0M;
+            decimal ShippingValue = 0.0M;
+            if (quantityArray[y].Visibility == Visibility.Visible)
+            {
+                try
+                {
+                    QuantityValue = Convert.ToDecimal(quantityArray[y].Text.Replace(",", "."));
+                }
+                catch
+                {
+                    return;
+                }
+                try
+                {
+                    PriceValue = Convert.ToDecimal(priceArray[y].Text.Replace(",", "."));
+                }
+                catch
+                {
+                    return;
+                }
+                try
+                {
+                    DiscountValue = Convert.ToDecimal(discountArray[y].Text.Replace(",", "."));
+                }
+                catch
+                {
+                    return;
+                }
+                try
+                {
+                    ShippingValue = Convert.ToDecimal(shippingArray[y].Text.Replace(",", "."));
+                }
+                catch
+                {
+                    return;
+                }
+
+                totalArray[y].Text = Convert.ToString(Math.Round((QuantityValue * PriceValue) - DiscountValue + ShippingValue, 2, MidpointRounding.AwayFromZero));
+            }
+        }
 
         private void EditBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -1564,7 +1640,7 @@ public Purchases_ChildView()
             TextBox textBox = (TextBox)sender;
 
             if (string.IsNullOrEmpty(textBox.Text)) { return; }
-            if (Convert.ToDouble(textBox.Text) < 0.01) { return; }
+            //if (Convert.ToDouble(textBox.Text) < 0.01) { return; }
             TextBox[] quantityArray = { quantity1, quantity2, quantity3, quantity4, quantity5, quantity6, quantity7, quantity8, quantity9, quantity10, quantity11, quantity12, quantity13, quantity14, quantity15, quantity16, quantity17, quantity18, quantity19, quantity20 };
             TextBox[] priceArray = { price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, price11, price12, price13, price14, price15, price16, price17, price18, price19, price20 };
             TextBox[] discountArray = { discount1, discount2, discount3, discount4, discount5, discount6, discount7, discount8, discount9, discount10, discount11, discount12, discount13, discount14, discount15, discount16, discount17, discount18, discount19, discount20 };
@@ -1592,11 +1668,38 @@ public Purchases_ChildView()
             decimal ShippingValue = 0.0M;
             if (quantityArray[y].Visibility == Visibility.Visible)
             {
+                try
+                {
                 QuantityValue = Convert.ToDecimal(quantityArray[y].Text.Replace(",","."));
+                }
+                catch
+                {
+                    return;
+                }
+                try
+                {
                 PriceValue = Convert.ToDecimal(priceArray[y].Text.Replace(",", "."));
+                }
+                catch
+                {
+                    return;
+                }
+                try
+                { 
                 DiscountValue = Convert.ToDecimal(discountArray[y].Text.Replace(",", "."));
+                }
+                catch
+                {
+                    return;
+                }
+                try { 
                 ShippingValue = Convert.ToDecimal(shippingArray[y].Text.Replace(",", "."));
-                
+                }
+                catch
+                {
+                    return;
+                }
+
                 totalArray[y].Text = Convert.ToString(Math.Round((QuantityValue * PriceValue) - DiscountValue + ShippingValue,2,MidpointRounding.AwayFromZero));
             }
         }
@@ -1694,6 +1797,7 @@ public Purchases_ChildView()
                 shippingArray[y].Text = "0.0";
                 totalArray[y].Text = "0.0";
             }
+            ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Hidden);
             order_sum.Text = "0";
             additems_Count.Text = "1";
             HideTheRest();
@@ -1733,7 +1837,7 @@ public Purchases_ChildView()
             if (i <= 19)
             {
                 i++;
-                if (i <= 8)
+                if (i <= 6)
                 {
                     ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Hidden);
                 }

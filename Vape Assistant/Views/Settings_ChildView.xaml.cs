@@ -1027,6 +1027,37 @@ namespace Vape_Assistant.Views
                     dr.Close();
                     dbConn.Close();
                 }
+                else
+                {
+                    query = $"pragma table_info({TableName.ToString()}) ;";
+                    dbConn.Open();
+                    dbCmd = new SQLiteCommand(query, dbConn);
+                    dbCmd.ExecuteNonQuery();
+                    SQLiteDataReader dr = dbCmd.ExecuteReader();
+
+                    int count = 0;
+                    while (dr.Read())
+                    {
+                        count++;
+                        if (count == 0)
+                        {
+                            csvHeader = dr[1].ToString() + delimiter;
+                        }
+                        else
+                        {
+                            csvHeader = csvHeader + dr[1].ToString() + delimiter;
+                        }
+                    }
+                    if (string.IsNullOrEmpty(csvHeader))
+                    {
+                    }
+                    else
+                    {
+                        csvHeader = csvHeader.TrimEnd(csvHeader[csvHeader.Length - 1]);
+                    }
+                    dr.Close();
+                    dbConn.Close();
+                }
 
                 //set up connection to database.
                 if (btnName == "Warehouse")

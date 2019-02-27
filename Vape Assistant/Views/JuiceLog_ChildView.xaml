@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Vape_Assistant.Views.JuiceLog_ChildView"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:Vape_Assistant.Views"
              xmlns:p="clr-namespace:Vape_Assistant.Properties"
              xmlns:myCalendar="clr-namespace:Vape_Assistant"
+             xmlns:cal="http://www.caliburnproject.org" x:Class="Vape_Assistant.Views.JuiceLog_ChildView"
              mc:Ignorable="d" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
-             Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
-             FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
+             Foreground="{Binding FGColor, Mode=TwoWay, Source={x:Static p:Settings.Default}}"
+             FontFamily="{Binding FontFam, Mode=TwoWay, Source={x:Static p:Settings.Default}}"
              BorderBrush="{x:Null}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,7 +19,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
         <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" x:Name="JuiceLogList" SelectionChanged="JuiceLogList_SelectionChanged"
                   LoadingRow="DataGrid_LoadingRow" SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                   EnableColumnVirtualization="True" IsReadOnly="True"
@@ -86,7 +86,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" Grid.RowSpan="3">
-            <Button x:Name="log_Add" Cursor="Hand" HorizontalContentAlignment="Center" Click="Log_Add_Click" VerticalAlignment="Bottom" Margin="10,5">
+            <Button x:Name="log_Add" Cursor="Hand" Click="Log_Add_Click" VerticalAlignment="Bottom" Margin="10,5">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Vape Assistant;component/Images/menuIconsDark/Add_32px.png" VerticalAlignment="Center" Width="20"/>
                     <TextBlock Text="{x:Static p:Resources.AddShop}" VerticalAlignment="Center" />
@@ -107,169 +107,122 @@
         </StackPanel>
         <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! Visibility="Visible" -->
         <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="AddLogElementInputBox" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.6"/>
-            <Border MinWidth="300" Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                       BorderBrush="Black" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Background="#4c4c4c" Opacity="0.7"/>
+            <Border MinWidth="300" 
+                       CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Margin="20">
-                    <TextBlock Margin="0,0,0,0" Text="{x:Static p:Resources.log_Add}" FontWeight="Bold" FontSize="20"/>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition MinWidth="120"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                    <GroupBox Header="{x:Static p:Resources.log_Add}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="{x:Static p:Resources.log_RecipeName}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                        <TextBox x:Name="Add_LogRecipeName" Grid.Row="0" Grid.Column="1" Padding="5" TabIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.log_RecipeName}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                            <TextBox x:Name="Add_LogRecipeName" Grid.Row="0" Grid.Column="1" Padding="5" TabIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-                        <TextBlock Text="{x:Static p:Resources.log_Amount}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,6"/>
-                        <TextBox x:Name="Add_LogAmount" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="5" TabIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="Add_LogAmount_PreviewTextInput" MaxLength="5"/>
+                            <TextBlock Text="{x:Static p:Resources.log_Amount}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,6"/>
+                            <TextBox x:Name="Add_LogAmount" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="5" TabIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="Add_LogAmount_PreviewTextInput" MaxLength="5"/>
 
-                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0">
-                            <TextBlock Text="{x:Static p:Resources.log_RatioPG}" VerticalAlignment="Center" />
-                            <TextBlock Text="/" VerticalAlignment="Center"/>
-                            <TextBlock Text="{x:Static p:Resources.log_RatioVG}" VerticalAlignment="Center" />
-                        </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0">
+                                <TextBlock Text="{x:Static p:Resources.log_RatioPG}" VerticalAlignment="Center" />
+                                <TextBlock Text="/" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static p:Resources.log_RatioVG}" VerticalAlignment="Center" />
+                            </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
-                            <TextBox x:Name="Add_LogPGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2" PreviewTextInput="Add_LogPGRatio_PreviewTextInput" MaxLength="5" TextChanged="Add_LogPGRatio_TextChanged"/>
-                            <TextBlock Text="/" VerticalAlignment="Center" FontSize="20" />
-                            <TextBox x:Name="Add_LogVGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="3" PreviewTextInput="Add_LogVGRatio_PreviewTextInput" MaxLength="5" TextChanged="Add_LogVGRatio_TextChanged"/>
-                        </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                                <TextBox x:Name="Add_LogPGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2" PreviewTextInput="Add_LogPGRatio_PreviewTextInput" MaxLength="5" TextChanged="Add_LogPGRatio_TextChanged"/>
+                                <TextBlock Text="/" VerticalAlignment="Center" FontSize="20" />
+                                <TextBox x:Name="Add_LogVGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="3" PreviewTextInput="Add_LogVGRatio_PreviewTextInput" MaxLength="5" TextChanged="Add_LogVGRatio_TextChanged"/>
+                            </StackPanel>
 
-                        <TextBlock Text="{x:Static p:Resources.log_Nic}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                        <TextBox x:Name="Add_LogNic" Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="4" PreviewTextInput="Add_LogNic_PreviewTextInput" MaxLength="4"/>
+                            <TextBlock Text="{x:Static p:Resources.log_Nic}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox x:Name="Add_LogNic" Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="4" PreviewTextInput="Add_LogNic_PreviewTextInput" MaxLength="4"/>
 
-                        <TextBlock Text="{x:Static p:Resources.log_Date}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                        <myCalendar:ucCalendar Grid.Row="4" Grid.Column="1" x:Name="log_date" Width="Auto" TabIndex="5" IsTabStop="True" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{x:Static p:Resources.log_Notes}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                        <TextBox x:Name="Add_LogNotes" Grid.Row="5" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" MaxLength="128" TextChanged="Add_LogNotes_TextChanged"/>
-                        <TextBlock x:Name="Add_LogNotesLimit" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" FontSize="12" Text="(128)"/>
-                    </Grid>
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="LogCancelButton" Margin="5" Padding="10,5" 
+                            <TextBlock Text="{x:Static p:Resources.log_Date}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <myCalendar:ucCalendar Grid.Row="4" Grid.Column="1" x:Name="log_date" Width="Auto" TabIndex="5" IsTabStop="True" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.log_Notes}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox x:Name="Add_LogNotes" Grid.Row="5" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" MaxLength="128" TextChanged="Add_LogNotes_TextChanged"/>
+                            <TextBlock x:Name="Add_LogNotesLimit" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" FontSize="12" Text="(128)"/>
+                            <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                                <Button x:Name="LogCancelButton" Margin="5" Padding="10,5" 
                                 IsCancel="True" TabIndex="8" Click="LogCancelButton_Click">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}" Padding="20,10" Margin="10,5">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Vape Assistant;component/Images/Clear_32px.png" VerticalAlignment="Center" Width="20"/>
-                                <TextBlock Text="{x:Static p:Resources.popup_Cancel}" VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </Button>
-                        <Button x:Name="LogSubmitButton" Margin="5" Padding="10,5"
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Clear_32px.png" VerticalAlignment="Center" Width="20"/>
+                                        <TextBlock Text="{x:Static p:Resources.popup_Cancel}" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="LogSubmitButton" Margin="5" Padding="10,5"
                                 IsDefault="True" TabIndex="7" Click="LogSubmitButton_Click">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}" Padding="20,10" Margin="10,5">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Vape Assistant;component/Images/Submit_32px.png" VerticalAlignment="Center" Width="20"/>
-                                <TextBlock Text="{x:Static p:Resources.popup_Submit}" VerticalAlignment="Center"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Submit_32px.png" VerticalAlignment="Center" Width="20"/>
+                                        <TextBlock Text="{x:Static p:Resources.popup_Submit}" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Button>
                             </StackPanel>
-                        </Button>
-                    </StackPanel>
+                        </Grid>
+                    </GroupBox>
                 </StackPanel>
             </Border>
         </Grid>
-        <!-- Edit/Update Form Starts Here Visibility="Visible"-->
         <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="EditLogElementInputBox" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.6"/>
-            <Border
-                                    MinWidth="300"
-                                    Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                                    BorderBrush="Black" 
-                                    BorderThickness="2" 
-                                    CornerRadius="20" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center">
+            <Grid Background="#4c4c4c" Opacity="0.6">
+            </Grid>
+            <Border MinWidth="300"
+                    CornerRadius="20" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
                 <StackPanel Margin="20">
-                    <TextBlock Margin="0,0,0,0" Text="{x:Static p:Resources.log_Edit}" FontWeight="Bold" FontSize="20"/>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition MinWidth="120"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                    <GroupBox Header="{x:Static p:Resources.log_Edit}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="Enter Id:" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
-                        <TextBox x:Name="EditItemIdBox" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
-                        <TextBlock Text="{x:Static p:Resources.log_RecipeName}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                        <TextBox x:Name="Edit_LogRecipeName" Grid.Row="1" Grid.Column="1" AutoWordSelection="True" TabIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                        <TextBlock Text="{x:Static p:Resources.log_Amount}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                        <TextBox x:Name="Edit_LogAmount" Grid.Row="2" Grid.Column="1" AutoWordSelection="True" TabIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="Edit_LogAmount_PreviewTextInput" />
-                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0">
-                            <TextBlock Text="{x:Static p:Resources.log_RatioPG}" VerticalAlignment="Center" />
-                            <TextBlock Text="/" VerticalAlignment="Center"/>
-                            <TextBlock Text="{x:Static p:Resources.log_RatioVG}" VerticalAlignment="Center" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                            <TextBox x:Name="Edit_LogPGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2" MaxLength="5" PreviewTextInput="Edit_LogPGRatio_PreviewTextInput" TextChanged="Edit_LogPGRatio_TextChanged" Height="30" VerticalAlignment="Bottom"/>
-                            <TextBlock Text="/" VerticalAlignment="Center" FontSize="20" />
-                            <TextBox x:Name="Edit_LogVGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="3" MaxLength="5" TextChanged="Edit_LogVGRatio_TextChanged" PreviewTextInput="Edit_LogVGRatio_PreviewTextInput" />
-                        </StackPanel>
-                        <TextBlock Text="{x:Static p:Resources.log_Nic}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                        <TextBox x:Name="Edit_LogNic" Grid.Row="4" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="4" PreviewTextInput="Edit_LogNic_PreviewTextInput" MaxLength="4"/>
-                        <TextBlock Text="{x:Static p:Resources.log_Date}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                        <myCalendar:ucCalendar Grid.Row="5" Grid.Column="1" x:Name="editlog_date" Width="Auto" TabIndex="5" IsTabStop="True" HorizontalAlignment="Center"/>
-                        <TextBlock Text="{x:Static p:Resources.log_Notes}" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                        <TextBox x:Name="Edit_LogNotes" Grid.Row="6" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" MaxLength="128" TextChanged="Edit_LogNotes_TextChanged"/>
-                        <TextBlock x:Name="Edit_LogNotesLimit" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" FontSize="12" Text="(128)"/>
-                    </Grid>
-
+                            <TextBlock Text="Enter Id:" Grid.Row="0" Grid.Column="0" Visibility="Collapsed"/>
+                            <TextBox x:Name="EditItemIdBox" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Collapsed"/>
+                            <TextBlock Text="{x:Static p:Resources.log_RecipeName}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                            <TextBox x:Name="Edit_LogRecipeName" Grid.Row="1" Grid.Column="1" AutoWordSelection="True" TabIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            <TextBlock Text="{x:Static p:Resources.log_Amount}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                            <TextBox x:Name="Edit_LogAmount" Grid.Row="2" Grid.Column="1" AutoWordSelection="True" TabIndex="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="Edit_LogAmount_PreviewTextInput" />
+                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0">
+                                <TextBlock Text="{x:Static p:Resources.log_RatioPG}" VerticalAlignment="Center" />
+                                <TextBlock Text="/" VerticalAlignment="Center"/>
+                                <TextBlock Text="{x:Static p:Resources.log_RatioVG}" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                                <TextBox x:Name="Edit_LogPGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2" MaxLength="5" PreviewTextInput="Edit_LogPGRatio_PreviewTextInput" TextChanged="Edit_LogPGRatio_TextChanged" Height="30" VerticalAlignment="Bottom"/>
+                                <TextBlock Text="/" VerticalAlignment="Center" FontSize="20" />
+                                <TextBox x:Name="Edit_LogVGRatio" MinWidth="199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="3" MaxLength="5" TextChanged="Edit_LogVGRatio_TextChanged" PreviewTextInput="Edit_LogVGRatio_PreviewTextInput" />
+                            </StackPanel>
+                            <TextBlock Text="{x:Static p:Resources.log_Nic}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox x:Name="Edit_LogNic" Grid.Row="4" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="4" PreviewTextInput="Edit_LogNic_PreviewTextInput" MaxLength="4"/>
+                            <TextBlock Text="{x:Static p:Resources.log_Date}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <myCalendar:ucCalendar Grid.Row="5" Grid.Column="1" x:Name="editlog_date" Width="Auto" TabIndex="5" IsTabStop="True" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{x:Static p:Resources.log_Notes}" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                            <TextBox x:Name="Edit_LogNotes" Grid.Row="6" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" MaxLength="128" TextChanged="Edit_LogNotes_TextChanged"/>
+                            <TextBlock x:Name="Edit_LogNotesLimit" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10" Margin="0,0,10,0" Text="(128)"/>
+                        </Grid>
+                    </GroupBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="EditLogCancelButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="EditLogCancelButton_Click"/>
                         <Button x:Name="EditLogUpdateButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="EditLogUpdateButton_Click"/>
@@ -291,6 +244,7 @@
         <TextBox x:Name="x7" Visibility="Hidden" Width="0"/>
         <TextBox x:Name="x8" Visibility="Hidden" Width="0"/>
         <TextBox x:Name="x9" Visibility="Hidden" Width="0"/>
+
     </Grid>
 
 </UserControl>

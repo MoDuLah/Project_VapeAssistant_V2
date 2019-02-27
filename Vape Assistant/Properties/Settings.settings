@@ -36,7 +36,7 @@
       <Value Profile="(Default)">AvantGarde Bk BT</Value>
     </Setting>
     <Setting Name="innerBGColor" Type="System.String" Scope="User">
-      <Value Profile="(Default)">#99FBFCFE</Value>
+      <Value Profile="(Default)">#90FBFCFE</Value>
     </Setting>
     <Setting Name="costBGColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">#FF8BFF00</Value>

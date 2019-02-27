@@ -5,15 +5,15 @@
 	
 	
 	<LinearGradientBrush x:Key="GlassBrush" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#96FFFFFF" Offset="0"/>
+        <GradientStop Color="#50FFFFFF" Offset="0"/> <!--96FFFFFF-->
 		<GradientStop Color="#28FFFFFF" Offset="0.5"/>
 		<GradientStop Color="#00FFFFFF" Offset="0.5"/>
 	</LinearGradientBrush>
 	
 	<LinearGradientBrush x:Key="BackgroundBrush" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#727272" Offset="0"/>
-		<GradientStop Color="#4c4c4c" Offset="1"/>
-	</LinearGradientBrush>
+        <GradientStop Color="#626262" Offset="1"/>
+        <GradientStop Color="#4c4c4c" Offset="0"/>
+    </LinearGradientBrush>
 	
 	<LinearGradientBrush x:Key="BackgroundBrushPopUp" EndPoint="0,1" StartPoint="0,0">
 		<GradientStop Color="#727272" Offset="1"/>
@@ -25,9 +25,8 @@
     <SolidColorBrush x:Key="DisabledBorderBrush" Color="#FF919191" />
 	
 	<LinearGradientBrush x:Key="DisabledBackground" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#f4f4f4" Offset="0"/>
-		<GradientStop Color="#d7d7d7" Offset="0.7"/>
-		<GradientStop Color="#c2c2c2" Offset="1"/>
+        <GradientStop Color="#4c4a4b" Offset="0"/>
+        <GradientStop Color="#282828" Offset="1"/>
 	</LinearGradientBrush>
 	
     <SolidColorBrush x:Key="DisabledForeground" Color="#aaaaaa" />
@@ -104,7 +103,7 @@
             <Setter Property="FontSize" Value="11"/>-->
             <Setter Property="Padding" Value="10"/> <!--4,0,0,0-->
             <Setter Property="Margin" Value="0"/>
-            <Setter Property="Foreground" Value="{StaticResource BorderBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -141,7 +140,7 @@
               Content="{TemplateBinding SelectionBoxItem}"
               ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
               ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-              Margin="3,3,23,3"
+              Margin="5,3,23,3"
               VerticalAlignment="Center"
               HorizontalAlignment="Left" />
                             <TextBox x:Name="PART_EditableTextBox"
@@ -149,7 +148,7 @@
               Template="{StaticResource ComboBoxTextBox}" 
               HorizontalAlignment="Left" 
               VerticalAlignment="Center" 
-              Margin="3,3,23,3"
+              Margin="5,3,23,3"
               Focusable="True" 
               Background="Transparent"
               Visibility="Hidden"
@@ -190,8 +189,7 @@
                             </Trigger>
                             <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
                             </Trigger>
-                            <Trigger Property="IsEditable"
-                 Value="true">
+                            <Trigger Property="IsEditable" Value="true">
                                 <Setter Property="IsTabStop" Value="false"/>
                                 <Setter TargetName="PART_EditableTextBox" Property="Visibility"	Value="Visible"/>
                                 <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>

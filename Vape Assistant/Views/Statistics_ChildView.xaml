@@ -10,6 +10,7 @@
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
              FontSize="18"
              mc:Ignorable="d">
+    <ScrollViewer MaxHeight="350">
     <Grid HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -183,4 +184,5 @@
                 TabIndex="12" VerticalAlignment="Top"/>
 
     </Grid>
+    </ScrollViewer>
 </UserControl>

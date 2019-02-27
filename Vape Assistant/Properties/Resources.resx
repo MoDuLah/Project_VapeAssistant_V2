@@ -1189,8 +1189,8 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="currency" xml:space="preserve">
     <value>$</value>
   </data>
-  <data name="MinimizeToTray" xml:space="preserve">
-    <value>Minimize To Tray</value>
+  <data name="btn_MinimizeToTray" xml:space="preserve">
+    <value>Minimize To Tray.</value>
   </data>
   <data name="settings_LanguageDe" xml:space="preserve">
     <value>Deutsche</value>
@@ -1213,6 +1213,12 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="settings_Setpin" xml:space="preserve">
     <value>Set Pin</value>
   </data>
+  <data name="about_donationHdr" xml:space="preserve">
+    <value>Do you like this application?</value>
+  </data>
+  <data name="about_donationTxt" xml:space="preserve">
+    <value>Buy me a beer!</value>
+  </data>
   <data name="purchases_amountInCurrency" xml:space="preserve">
     <value>Amount in </value>
   </data>
@@ -1227,5 +1233,17 @@ If you decline and keep the default pin-code you will be asked the next time you
   </data>
   <data name="settings_CurrentPin" xml:space="preserve">
     <value>Current PIN</value>
+  </data>
+  <data name="btn_CloseWindow" xml:space="preserve">
+    <value>Closes the window.</value>
+  </data>
+  <data name="btn_Reload" xml:space="preserve">
+    <value>Reload Page</value>
+  </data>
+  <data name="oneshot_grams" xml:space="preserve">
+    <value>Grams</value>
+  </data>
+  <data name="oneshot_ml" xml:space="preserve">
+    <value>ml</value>
   </data>
 </root>

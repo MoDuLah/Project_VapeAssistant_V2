@@ -21,6 +21,12 @@
 	</LinearGradientBrush>
 
     <SolidColorBrush x:Key="ListBorder" Color="#828790"/>
+    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#d22828"/>
+    <LinearGradientBrush x:Key="{x:Static SystemColors.ControlBrushKey}" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#d22828" Offset="1"/>
+        <GradientStop Color="#b00000" Offset="0"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="White"/>
 
     <Style TargetType="{x:Type TreeView}">
 			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
@@ -139,7 +145,7 @@
 							<Trigger Property="IsMouseOver" Value="true">
 								<Setter Property="Background" TargetName="Bd" Value="{StaticResource OverBackground}"/>
 							</Trigger>
-							<MultiTrigger>
+                            <MultiTrigger>
 								<MultiTrigger.Conditions>
 									<Condition Property="IsSelected" Value="true"/>
 									<Condition Property="IsSelectionActive" Value="false"/>

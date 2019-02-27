@@ -314,9 +314,6 @@
       <DependentUpon>BoosterCost_ChildView.xaml</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Views\Donate.xaml.cs">
-      <DependentUpon>Donate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Flavors_ChildView.xaml.cs">
       <DependentUpon>Flavors_ChildView.xaml</DependentUpon>
     </Compile>
@@ -513,10 +510,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Donate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Flavors_ChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -669,10 +662,6 @@
     <Resource Include="Images\favicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Hover\Close-Window_96px.png" />
-    <Resource Include="Images\Hover\Minimize-Window_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\menuIconsDark\About_32px.png" />
     <Resource Include="Images\menuIconsDark\Add_32px.png" />
     <Resource Include="Images\menuIconsDark\Admin_32px.png" />
@@ -755,6 +744,17 @@
     <None Include="Images\banners\4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PayPal_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Hover\Close Window_32px.png" />
+    <Resource Include="Images\Hover\Minimize Window_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Hover\Close Window_Hover_32px.png" />
+    <Resource Include="Images\Hover\Minimize Window_Hover_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />

@@ -1440,10 +1440,6 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>$</source>
           <target state="new">$</target>
         </trans-unit>
-        <trans-unit id="MinimizeToTray" translate="yes" xml:space="preserve">
-          <source>Minimize To Tray</source>
-          <target state="new">Minimize To Tray</target>
-        </trans-unit>
         <trans-unit id="settings_LanguageEn" translate="yes" xml:space="preserve">
           <source>English</source>
           <target state="new">English</target>
@@ -1511,6 +1507,34 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="purchases_TotalCost" translate="yes" xml:space="preserve">
           <source>Total Cost ($)</source>
           <target state="new">Total Cost ($)</target>
+        </trans-unit>
+        <trans-unit id="about_donationHdr" translate="yes" xml:space="preserve">
+          <source>Do you like this application?</source>
+          <target state="new">Do you like this application?</target>
+        </trans-unit>
+        <trans-unit id="about_donationTxt" translate="yes" xml:space="preserve">
+          <source>Buy me a beer!</source>
+          <target state="new">Buy me a beer!</target>
+        </trans-unit>
+        <trans-unit id="btn_MinimizeToTray" translate="yes" xml:space="preserve">
+          <source>Minimize To Tray.</source>
+          <target state="new">Minimize To Tray.</target>
+        </trans-unit>
+        <trans-unit id="btn_CloseWindow" translate="yes" xml:space="preserve">
+          <source>Closes the window.</source>
+          <target state="new">Closes the window.</target>
+        </trans-unit>
+        <trans-unit id="btn_Reload" translate="yes" xml:space="preserve">
+          <source>Reload Page</source>
+          <target state="new">Reload Page</target>
+        </trans-unit>
+        <trans-unit id="oneshot_grams" translate="yes" xml:space="preserve">
+          <source>Grams</source>
+          <target state="new">Grams</target>
+        </trans-unit>
+        <trans-unit id="oneshot_ml" translate="yes" xml:space="preserve">
+          <source>ml</source>
+          <target state="new">ml</target>
         </trans-unit>
       </group>
     </body>

@@ -9,17 +9,19 @@
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <Style x:Key="myLBStyle" TargetType="{x:Type TreeViewItem}">
+        <!--<Style x:Key="myLBStyle" TargetType="{x:Type TreeViewItem}">
             <Style.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
             </Style.Resources>
-        </Style>
+        </Style>-->
     </UserControl.Resources>
         <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -34,28 +36,46 @@
             </Grid.RowDefinitions>
 
             <!--Row 0-->
-            <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="99"/>
-            <TextBlock Grid.Row="0" Grid.Column="0" TextAlignment="Right" Margin="0,5,0,0" HorizontalAlignment="Left">
-                <Image Source="/Vape Assistant;component/Images/MatrixDesktop_96px.png" Width="16" Margin="0,0,0,0" VerticalAlignment="Bottom"/>
-                <Run Text="{x:Static p:Resources.Codebehind}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
+        <GroupBox Grid.Row="0" Grid.Column="0">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Vape Assistant;component/Images/MatrixDesktop_96px.png" Width="16" VerticalAlignment="Center"/>
+                    <TextBlock Text="{x:Static p:Resources.Codebehind}" VerticalAlignment="Center" />
+                </StackPanel>
+            </GroupBox.Header>
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Center">
             <Hyperlink NavigateUri="https://www.facebook.com/Chr.Gleridis" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
-                <Run Text="{x:Static p:Resources.ChrisG}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
+                <Run Text="{x:Static p:Resources.ChrisG}" Foreground="White" TextDecorations="Underline" />
                 </Hyperlink>
             </TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Versioned_Text" Margin="0,5,0,0" FontWeight="Bold" TextAlignment="Right" />
-            <TextBlock Grid.Row="5" Grid.Column="1" Margin="0,0,0,0">
-                <Image Source="/Vape Assistant;component/Images/menuIconsDark/UserGroups_100px.png" Width="16" Margin="0,0,0,0"/>
-                <Run Text="{x:Static p:Resources.vendor_Website}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
+        </GroupBox>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Version: blah" x:Name="Versioned_Text" Margin="0,5,0,0" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <GroupBox Grid.Row="2" Grid.Column="0">
+            <GroupBox.Header>
+                <TextBlock Grid.Row="5" Grid.Column="1" Text="{x:Static p:Resources.vendor_Website}"/>
+            </GroupBox.Header>
+            <TextBlock>
                     <Hyperlink NavigateUri="https://vape-assistant.com" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
-                <Run Text="{x:Static p:Resources.Website}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" />
+                <Run Text="{x:Static p:Resources.Website}" Foreground="White" TextDecorations="underline" />
                 </Hyperlink>
             </TextBlock>
-            <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Padding="0,5,0,0" FontWeight="Bold" Text="{x:Static p:Resources.ChildHeaderNine_ChangeLog}" TextAlignment="Center" HorizontalAlignment="Right" />
-            <TreeView Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
+        </GroupBox>
+        <GroupBox Grid.Row="2" Grid.Column="1" Header="{x:Static p:Resources.about_donationHdr}" HorizontalAlignment="left">
+            <Button x:Name="btnDonate" HorizontalAlignment="Center" Click="BtnDonate_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="{x:Static p:Resources.about_donationTxt}" VerticalAlignment="Center"/>
+                        <Image Source="/Vape Assistant;component/Images/PayPal_48px.png" Width="16" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+        </GroupBox>
+        <GroupBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static p:Resources.ChildHeaderNine_ChangeLog}">
+            <TreeView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
                       MinWidth="800" MaxWidth="1000"
-                      MaxHeight="250" 
-                      ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,0,20"
-                      HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
+                      MaxHeight="250" Padding="2"
+                      ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0" BorderThickness="0" Background="{x:Null}">
                 
                 <TreeViewItem Header="2019/01/26 - 2.3.6965">
                     <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0027}" TextWrapping="Wrap"/>
@@ -145,5 +165,6 @@
                     <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0000}" TextWrapping="Wrap" />
                 </TreeViewItem>
             </TreeView>
-        </Grid>
+        </GroupBox>
+    </Grid>
 </UserControl>

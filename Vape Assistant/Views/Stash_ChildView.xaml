@@ -47,95 +47,87 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="4">
-            <Button x:Name="add_Item" Click="add_Item_Click" Cursor="Hand">
+            <Button x:Name="add_Item" Click="add_Item_Click" Cursor="Hand" Margin="10,5">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source="/Vape Assistant;component/Images/menuIconsLight/Add_32px.png" VerticalAlignment="Center" Width="20"/>
-                <TextBlock Text="{x:Static p:Resources.AddShop}" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Add_32px.png" VerticalAlignment="Center" Width="20"/>
+                    <TextBlock Text="{x:Static p:Resources.AddShop}" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="Edit_Item" Click="edit_Item_Click" Cursor="Hand">
+            <Button x:Name="Edit_Item" Click="edit_Item_Click" Cursor="Hand" Margin="10,5">
                 <StackPanel Orientation="Horizontal">
-                <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" VerticalAlignment="Center" Width="20"/>
-                <TextBlock Text="{x:Static p:Resources.vendor_edit}" VerticalAlignment="Center"/>
-            </StackPanel>
-        </Button>
-            <Button x:Name="Delete_Item" Click="Delete_Item_Click" Cursor="Hand">
+                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" VerticalAlignment="Center" Width="20"/>
+                    <TextBlock Text="{x:Static p:Resources.vendor_edit}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="Delete_Item" Click="Delete_Item_Click" Cursor="Hand" Margin="10,5">
                 <StackPanel Orientation="Horizontal">
-                <Image Source="/Vape Assistant;component/Images/menuIconsLight/Close Window_32px.png" VerticalAlignment="Center" Width="20"/>
-                <TextBlock Text="{x:Static p:Resources.vendor_delete}" VerticalAlignment="Center"/>
-            </StackPanel>
-        </Button>
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-            <TextBlock Text="{x:Static p:Resources.add_flv_WarehouseCount}" />
-            <TextBlock x:Name="WarehouseCount" Text="0"/>
-        </StackPanel>
+                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Close Window_32px.png" VerticalAlignment="Center" Width="20"/>
+                    <TextBlock Text="{x:Static p:Resources.vendor_delete}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <GroupBox Header="{x:Static p:Resources.add_flv_WarehouseCount}" Margin="10,5,10,20">
+                <TextBlock x:Name="WarehouseCount" Text="0" TextAlignment="Center"/>
+            </GroupBox>
         </StackPanel>
         <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! Visibility="Visible" -->
-        <Grid Grid.Row="0" Grid.RowSpan="15" Grid.ColumnSpan="6" x:Name="add_Popup" Visibility="Collapsed">
+        <Grid Grid.RowSpan="15" Grid.ColumnSpan="6" x:Name="add_Popup" Visibility="Collapsed">
             <Grid Background="Black" Opacity="0.6"/>
-            <Border MinWidth="300" Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                       BorderBrush="Black" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Margin="20">
-                    <TextBlock Margin="0,0,0,0" Text="{x:Static p:Resources.log_Add}" FontWeight="Bold" FontSize="20"/>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                            <RowDefinition MinHeight="30"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition MinWidth="120"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{x:Static p:Resources.Alch_Warehouse_FlvId}" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
-                        <TextBox x:Name="add_Id" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
-                        <TextBlock Text="{x:Static p:Resources.add_flv_brandSelect}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                        <ComboBox x:Name="add_Brand" Grid.Row="0" Grid.Column="1" Padding="5" MinWidth="200" IsEditable="False" IsTextSearchEnabled="True" LostFocus="add_Brand_LostFocus" SelectionChanged="add_Brand_SelectionChanged" TabIndex="0" Margin="0,0,0,5" />
-                        <TextBlock Text="{x:Static p:Resources.add_flv_flavorSelect}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                        <ComboBox x:Name="add_Flavor" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="5" LostFocus="add_Flavor_LostFocus" TabIndex="1" Margin="0,5" />
-                        <TextBlock Text="{x:Static p:Resources.add_flv_amountEnter}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                        <TextBox x:Name="add_Amount" Width="200" MinHeight="24" Grid.Row="2" Grid.Column="1" AutoWordSelection="True" TabIndex="2" PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp" GotFocus="Amount_GotFocus" TextChanged="Amount_TextChanged" LostFocus="Amount_LostFocus" Margin="0,5" />
-                    </Grid>
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="add_Cancel" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="add_Cancel_Click" IsCancel="True" TabIndex="4" />
-                        <Button x:Name="add_Submit" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="add_Submit_Click" IsDefault="True" TabIndex="3"/>
-                    </StackPanel>
+                    <GroupBox Header="{x:Static p:Resources.log_Add}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                                <RowDefinition MinHeight="30"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{x:Static p:Resources.Alch_Warehouse_FlvId}" Grid.Row="0" Grid.Column="0" Visibility="Collapsed"/>
+                            <TextBox x:Name="add_Id" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Collapsed"/>
+                            <TextBlock Text="{x:Static p:Resources.add_flv_brandSelect}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0"/>
+                            <ComboBox x:Name="add_Brand" Grid.Row="0" Grid.Column="1" Padding="5" MinWidth="200" IsEditable="False" IsTextSearchEnabled="True" LostFocus="add_Brand_LostFocus" SelectionChanged="add_Brand_SelectionChanged" TabIndex="0" Margin="5,0" VerticalAlignment="Center" />
+                            <TextBlock Text="{x:Static p:Resources.add_flv_flavorSelect}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0"/>
+                            <ComboBox x:Name="add_Flavor" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="5" LostFocus="add_Flavor_LostFocus" TabIndex="1" Margin="5,0" VerticalAlignment="Center" />
+                            <TextBlock Text="{x:Static p:Resources.add_flv_amountEnter}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0"/>
+                            <TextBox x:Name="add_Amount" MinWidth="80" MinHeight="24" Grid.Row="2" Grid.Column="1" AutoWordSelection="True" TabIndex="2" PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp" GotFocus="Amount_GotFocus" TextChanged="Amount_TextChanged" LostFocus="Amount_LostFocus" Margin="10,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <StackPanel Grid.Row="3" Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="add_Cancel" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="add_Cancel_Click" IsCancel="True" TabIndex="4" />
+                                <Button x:Name="add_Submit" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="add_Submit_Click" IsDefault="True" TabIndex="3"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
                 </StackPanel>
-            </Border>
         </Grid>
         <!-- Edit/Update Form Starts Here Visibility="Visible"-->
-        <Grid Grid.Row="0" Grid.RowSpan="16" Grid.Column="0" Grid.ColumnSpan="6" x:Name="edit_Popup" Visibility="Collapsed">
+        <Grid Grid.RowSpan="15" Grid.ColumnSpan="6" x:Name="edit_Popup" Visibility="Collapsed">
             <Grid Background="Black" Opacity="0.6"/>
-            <Border MinWidth="300" Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                       BorderBrush="Black" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <StackPanel Margin="20">
-                    <TextBlock Margin="0,0,0,0" Text="{x:Static p:Resources.log_Add}" FontWeight="Bold" FontSize="20"/>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0"/>
-                            <RowDefinition />
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition MinWidth="150"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="Enter Id:" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
-                        <TextBox x:Name="edit_Id" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
-                        <TextBlock Text="{x:Static p:Resources.add_flv_amountEnter}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                        <TextBox x:Name="edit_Amount" Width="100" MinHeight="24" Grid.Row="1" Grid.Column="1" AutoWordSelection="True" TabIndex="0" PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp" GotFocus="Amount_GotFocus" LostFocus="Amount_LostFocus" TextChanged="Amount_TextChanged" />
-                    </Grid>
+            <GroupBox Header="{x:Static p:Resources.log_Add}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Enter Id:" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
+                    <TextBox x:Name="edit_Id" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
+                    <TextBlock Text="{x:Static p:Resources.add_flv_amountEnter}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                    <TextBox x:Name="edit_Amount" Width="100" MinHeight="24" Grid.Row="1" Grid.Column="1" AutoWordSelection="True" TabIndex="0" PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp" GotFocus="Amount_GotFocus" LostFocus="Amount_LostFocus" TextChanged="Amount_TextChanged" />
+                    <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="edit_Cancel" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="edit_Cancel_Click" />
                         <Button x:Name="edit_Submit" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="edit_Submit_Click"/>
                     </StackPanel>
-                </StackPanel>
-            </Border>
+                    <TextBox Grid.Row="5" Grid.Column="4" x:Name="add_warehouseflv_id" Visibility="Collapsed"/>
+                </Grid>
+            </GroupBox>
         </Grid>
-
-        <TextBox Grid.Row="5" Grid.Column="4" x:Name="add_warehouseflv_id" Visibility="Hidden"/>
     </Grid>
 </UserControl>

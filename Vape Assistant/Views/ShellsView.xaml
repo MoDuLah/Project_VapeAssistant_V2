@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:p="clr-namespace:Vape_Assistant.Properties"
         xmlns:myStatusbar="clr-namespace:Vape_Assistant.Views"
-        xmlns:my="clr-namespace:CreationTemplate.UserControls" 
+        AllowsTransparency="True"
+        Background="Transparent"
         Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
         FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
         mc:Ignorable="d" FontSize="18"
@@ -19,337 +20,237 @@
         Closing="VapeAssistant_Closing"
         Icon="/Vape Assistant;component/Images/favicon.png"
         SizeChanged="Window_StateChanged"
-        BorderBrush="{x:Null}">
-    <!--<Window.Resources>
-        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20" />
-                </Grid.ColumnDefinitions>
-                <Border
-                  x:Name="Border" 
-                  Grid.ColumnSpan="2"
-                  CornerRadius="0"
-                  Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                  BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"
-                  BorderThickness="1" />
-                <Border 
-                  Grid.Column="0"
-                  CornerRadius="0" 
-                  Margin="1" 
-                  Background="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" 
-                  BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                  BorderThickness="0,0,1,0" />
-                <Path 
-                  x:Name="Arrow"
-                  Grid.Column="1"     
-                  Fill="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                  Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
-                />
-            </Grid>
-            <ControlTemplate.Triggers>
-                <Trigger Property="ToggleButton.IsMouseOver" Value="true">
-                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
-                </Trigger>
-                <Trigger Property="ToggleButton.IsChecked" Value="true">
-                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
-                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                    <Setter TargetName="Border" Property="BorderBrush" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
-                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
-                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
+        BorderBrush="{x:Null}" Topmost="True" WindowStyle="None"
+        >
 
-        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
-            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
-        </ControlTemplate>
 
-        <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
-            <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
-            --><!--<Setter Property="MinWidth" Value="120"/>--><!--
-            <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBox}">
-                        <Grid>
-                            <ToggleButton 
-                            Name="ToggleButton" 
-                            Template="{StaticResource ComboBoxToggleButton}" 
-                            Grid.Column="2" 
-                            Focusable="false"
-                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
-                            ClickMode="Press">
-                            </ToggleButton>
-                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
-                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                            Margin="3,3,23,3"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left" />
-                            <TextBox x:Name="PART_EditableTextBox"
-                            Style="{x:Null}" 
-                            Template="{StaticResource ComboBoxTextBox}" 
-                            HorizontalAlignment="Left" 
-                            VerticalAlignment="Center" 
-                            Margin="3,3,23,3"
-                            Focusable="True" 
-                            Background="Transparent"
-                            Foreground="White"
-                            SelectionBrush="Red"
-                            Visibility="Hidden"
-                            IsReadOnly="{TemplateBinding IsReadOnly}"/>
-                            <Popup 
-                            Name="Popup"
-                            Placement="Bottom"
-                            IsOpen="{TemplateBinding IsDropDownOpen}"
-                            AllowsTransparency="True" 
-                            Focusable="False"
-                            PopupAnimation="Slide">
-                                <Grid Name="DropDown"
-                              SnapsToDevicePixels="True"                
-                              MinWidth="{TemplateBinding ActualWidth}"
-                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                    <Border 
-                                x:Name="DropDownBorder"
-                                Background="#FF3F3F3F"
-
-                                BorderThickness="1"
-                                BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
-                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
-                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                                    </ScrollViewer>
-                                </Grid>
-                            </Popup>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="HasItems" Value="false">
-                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#FFFFFFFF"/>
-                            </Trigger>
-                            <Trigger Property="IsGrouping" Value="true">
-                                <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
-                            </Trigger>
-                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
-                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
-                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
-                            </Trigger>
-                            <Trigger Property="IsEditable"  Value="true">
-                                <Setter Property="IsTabStop" Value="false"/>
-                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
-                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-            </Style.Triggers>
-        </Style>
-
-        --><!-- SimpleStyles: ComboBoxItem --><!--
-        <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
-            <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-                        <Border Name="Border"
-                              Padding="2"
-                              SnapsToDevicePixels="true">
-                            <ContentPresenter />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsHighlighted" Value="true">
-                                <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>-->
-    <Window.Background>
+    <!--<Window.Background>
         <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill" Opacity="0.99"/>
-    </Window.Background>
-    <DockPanel VerticalAlignment="Top" x:Name="LayoutRoot">
-        <Menu MaxHeight="28" DockPanel.Dock="Top" FontFamily="Tahoma" FontSize="16">
-            <Menu.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#CC747474" Offset="0"/>
-                    <GradientStop Color="#CC323230" Offset="1"/>
-                </LinearGradientBrush>
-            </Menu.Background>
-            <MenuItem Header="{x:Static p:Resources.menu_file}" VerticalAlignment="Center">
-                <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/File_32px.png" Width="20"/>
-                </MenuItem.Icon>
-                <MenuItem x:Name="_exit" Header="{x:Static p:Resources.menu_file_exit}" InputGestureText="Alt + F4" Click="_exit_Click">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Close Window_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <Separator Width="2" Height="24" Margin="5,0" />
-            <MenuItem Header="{x:Static p:Resources.menu_edit}" VerticalAlignment="Center">
-                <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" Width="20"/>
-                </MenuItem.Icon>
-                <MenuItem Command="Cut">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Cut_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Command="Copy">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Copy_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Command="Paste">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Paste_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <Separator Width="2" Height="24" Margin="5,0" />
-            <MenuItem Header="{x:Static p:Resources.menu_tools}" VerticalAlignment="Center">
-                <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Tools_32px.png" Width="20"/>
-                </MenuItem.Icon>
-                <MenuItem Header="{x:Static p:Resources.menu_tools_OhmsLaw}" x:Name="Load_OhmsLaw" Margin="0,3,0,0">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Book_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator />
-                <MenuItem Header="{x:Static p:Resources.menu_tools_Statistics}" x:Name="Load_Statistics">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Statistics_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator />
-                <MenuItem Header="{x:Static p:Resources.menu_tools_NicotineCost}" x:Name="Load_BoosterCost">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Money Bag_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator />
-                <MenuItem Header="{x:Static p:Resources.menu_tools_Purchases}" x:Name="Load_Purchases">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator />
-                <MenuItem Header="{x:Static p:Resources.menu_tools_Alchemy}" x:Name="Load_Alchemy">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Test Tube_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                    <MenuItem x:Name="Load_OneShots" Header="{x:Static p:Resources.menu_tools_Alchemy_Oneshots}">
-                        <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Bottle_32px.png" Width="20"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem x:Name="Load_Warehouse" Header="{x:Static p:Resources.menu_tools_Alchemy_Warehouse}">
-                        <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Warehouse_32px.png" Width="20"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem x:Name="Load_JuiceLog" Header="{x:Static p:Resources.menu_tools_Alchemy_JuiceLog}">
-                        <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Story_32px.png" Width="20"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem x:Name="Load_Recipes" Header="{x:Static p:Resources.menu_tools_Alchemy_Recipes}">
-                        <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" Width="20"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem x:Name="Load_Synthesize" Header="{x:Static p:Resources.menu_tools_Alchemy_Synthesize}">
-                        <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Test Tube_32px.png" Width="20"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem x:Name="Load_BasesMix" Header="{x:Static p:Resources.menu_tools_Alchemy_BasesMix}">
-                        <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Test Tube Slim_32px.png" Width="20"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem x:Name="Load_Flavors" Header="{x:Static p:Resources.menu_tools_Alchemy_Flavors}">
-                        <MenuItem.Icon>
-                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Perfume Bottle_32px.png" Width="20"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <Separator />
-                <MenuItem Header="{x:Static p:Resources.LoadPageEight}" x:Name="Load_Settings">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Settings_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <Separator Width="2" Height="24" Margin="5,0" />
-            <MenuItem Header="{x:Static p:Resources.menu_about}" VerticalAlignment="Center">
-                <MenuItem.Icon>
-                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/About_32px.png" Width="20"/>
-                </MenuItem.Icon>
-                <MenuItem Header="{x:Static p:Resources.Help}" x:Name="Load_Help">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Help_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator/>
-                <MenuItem Header="{x:Static p:Resources.ChildHeaderNine}" x:Name="Load_About">
-                    <MenuItem.Icon>
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/About_32px.png" Width="20"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-            <MenuItem Header="{x:Static p:Resources.MinimizeToTray}" Click="MenuItem_Click" Padding="5" FontSize="12" Background="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        </Menu>
-        <Border Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" BorderThickness="5,2,5,2" CornerRadius="30" Margin="10" >
-            <Border.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB90000" Offset="0"/>
-                    <GradientStop Color="#FF680000" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
-            <ScrollViewer x:Name="MainW" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Visibility="Visible" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" MouseDown="MainW_MouseDown" Margin="20,10">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="7" x:Name="ActiveItem" IsTabStop="False" MinHeight="300" MinWidth="800" AllowDrop="True" MouseDown="ActiveItem_MouseDown" />
-                    <myStatusbar:ucFooter Grid.Row="1" Background="Transparent" UseLayoutRounding="True" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Grid>
-            </ScrollViewer>
-        </Border>        
-    </DockPanel>
+    </Window.Background>-->
+    <StackPanel>
+        <Border CornerRadius="30" >
+            <Border.Background>
+                <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill"/>
+            </Border.Background>
+            <DockPanel VerticalAlignment="Top" x:Name="LayoutRoot">
+                <Border Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" BorderThickness="7,5,7,5" CornerRadius="10,10,30,30" >
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform Angle="67" CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FFAA0000" Offset="0"/>
+                            <GradientStop Color="#FC680000" Offset="0.491"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+
+                        </Grid.RowDefinitions>
+                        <Border Background="#FF424242" Grid.Row="0" Margin="0,0,0,0"  CornerRadius="5,5,0,0" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="25"/>
+                                    <ColumnDefinition Width="26"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="pack://siteoforigin:,,,/favicon.ico" Width="24" HorizontalAlignment="left" Margin="5,2" MaxWidth="24"/>
+                                <TextBlock Grid.Column="1" x:Name="titlebar" Text="TitleBar" Foreground="White" FontSize="14" Margin="5,0,0,0" VerticalAlignment="Center" MouseDown="Titlebar_MouseDown"/>
+                                <Image Grid.Column="2" x:Name="btn_Minimize" Width="24" MouseLeftButtonUp="btn_Minimize_MouseLeftButtonUp">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Minimize Window_32px.png"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Minimize Window_Hover_32px.png"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{x:Static p:Resources.btn_MinimizeToTray}"/>
+                                    </Image.ToolTip>
+                                </Image>
+                                <Image Grid.Column="3" x:Name="btn_Close" Width="24" MouseLeftButtonUp="btn_Close_MouseLeftButtonUp">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_32px.png"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_Hover_32px.png"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{x:Static p:Resources.btn_CloseWindow}"/>
+                                    </Image.ToolTip>
+                                </Image>
+                            </Grid>
+                        </Border>
+                        <Menu MaxHeight="28" DockPanel.Dock="Top" FontFamily="Tahoma" FontSize="16" Grid.Row="1">
+                            <Menu.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#CC747474" Offset="0"/>
+                                    <GradientStop Color="#CC323230" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Menu.Background>
+                            <MenuItem Header="{x:Static p:Resources.menu_file}" VerticalAlignment="Center">
+                                <MenuItem.Icon>
+                                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/File_32px.png" Width="20"/>
+                                </MenuItem.Icon>
+                                <MenuItem x:Name="_exit" Header="{x:Static p:Resources.menu_file_exit}" InputGestureText="Alt + F4" Click="_exit_Click">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Close Window_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </MenuItem>
+                            <Separator Width="2" Height="24" Margin="5,0" />
+                            <MenuItem Header="{x:Static p:Resources.menu_edit}" VerticalAlignment="Center">
+                                <MenuItem.Icon>
+                                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" Width="20"/>
+                                </MenuItem.Icon>
+                                <MenuItem Command="Cut">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Cut_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Command="Copy">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Copy_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Command="Paste">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Paste_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </MenuItem>
+                            <Separator Width="2" Height="24" Margin="5,0" />
+                            <MenuItem Header="{x:Static p:Resources.menu_tools}" VerticalAlignment="Center">
+                                <MenuItem.Icon>
+                                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Tools_32px.png" Width="20"/>
+                                </MenuItem.Icon>
+                                <MenuItem Header="{x:Static p:Resources.menu_tools_OhmsLaw}" x:Name="Load_OhmsLaw" Margin="0,3,0,0">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Book_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{x:Static p:Resources.menu_tools_Statistics}" x:Name="Load_Statistics">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Statistics_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{x:Static p:Resources.menu_tools_NicotineCost}" x:Name="Load_BoosterCost">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Money Bag_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{x:Static p:Resources.menu_tools_Purchases}" x:Name="Load_Purchases">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{x:Static p:Resources.menu_tools_Alchemy}" x:Name="Load_Alchemy">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Test Tube_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                    <MenuItem x:Name="Load_OneShots" Header="{x:Static p:Resources.menu_tools_Alchemy_Oneshots}">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Bottle_32px.png" Width="20"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator />
+                                    <MenuItem x:Name="Load_Warehouse" Header="{x:Static p:Resources.menu_tools_Alchemy_Warehouse}">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Warehouse_32px.png" Width="20"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator />
+                                    <MenuItem x:Name="Load_JuiceLog" Header="{x:Static p:Resources.menu_tools_Alchemy_JuiceLog}">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Story_32px.png" Width="20"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator />
+                                    <MenuItem x:Name="Load_Recipes" Header="{x:Static p:Resources.menu_tools_Alchemy_Recipes}">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" Width="20"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator />
+                                    <MenuItem x:Name="Load_Synthesize" Header="{x:Static p:Resources.menu_tools_Alchemy_Synthesize}">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Test Tube_32px.png" Width="20"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator />
+                                    <MenuItem x:Name="Load_BasesMix" Header="{x:Static p:Resources.menu_tools_Alchemy_BasesMix}">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Test Tube Slim_32px.png" Width="20"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator />
+                                    <MenuItem x:Name="Load_Flavors" Header="{x:Static p:Resources.menu_tools_Alchemy_Flavors}">
+                                        <MenuItem.Icon>
+                                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Perfume Bottle_32px.png" Width="20"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="{x:Static p:Resources.LoadPageEight}" x:Name="Load_Settings">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Settings_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </MenuItem>
+                            <Separator Width="2" Height="24" Margin="5,0" />
+                            <MenuItem Header="{x:Static p:Resources.menu_about}" VerticalAlignment="Center">
+                                <MenuItem.Icon>
+                                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/About_32px.png" Width="20"/>
+                                </MenuItem.Icon>
+                                <MenuItem Header="{x:Static p:Resources.Help}" x:Name="Load_Help">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Help_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator/>
+                                <MenuItem Header="{x:Static p:Resources.ChildHeaderNine}" x:Name="Load_About">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/About_32px.png" Width="20"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </MenuItem>
+                        </Menu>
+                        <ScrollViewer Grid.Row="2" x:Name="MainW" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Visibility="Visible" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" MouseDown="MainW_MouseDown" Margin="20,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="7" x:Name="ActiveItem" IsTabStop="False" MinHeight="300" MinWidth="800" AllowDrop="True" MouseDown="ActiveItem_MouseDown" />
+                                <myStatusbar:ucFooter Grid.Row="1" Background="Transparent" UseLayoutRounding="True" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </DockPanel>
+        </Border>
+    </StackPanel>
 </Window>

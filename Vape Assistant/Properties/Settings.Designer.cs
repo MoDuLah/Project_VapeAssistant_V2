@@ -157,7 +157,7 @@ namespace Vape_Assistant.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#99FBFCFE")]
+        [global::System.Configuration.DefaultSettingValueAttribute("#90FBFCFE")]
         public string innerBGColor {
             get {
                 return ((string)(this["innerBGColor"]));

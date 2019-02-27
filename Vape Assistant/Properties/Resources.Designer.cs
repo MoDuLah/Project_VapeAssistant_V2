@@ -364,6 +364,24 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you like this application?.
+        /// </summary>
+        public static string about_donationHdr {
+            get {
+                return ResourceManager.GetString("about_donationHdr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buy me a beer!.
+        /// </summary>
+        public static string about_donationTxt {
+            get {
+                return ResourceManager.GetString("about_donationTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abbreviation: .
         /// </summary>
         public static string add_flv_abbreviation {
@@ -954,6 +972,33 @@ namespace Vape_Assistant.Properties {
         public static string BaseMixNicBoosterError {
             get {
                 return ResourceManager.GetString("BaseMixNicBoosterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Closes the window..
+        /// </summary>
+        public static string btn_CloseWindow {
+            get {
+                return ResourceManager.GetString("btn_CloseWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimize To Tray..
+        /// </summary>
+        public static string btn_MinimizeToTray {
+            get {
+                return ResourceManager.GetString("btn_MinimizeToTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reload Page.
+        /// </summary>
+        public static string btn_Reload {
+            get {
+                return ResourceManager.GetString("btn_Reload", resourceCulture);
             }
         }
         
@@ -2065,15 +2110,6 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Minimize To Tray.
-        /// </summary>
-        public static string MinimizeToTray {
-            get {
-                return ResourceManager.GetString("MinimizeToTray", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Base: A.
         /// </summary>
         public static string mixbase_baseA {
@@ -2286,6 +2322,24 @@ namespace Vape_Assistant.Properties {
         public static string ohms_Wattage {
             get {
                 return ResourceManager.GetString("ohms_Wattage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grams.
+        /// </summary>
+        public static string oneshot_grams {
+            get {
+                return ResourceManager.GetString("oneshot_grams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ml.
+        /// </summary>
+        public static string oneshot_ml {
+            get {
+                return ResourceManager.GetString("oneshot_ml", resourceCulture);
             }
         }
         

@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:DataGridTester.Themes">
+                    xmlns:myLocal="clr-namespace:Vape_Assistant.Themes">
 
     <SolidColorBrush x:Key="BorderBrush" Color="#cfcfcf" />
 
@@ -165,7 +165,7 @@
                         <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                      RecognizesAccessKey="True" />
+                                      RecognizesAccessKey="True"/>
                         <Thumb x:Name="PART_LeftHeaderGripper"
                                HorizontalAlignment="Left"
                                Style="{StaticResource ColumnHeaderGripperStyle}"/>

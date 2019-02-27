@@ -10,39 +10,37 @@
 	</LinearGradientBrush>
 	
 	<LinearGradientBrush x:Key="HeaderBackground" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#6c6a6b" Offset="0"/>
+		<GradientStop Color="#4c4a4b" Offset="0"/>
 		<GradientStop Color="#282828" Offset="1"/>
 	</LinearGradientBrush>
 	
 	<SolidColorBrush x:Key="NormalOuterBorder" Color="#7a7a7a"/>
 	
 	<LinearGradientBrush x:Key="GlassBrush" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#96FFFFFF" Offset="0"/>
+        <GradientStop Color="#50FFFFFF" Offset="0"/> <!--96FFFFFF-->
 		<GradientStop Color="#28FFFFFF" Offset="0.5"/>
 		<GradientStop Color="#00FFFFFF" Offset="0.5"/>
 	</LinearGradientBrush>
 	
 	<LinearGradientBrush x:Key="DisabledBackground" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#f4f4f4" Offset="1"/>
-		<GradientStop Color="#c2c2c2" Offset="0"/>
-	</LinearGradientBrush>
+        <GradientStop Color="#4c4a4b" Offset="0"/>
+        <GradientStop Color="#282828" Offset="1"/>
+    </LinearGradientBrush>
 	
 	<LinearGradientBrush x:Key="DisabledHeaderBackground" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#f4f4f4" Offset="0"/>
-		<GradientStop Color="#d7d7d7" Offset="0.7"/>
-		<GradientStop Color="#c2c2c2" Offset="1"/>
-	</LinearGradientBrush>
-	<SolidColorBrush x:Key="OuterBorderDisabled" Color="#cfcfcf"/>
-	
-	
-	<BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
+        <GradientStop Color="#50FFFFFF" Offset="0"/>
+        <GradientStop Color="#28FFFFFF" Offset="0.5"/>
+        <GradientStop Color="#00FFFFFF" Offset="0.5"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="OuterBorderDisabled" Color="#FFA12B2B"/>
+    <SolidColorBrush x:Key="Text" Color="White"/>
+
+    <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
 	<Style TargetType="{x:Type GroupBox}">
-		<Setter Property="BorderBrush" Value="#D5DFE5"/>
-		<Setter Property="BorderThickness" Value="1"/>
 		<Setter Property="Margin" Value="4"/>
-		<Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource Text}"/>
 		<Setter Property="Template">
-			<Setter.Value>
+            <Setter.Value>
 				<ControlTemplate TargetType="{x:Type GroupBox}">
 					<Grid SnapsToDevicePixels="true">
 						<Grid.ColumnDefinitions>
@@ -52,7 +50,7 @@
 							<RowDefinition Height="Auto"/>
 							<RowDefinition/>
 						</Grid.RowDefinitions>
-						<Border x:Name="Header" Grid.Column="0" Grid.Row="0" Padding="3" Background="{StaticResource HeaderBackground}" CornerRadius="4,4,0,0" BorderBrush="{StaticResource NormalOuterBorder}" BorderThickness="1,1,1,0">
+						<Border x:Name="Header" Grid.Column="0" Grid.Row="0" Padding="5" Background="{StaticResource HeaderBackground}" CornerRadius="4,4,0,0" BorderBrush="{StaticResource NormalOuterBorder}" BorderThickness="1,1,1,0">
 							<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" ContentSource="Header" RecognizesAccessKey="True" HorizontalAlignment="Center"/>
 						</Border>
 						<Border x:Name="Glass" Grid.Column="0" Grid.Row="0" Margin="2" Background="{StaticResource GlassBrush}" CornerRadius="4,4,0,0"/>

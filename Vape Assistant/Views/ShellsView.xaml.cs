@@ -40,7 +40,7 @@ namespace Vape_Assistant.Views
             Settings.Default.Run = Settings.Default.Run + 1;
             Settings.Default.LoginSuccess = false;
             int Run = Settings.Default.Run;
-            VapeAssistant.Title = string.Format(Properties.Resources.SoftwareTitle + " - " + Properties.Resources.SoftwareVersion + " {0}.{1}.{2}",
+            titlebar.Text = string.Format(Properties.Resources.SoftwareTitle + " - " + Properties.Resources.SoftwareVersion + " {0}.{1}.{2}",
               version.Major, version.Minor, version.Build) + " Run: " + Run;
 
             MyNotifyIcon = new System.Windows.Forms.NotifyIcon
@@ -52,7 +52,7 @@ namespace Vape_Assistant.Views
                     (MyNotifyIcon_MouseDoubleClick);
             if (IsAdministrator == true)
             {
-                VapeAssistant.Title = VapeAssistant.Title + " [Administrator]";
+                titlebar.Text = titlebar.Text + " [Administrator]";
             }
             else
             {
@@ -110,6 +110,8 @@ namespace Vape_Assistant.Views
         }
         public static bool IsAdministrator => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
 
+        public object UI { get; private set; }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Settings.Default.Save();
@@ -162,7 +164,7 @@ namespace Vape_Assistant.Views
                 DragMove();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+         private void btn_Minimize_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
             ShowInTaskbar = false;
@@ -170,6 +172,22 @@ namespace Vape_Assistant.Views
             MyNotifyIcon.BalloonTipText = "Minimized to tray.";
             MyNotifyIcon.ShowBalloonTip(autotimeout);
             MyNotifyIcon.Visible = true;
+        }
+
+        private void btn_Close_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Settings.Default.Save();
+            GC.Collect();
+            Close();
+        }
+
+
+        private void Titlebar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
         }
 
         private void _exit_Click(object sender, RoutedEventArgs e)

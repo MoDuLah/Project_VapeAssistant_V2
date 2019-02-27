@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using Vape_Assistant.Properties;
 
@@ -32,6 +33,21 @@ namespace Vape_Assistant.Views
         public OneShots_ChildView()
         {
             InitializeComponent();
+            TotalGrams_label.Visibility = Visibility.Collapsed;
+            pgBase_label.Visibility = Visibility.Collapsed;
+            vgBase_label.Visibility = Visibility.Collapsed;
+            snvFlavor_Label.Visibility = Visibility.Collapsed;
+            snvNicotine_label.Visibility = Visibility.Collapsed;
+            OS_Name_label.Visibility = Visibility.Collapsed;
+            nicBooster_label.Visibility = Visibility.Hidden;
+        }
+
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+
+            if (textBox != null && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
         }
 
         private void snvFinalMix_LostFocus(object sender, System.Windows.RoutedEventArgs e)
@@ -71,6 +87,7 @@ namespace Vape_Assistant.Views
             TextBox textBox = (TextBox)sender;
             if (textBox.Text == "")
             {
+                snvFinal_VG.TabIndex = 2;
                 return;
             }
             else
@@ -86,6 +103,31 @@ namespace Vape_Assistant.Views
                 // restore cursor position and selection
                 textBox.Select(start, length);
                 snvFinal_VG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                snvFinal_VG.TabIndex = snvFinal_VG.TabIndex + 100;
+            }
+        }
+        private void snvFinal_VG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                snvFinal_PG.TabIndex = 1;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                snvFinal_PG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                snvFinal_PG.TabIndex = snvFinal_PG.TabIndex + 100;
             }
         }
 
@@ -204,10 +246,12 @@ namespace Vape_Assistant.Views
             {
                 double percent = Math.Round(((snvFlvMl / snvMixMl) * 100), 2);
                 snvFinalFlv.Text = percent.ToString();
+                snvFinalFlv.TabIndex = snvFinalFlv.TabIndex + 100;
             }
             else
             {
                 snvFinalFlv.Text = "";
+                snvFinalFlv.TabIndex = 4;
             }
             isEditing = false;
         }
@@ -305,7 +349,7 @@ namespace Vape_Assistant.Views
                 if (string.IsNullOrEmpty(snvFinalMix.Text))
                 {
                     errorcatch.Text = errorcatch.Text + "1";
-                    err1 = TotalMix_label.Text;
+                    err1 = TotalMix_label.Header.ToString();
                 }
                 else
                 {
@@ -315,7 +359,7 @@ namespace Vape_Assistant.Views
                 if (string.IsNullOrEmpty(snvFinal_PG.Text))
                 {
                     errorcatch.Text = errorcatch.Text + "2";
-                    err2 = TotalPG_label.Text;
+                    err2 = TotalPG_label.Header.ToString();
                 }
                 else
                 {
@@ -325,7 +369,7 @@ namespace Vape_Assistant.Views
                 if (string.IsNullOrEmpty(snvFinal_Nic.Text))
                 {
                     errorcatch.Text = errorcatch.Text + "3";
-                    err3 = TotalNic_label.Text;
+                    err3 = TotalNic_label.Header.ToString();
                 }
                 else
                 {
@@ -335,7 +379,7 @@ namespace Vape_Assistant.Views
                 if (nic_style.SelectedIndex < 0 && Convert.ToDouble(snvFinal_Nic.Text) > 0)
                 {
                     errorcatch.Text = errorcatch.Text + "4";
-                    err4 = nicBooster_label.Text;
+                    err4 = nicBooster_label.Header.ToString();
                 }
                 else
                 {
@@ -345,7 +389,7 @@ namespace Vape_Assistant.Views
                 if (string.IsNullOrEmpty(snvFinalFlv.Text))
                 {
                     errorcatch.Text = errorcatch.Text + "5";
-                    err5 = snvFinalFlv_label.Text;
+                    err5 = snvFinalFlv_label.Header.ToString();
                 }
                 else
                 {
@@ -355,7 +399,7 @@ namespace Vape_Assistant.Views
                 if (string.IsNullOrEmpty(snvFinal_Nic.Text))
                 {
                     errorcatch.Text = errorcatch.Text + "6";
-                    err6 = TotalNic_label.Text;
+                    err6 = TotalNic_label.Header.ToString();
                 }
                 else
                 {
@@ -653,19 +697,18 @@ namespace Vape_Assistant.Views
                 double NicVG_ml = (snv_Nic_ml * snv_NicVGpercent) / 100; //turn PG Percentage into decimal
                 double snv_Final_PG = Convert.ToDouble(snvFinal_PG.Text);
                 double snv_Final_VG = Convert.ToDouble(snvFinal_VG.Text);
-                double snvΒasPG_PGpercent = Convert.ToDouble(BasPG_PGpercent.Text);
-                double snvΒasVG_VGpercent = Convert.ToDouble(BasVG_VGpercent.Text);
+                double snvΒasPG_PGpercent = Convert.ToDouble(100);
+                double snvΒasVG_VGpercent = Convert.ToDouble(100);
                 double FinalPG_ml = (snv_FinalMix * snv_Final_PG) / 100;
                 double FinalVG_ml = (snv_FinalMix * snv_Final_VG) / 100;
-                double snv_Flv_PG = Convert.ToDouble(snvFlv_PG.Text);
-                double snv_Flv_VG = Convert.ToDouble(snvFlv_VG.Text);
+                double snv_Flv_PG = Convert.ToDouble(100);
+                double snv_Flv_VG = Convert.ToDouble(0);
                 double FlvPG_ml = (snv_Flv_ml * snv_Flv_PG) / 100;
                 double FlvVG_ml = (snv_Flv_ml * snv_Flv_VG) / 100;
                 double snvBasPGml = Math.Round(FinalPG_ml - NicPG_ml - FlvPG_ml, 2);
                 double snv_BasPG_ml = Math.Round(FinalPG_ml - NicPG_ml - FlvPG_ml, 2);
                 double snv_BasVG_ml = Math.Round(FinalVG_ml - NicVG_ml - FlvVG_ml, 2);
 
-                //double snvFlv_PGpercent = Convert.ToDouble(this.snvFlv_PG.Text);
                 //turn nic pg/vg percent to decimal value
 
                 // calculate required ml
@@ -691,32 +734,15 @@ namespace Vape_Assistant.Views
                 this.snvFinal_Grams.Text = Convert.ToString(Math.Round(TotalPG + TotalVG, 2));
 
                 // turn visible the invisible
-                snvFinal_Grams.Visibility = Visibility.Visible;
+                TotalGrams_label.Visibility = Visibility.Visible;
                 pgBase_label.Visibility = Visibility.Visible;
                 vgBase_label.Visibility = Visibility.Visible;
-                snvBasPG_ml.Visibility = Visibility.Visible;
-                snvBasVG_ml.Visibility = Visibility.Visible;
+                snvFlavor_Label.Visibility = Visibility.Visible;
+                snvNicotine_label.Visibility = Visibility.Visible;
+                OS_Name_label.Visibility = Visibility.Visible;
                 if (Convert.ToDouble(snvFinal_Nic.Text) > 0) {
-                    nicBooster_label.Visibility = Visibility.Visible;
-                    nic_style.Visibility = Visibility.Visible;
-                    snvNic_ml.Visibility = Visibility.Visible;
-                    snvNic_PGpercent.Visibility = Visibility.Visible;
-                    snvNic_VGpercent.Visibility = Visibility.Visible;
-                    snvNic_Grams.Visibility = Visibility.Visible;
+                    snvNicotine_label.Visibility = Visibility.Visible;
                 }
-                snvFlv_ml.Visibility = Visibility.Visible;
-                BasPG_PGpercent.Visibility = Visibility.Visible;
-                BasPG_VGpercent.Visibility = Visibility.Visible;
-                BasVG_PGpercent.Visibility = Visibility.Visible;
-                BasVG_VGpercent.Visibility = Visibility.Visible;
-
-                snvFlv_PG.Visibility = Visibility.Visible;
-                snvFlv_VG.Visibility = Visibility.Visible;
-                snvFlv_Grams.Visibility = Visibility.Visible;
-                BasPG_Grams.Visibility = Visibility.Visible;
-                BasVG_Grams.Visibility = Visibility.Visible;
-
-
 
                 if ((snv_BasPG_ml < 0) || (snv_BasVG_ml < 0))
                 {
@@ -724,9 +750,9 @@ namespace Vape_Assistant.Views
                     {
                         Color bgcolor = (Color)ColorConverter.ConvertFromString(Settings.Default.ErrorBG);
                         var bgbrush = new SolidColorBrush(bgcolor);
-                        Color fgcolor = (Color)ColorConverter.ConvertFromString("#FFFFFF");
+                        Color fgcolor = (Color)ColorConverter.ConvertFromString("#FFAA0000");
                         var fgbrush = new SolidColorBrush(fgcolor);
-                        this.snvBasPG_ml.Background = bgbrush;
+                        snvBasPG_ml.Background = bgbrush;
                         this.snvBasPG_ml.Foreground = fgbrush;
                     }
 
@@ -734,7 +760,7 @@ namespace Vape_Assistant.Views
                     {
                         Color bgcolor = (Color)ColorConverter.ConvertFromString(Settings.Default.ErrorBG);
                         var bgbrush = new SolidColorBrush(bgcolor);
-                        Color fgcolor = (Color)ColorConverter.ConvertFromString("#FFFFFF");
+                        Color fgcolor = (Color)ColorConverter.ConvertFromString("#FFAA0000");
                         var fgbrush = new SolidColorBrush(fgcolor);
                         this.snvBasVG_ml.Background = bgbrush;
                         this.snvBasVG_ml.Foreground = fgbrush;
@@ -747,7 +773,7 @@ namespace Vape_Assistant.Views
                 {
                     Color bgcolor = (Color)ColorConverter.ConvertFromString(Settings.Default.BGColor);
                     var bgbrush = new SolidColorBrush(bgcolor);
-                    Color fgcolor = (Color)ColorConverter.ConvertFromString(Settings.Default.FGColor);
+                    Color fgcolor = (Color)ColorConverter.ConvertFromString("#FFD3D3D3");
                     var fgbrush = new SolidColorBrush(fgcolor);
                     this.snvBasPG_ml.Background = bgbrush;
                     this.snvBasVG_ml.Background = bgbrush;
@@ -824,32 +850,19 @@ namespace Vape_Assistant.Views
         {
             TextBox textBox = (TextBox)sender;
             if (string.IsNullOrEmpty(textBox.Text) || textBox.Text == "0") {
-                nicBooster_label.Visibility = Visibility.Collapsed;
-                nic_style.Visibility = Visibility.Collapsed;
+                nicBooster_label.Visibility = Visibility.Hidden;
                 nic_style.SelectedIndex = -1;
-                snvNic_ml.Visibility = Visibility.Collapsed;
                 snvNic_ml.Text = "0";
-                snvNic_PGpercent.Visibility = Visibility.Collapsed;
                 snvNic_PGpercent.Text = "0";
-                snvNic_VGpercent.Visibility = Visibility.Collapsed;
                 snvNic_VGpercent.Text = "0";
-                snvNic_Grams.Visibility = Visibility.Collapsed;
                 snvNic_Grams.Text = "0";
-                snvNicLevel.Visibility = Visibility.Collapsed;
-                nicotine_seperator.Visibility = Visibility.Visible;
             }
             else
             {
                 nicBooster_label.Visibility = Visibility.Visible;
-                nic_style.Visibility = Visibility.Visible;
-                nicotine_seperator.Visibility = Visibility.Collapsed;
-                if (oneshot_calced == true) { 
-                snvNic_ml.Visibility = Visibility.Visible;
-                snvNic_PGpercent.Visibility = Visibility.Visible;
-                snvNic_VGpercent.Visibility = Visibility.Visible;
-                snvNic_Grams.Visibility = Visibility.Visible;
+                if (oneshot_calced == true) {
+                snvNicotine_label.Visibility = Visibility.Visible;
                 }
-                snvNicLevel.Visibility = Visibility.Visible;
                 if (Convert.ToDouble(textBox.Text) >= Convert.ToDouble(snvNicLevel.Text))
                 {
                     string message = "", title = "";
