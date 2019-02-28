@@ -7,10 +7,15 @@
         xmlns:local="clr-namespace:Vape_Assistant.Views"
         x:Name="LoginForm" FontSize="18" HorizontalAlignment="Center" SizeToContent="WidthAndHeight"
         ScrollViewer.VerticalScrollBarVisibility="Disabled" WindowStyle="None"
-        Background="Transparent"
-        FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}" ResizeMode="NoResize" ShowInTaskbar="False">
+        AllowsTransparency="True"
+        FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
+        ResizeMode="NoResize" ShowInTaskbar="False" Background="{x:Null}">
 
-    <Grid FocusManager.FocusedElement="{Binding ElementName=PassWord}" VerticalAlignment="Top">
+    <Border CornerRadius="10">
+        <Border.Background>
+            <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill"/>
+        </Border.Background>
+        <Grid FocusManager.FocusedElement="{Binding ElementName=PassWord}" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
@@ -48,46 +53,47 @@
             </Image.Style>
         </Image>
         <GroupBox Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <StackPanel>
-            <Grid Height="315">
+            <StackPanel>
+                <Grid Height="315">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="20"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
-                </Grid.RowDefinitions>
-                <Button Grid.Row="1" Grid.Column="1" Content="1" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_1"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="2" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_2"/>
-                <Button Grid.Row="1" Grid.Column="3" Content="3" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_3"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="4" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_4"/>
-                <Button Grid.Row="2" Grid.Column="2" Content="5" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_5"/>
-                <Button Grid.Row="2" Grid.Column="3" Content="6" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_6"/>
-                <Button Grid.Row="3" Grid.Column="1" Content="7" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_7"/>
-                <Button Grid.Row="3" Grid.Column="2" Content="8" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_8"/>
-                <Button Grid.Row="3" Grid.Column="3" Content="9" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_9"/>
-                <Button Grid.Row="4" Grid.Column="1" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_11" Height="65">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Clear_32px.png" VerticalAlignment="Center" Width="32"/>
-                    </StackPanel>
-                </Button>
-                <Button Grid.Row="4" Grid.Column="2" Content="0" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_10"/>
-                <Button x:Name="Submit" Grid.Row="4" Grid.Column="3" Click="Button_Click" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" IsDefault="True">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Submit_32px.png" VerticalAlignment="Center" Width="32"/>
-                    </StackPanel>
-                </Button>
-            </Grid>
-        </StackPanel>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Grid.Column="1" Content="1" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_1"/>
+                    <Button Grid.Row="1" Grid.Column="2" Content="2" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_2"/>
+                    <Button Grid.Row="1" Grid.Column="3" Content="3" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_3"/>
+                    <Button Grid.Row="2" Grid.Column="1" Content="4" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_4"/>
+                    <Button Grid.Row="2" Grid.Column="2" Content="5" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_5"/>
+                    <Button Grid.Row="2" Grid.Column="3" Content="6" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_6"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="7" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_7"/>
+                    <Button Grid.Row="3" Grid.Column="2" Content="8" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_8"/>
+                    <Button Grid.Row="3" Grid.Column="3" Content="9" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_9"/>
+                    <Button Grid.Row="4" Grid.Column="1" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_11" Height="65">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Clear_32px.png" VerticalAlignment="Center" Width="32"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Grid.Row="4" Grid.Column="2" Content="0" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" Click="Button_Click_10"/>
+                    <Button x:Name="Submit" Grid.Row="4" Grid.Column="3" Click="Button_Click" Margin="10,2" FontSize="22" MinWidth="70" FontWeight="Bold" IsDefault="True">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Vape Assistant;component/Images/menuIconsDark/Submit_32px.png" VerticalAlignment="Center" Width="32"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </StackPanel>
         </GroupBox>
     </Grid>
+    </Border>
 </Window>

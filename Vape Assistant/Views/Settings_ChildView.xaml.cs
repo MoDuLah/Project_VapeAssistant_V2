@@ -35,8 +35,8 @@ namespace Vape_Assistant.Views
         public string de = "de-DE";
         public string en = "en-US";
         public string es = "es-ES";
-        public string fr = "fr-FR";
         public string gr = "el-GR";
+        public string fr = "fr-FR";
         public string it = "it-IT";
         public string ro = "ro-RO";
         public string ru = "ru-RU";

@@ -18,11 +18,6 @@ namespace Vape_Assistant.Views
             InitializeComponent();
 
             // ---Mix Base--- //
-            mixNic_amount.Height = BaseMixnic_style.Height;
-            mixNic_ml.Height = BaseMixnic_style.Height;
-            mixNic_PG.Height = BaseMixnic_style.Height;
-            mixNic_VG.Height = BaseMixnic_style.Height;
-            mixNicLevel.Height = BaseMixnic_style.Height;
             mixBase1_PG.Text = "50";
             mixBase2_PG.Text = "50";
             mixBase3_PG.Text = "50";

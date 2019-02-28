@@ -1003,15 +1003,6 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reload Page.
-        /// </summary>
-        public static string btn_Reload {
-            get {
-                return ResourceManager.GetString("btn_Reload", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Calculate.
         /// </summary>
         public static string Calculate_Button {

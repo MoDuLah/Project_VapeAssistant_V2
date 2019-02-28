@@ -468,7 +468,7 @@
                     </DataGrid.BorderBrush>
                     <DataGrid.Columns>
                         <DataGridTextColumn x:Name="IdColumn" Binding="{Binding Id}" Header=" # " Width="Auto"/>
-                        <DataGridTextColumn x:Name="DateColumn" Binding="{Binding Date}" Header=" Order Date " Width="Auto" MaxWidth="200" Foreground="Black"/>
+                        <DataGridTextColumn x:Name="DateColumn" Binding="{Binding Date}" Header=" Order Date " Width="Auto" MaxWidth="200"/>
                         <DataGridTextColumn x:Name="ReferenceColumn" Binding="{Binding Reference}" Header="Order Ref." MaxWidth="200" Width="Auto"/>
                         <DataGridTextColumn x:Name="NameColumn" Binding="{Binding Name}" Header=" Company " MaxWidth="200" Width="Auto"/>
                         <DataGridTextColumn x:Name="VIDColumn" Binding="{Binding VID}" Header=" Company ID " MaxWidth="200" Width="Auto"/>

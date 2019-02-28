@@ -37,6 +37,7 @@ namespace Vape_Assistant.Views
         public int y = 0;
         public bool clicked = false;
         public bool pause = false;
+        public string CurrentCulture = Settings.Default.Culture;
         DirectoryInfo ch;
 
         public ucFooter()
@@ -66,10 +67,10 @@ namespace Vape_Assistant.Views
             string v = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
             TextBox[] adlink = { adlink1, adlink2, adlink3, adlink4, adlink5, adlink6, adlink7, adlink8, adlink9, adlink10 };
             string BannerPath = AppDomain.CurrentDomain.BaseDirectory + @"Images\banners\";
-            string fileName = BannerPath + "update." + v + ".txt";
+            string fileName = BannerPath + "update."+ v +"."+ CurrentCulture + ".txt";
             string timeStamp = DateTime.Now.ToString("yyyy.MM.dd");
-            string remoteaddress = "https://vapeassistant.000webhostapp.com/updates/" + @"update.txt";
-            string localpath = BannerPath + @"update." + v + ".txt";
+            string remoteaddress = "https://vapeassistant.000webhostapp.com/updates/" + @"update." + CurrentCulture +".txt";
+            string localpath = BannerPath + @"update." + v + "." + CurrentCulture + ".txt";
             string extension = ".png";
             WebClient Client = new WebClient();
             if (!File.Exists(fileName))

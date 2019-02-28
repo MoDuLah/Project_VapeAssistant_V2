@@ -489,97 +489,97 @@ namespace Vape_Assistant.Views
                 switch (Convert.ToInt32(errorcatch.Text))
                 {
                     case 00005:
-                        MessageBox.Show(singular + synth_RecName_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(singular + synth_RecName_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 00040:
-                        MessageBox.Show(singular + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(singular + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 00045:
-                        MessageBox.Show(singular + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(singular + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 00300:
-                        MessageBox.Show(singular + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(singular + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 00305:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 00340:
-                        MessageBox.Show(plural + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 00345:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02000:
-                        MessageBox.Show(singular + synth_FinalPG_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(singular + synth_FinalPG_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02005:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synth_FinalPG_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synth_FinalPG_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02040:
-                        MessageBox.Show(plural + synth_FinalPG_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_FinalPG_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02045:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synth_FinalPG_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synth_FinalPG_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02300:
-                        MessageBox.Show(plural + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02305:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02340:
-                        MessageBox.Show(plural + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 02345:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10000:
-                        MessageBox.Show(singular + synthFinalMix.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(singular + synthFinalMix.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10005:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10040:
-                        MessageBox.Show(plural + synthFinalMix.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synthFinalMix.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10045:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10300:
-                        MessageBox.Show(plural + synthFinalMix.Text + sep + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synthFinalMix.Header + sep + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10305:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text + sep + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header + sep + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10340:
-                        MessageBox.Show(plural + synthFinalMix.Text + sep + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synthFinalMix.Header + sep + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 10345:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text + sep + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header + sep + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12000:
-                        MessageBox.Show(plural + synthFinalMix.Text + sep + synth_FinalPG_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synthFinalMix.Header + sep + synth_FinalPG_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12005:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text + sep + synth_FinalPG_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header + sep + synth_FinalPG_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12040:
-                        MessageBox.Show(plural + synthFinalMix.Text + sep + synth_FinalPG_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synthFinalMix.Header + sep + synth_FinalPG_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12045:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text + sep + synth_FinalPG_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header + sep + synth_FinalPG_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12300:
-                        MessageBox.Show(plural + synthFinalMix.Text + sep + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synthFinalMix.Header + sep + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12305:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text + sep + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header + sep + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12340:
-                        MessageBox.Show(plural + synthFinalMix.Text + sep + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synthFinalMix.Header + sep + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                     case 12345:
-                        MessageBox.Show(plural + synth_RecName_Label.Text + sep + synthFinalMix.Text + sep + synth_FinalPG_Label.Text + sep + synth_FinalNic_Label.Text + sep + synth_NicBooster_Label.Text, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        MessageBox.Show(plural + synth_RecName_Label.Header + sep + synthFinalMix.Header + sep + synth_FinalPG_Label.Header + sep + synth_FinalNic_Label.Header + sep + synth_NicBooster_Label.Header, title + errorcatch.Text, MessageBoxButton.OK, MessageBoxImage.Exclamation);
                         return;
                 }
                 //get total mix

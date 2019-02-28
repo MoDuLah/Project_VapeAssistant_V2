@@ -29,81 +29,52 @@
         <TextBox x:Name="errorcatch" Visibility="Collapsed" />
         <TextBox x:Name="synth_recipeid" Visibility="Collapsed" IsTabStop="False"/>
         <TextBox x:Name="synth_flavors_shown" Visibility="Collapsed"/>
-        <TextBlock x:Name="synth_RecName_Label" Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.synth_RecipeName}"  HorizontalAlignment="Center" Margin="0,0,5,0" VerticalAlignment="Bottom"/>
-        <TextBlock x:Name="synthFinalMix" Grid.Row="0" Grid.Column="1" Text="{x:Static p:Resources.synth_TargetMl}" HorizontalAlignment="Center" Margin="0,0,5,0" VerticalAlignment="Bottom"/>
-        <TextBlock x:Name="synth_FinalPG_Label" Grid.Row="0" Grid.Column="2" Text="{x:Static p:Resources.mb_pg_percent}" HorizontalAlignment="Center" Margin="0,0,5,0" VerticalAlignment="Bottom"/>
-        <TextBlock x:Name="synth_FinalVG_Label" Grid.Row="0" Grid.Column="3" Text="{x:Static p:Resources.mb_vg_percent}" HorizontalAlignment="Center" Margin="0,0,5,0" VerticalAlignment="Bottom"/>
-        <TextBlock x:Name="synth_FinalNic_Label" Grid.Row="0" Grid.Column="4" Text="{x:Static p:Resources.mixbase_HeaderNicLevel}" HorizontalAlignment="Center" Margin="0,0,5,0" VerticalAlignment="Bottom"/>
-        <TextBlock x:Name="synth_NicBooster_Label" Grid.Row="0" Grid.Column="5" Text="{x:Static p:Resources.OneShotL_NicBooster}" Margin="0,0,5,0" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
-        <TextBlock x:Name="synth_mg_Label" Grid.Row="0" Grid.Column="6" Text="{x:Static p:Resources.mg_ml}" HorizontalAlignment="Center" FontSize="10" VerticalAlignment="Bottom"/>
-        <TextBlock Grid.Row="0" Grid.Column="7" Text="{x:Static p:Resources.synth_Notes}"  Margin="0,0,5,0" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+        <GroupBox x:Name="synth_RecName_Label" Grid.Row="0" Grid.Column="0" Header="{x:Static p:Resources.synth_RecipeName}">
+                <ComboBox Grid.Row="1" Grid.Column="0" MinWidth="150" MaxWidth="150" x:Name="synth_RecName" Height="30" LostFocus="synth_RecName_LostFocus" PreviewKeyUp="synth_RecName_LostFocus" VerticalAlignment="Stretch" />
+        </GroupBox>
+        <GroupBox x:Name="synthFinalMix" Grid.Row="0" Grid.Column="1" Header="{x:Static p:Resources.synth_TargetMl}">
+            <TextBox MinWidth="120" MaxWidth="150" x:Name="synth_TargetML" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="synth_PreviewTextInput" />
+        </GroupBox>
+        <GroupBox x:Name="synth_FinalPG_Label" Grid.Row="0" Grid.Column="2" Header="{x:Static p:Resources.mb_pg_percent}">
+            <TextBox MinWidth="120" MaxWidth="150" x:Name="synth_FinalPG" TextChanged="synth_finalPG_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="synth_PreviewTextInput" />
+        </GroupBox>
+        <GroupBox x:Name="synth_FinalVG_Label" Grid.Row="0" Grid.Column="3" Header="{x:Static p:Resources.mb_vg_percent}">
+            <TextBox MinWidth="120" MaxWidth="150" x:Name="synth_FinalVG" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        </GroupBox>
+
+        <GroupBox x:Name="synth_FinalNic_Label" Grid.Row="0" Grid.Column="4" Header="{x:Static p:Resources.mixbase_HeaderNicLevel}" >
+            <TextBox MinWidth="120" MaxWidth="150" x:Name="synth_FinalNic" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="Synth_FinalNic_TextChanged" PreviewTextInput="synth_PreviewTextInput" />
+        </GroupBox>
+        <GroupBox x:Name="synth_NicBooster_Label" Grid.Row="0" Grid.Column="5" Header="{x:Static p:Resources.OneShotL_NicBooster}">
+            <ComboBox x:Name="mixnic_style" MinWidth="120" MaxWidth="150" MinHeight="24" Height="30" Margin="0" SelectedIndex="-1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" PreviewKeyUp="mixnic_style_PreviewKeyUp" DropDownClosed="mixnic_style_DropDownClosed">
+                <ComboBoxItem Content="PG 100-0 VG"/>
+                <ComboBoxItem Content="PG 70-30 VG"/>
+                <ComboBoxItem Content="PG 50-50 VG"/>
+                <ComboBoxItem Content="PG 30-70 VG"/>
+                <ComboBoxItem Content="PG 0-100 VG"/>
+            </ComboBox>
+        </GroupBox>
+        <GroupBox x:Name="synth_mg_Label" Grid.Row="0" Grid.Column="6" Header="{x:Static p:Resources.mg_ml}" FontSize="10">
+            <TextBox Grid.Row="1" Grid.Column="6" x:Name="nicboosterlevel" Text="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Bottom" PreviewTextInput="synth_PreviewTextInput"/>
+        </GroupBox>
+        <GroupBox Grid.Row="0" Grid.Column="7" Grid.RowSpan="3" Header="{x:Static p:Resources.synth_Notes}">
+            <TextBox MinWidth="120" MaxWidth="150" x:Name="synth_Notes" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
+        </GroupBox>
         <StackPanel Grid.Row="0" Grid.Column="8" Grid.RowSpan="3" Orientation="Vertical" HorizontalAlignment="Left">
-            <Button x:Name="synth_RecName_Deduct" Content="{x:Static p:Resources.flv_tab_Craft}" Click="synth_RecName_Deduct_Click" MinHeight="40" HorizontalAlignment="Center" Cursor="Hand" Margin="10,0,10,5" IsEnabled="False" >
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" Padding="10,0">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                            <!-- -->
-                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-            <Button x:Name="synth_RecName_Calc" Content="{x:Static p:Resources.Calculate_Button}" Click="synth_RecName_Calc_Click" MinHeight="40" HorizontalAlignment="Center" Cursor="Hand" Margin="10,0,10,5">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" Padding="10,0">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                            <!-- -->
-                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
+            <Button x:Name="synth_RecName_Deduct" Content="{x:Static p:Resources.flv_tab_Craft}" Click="synth_RecName_Deduct_Click" MinHeight="40" Cursor="Hand" IsEnabled="False" Margin="10,5" />
+            <Button x:Name="synth_RecName_Calc" Content="{x:Static p:Resources.Calculate_Button}" Click="synth_RecName_Calc_Click" MinHeight="40" Cursor="Hand" Margin="10,5"/>
         </StackPanel>
 
-        <ComboBox Grid.Row="1" Grid.Column="0" MinWidth="150" MaxWidth="150" x:Name="synth_RecName" Height="30" LostFocus="synth_RecName_LostFocus" PreviewKeyUp="synth_RecName_LostFocus" />
-        <TextBox Grid.Row="1" Grid.Column="1" MinWidth="120" MaxWidth="150" Margin="0" MinHeight="24" x:Name="synth_TargetML" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="synth_PreviewTextInput" />
-        <TextBox Grid.Row="1" Grid.Column="2" MinWidth="120" MaxWidth="150" Margin="0" MinHeight="24" x:Name="synth_FinalPG" TextChanged="synth_finalPG_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="synth_PreviewTextInput" />
-        <TextBox Grid.Row="1" Grid.Column="3" MinWidth="120" MaxWidth="150" Margin="0" MinHeight="24" x:Name="synth_FinalVG" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-        <TextBox Grid.Row="1" Grid.Column="4" MinWidth="120" MaxWidth="150" Margin="0" MinHeight="24" x:Name="synth_FinalNic" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="Synth_FinalNic_TextChanged" PreviewTextInput="synth_PreviewTextInput" />
-        <ComboBox Grid.Row="1" Grid.Column="5" x:Name="mixnic_style" MinWidth="120" MaxWidth="150" MinHeight="24" Height="30" Margin="0" SelectedIndex="-1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" PreviewKeyUp="mixnic_style_PreviewKeyUp" DropDownClosed="mixnic_style_DropDownClosed">
-            <ComboBoxItem Content="PG 100-0 VG" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" Background="{Binding Source={x:Static p:Settings.Default}, Path=BGColor, Mode=TwoWay}" BorderBrush="{x:Null}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
-            <ComboBoxItem Content="PG 70-30 VG" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" Background="{Binding Source={x:Static p:Settings.Default}, Path=BGColor, Mode=TwoWay}" BorderBrush="{x:Null}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
-            <ComboBoxItem Content="PG 50-50 VG" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" Background="{Binding Source={x:Static p:Settings.Default}, Path=BGColor, Mode=TwoWay}" BorderBrush="{x:Null}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
-            <ComboBoxItem Content="PG 30-70 VG" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" Background="{Binding Source={x:Static p:Settings.Default}, Path=BGColor, Mode=TwoWay}" BorderBrush="{x:Null}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
-            <ComboBoxItem Content="PG 0-100 VG" Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}" Background="{Binding Source={x:Static p:Settings.Default}, Path=BGColor, Mode=TwoWay}" BorderBrush="{x:Null}" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
-        </ComboBox>
+
+
+
+
+
+
         <TextBox Grid.Row="1" Grid.Column="5" x:Name="nicbooster_pg" Visibility="Collapsed"/>
         <TextBox Grid.Row="1" Grid.Column="5" x:Name="nicbooster_vg" Visibility="Collapsed"/>
-        <TextBox Grid.Row="1" Grid.Column="6" x:Name="nicboosterlevel" Text="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Bottom" PreviewTextInput="synth_PreviewTextInput"/>
-        <TextBox Grid.Row="1" Grid.Column="7" Grid.RowSpan="2" MinWidth="120" MaxWidth="150" Margin="0" x:Name="synth_Notes" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True"/>
+
+        
 
         <ScrollViewer x:Name="RecScroll" MaxHeight="300" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" Margin="0,5,5,0" Visibility="Visible" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
             <Grid>

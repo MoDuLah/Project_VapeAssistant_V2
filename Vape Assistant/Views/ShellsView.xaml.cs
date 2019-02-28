@@ -42,6 +42,8 @@ namespace Vape_Assistant.Views
             titlebar.Text = string.Format(Properties.Resources.SoftwareTitle + " - " + Properties.Resources.SoftwareVersion + " {0}.{1}.{2}",
               version.Major, version.Minor, version.Build) + " Run: " + Run;
 
+            VapeAssistant.Title = titlebar.Text;
+
             MyNotifyIcon = new System.Windows.Forms.NotifyIcon
             {
                 Icon = new System.Drawing.Icon(AppDomain.CurrentDomain.BaseDirectory + "favicon.ico")

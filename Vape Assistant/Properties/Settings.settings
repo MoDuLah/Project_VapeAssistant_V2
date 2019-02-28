@@ -105,7 +105,7 @@
       <Value Profile="(Default)">#FF000000</Value>
     </Setting>
     <Setting Name="IntervalTime" Type="System.String" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="ImagePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">Images\banners</Value>

@@ -1237,9 +1237,6 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="btn_CloseWindow" xml:space="preserve">
     <value>Closes the window.</value>
   </data>
-  <data name="btn_Reload" xml:space="preserve">
-    <value>Reload Page</value>
-  </data>
   <data name="oneshot_grams" xml:space="preserve">
     <value>Grams</value>
   </data>

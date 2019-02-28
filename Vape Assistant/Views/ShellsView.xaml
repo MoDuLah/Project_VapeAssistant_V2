@@ -20,13 +20,8 @@
         Icon="/Vape Assistant;component/Images/favicon.png"
         SizeChanged="Window_StateChanged"
         BorderBrush="{x:Null}" WindowStyle="None">
-
-
-    <!--<Window.Background>
-        <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill" Opacity="0.99"/>
-    </Window.Background>-->
     <StackPanel>
-        <Border CornerRadius="30" >
+        <Border CornerRadius="30">
             <Border.Background>
                 <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill"/>
             </Border.Background>
@@ -216,22 +211,11 @@
                                 </MenuItem>
                             </MenuItem>
                             <Separator Width="2" Height="24" Margin="5,0" />
-                            <MenuItem Header="{x:Static p:Resources.menu_about}" VerticalAlignment="Center">
+                            <MenuItem Header="{x:Static p:Resources.ChildHeaderNine}" x:Name="Load_About" VerticalAlignment="Center">
                                 <MenuItem.Icon>
                                     <Image Source="/Vape Assistant;component/Images/menuIconsLight/About_32px.png" Width="20"/>
                                 </MenuItem.Icon>
-                                <MenuItem Header="{x:Static p:Resources.Help}" x:Name="Load_Help">
-                                    <MenuItem.Icon>
-                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Help_32px.png" Width="20"/>
-                                    </MenuItem.Icon>
-                                </MenuItem>
-                                <Separator/>
-                                <MenuItem Header="{x:Static p:Resources.ChildHeaderNine}" x:Name="Load_About">
-                                    <MenuItem.Icon>
-                                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/About_32px.png" Width="20"/>
-                                    </MenuItem.Icon>
-                                </MenuItem>
-                            </MenuItem>
+                             </MenuItem>
                         </Menu>
                         <ScrollViewer Grid.Row="2" x:Name="MainW" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Visibility="Visible" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" MouseDown="MainW_MouseDown" Margin="20,10">
                             <Grid>

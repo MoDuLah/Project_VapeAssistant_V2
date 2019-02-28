@@ -1522,10 +1522,6 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Closes the window.</source>
           <target state="new">Closes the window.</target>
         </trans-unit>
-        <trans-unit id="btn_Reload" translate="yes" xml:space="preserve">
-          <source>Reload Page</source>
-          <target state="new">Reload Page</target>
-        </trans-unit>
         <trans-unit id="oneshot_grams" translate="yes" xml:space="preserve">
           <source>Grams</source>
           <target state="new">Grams</target>

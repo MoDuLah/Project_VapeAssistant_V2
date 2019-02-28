@@ -1422,121 +1422,117 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>ml</source>
           <target state="final">ml</target>
         </trans-unit>
-        <trans-unit id="help_Answer" translate="yes" xml:space="preserve">
+        <trans-unit id="help_Answer" translate="no" xml:space="preserve">
           <source>Answer</source>
-          <target state="new">Answer</target>
+          <target state="final">Answer</target>
         </trans-unit>
-        <trans-unit id="help_Question" translate="yes" xml:space="preserve">
+        <trans-unit id="help_Question" translate="no" xml:space="preserve">
           <source>Question</source>
-          <target state="new">Question</target>
+          <target state="final">Question</target>
         </trans-unit>
-        <trans-unit id="help_Id" translate="yes" xml:space="preserve">
+        <trans-unit id="help_Id" translate="no" xml:space="preserve">
           <source>#</source>
-          <target state="new">#</target>
+          <target state="final">#</target>
         </trans-unit>
-        <trans-unit id="currency" translate="yes" xml:space="preserve">
+        <trans-unit id="currency" translate="no" xml:space="preserve">
           <source>$</source>
-          <target state="new">$</target>
+          <target state="final">$</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageEn" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageEn" translate="no" xml:space="preserve">
           <source>English</source>
-          <target state="new">English</target>
+          <target state="final">English</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageGr" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageGr" translate="no" xml:space="preserve">
           <source>Ελληνικά</source>
-          <target state="new">Ελληνικά</target>
+          <target state="final">Ελληνικά</target>
         </trans-unit>
-        <trans-unit id="settings_Restart" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_Restart" translate="no" xml:space="preserve">
           <source>Restart</source>
-          <target state="new">Restart</target>
+          <target state="final">Restart</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageDe" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageDe" translate="no" xml:space="preserve">
           <source>Deutsche</source>
-          <target state="new">Deutsche</target>
+          <target state="final">Deutsche</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageEs" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageEs" translate="no" xml:space="preserve">
           <source>Español</source>
-          <target state="new">Español</target>
+          <target state="final">Español</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageIt" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageIt" translate="no" xml:space="preserve">
           <source>Italiano</source>
-          <target state="new">Italiano</target>
+          <target state="final">Italiano</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageRo" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageRo" translate="no" xml:space="preserve">
           <source>Romanian</source>
-          <target state="new">Romanian</target>
+          <target state="final">Romanian</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageRu" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageRu" translate="no" xml:space="preserve">
           <source>Pусский</source>
-          <target state="new">Pусский</target>
+          <target state="final">Pусский</target>
         </trans-unit>
-        <trans-unit id="settings_LanguageFr" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_LanguageFr" translate="no" xml:space="preserve">
           <source>Français</source>
-          <target state="new">Français</target>
+          <target state="final">Français</target>
         </trans-unit>
-        <trans-unit id="menu_tools_Alchemy_Warehouse" translate="yes" xml:space="preserve">
+        <trans-unit id="menu_tools_Alchemy_Warehouse" translate="no" xml:space="preserve">
           <source>_Warehouse</source>
-          <target state="new">_Warehouse</target>
+          <target state="final">_Warehouse</target>
         </trans-unit>
-        <trans-unit id="settings_PurchasesPIN" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_PurchasesPIN" translate="no" xml:space="preserve">
           <source>PIN (Purchases)</source>
-          <target state="new">PIN (Purchases)</target>
+          <target state="final">PIN (Purchases)</target>
         </trans-unit>
-        <trans-unit id="settings_Setpin" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_Setpin" translate="no" xml:space="preserve">
           <source>Set Pin</source>
-          <target state="new">Set Pin</target>
+          <target state="final">Set Pin</target>
         </trans-unit>
-        <trans-unit id="required" translate="yes" xml:space="preserve">
+        <trans-unit id="required" translate="no" xml:space="preserve">
           <source>Required</source>
-          <target state="new">Required</target>
+          <target state="final">Required</target>
         </trans-unit>
-        <trans-unit id="purchases_amountInCurrency" translate="yes" xml:space="preserve">
+        <trans-unit id="purchases_amountInCurrency" translate="no" xml:space="preserve">
           <source>Amount in </source>
-          <target state="new">Amount in </target>
+          <target state="final">Amount in </target>
         </trans-unit>
-        <trans-unit id="settings_CurrentPin" translate="yes" xml:space="preserve">
+        <trans-unit id="settings_CurrentPin" translate="no" xml:space="preserve">
           <source>Current PIN</source>
-          <target state="new">Current PIN</target>
+          <target state="final">Current PIN</target>
         </trans-unit>
-        <trans-unit id="purchases_Items" translate="yes" xml:space="preserve">
+        <trans-unit id="purchases_Items" translate="no" xml:space="preserve">
           <source>Items</source>
-          <target state="new">Items</target>
+          <target state="final">Items</target>
         </trans-unit>
-        <trans-unit id="purchases_TotalCost" translate="yes" xml:space="preserve">
+        <trans-unit id="purchases_TotalCost" translate="no" xml:space="preserve">
           <source>Total Cost ($)</source>
-          <target state="new">Total Cost ($)</target>
+          <target state="final">Total Cost ($)</target>
         </trans-unit>
-        <trans-unit id="about_donationHdr" translate="yes" xml:space="preserve">
+        <trans-unit id="about_donationHdr" translate="no" xml:space="preserve">
           <source>Do you like this application?</source>
-          <target state="new">Do you like this application?</target>
+          <target state="final">Do you like this application?</target>
         </trans-unit>
-        <trans-unit id="about_donationTxt" translate="yes" xml:space="preserve">
+        <trans-unit id="about_donationTxt" translate="no" xml:space="preserve">
           <source>Buy me a beer!</source>
-          <target state="new">Buy me a beer!</target>
+          <target state="final">Buy me a beer!</target>
         </trans-unit>
-        <trans-unit id="btn_MinimizeToTray" translate="yes" xml:space="preserve">
+        <trans-unit id="btn_MinimizeToTray" translate="no" xml:space="preserve">
           <source>Minimize To Tray.</source>
-          <target state="new">Minimize To Tray.</target>
+          <target state="final">Minimize To Tray.</target>
         </trans-unit>
-        <trans-unit id="btn_CloseWindow" translate="yes" xml:space="preserve">
+        <trans-unit id="btn_CloseWindow" translate="no" xml:space="preserve">
           <source>Closes the window.</source>
-          <target state="new">Closes the window.</target>
+          <target state="final">Closes the window.</target>
         </trans-unit>
-        <trans-unit id="btn_Reload" translate="yes" xml:space="preserve">
-          <source>Reload Page</source>
-          <target state="new">Reload Page</target>
-        </trans-unit>
-        <trans-unit id="oneshot_grams" translate="yes" xml:space="preserve">
+        <trans-unit id="oneshot_grams" translate="no" xml:space="preserve">
           <source>Grams</source>
-          <target state="new">Grams</target>
+          <target state="final">Grams</target>
         </trans-unit>
-        <trans-unit id="oneshot_ml" translate="yes" xml:space="preserve">
+        <trans-unit id="oneshot_ml" translate="no" xml:space="preserve">
           <source>ml</source>
-          <target state="new">ml</target>
+          <target state="final">ml</target>
         </trans-unit>
-        <trans-unit id="about_Translations" translate="yes" xml:space="preserve">
+        <trans-unit id="about_Translations" translate="no" xml:space="preserve">
           <source>Translations</source>
-          <target state="new">Translations</target>
+          <target state="final">Translations</target>
         </trans-unit>
       </group>
     </body>

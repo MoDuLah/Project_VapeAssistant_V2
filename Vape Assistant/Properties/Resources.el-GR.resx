@@ -178,7 +178,7 @@
     <value>Για παράδειγμα 8€/10ml=0.8€/ml οπότε γράφετε 0.8</value>
   </data>
   <data name="purchase_DateOfPurchase" xml:space="preserve">
-    <value>Ημερομηνία Αγοράς (εεεε/μμ/ηη)</value>
+    <value>Ημερομηνία Αγοράς</value>
   </data>
   <data name="purchase_VendorName" xml:space="preserve">
     <value>Επωνυμία</value>
@@ -250,7 +250,7 @@
     <value>Επωνυμία</value>
   </data>
   <data name="vendor_Load" xml:space="preserve">
-    <value>Φόρτωση πίνακα δεδομένων</value>
+    <value>Φόρτωση</value>
   </data>
   <data name="purchases_tabitem1" xml:space="preserve">
     <value>Προσθήκη</value>
@@ -1015,7 +1015,7 @@
     <value>Όγκος</value>
   </data>
   <data name="mixbase_LeftMixVolumePGVG" xml:space="preserve">
-    <value>Όγκος PG / VG (ml)</value>
+    <value>Όγκος PG / VG</value>
   </data>
   <data name="mixbase_LeftResultmlToolTip" xml:space="preserve">
     <value>Η αναλογία είναι σε ml</value>
@@ -1029,7 +1029,64 @@
   <data name="mixbase_HeaderML" xml:space="preserve">
     <value>ml</value>
   </data>
+  <data name="help_Answer" xml:space="preserve">
+    <value>Απάντηση</value>
+  </data>
+  <data name="help_Question" xml:space="preserve">
+    <value>Ερώτηση</value>
+  </data>
   <data name="help_Id" xml:space="preserve">
     <value>#</value>
+  </data>
+  <data name="currency" xml:space="preserve">
+    <value>€</value>
+  </data>
+  <data name="settings_Restart" xml:space="preserve">
+    <value>Επανεκκίνηση</value>
+  </data>
+  <data name="menu_tools_Alchemy_Warehouse" xml:space="preserve">
+    <value>_Αποθήκη</value>
+  </data>
+  <data name="settings_PurchasesPIN" xml:space="preserve">
+    <value>PIN (Αγορές)</value>
+  </data>
+  <data name="settings_Setpin" xml:space="preserve">
+    <value>Ορίστε PIN</value>
+  </data>
+  <data name="required" xml:space="preserve">
+    <value>Απαιτείται</value>
+  </data>
+  <data name="purchases_amountInCurrency" xml:space="preserve">
+    <value>Ποσό σε </value>
+  </data>
+  <data name="settings_CurrentPin" xml:space="preserve">
+    <value>Τρέχον PIN</value>
+  </data>
+  <data name="purchases_Items" xml:space="preserve">
+    <value>Αντικείμενα</value>
+  </data>
+  <data name="purchases_TotalCost" xml:space="preserve">
+    <value>Τελικό Κόστος (€)</value>
+  </data>
+  <data name="about_donationHdr" xml:space="preserve">
+    <value>Σας αρέσει αυτή η εφαρμογή;</value>
+  </data>
+  <data name="about_donationTxt" xml:space="preserve">
+    <value>Κεράστε με μια μπύρα!</value>
+  </data>
+  <data name="btn_MinimizeToTray" xml:space="preserve">
+    <value>Ελαχιστοποίηση στο Tray.</value>
+  </data>
+  <data name="btn_CloseWindow" xml:space="preserve">
+    <value>Κλείνει το παράθυρο.</value>
+  </data>
+  <data name="oneshot_grams" xml:space="preserve">
+    <value>Γραμμάρια</value>
+  </data>
+  <data name="oneshot_ml" xml:space="preserve">
+    <value>ml</value>
+  </data>
+  <data name="about_Translations" xml:space="preserve">
+    <value>Μεταφράσεις</value>
   </data>
 </root>
