@@ -29,6 +29,7 @@
                   SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                   IsReadOnly="True"
                   Background="#FF242424"
+                  MaxHeight="500"
                   AlternatingRowBackground="#FF424242"  AlternationCount="-1" AutoGenerateColumns="False"
                   FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101"
                   >

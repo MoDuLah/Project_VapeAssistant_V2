@@ -20,39 +20,25 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" x:Name="JuiceLogList" SelectionChanged="JuiceLogList_SelectionChanged"
-                  LoadingRow="DataGrid_LoadingRow" SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  LoadingRow="DataGrid_LoadingRow" 
                   EnableColumnVirtualization="True" IsReadOnly="True"
-                  Background="#FF242424"
+                  Background="#FF242424" MaxHeight="500"
                   AlternatingRowBackground="#FF424242"  AlternationCount="-1" AutoGenerateColumns="False"
-                  FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101"                  >
+                  FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101">
             <DataGrid.Resources>
-                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                    <!--<Setter Property="Background" Value="#FF606060" />-->
-                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                    <Setter Property="Margin" Value="2,0,0,0"/>
-                    <Setter Property="Padding" Value="5"/>
-                    <!--<Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,0"/>-->
-                </Style>
-                <Style BasedOn="{StaticResource {x:Type DataGridRowHeader}}" TargetType="{x:Type DataGridRowHeader}">
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="Margin" Value="0,0,0,0"/>
-                    <Setter Property="Padding" Value="5,0"/>
-                    <!--<Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,0"/>-->
-                </Style>
-                <Style BasedOn="{StaticResource {x:Type DataGridRow}}" TargetType="{x:Type DataGridRow}">
-                    <!--<Setter Property="Background" Value="#FF2B2B2B"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="0,0,0,1"/>-->
-                </Style>
                 <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="LogIdColumn" Binding="{Binding id}" Header="{x:Static p:Resources.juiceLog_Id}" MinWidth="40" MaxWidth="40"/>
+                <DataGridTextColumn x:Name="LogIdColumn" Binding="{Binding id}" Header="{x:Static p:Resources.juiceLog_Id}" MinWidth="40" MaxWidth="40">
+                    <DataGridTextColumn.CellStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
                 <DataGridTextColumn x:Name="LogNameColumn"     Binding="{Binding Name}"     Header="{x:Static p:Resources.juiceLog_Name}" MinWidth="120" MaxWidth="300"/>
                 <DataGridTextColumn x:Name="LogAmountColumn"   Binding="{Binding Amount}"   Header="{x:Static p:Resources.juiceLog_Amount}" MinWidth="150" MaxWidth="150">
                     <DataGridTextColumn.CellStyle>

@@ -8,287 +8,92 @@
              Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
              mc:Ignorable="d" HorizontalAlignment="Center"
-        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinWidth="475" MinHeight="410"
+        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinWidth="475" MinHeight="350"
         ShowInTaskbar="True" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight"
         Topmost="True" WindowStyle="ToolWindow"
         FontSize="18">
-    <Window.Resources>
-        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="20" />
-                </Grid.ColumnDefinitions>
-                <Border
-                  x:Name="Border" 
-                  Grid.ColumnSpan="2"
-                  CornerRadius="0"
-                  Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                  BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"
-                  BorderThickness="1" />
-                <Border 
-                  Grid.Column="0"
-                  CornerRadius="0" 
-                  Margin="1" 
-                  Background="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" 
-                  BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                  BorderThickness="0,0,1,0" />
-                <Path 
-                  x:Name="Arrow"
-                  Grid.Column="1"     
-                  Fill="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                  Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
-                />
-            </Grid>
-            <ControlTemplate.Triggers>
-                <Trigger Property="ToggleButton.IsMouseOver" Value="true">
-                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
-                </Trigger>
-                <Trigger Property="ToggleButton.IsChecked" Value="true">
-                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
-                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                </Trigger>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                    <Setter TargetName="Border" Property="BorderBrush" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}" />
-                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
-                    <Setter TargetName="Arrow" Property="Fill" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" />
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
-
-        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
-            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
-        </ControlTemplate>
-
-        <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
-            <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
-            <!--<Setter Property="MinWidth" Value="120"/>-->
-            <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBox}">
-                        <Grid>
-                            <ToggleButton 
-                            Name="ToggleButton" 
-                            Template="{StaticResource ComboBoxToggleButton}" 
-                            Grid.Column="2" 
-                            Focusable="false"
-                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
-                            ClickMode="Press">
-                            </ToggleButton>
-                            <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
-                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                            Margin="3,3,23,3"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left" />
-                            <TextBox x:Name="PART_EditableTextBox"
-                            Style="{x:Null}" 
-                            Template="{StaticResource ComboBoxTextBox}" 
-                            HorizontalAlignment="Left" 
-                            VerticalAlignment="Center" 
-                            Margin="3,3,23,3"
-                            Focusable="True" 
-                            Background="Transparent"
-                            Foreground="White"
-                            SelectionBrush="Red"
-                            Visibility="Hidden"
-                            IsReadOnly="{TemplateBinding IsReadOnly}"/>
-                            <Popup 
-                            Name="Popup"
-                            Placement="Bottom"
-                            IsOpen="{TemplateBinding IsDropDownOpen}"
-                            AllowsTransparency="True" 
-                            Focusable="False"
-                            PopupAnimation="Slide">
-                                <Grid Name="DropDown"
-                              SnapsToDevicePixels="True"                
-                              MinWidth="{TemplateBinding ActualWidth}"
-                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                    <Border 
-                                x:Name="DropDownBorder"
-                                Background="#FF3F3F3F"
-
-                                BorderThickness="1"
-                                BorderBrush="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
-                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
-                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                                    </ScrollViewer>
-                                </Grid>
-                            </Popup>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="HasItems" Value="false">
-                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#FFFFFFFF"/>
-                            </Trigger>
-                            <Trigger Property="IsGrouping" Value="true">
-                                <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
-                            </Trigger>
-                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
-                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
-                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
-                            </Trigger>
-                            <Trigger Property="IsEditable"  Value="true">
-                                <Setter Property="IsTabStop" Value="false"/>
-                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
-                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-            </Style.Triggers>
-        </Style>
-
-        <!-- SimpleStyles: ComboBoxItem -->
-        <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
-            <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="OverridesDefaultStyle" Value="true"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-                        <Border Name="Border"
-                              Padding="2"
-                              SnapsToDevicePixels="true">
-                            <ContentPresenter />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsHighlighted" Value="true">
-                                <Setter TargetName="Border" Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill" Opacity="0.99"/>
     </Window.Background>
 
-    <TabControl Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}">
-        <TabItem Padding="10,0">
+    <TabControl>
+        <TabItem>
             <TabItem.Header>
-                <StackPanel Orientation="Vertical">
-                    <Image Source="/Vape Assistant;component/Images/Bottle_32px.png" VerticalAlignment="Center" Width="25"/>
+                <StackPanel Orientation="Vertical" Margin="5,0">
+                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Admin_32px.png" VerticalAlignment="Center" Width="25"/>
                     <TextBlock Text="{x:Static p:Resources.vendor_tabitem1}" VerticalAlignment="Center"/>
                 </StackPanel>
             </TabItem.Header>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="vendor_Name" Text="{x:Static p:Resources.vendor_Name}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" x:Name="vendor_Address" Text="{x:Static p:Resources.vendor_Address}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
-                <TextBlock Grid.Row="1" Grid.Column="3" x:Name="vendor_PostCode" Text="{x:Static p:Resources.vendor_PostCode}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
-                <TextBlock Grid.Row="1" Grid.Column="4" x:Name="vendor_Website" Text="{x:Static p:Resources.vendor_Website}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
+                <GroupBox x:Name="vendor_Name" Header="{x:Static p:Resources.vendor_Name}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBox x:Name="add_vendorName" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Column="1" x:Name="vendor_Address" Header="{x:Static p:Resources.vendor_Address}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBox x:Name="add_Address" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Column="2" x:Name="vendor_PostCode" Header="{x:Static p:Resources.vendor_PostCode}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBox x:Name="add_PostCode" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Column="3" x:Name="vendor_Website" Header="{x:Static p:Resources.vendor_Website}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBox Grid.Row="2" Grid.Column="4" x:Name="add_Website" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
 
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="add_vendorName" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="2" Grid.Column="2" x:Name="add_Address" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="2" Grid.Column="3" x:Name="add_PostCode" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="2" Grid.Column="4" x:Name="add_Website" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-
-                <TextBlock Grid.Row="3" Grid.Column="1" x:Name="vendor_Country" Text="{x:Static p:Resources.vendor_Country}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" x:Name="vendor_City" Text="{x:Static p:Resources.vendor_City}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
-                <TextBlock Grid.Row="3" Grid.Column="3" x:Name="vendor_Telephone" Text="{x:Static p:Resources.vendor_Telephone}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
-                <TextBlock Grid.Row="3" Grid.Column="4" x:Name="vendor_County" Text="{x:Static p:Resources.vendor_County}" HorizontalAlignment="Center" Padding="2" Margin="20,0"/>
-
-                <ComboBox Grid.Row="4" Grid.Column="1" x:Name="add_Country" MinWidth="120" /> <!--SelectedValuePath="Content"-->
-                <TextBox Grid.Row="4" Grid.Column="2" x:Name="add_City" HorizontalAlignment="Center" Padding="2"  MinWidth="120" />
-                <TextBox Grid.Row="4" Grid.Column="3" x:Name="add_Telephone" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="4" Grid.Column="4" x:Name="add_County" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-
-                <TextBlock Grid.Row="5" Grid.Column="2" x:Name="vendor_Active" Text="{x:Static p:Resources.vendor_Active}" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="2" Margin="0,0"/>
-                <CheckBox Grid.Row="5" Grid.Column="3" x:Name="add_Active" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="5" Grid.Column="1" x:Name="add_txt_Id" Padding="2" Width="111" Height="22" Visibility="Hidden" IsReadOnly="True"/>
-                <Button Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="1" x:Name="Vendor_add" Margin="0,5,0,5" Cursor="Hand" MinWidth="100" MaxWidth="120" Padding="5" Click="Vendor_add_Click">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border Background="{TemplateBinding Background}" Padding="10,0">
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch" OpacityMask="#FFA12B2B"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                    <!-- -->
-                                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                                    <!---->
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Vape Assistant;component/Images/Save_100px.png" VerticalAlignment="Center" Width="20"/>
-                                <TextBlock Text="{x:Static p:Resources.Save_Button}" VerticalAlignment="Center"/>
-                            </StackPanel>
+                <GroupBox Grid.Row="1" Grid.Column="0" x:Name="vendor_Country" Header="{x:Static p:Resources.vendor_Country}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <ComboBox x:Name="add_Country" MinWidth="120" VerticalAlignment="Center" HorizontalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="1" x:Name="vendor_City" Header="{x:Static p:Resources.vendor_City}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBox x:Name="add_City"  MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="2" x:Name="vendor_Telephone" Header="{x:Static p:Resources.vendor_Telephone}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBox x:Name="add_Telephone" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="3" x:Name="vendor_County" Header="{x:Static p:Resources.vendor_County}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBox x:Name="add_County" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="2" Grid.Column="2" x:Name="vendor_Active" Header="{x:Static p:Resources.vendor_Active}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                    <CheckBox x:Name="add_Active" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </GroupBox>
+                <TextBox x:Name="add_txt_Id" Visibility="Collapsed" IsReadOnly="True"/>
+                <Button Grid.Row="2" Grid.Column="3" x:Name="Vendor_add" Cursor="Hand" MinWidth="100" Click="Vendor_add_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Save_32px.png" VerticalAlignment="Center" Width="20"/>
+                        <TextBlock Text="{x:Static p:Resources.Save_Button}" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </Button>
                 <!-- Click="Button_Click"-->
                 <TextBox x:Name="add_errorcatch" Visibility="Hidden" />
-
             </Grid>
         </TabItem>
-        <TabItem Padding="10,0">
+        <TabItem Padding="20,0" IsTabStop="False">
             <TabItem.Header>
-                <StackPanel Orientation="Vertical">
-                    <Image Source="/Vape Assistant;component/Images/Bottle_32px.png" VerticalAlignment="Center" Width="25"/>
+                <StackPanel Orientation="Vertical" Margin="5,0">
+                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" VerticalAlignment="Center" Width="25"/>
                     <TextBlock Text="{x:Static p:Resources.vendor_tabitem2}" VerticalAlignment="Center"/>
                 </StackPanel>
             </TabItem.Header>
-            <Grid Background="{x:Null}">
+            <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="0*"/>
-                    <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -297,114 +102,61 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Static p:Resources.vendor_Vendor}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="2" Margin="20,0"/>
-                <TextBox Grid.Row="1" Grid.Column="2" x:Name="edit_txt_Id" Padding="2" Margin="0,0,0,0" IsReadOnly="True" VerticalAlignment="Center"
+                <GroupBox Grid.Column="0" Header="{x:Static p:Resources.vendor_Vendor}">
+                    <ComboBox x:Name="purchase_vendor" SelectedValuePath="Content" DisplayMemberPath="Vendors" ItemsSource="{Binding}" HorizontalAlignment="Center" MinWidth="120" 
+                          VerticalContentAlignment="Center" VerticalAlignment="Center" SelectionChanged="purchase_vendor_SelectionChanged"/>
+                </GroupBox>
+                <TextBox Grid.Row="1" Grid.Column="2" x:Name="edit_txt_Id" Margin="0,0,0,0" IsReadOnly="True" VerticalAlignment="Center"
                          VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" BorderThickness="2" Visibility="Hidden" />
-                <ComboBox Grid.Row="2" Grid.Column="1" x:Name="purchase_vendor" SelectedValuePath="Content" Margin="0,0,0,0" 
-                          DisplayMemberPath="Vendors" ItemsSource="{Binding}" HorizontalAlignment="Center" MinWidth="120" 
-                          VerticalContentAlignment="Center" VerticalAlignment="Center" BorderThickness="2" 
-                          SelectionChanged="purchase_vendor_SelectionChanged"/>
-                <Button Grid.Row="2" Grid.Column="3" x:Name="edit_Submit" MinWidth="100" Content="{x:Static p:Resources.vendor_edit}" Margin="5,0" Click="edit_Submit_Click">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border Background="{TemplateBinding Background}" Padding="10,0">
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" OpacityMask="#FFA12B2B"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                    <!-- -->
-                                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                                    <!---->
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                </Button>
-                <Button Grid.Row="2" Grid.Column="4" x:Name="edit_delete" MinWidth="100" Content="{x:Static p:Resources.vendor_delete}" Margin="5,0"  Click="edit_delete_Click">
-                     <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border Background="{TemplateBinding Background}" Padding="10,0">
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" OpacityMask="#FFA12B2B"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                                    <!-- -->
-                                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                                    <!---->
-                                </Trigger>
-                            </Style.Triggers>
-                            </Style>
-                     </Button.Style>
-                </Button>
 
-                <TextBlock Grid.Row="3" Grid.Column="1" Text="{x:Static p:Resources.vendor_Name}" HorizontalAlignment="Center" Padding="2" Margin="0,10,0,0"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Text="{x:Static p:Resources.vendor_Address}" HorizontalAlignment="Center" Padding="2" Margin="0,10,0,0"/>
-                <TextBlock Grid.Row="3" Grid.Column="3" Text="{x:Static p:Resources.vendor_PostCode}" HorizontalAlignment="Center" Padding="2" Margin="0,10,0,0"/>
-                <TextBlock Grid.Row="3" Grid.Column="4" Text="{x:Static p:Resources.vendor_Website}" HorizontalAlignment="Center" Padding="2" Margin="0,10,0,0"/>
+                <Button Grid.Column="2" x:Name="edit_Submit" MinWidth="100" Content="{x:Static p:Resources.vendor_edit}" Click="edit_Submit_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <TextBox Grid.Row="4" Grid.Column="1" x:Name="edit_vendorName" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="4" Grid.Column="2" x:Name="edit_Address" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="4" Grid.Column="3" x:Name="edit_PostCode" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="4" Grid.Column="4" x:Name="edit_Website" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
+                <Button Grid.Column="3" x:Name="edit_delete" MinWidth="100" Content="{x:Static p:Resources.vendor_delete}" Margin="5,0"  Click="edit_delete_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="1" Text="{x:Static p:Resources.vendor_Country}" HorizontalAlignment="Center" Padding="2" />
-                <TextBlock Grid.Row="5" Grid.Column="2" Text="{x:Static p:Resources.vendor_City}" HorizontalAlignment="Center" Padding="2" />
-                <TextBlock Grid.Row="5" Grid.Column="3" Text="{x:Static p:Resources.vendor_Telephone}" HorizontalAlignment="Center" Padding="2" />
-                <TextBlock Grid.Row="5" Grid.Column="4" Text="{x:Static p:Resources.vendor_Active}" HorizontalAlignment="Center" Padding="2" />
+                <GroupBox Grid.Row="1" Grid.Column="0" Header="{x:Static p:Resources.vendor_Name}">
+                    <TextBox x:Name="edit_vendorName" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="1" Header="{x:Static p:Resources.vendor_Address}" >
+                    <TextBox x:Name="edit_Address" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="2" Header="{x:Static p:Resources.vendor_PostCode}" >
+                    <TextBox x:Name="edit_PostCode" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="3" Header="{x:Static p:Resources.vendor_Website}" HorizontalAlignment="Center">
+                    <TextBox x:Name="edit_Website" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
 
-                <ComboBox Grid.Row="6" Grid.Column="1" x:Name="edit_Country" MinWidth="120"  SelectedValuePath="Content"/>
-                <TextBox Grid.Row="6" Grid.Column="2" x:Name="edit_City" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <TextBox Grid.Row="6" Grid.Column="3" x:Name="edit_Telephone" HorizontalAlignment="Center" Padding="2" MinWidth="120" />
-                <CheckBox Grid.Row="6" Grid.Column="4" x:Name="edit_Active" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="16" />
+                <GroupBox Grid.Row="2" Grid.Column="0" Header="{x:Static p:Resources.vendor_Country}" >
+                    <ComboBox x:Name="edit_Country" MinWidth="120" SelectedValuePath="Content"/>
+                </GroupBox>
+                <GroupBox Grid.Row="2" Grid.Column="1" Header="{x:Static p:Resources.vendor_City}">
+                    <TextBox  x:Name="edit_City" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="2" Grid.Column="2" Header="{x:Static p:Resources.vendor_Telephone}">
+                    <TextBox  x:Name="edit_Telephone" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </GroupBox>
+                <GroupBox Grid.Row="2" Grid.Column="3" Header="{x:Static p:Resources.vendor_Active}">
+                    <CheckBox x:Name="edit_Active" VerticalAlignment="Center" HorizontalAlignment="Center" Width="16" />
+                </GroupBox>
 
-                <Button Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" x:Name="Load_table_txt" Content="{x:Static p:Resources.vendor_Load}" Margin="20,10,20,0"
-                            Click="Load_table" MinWidth="120">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                        <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                        <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Background="{TemplateBinding Background}" Padding="10,0">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch" OpacityMask="#FFA12B2B"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                            <!-- -->
-                            <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                            <!---->
-                        </Trigger>
-                    </Style.Triggers>
-                    </Style>
-                    </Button.Style>
-                </Button>
-                <DataGrid Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4" VerticalAlignment="Top" x:Name="ViewEntries" AutoGenerateColumns="True" MinHeight="100"
-                              Height="300" Margin="10,0,10,0" Background="#FF6A6A6A" IsReadOnly="True"/>
+                <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Load_table_txt" Content="{x:Static p:Resources.vendor_Load}"
+                            Click="Load_table" MinWidth="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,0"/>
+
+
+                <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Top" x:Name="ViewEntries" AutoGenerateColumns="True" MinHeight="100"
+                              Height="300" 
+                    LoadingRow="DataGrid_LoadingRow" 
+                  EnableColumnVirtualization="True" IsReadOnly="True"
+                  Background="#FF242424" MaxHeight="500"
+                  AlternatingRowBackground="#FF424242"  AlternationCount="-1"
+                  FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
             </Grid>
         </TabItem>
     </TabControl>
