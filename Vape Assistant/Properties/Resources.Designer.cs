@@ -382,6 +382,15 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Translations.
+        /// </summary>
+        public static string about_Translations {
+            get {
+                return ResourceManager.GetString("about_Translations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abbreviation: .
         /// </summary>
         public static string add_flv_abbreviation {
@@ -2236,7 +2245,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Volume PG / VG (ml).
+        ///   Looks up a localized string similar to Volume PG / VG.
         /// </summary>
         public static string mixbase_LeftMixVolumePGVG {
             get {

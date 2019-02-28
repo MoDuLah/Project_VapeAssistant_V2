@@ -1405,8 +1405,9 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Όγκος</target>
         </trans-unit>
         <trans-unit id="mixbase_LeftMixVolumePGVG" translate="yes" xml:space="preserve">
-          <source>Volume PG / VG (ml)</source>
-          <target state="final">Όγκος PG / VG (ml)</target>
+          <source>Volume PG / VG</source>
+          <target state="needs-review-translation">Όγκος PG / VG (ml)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="mixbase_LeftResultmlToolTip" translate="yes" xml:space="preserve">
           <source>Ratio is in ml</source>
@@ -1535,6 +1536,10 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="oneshot_ml" translate="yes" xml:space="preserve">
           <source>ml</source>
           <target state="new">ml</target>
+        </trans-unit>
+        <trans-unit id="about_Translations" translate="yes" xml:space="preserve">
+          <source>Translations</source>
+          <target state="new">Translations</target>
         </trans-unit>
       </group>
     </body>

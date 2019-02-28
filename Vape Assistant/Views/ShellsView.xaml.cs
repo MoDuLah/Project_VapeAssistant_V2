@@ -8,8 +8,6 @@ using System.Windows.Navigation;
 using System.Security.Principal;
 using Vape_Assistant.Properties;
 using System.Runtime.InteropServices;
-using Vape_Assistant.Views;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Collections.Generic;
@@ -32,6 +30,7 @@ namespace Vape_Assistant.Views
         string gr = "el-GR";
         private System.Windows.Forms.NotifyIcon MyNotifyIcon;
         public bool IsAdmin { get; set; } = false;
+        public int ad0, ad1, ad2, ad3, ad4, ad5, ad6, ad7, ad8, ad9, ad10;
 
         public ShellsView()
         {

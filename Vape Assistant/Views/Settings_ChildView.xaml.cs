@@ -6,7 +6,6 @@ using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
 using System.IO;
-using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -137,6 +136,8 @@ namespace Vape_Assistant.Views
                     {
                         message = "Das Programm hat einen Neustart, damit die Änderungen wirksam werden können." +
                             " Drücken Sie die Taste rechts.";
+                        message += "\n\nDie Übersetzung in dieser Sprache ist nicht vollständig." +
+                            " Wenn Sie uns helfen möchten, senden Sie uns eine Nachricht.";
                         Settings.Default.Culture = de;
                         Settings.Default.CultureIndex = 0;
 
@@ -157,6 +158,8 @@ namespace Vape_Assistant.Views
                     {
                         message = "El programa se ha reiniciado para que los cambios surtan efecto." +
                             " Presiona el botón de la derecha.";
+                        message += "La traducción en este idioma no está completa." +
+                            " Si quieres ayudarnos, envíanos un mensaje.";
                         Settings.Default.Culture = es;
                         Settings.Default.CultureIndex = 2;
 
@@ -167,6 +170,8 @@ namespace Vape_Assistant.Views
                     {
                         message = "Le programme a redémarré pour que les modifications puissent prendre effet." +
                             " Appuyez sur le bouton à droite.";
+                        message += "La traduction dans cette langue n'est pas complète." +
+                            " Si vous voulez nous aider, envoyez-nous un message.";
                         Settings.Default.Culture = fr;
                         Settings.Default.CultureIndex = 3;
 
@@ -186,6 +191,8 @@ namespace Vape_Assistant.Views
                     {
                         message = "Il programma è stato riavviato in modo che le modifiche possano avere effetto." +
                             " Premi il pulsante a destra.";
+                        message += "La traduzione in questa lingua non è completa." +
+                            " Se vuoi aiutarci, inviaci un messaggio.";
                         Settings.Default.Culture = it;
                         Settings.Default.CultureIndex = 5;
                     }
@@ -195,6 +202,7 @@ namespace Vape_Assistant.Views
                     {
                         message = "Programul are o repornire, astfel încât schimbările pot intra în vigoare." +
                             " Apăsați butonul din dreapta.";
+                        message += "\n\nTraducerea în această limbă nu este completă. Dacă vrei să ne ajuți, trimite-ne un mesaj.";
                         Settings.Default.Culture = ro;
                         Settings.Default.CultureIndex = 6;
                     }
@@ -204,6 +212,7 @@ namespace Vape_Assistant.Views
                     {
                         message = "Программа перезапустится, чтобы изменения вступили в силу." +
                             " Нажмите кнопку справа.";
+                        message += "Перевод на этом языке не завершен. Если вы хотите помочь нам, отправьте нам сообщение.";
                         Settings.Default.Culture = ru;
                         Settings.Default.CultureIndex = 7;
                     }
@@ -238,7 +247,7 @@ namespace Vape_Assistant.Views
                         if (Settings.Default.Culture == de)
                         {
                             message = "Die PIN darf nicht leer sein.";
-                            title = "Error";
+                            title = "Fehler";
                         }
                         break;
                     case 1:
@@ -459,7 +468,7 @@ namespace Vape_Assistant.Views
                                     if (Settings.Default.Culture == de)
                                     {
                                         message = "Die PIN ist falsch.";
-                                        title = "Error";
+                                        title = "Fehler";
                                     }
                                     break;
                                 case 1:
@@ -560,7 +569,38 @@ namespace Vape_Assistant.Views
         private void db_selector_LostFocus(object sender, RoutedEventArgs e)
         {
 
-
+            if (CurrentCulture == de)
+            {
+                if (db_selector.SelectedIndex < 0)
+                {
+                    db_description.Text = null;
+                }
+                if (db_selector.SelectedIndex == 0)
+                {
+                    db_description.Text = "Umfasst Ihre Einkäufe.";
+                    export.Name = "Purchases";
+                }
+                if (db_selector.SelectedIndex == 1)
+                {
+                    db_description.Text = "Es beinhaltet die Düfte, die Sie besitzen.";
+                    export.Name = "Warehouse";
+                }
+                if (db_selector.SelectedIndex == 2)
+                {
+                    db_description.Text = "Es enthält die Rezepte, die Sie hinzugefügt haben. Teil A.";
+                    export.Name = "RecipeBook";
+                }
+                if (db_selector.SelectedIndex == 3)
+                {
+                    db_description.Text = "Es enthält die Rezepte, die Sie hinzugefügt haben. Teil B.";
+                    export.Name = "hash";
+                }
+                if (db_selector.SelectedIndex == 4)
+                {
+                    db_description.Text = "Enthält die Historienaufzeichnung gemischter Rezepte.";
+                    export.Name = "RecipeLog";
+                }
+            }
             if (CurrentCulture == en) { 
                 if (db_selector.SelectedIndex < 0)
                 {
@@ -589,6 +629,70 @@ namespace Vape_Assistant.Views
                 if (db_selector.SelectedIndex == 4)
                 {
                     db_description.Text = "Includes the history log of the recipes you have mixed";
+                    export.Name = "RecipeLog";
+                }
+            }
+            if (CurrentCulture == es)
+            {
+                if (db_selector.SelectedIndex < 0)
+                {
+                    db_description.Text = null;
+                }
+                if (db_selector.SelectedIndex == 0)
+                {
+                    db_description.Text = "Incluye tus compras.";
+                    export.Name = "Purchases";
+                }
+                if (db_selector.SelectedIndex == 1)
+                {
+                    db_description.Text = "Incluye las fragancias que posees.";
+                    export.Name = "Warehouse";
+                }
+                if (db_selector.SelectedIndex == 2)
+                {
+                    db_description.Text = "Incluye las recetas que has añadido. Parte A.";
+                    export.Name = "RecipeBook";
+                }
+                if (db_selector.SelectedIndex == 3)
+                {
+                    db_description.Text = "Incluye las recetas que has añadido. Parte B.";
+                    export.Name = "hash";
+                }
+                if (db_selector.SelectedIndex == 4)
+                {
+                    db_description.Text = "Incluye registro histórico de recetas mixtas.";
+                    export.Name = "RecipeLog";
+                }
+            }
+            if (CurrentCulture == fr)
+            {
+                if (db_selector.SelectedIndex < 0)
+                {
+                    db_description.Text = null;
+                }
+                if (db_selector.SelectedIndex == 0)
+                {
+                    db_description.Text = "Inclut vos achats.";
+                    export.Name = "Purchases";
+                }
+                if (db_selector.SelectedIndex == 1)
+                {
+                    db_description.Text = "Cela inclut les parfums que vous possédez.";
+                    export.Name = "Warehouse";
+                }
+                if (db_selector.SelectedIndex == 2)
+                {
+                    db_description.Text = "Il comprend les recettes que vous avez ajoutées. Partie A.";
+                    export.Name = "RecipeBook";
+                }
+                if (db_selector.SelectedIndex == 3)
+                {
+                    db_description.Text = "Il comprend les recettes que vous avez ajoutées. Partie B.";
+                    export.Name = "hash";
+                }
+                if (db_selector.SelectedIndex == 4)
+                {
+                    db_description.Text = "Comprend un historique des recettes variées.";
                     export.Name = "RecipeLog";
                 }
             }
@@ -621,6 +725,102 @@ namespace Vape_Assistant.Views
                 if (db_selector.SelectedIndex == 4)
                 {
                     db_description.Text = "Περιλαμβάνει το αρχείο καταγραφής ιστορικού των συνταγών που έχουν αναμειχθεί.";
+                    export.Name = "RecipeLog";
+                }
+            }
+            if (CurrentCulture == it)
+            {
+                if (db_selector.SelectedIndex < 0)
+                {
+                    db_description.Text = null;
+                }
+                if (db_selector.SelectedIndex == 0)
+                {
+                    db_description.Text = "Include i tuoi acquisti.";
+                    export.Name = "Purchases";
+                }
+                if (db_selector.SelectedIndex == 1)
+                {
+                    db_description.Text = "Include i profumi che possiedi.";
+                    export.Name = "Warehouse";
+                }
+                if (db_selector.SelectedIndex == 2)
+                {
+                    db_description.Text = "Include le ricette che hai aggiunto. Parte A.";
+                    export.Name = "RecipeBook";
+                }
+                if (db_selector.SelectedIndex == 3)
+                {
+                    db_description.Text = "Include le ricette che hai aggiunto. Parte B.";
+                    export.Name = "hash";
+                }
+                if (db_selector.SelectedIndex == 4)
+                {
+                    db_description.Text = "Include la cronologia delle ricette miste.";
+                    export.Name = "RecipeLog";
+                }
+            }
+            if (CurrentCulture == ro)
+            {
+                if (db_selector.SelectedIndex < 0)
+                {
+                    db_description.Text = null;
+                }
+                if (db_selector.SelectedIndex == 0)
+                {
+                    db_description.Text = "Include achizițiile dvs.";
+                    export.Name = "Purchases";
+                }
+                if (db_selector.SelectedIndex == 1)
+                {
+                    db_description.Text = "Acesta include aromele pe care le dețineți.";
+                    export.Name = "Warehouse";
+                }
+                if (db_selector.SelectedIndex == 2)
+                {
+                    db_description.Text = "Acesta include rețetele pe care le-ați adăugat. Partea A.";
+                    export.Name = "RecipeBook";
+                }
+                if (db_selector.SelectedIndex == 3)
+                {
+                    db_description.Text = "Acesta include rețetele pe care le-ați adăugat. Partea B.";
+                    export.Name = "hash";
+                }
+                if (db_selector.SelectedIndex == 4)
+                {
+                    db_description.Text = "Include istoricul rețetelor mixte.";
+                    export.Name = "RecipeLog";
+                }
+            }
+            if (CurrentCulture == ru)
+            {
+                if (db_selector.SelectedIndex < 0)
+                {
+                    db_description.Text = null;
+                }
+                if (db_selector.SelectedIndex == 0)
+                {
+                    db_description.Text = "Включает ваши покупки.";
+                    export.Name = "Purchases";
+                }
+                if (db_selector.SelectedIndex == 1)
+                {
+                    db_description.Text = "Он включает в себя ароматы, которыми вы владеете.";
+                    export.Name = "Warehouse";
+                }
+                if (db_selector.SelectedIndex == 2)
+                {
+                    db_description.Text = "Он включает в себя рецепты, которые вы добавили. Часть А.";
+                    export.Name = "RecipeBook";
+                }
+                if (db_selector.SelectedIndex == 3)
+                {
+                    db_description.Text = "Он включает в себя рецепты, которые вы добавили. Часть Б.";
+                    export.Name = "hash";
+                }
+                if (db_selector.SelectedIndex == 4)
+                {
+                    db_description.Text = "Включает запись истории смешанных рецептов.";
                     export.Name = "RecipeLog";
                 }
             }
@@ -659,15 +859,45 @@ namespace Vape_Assistant.Views
                     if (count == 0)
                     {
                         string message = "", title = "";
+                        if (CurrentCulture == de)
+                        {
+                            title = "Fehler";
+                            message = "Es gibt keine Datensätze in Ihrer Datenbank.\n\nDer Export wurde abgebrochen.";
+                        }
                         if (CurrentCulture == en)
                         {
                             title = "Error";
                             message = "There are no entries in your database.\n\nExport Canceled.";
                         }
+                        if (CurrentCulture == es)
+                        {
+                            title = "Error";
+                            message = "No hay registros en su base de datos.\n\nSe canceló la exportación.";
+                        }
+                        if (CurrentCulture == fr)
+                        {
+                            title = "Erreur";
+                            message = "Il n'y a aucun enregistrement dans votre base de données.\n\nL'exportation a été annulée.";
+                        }
                         if (CurrentCulture == gr)
                         {
                             title = "Σφάλμα";
                             message = "Δεν υπάρχουν εγγραφές στη βάση δεδομένων σας.\n\nΗ εξαγωγή ακυρώθηκε.";
+                        }
+                        if (CurrentCulture == it)
+                        {
+                            title = "Errore";
+                            message = "Non ci sono record nel tuo database.\n\nL'esportazione è stata annullata.";
+                        }
+                        if (CurrentCulture == ro)
+                        {
+                            title = "Eroare";
+                            message = "Nu există înregistrări în baza dvs. de date.\n\nExportul a fost anulat.";
+                        }
+                        if (CurrentCulture == ru)
+                        {
+                            title = "ошибка";
+                            message = "В вашей базе данных нет записей.\n\nЭкспорт был отменен.";
                         }
                         AutoClosingMessageBox.Show(message, title, 2000);
                         return;
@@ -986,7 +1216,11 @@ namespace Vape_Assistant.Views
                 string delimiter = "|";
                 //specify file name of log file (csv).
                 string newfileName = Path + "Backup\\" + btnName + "-" + timeStamp + ".csv";
-                //check to see if file exists, if not create an empty file with the specified file name.
+                if (File.Exists(newfileName))
+                {
+                    File.Delete(newfileName);
+                }
+                    //check to see if file exists, if not create an empty file with the specified file name.
                 if (!File.Exists(newfileName))
                 {
                     FileStream fs = new FileStream(newfileName, FileMode.CreateNew);
@@ -1120,15 +1354,45 @@ namespace Vape_Assistant.Views
                     }
                     string message = "";
                     string title = "";
+                    if (CurrentCulture == de)
+                    {
+                        message = $"Exportieren der Tabelle: {btnName} aus der Datenbank war erfolgreich! Sie finden die Datei hier: " + newfileName;
+                        title = "Erfolg!";
+                    }
                     if (CurrentCulture == en)
                     {
-                        message = btnName + " exported successfully at " + newfileName;
+                        message = $"Exporting the table: { btnName } from the database was successful!\nYou will find the file here: "+ newfileName;
                         title = "Success!";
+                    }
+                    if (CurrentCulture == es)
+                    {
+                        message = $"La exportación de la tabla: {btnName} de la base de datos fue exitosa!\nEncontrará el archivo aquí: " + newfileName;
+                        title = "El exito!";
+                    }
+                    if (CurrentCulture == fr)
+                    {
+                        message = $"L'exportation de la table: {btnName} de la base de données a réussi!\nVous trouverez le fichier ici: " + newfileName;
+                        title = "Succès!";
                     }
                     if (CurrentCulture == gr)
                     {
                         message = $"Η εξαγωγή του πίνακα: {btnName} από τη βάση ήταν επιτυχής!\nΘα το βρείτε εδώ: " + newfileName;
                         title = "Επιτυχία!";
+                    }
+                    if (CurrentCulture == it)
+                    {
+                        message = $"Esportare la tabella: {btnName} dal database ha avuto successo! Troverete il file qui: " + newfileName;
+                        title = "Successo!";
+                    }
+                    if (CurrentCulture == ro)
+                    {
+                        message = $"Exportarea tabelului: {btnName} din baza de date a avut succes! Veți găsi fișierul aici: " + newfileName;
+                        title = "Succes!";
+                    }
+                    if (CurrentCulture == ru)
+                    {
+                        message = $"Экспорт таблицы: {btnName} из базы данных выполнен успешно! Вы найдете файл здесь: " + newfileName;
+                        title = "Успех!";
                     }
                     AutoClosingMessageBox.Show(message, title, autotimeout);
                 }

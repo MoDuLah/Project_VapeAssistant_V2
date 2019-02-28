@@ -7,7 +7,6 @@
         xmlns:myStatusbar="clr-namespace:Vape_Assistant.Views"
         AllowsTransparency="True"
         Background="Transparent"
-        Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
         FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
         mc:Ignorable="d" FontSize="18"
         VerticalContentAlignment="Stretch"
@@ -20,8 +19,7 @@
         Closing="VapeAssistant_Closing"
         Icon="/Vape Assistant;component/Images/favicon.png"
         SizeChanged="Window_StateChanged"
-        BorderBrush="{x:Null}" Topmost="True" WindowStyle="None"
-        >
+        BorderBrush="{x:Null}" WindowStyle="None">
 
 
     <!--<Window.Background>

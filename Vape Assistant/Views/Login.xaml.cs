@@ -199,5 +199,22 @@ namespace Vape_Assistant
             MessageBox.Show(Hash(PassWord.Password));
         }
 
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Settings.Default.LoginSuccess = false;
+            Settings.Default.Save();
+            Close(); //closing this splash screen
+            GC.Collect();
+        }
+
+        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Image_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

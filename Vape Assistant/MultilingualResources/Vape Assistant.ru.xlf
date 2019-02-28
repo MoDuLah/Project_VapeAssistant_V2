@@ -255,8 +255,8 @@
           <target state="new">Volume</target>
         </trans-unit>
         <trans-unit id="mixbase_LeftMixVolumePGVG" translate="yes" xml:space="preserve">
-          <source>Volume PG / VG (ml)</source>
-          <target state="new">Volume PG / VG (ml)</target>
+          <source>Volume PG / VG</source>
+          <target state="new">Volume PG / VG</target>
         </trans-unit>
         <trans-unit id="mixbase_LeftResultmlToolTip" translate="yes" xml:space="preserve">
           <source>Ratio is in ml</source>
@@ -1533,6 +1533,10 @@ If you decline and keep the default pin-code you will be asked the next time you
         <trans-unit id="oneshot_ml" translate="yes" xml:space="preserve">
           <source>ml</source>
           <target state="new">ml</target>
+        </trans-unit>
+        <trans-unit id="about_Translations" translate="yes" xml:space="preserve">
+          <source>Translations</source>
+          <target state="new">Translations</target>
         </trans-unit>
       </group>
     </body>

@@ -11,6 +11,8 @@ using System.IO;
 using Vape_Assistant.Properties;
 using System.Diagnostics;
 using System.Windows.Navigation;
+using System.Net;
+using System.Reflection;
 
 namespace Vape_Assistant.Views
 {
@@ -19,6 +21,9 @@ namespace Vape_Assistant.Views
     /// </summary>
     public partial class ucFooter : UserControl
     {
+        Version version = Assembly.GetExecutingAssembly().GetName().Version;
+        public static List<string> listA = new List<string>();
+        public static List<string> listB = new List<string>();
         private DispatcherTimer timerImageChange;
         private Image[] ImageControls;
         private List<ImageSource> Images = new List<ImageSource>();
@@ -28,7 +33,7 @@ namespace Vape_Assistant.Views
         private int CurrentSourceIndex, CurrentCtrlIndex, EffectIndex = 0, IntervalTimer = 1;
         public string removeString = "";
         public int index = 0;
-        public string MyURL;
+        public string MyURL,MyURL2;
         public int y = 0;
         public bool clicked = false;
         public bool pause = false;
@@ -37,6 +42,10 @@ namespace Vape_Assistant.Views
         public ucFooter()
         {
             InitializeComponent();
+
+            //Download Ads
+            GetImagesInFolder();
+
             //Initialize Image control, Image directory path and Image timer.
             IntervalTimer = Convert.ToInt32(Settings.Default.IntervalTime);
             strImagePath = Settings.Default.ImagePath;
@@ -51,6 +60,76 @@ namespace Vape_Assistant.Views
             timerImageChange.Tick += new EventHandler(timerImageChange_Tick);
         }
 
+        private void GetImagesInFolder()
+        {
+            int i = 0;
+            string v = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
+            TextBox[] adlink = { adlink1, adlink2, adlink3, adlink4, adlink5, adlink6, adlink7, adlink8, adlink9, adlink10 };
+            string BannerPath = AppDomain.CurrentDomain.BaseDirectory + @"Images\banners\";
+            string fileName = BannerPath + "update." + v + ".txt";
+            string timeStamp = DateTime.Now.ToString("yyyy.MM.dd");
+            string remoteaddress = "https://vapeassistant.000webhostapp.com/updates/" + @"update.txt";
+            string localpath = BannerPath + @"update." + v + ".txt";
+            string extension = ".png";
+            WebClient Client = new WebClient();
+            if (!File.Exists(fileName))
+            {
+                try
+                {
+                    Client.DownloadFile(remoteaddress, localpath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+            using (var reader = new StreamReader(localpath))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(line))
+                    {
+                        i++;
+
+                        var values = line.Split(';');
+                        foreach (var value in values)
+                        {
+                            if (!string.IsNullOrEmpty(value))
+                            {
+                                if (value.StartsWith("https://vapeassistant"))
+                                {
+                                    if (!File.Exists(BannerPath + i + extension))
+                                    {
+                                        try
+                                        {
+                                            Client.DownloadFile(value, BannerPath + i + extension);
+                                        }
+                                        catch (Exception dx)
+                                        {
+                                            MessageBox.Show(dx.Message);
+                                            return;
+                                        }
+                                    }
+                                }
+                                else if (value.StartsWith("https://bit.ly"))
+                                {
+                                    listA.Add(value);
+                                }
+                                else
+                                {
+                                    listB.Add(value);
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            Client.Dispose();
+        }
+
         private void control_Loaded(object sender, RoutedEventArgs e)
         {
             PlaySlideShow();
@@ -60,12 +139,16 @@ namespace Vape_Assistant.Views
         {
             pause = true;
             string s = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
-            clickedToday(e);
+            clickedToday(y);
             if (!string.IsNullOrEmpty(MyURL) && clicked == false) { 
             Process.Start(new ProcessStartInfo(MyURL));
                 //Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
                 switch (y)
                 {
+                    case 0:
+                        Settings.Default.link0clickeddate = s;
+                        Settings.Default.Save();
+                        break;
                     case 1:
                         Settings.Default.link1clickeddate = s;
                         Settings.Default.Save();
@@ -86,6 +169,18 @@ namespace Vape_Assistant.Views
                         Settings.Default.link5clickeddate = s;
                         Settings.Default.Save();
                         break;
+                    case 6:
+                        Settings.Default.link6clickeddate = s;
+                        Settings.Default.Save();
+                        break;
+                    case 7:
+                        Settings.Default.link7clickeddate = s;
+                        Settings.Default.Save();
+                        break;
+                    case 8:
+                        Settings.Default.link8clickeddate = s;
+                        Settings.Default.Save();
+                        break;
                     case 9999:
                         MessageBox.Show("Error");
                         return;
@@ -101,7 +196,7 @@ namespace Vape_Assistant.Views
             {
                 if (clicked == true)
                 {
-                    MessageBox.Show("Error");
+                    Process.Start(new ProcessStartInfo(MyURL2));
                     e.Handled = false;
                     pause = false;
                     return;
@@ -113,18 +208,24 @@ namespace Vape_Assistant.Views
                 }
             }
         }
-        private void clickedToday(object sender)
+        private void clickedToday(int y)
         {
             if (y == 9999) { return; }
+            string date0 = Settings.Default.link0clickeddate;
             string date1 = Settings.Default.link1clickeddate;
             string date2 = Settings.Default.link2clickeddate;
             string date3 = Settings.Default.link3clickeddate;
             string date4 = Settings.Default.link4clickeddate;
             string date5 = Settings.Default.link5clickeddate;
-            string[] date = { date1, date2, date3, date4,date5 };
-            int index = y - 1;
+            string date6 = Settings.Default.link6clickeddate;
+            string date7 = Settings.Default.link7clickeddate;
+            string date8 = Settings.Default.link8clickeddate;
+            string date9 = Settings.Default.link9clickeddate;
+            string date10 = Settings.Default.link10clickeddate;
+            string[] date = { date0, date1, date2, date3, date4,date5, date6, date7, date8, date9, date10 };
+
             string s = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
-            string test = date[index];
+            string test = date[y];
             bool result = s.Equals(test, StringComparison.Ordinal);
             if (!string.IsNullOrEmpty(MyURL) && result == false)
             {
@@ -146,8 +247,6 @@ namespace Vape_Assistant.Views
             {
                 ErrorText.Text = "The specified folder does not exist: " + Environment.NewLine + Environment.CurrentDirectory + folder;
                 ErrorText.Visibility = Visibility.Visible;
-                y = 9999;
-                return;
             }
             //Random r = new Random();
             //orderby r.Next()
@@ -223,10 +322,10 @@ namespace Vape_Assistant.Views
         {
             try
             {
-
-                if (Images.Count == 0)
+                if (Images.Count == 0) { 
                     return;
-                var oldCtrlIndex = CurrentCtrlIndex;
+                }
+                int oldCtrlIndex = CurrentCtrlIndex;
                 CurrentCtrlIndex = (CurrentCtrlIndex + 1) % 2;
                 CurrentSourceIndex = (CurrentSourceIndex + 1) % Images.Count;
 
@@ -241,37 +340,17 @@ namespace Vape_Assistant.Views
                 StboardFadeOut.Begin(imgFadeOut);
                 Storyboard StboardFadeIn = Resources[string.Format("{0}In", TransitionType.ToString())] as Storyboard;
                 StboardFadeIn.Begin(imgFadeIn);
-                if (y < Images.Count && y > 0) { 
+                if (y < Images.Count) { 
                 y++;
                 }
                 else
                 {
-                    y = 1;
+                    y = 0;
                 }
-                switch (y)
-                {
-                    case 1:
-                        MyURL = "http://Link1.com";//"http://bit.ly/2XiJBJV"; // #Atmology
-                        break;
-                    case 2:
-                        MyURL = "http://Link2.com";
-                        break;
-                    case 3:
-                        MyURL = "http://Link3.com"; //"http://vape-assistant.com";
-                        break; 
-                    case 4:
-                        MyURL = "http://Link4.com"; //"http://facebook.com";
-                        break;
-                    case 5:
-                        MyURL = "http://Link5.com"; //"http://facebook.com";
-                        break;
-                    case 6:
-                        MyURL = "https://www.facebook.com/messages/t/VapeAssistant"; // #PM
-                        break; 
-                    default:
-                        break;
-                }
-                
+                if (y == Images.Count) { y = 0; }
+                MyURL = listA[y];
+                MyURL2 = listB[y];
+
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);

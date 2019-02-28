@@ -11,7 +11,7 @@
              FontSize="18"
              mc:Ignorable="d">
     <ScrollViewer MaxHeight="350">
-    <Grid HorizontalAlignment="Center">
+        <Grid HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -175,14 +175,13 @@
                      IsTabStop="False" MinWidth="120" HorizontalAlignment="Center" />
         </GroupBox>
         <!--Row 11-->
-        <Button x:Name="stats_reset" Grid.Column="1" Grid.Row="10" Margin="10,5"
+            <Button x:Name="stats_reset" Grid.Column="1" Grid.Row="10" Margin="10,5"
                 Content="{x:Static p:Resources.Clear_Button}" Click="stats_reset_Click"
                 TabIndex="13" VerticalAlignment="Top">
-        </Button>
-        <Button x:Name="stats_submit" Grid.Column="3" Grid.Row="10" Margin="20,5"
+            </Button>
+            <Button x:Name="stats_submit" Grid.Column="3" Grid.Row="10" Margin="20,5"
                 Content="{x:Static p:Resources.Save_Button}" Click="stats_submit_Click"
                 TabIndex="12" VerticalAlignment="Top"/>
-
-    </Grid>
+        </Grid>
     </ScrollViewer>
 </UserControl>

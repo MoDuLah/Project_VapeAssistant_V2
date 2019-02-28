@@ -514,5 +514,77 @@ namespace Vape_Assistant.Properties {
                 this["link5clickeddate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string link6clickeddate {
+            get {
+                return ((string)(this["link6clickeddate"]));
+            }
+            set {
+                this["link6clickeddate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string link7clickeddate {
+            get {
+                return ((string)(this["link7clickeddate"]));
+            }
+            set {
+                this["link7clickeddate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string link8clickeddate {
+            get {
+                return ((string)(this["link8clickeddate"]));
+            }
+            set {
+                this["link8clickeddate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string link9clickeddate {
+            get {
+                return ((string)(this["link9clickeddate"]));
+            }
+            set {
+                this["link9clickeddate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string link10clickeddate {
+            get {
+                return ((string)(this["link10clickeddate"]));
+            }
+            set {
+                this["link10clickeddate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string link0clickeddate {
+            get {
+                return ((string)(this["link0clickeddate"]));
+            }
+            set {
+                this["link0clickeddate"] = value;
+            }
+        }
     }
 }

@@ -116,8 +116,8 @@ namespace Vape_Assistant.Views
             }
             catch (Exception ex)
             {
-                AutoClosingMessageBox.Show(ex.ToString(), "Error", autotimeout);
-                //MessageBox.Show("Error" + ex.ToString());
+                AutoClosingMessageBox.Show(ex.Message, "Error", autotimeout);
+                //MessageBox.Show("Error" + ex.Message);
                 if (dbConn.State == ConnectionState.Open)
                 {
                     dbConn.Close();
@@ -252,9 +252,9 @@ namespace Vape_Assistant.Views
                         dbCmd.Dispose();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    AutoClosingMessageBox.Show(e.ToString(), "Error", autotimeout);
+                    AutoClosingMessageBox.Show(ex.Message, "Error", autotimeout);
                     if (dbConn.State == ConnectionState.Open)
                     {
                         dbConn.Close();
@@ -283,15 +283,15 @@ namespace Vape_Assistant.Views
             if (string.IsNullOrEmpty(RecipeName.Text)) { return; }
             if (string.IsNullOrEmpty(recipeid.Text)) { return; }
 
-            if (CurrentCulture == "en-US")
-            {
-                message = "Are you sure?";
-                caption = "Question";
-            }
             if (CurrentCulture == "el-GR")
             {
                 message = "Είστε σίγουρος/η;";
                 caption = "Ερώτηση";
+            }
+            else
+            {
+                message = "Are you sure?";
+                caption = "Question";
             }
             if (MessageBox.Show(message, caption, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
             {
@@ -375,7 +375,7 @@ namespace Vape_Assistant.Views
                 }
                 catch (Exception ex)
                 {
-                    AutoClosingMessageBox.Show(ex.ToString(), "Error", autotimeout);
+                    AutoClosingMessageBox.Show(ex.Message, "Error", autotimeout);
                     if (dbConn.State == ConnectionState.Open)
                     {
                         dbConn.Close();
@@ -545,11 +545,11 @@ namespace Vape_Assistant.Views
             string error_3_gr = "Το ποσοστό του αρώματος δεν μπορεί να είναι λιγότερο από 0.01%";
             string error_4_en = "Flavor Percentage can not be more than 100%";
             string error_4_gr = "Το ποσοστό του αρώματος δεν μπορεί να είναι μεγαλύτερο από 100%";
-            string brnd_us = "Brand can not be empty!";
+            string brnd_en = "Brand can not be empty!";
             string brnd_gr = "Το όνομα της εταιρίας δεν μπορεί να είναι κενό!";
-            string flv_us = "Flavor can not be empty!";
+            string flv_en = "Flavor can not be empty!";
             string flv_gr = "Το όνομα του αρώματος δεν μπορεί να είναι κενό!";
-            string perc_us = "Percentage can not be empty!";
+            string perc_en = "Percentage can not be empty!";
             string perc_gr = "Το ποσοστό του αρώματος δεν μπορεί να είναι κενό!";
             string brndmessage = "";
             string flvmessage = "";
@@ -579,41 +579,38 @@ namespace Vape_Assistant.Views
                 switch (Convert.ToInt32(errorcode))
                 {
                     case 02:
-                        if (CurrentCulture == "en-US")
+                        if (CurrentCulture == "el-GR")
+                        {
+                            AutoClosingMessageBox.Show(error_2_el, "Σφάλμα", autotimeout);
+                            return;
+                        }
+                        else
                         {
                             AutoClosingMessageBox.Show(error_2_en, "Error", autotimeout);
                             return;
                         }
-                        else if (CurrentCulture == "el-GR")
+                    case 10:
+                        if (CurrentCulture == "el-GR")
                         {
-                            AutoClosingMessageBox.Show(error_2_el, "Error", autotimeout);
+                            AutoClosingMessageBox.Show(error_1_el, "Σφάλμα", autotimeout);
                             return;
                         }
-                        break;
-                    case 10:
-                        if (CurrentCulture == "en-US")
+                        else
                         {
                             AutoClosingMessageBox.Show(error_1_en, "Error", autotimeout);
                             return;
                         }
-                        else if (CurrentCulture == "el-GR")
+                    case 12:
+                        if (CurrentCulture == "el-GR")
                         {
-                            AutoClosingMessageBox.Show(error_1_el, "Error", autotimeout);
+                            AutoClosingMessageBox.Show(error_1_el + "\n" + error_2_el, "Σφάλμα", autotimeout);
                             return;
                         }
-                        break;
-                    case 12:
-                        if (CurrentCulture == "en-US")
+                        else
                         {
                             AutoClosingMessageBox.Show(error_1_en + "\n" + error_2_en, "Error", autotimeout);
                             return;
                         }
-                        else if (CurrentCulture == "el-GR")
-                        {
-                            AutoClosingMessageBox.Show(error_1_el + "\n" + error_2_el, "Error", autotimeout);
-                            return;
-                        }
-                        break;
                     default:
                         break;
                 }
@@ -655,26 +652,26 @@ namespace Vape_Assistant.Views
                 //MessageBox.Show(myBrandArray[i].ToString()+"\n"+ myFlavorArray[i].ToString() + "\n"+ myPercentArray[i].ToString() + "\n" + myIdArray[i].ToString());
                 if (string.IsNullOrEmpty(myBrandArray[i]))
                 {
-                    if (CurrentCulture == "en-US")
+                    if (CurrentCulture == "el-GR")
                     {
-                        brndmessage = brnd_us;
+                        brndmessage = brnd_gr;
                     }
                     else
                     {
-                        brndmessage = brnd_gr;
+                        brndmessage = brnd_en;
                     }
                     AutoClosingMessageBox.Show(brndmessage, "Error", autotimeout);
                     return;
                 }
                 if (string.IsNullOrEmpty(myFlavorArray[i]))
                 {
-                    if (CurrentCulture == "en-US")
+                    if (CurrentCulture == "el-GR")
                     {
-                        flvmessage = flv_us;
+                        flvmessage = flv_gr;
                     }
                     else
                     {
-                        flvmessage = flv_gr;
+                        flvmessage = flv_en;
                     }
                     AutoClosingMessageBox.Show(flvmessage, "Error", autotimeout);
                     return;
@@ -682,13 +679,13 @@ namespace Vape_Assistant.Views
 
                 if (string.IsNullOrEmpty(myPercentArray[i]))
                 {
-                    if (CurrentCulture == "en-US")
+                    if (CurrentCulture == "el-GR")
                     {
-                        percmessage = perc_us;
+                        percmessage = perc_gr;
                     }
                     else
                     {
-                        percmessage = perc_gr;
+                        percmessage = perc_en;
                     }
                     AutoClosingMessageBox.Show(percmessage, "Error", autotimeout);
                     return;
@@ -697,26 +694,26 @@ namespace Vape_Assistant.Views
                 double perc = Convert.ToDouble(myPercentArray[i]);
                 if (perc < 0.01)
                 {
-                    if (CurrentCulture == "en-US")
+                    if (CurrentCulture ==  "el-GR")
                     {
-                        lowpercent = error_3_en;
+                        lowpercent = error_3_gr;
                     }
                     else
                     {
-                        lowpercent = error_3_gr;
+                        lowpercent = error_3_en;
                     }
                     AutoClosingMessageBox.Show(lowpercent, "Error", autotimeout);
                     return;
                 }
                 if (perc > 100)
                 {
-                    if (CurrentCulture == "en-US")
+                    if (CurrentCulture == "el-GR")
                     {
-                        highpercent = error_4_en;
+                        highpercent = error_4_gr;
                     }
                     else
                     {
-                        highpercent = error_4_gr;
+                        highpercent = error_4_en;
                     }
                     AutoClosingMessageBox.Show(highpercent, "Error", autotimeout);
                     return;
@@ -738,15 +735,15 @@ namespace Vape_Assistant.Views
                     query += $"VALUES('{RecipeName.Text.Replace("'", "''")}', '0', '{ Author.Text.Replace("'", "''") }');";
                     dbCmd = new SQLiteCommand(query, dbConn);
                     int resultAffectedRows = dbCmd.ExecuteNonQuery();
-                    if (CurrentCulture == "en-US")
-                    {
-                        message = "The recipe: " + RecipeName.Text + "\nAdded successfully!";
-                        caption = "Success";
-                    }
                     if (CurrentCulture == "el-GR")
                     {
                         message = "Η συνταγή: " + RecipeName.Text + "\nΠροστέθηκε επιτυχώς!";
                         caption = "Επιτυχία";
+                    }
+                    else
+                    {
+                        message = "The recipe: " + RecipeName.Text + "\nAdded successfully!";
+                        caption = "Success";
                     }
                     AutoClosingMessageBox.Show(message, caption, autotimeout);
                     dbConn.Close();
@@ -759,15 +756,15 @@ namespace Vape_Assistant.Views
                         query = $"UPDATE RecipeBook Set RecipeName='{ RecipeName.Text.Replace("'", "''") }', Author='{ Author.Text.Replace("'", "''") }' Where Id = '{ recipeid.Text }'; ";
                         dbCmd = new SQLiteCommand(query, dbConn);
                         int resultAffectedRows = dbCmd.ExecuteNonQuery();
-                        if (CurrentCulture == "en-US")
-                        {
-                            message = "Updated successfully " + resultAffectedRows + " entry!";
-                            caption = "Success";
-                        }
                         if (CurrentCulture == "el-GR")
                         {
                             message = "Ενημερώθηκε επιτυχώς " + resultAffectedRows + " εγγραφή!";
                             caption = "Επιτυχία!";
+                        }
+                        else
+                        {
+                            message = "Updated successfully " + resultAffectedRows + " entry!";
+                            caption = "Success";
                         }
                         AutoClosingMessageBox.Show(message, caption, autotimeout);
                         query = $"Delete from [hash] where RECIPE_ID = '{ recipeid.Text }'; ";
@@ -778,7 +775,7 @@ namespace Vape_Assistant.Views
             }
             catch (Exception ex)
             {
-                AutoClosingMessageBox.Show(ex.ToString(), "Error", autotimeout);
+                AutoClosingMessageBox.Show(ex.Message, "Error", autotimeout);
                 if (dbConn.State == ConnectionState.Open)
                 {
                     dbConn.Close();
@@ -948,7 +945,7 @@ namespace Vape_Assistant.Views
                 }
                 catch (Exception ex)
                 {
-                    AutoClosingMessageBox.Show(ex.ToString(), "Error", autotimeout);
+                    AutoClosingMessageBox.Show(ex.Message, "Error", autotimeout);
                     if (dbConn.State == ConnectionState.Open)
                     {
                         dbConn.Close();

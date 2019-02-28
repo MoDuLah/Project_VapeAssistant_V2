@@ -304,7 +304,7 @@
     <value>Volume</value>
   </data>
   <data name="mixbase_LeftMixVolumePGVG" xml:space="preserve">
-    <value>Volume PG / VG (ml)</value>
+    <value>Volume PG / VG</value>
   </data>
   <data name="mixbase_LeftResultmlToolTip" xml:space="preserve">
     <value>Ratio is in ml</value>
@@ -1245,5 +1245,8 @@ If you decline and keep the default pin-code you will be asked the next time you
   </data>
   <data name="oneshot_ml" xml:space="preserve">
     <value>ml</value>
+  </data>
+  <data name="about_Translations" xml:space="preserve">
+    <value>Translations</value>
   </data>
 </root>

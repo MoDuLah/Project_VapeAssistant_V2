@@ -36,31 +36,90 @@
             </Grid.RowDefinitions>
 
             <!--Row 0-->
-        <GroupBox Grid.Row="0" Grid.Column="0">
+        <GroupBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="165">
             <GroupBox.Header>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Vape Assistant;component/Images/MatrixDesktop_96px.png" Width="16" VerticalAlignment="Center"/>
                     <TextBlock Text="{x:Static p:Resources.Codebehind}" VerticalAlignment="Center" />
                 </StackPanel>
             </GroupBox.Header>
-            <TextBlock TextAlignment="Right" HorizontalAlignment="Center">
+            <TextBlock TextAlignment="Right" HorizontalAlignment="Center" Margin="10,5" VerticalAlignment="Center">
             <Hyperlink NavigateUri="https://www.facebook.com/Chr.Gleridis" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
                 <Run Text="{x:Static p:Resources.ChrisG}" Foreground="White" TextDecorations="Underline" />
                 </Hyperlink>
             </TextBlock>
         </GroupBox>
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="Version: blah" x:Name="Versioned_Text" Margin="0,5,0,0" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <GroupBox Grid.Row="2" Grid.Column="0">
+        <GroupBox Header="{x:Static p:Resources.about_Translations}" Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" HorizontalAlignment="Center">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5" HorizontalAlignment="Right">
+                    <TextBlock Text="German" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/de.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" Margin="5,5" HorizontalAlignment="Right">
+                    <TextBlock Text="English" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/en.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="C. Gleridis" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" Margin="5,5" HorizontalAlignment="Right">
+                    <TextBlock Text="Spanish" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/es.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" Margin="5,5" HorizontalAlignment="Right">
+                    <TextBlock Text="French" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/fr.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,5">
+                    <TextBlock Text="Greek" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/gr.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="C. Gleridis" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" Margin="5,5" HorizontalAlignment="Right">
+                    <TextBlock Text="Italian" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/it.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,5">
+                    <TextBlock Text="Romanian" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/ro.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="M. Voina" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,5">
+                    <TextBlock Text="Russian" VerticalAlignment="Center"/>
+                    <Image Source="/Vape Assistant;component/Images/flags/ru.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
+                    <TextBlock Text="" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Separator/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="{x:Static p:Resources.SoftwareTitle}">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Vape Assistant;component/Images/favicon.png" Width="56" VerticalAlignment="Top"/>
+                    <TextBlock Text="Version: blah" x:Name="Versioned_Text" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
             <GroupBox.Header>
                 <TextBlock Grid.Row="5" Grid.Column="1" Text="{x:Static p:Resources.vendor_Website}"/>
             </GroupBox.Header>
-            <TextBlock>
+            <TextBlock Margin="10,5">
                     <Hyperlink NavigateUri="https://vape-assistant.com" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
                 <Run Text="{x:Static p:Resources.Website}" Foreground="White" TextDecorations="underline" />
                 </Hyperlink>
             </TextBlock>
         </GroupBox>
-        <GroupBox Grid.Row="2" Grid.Column="1" Header="{x:Static p:Resources.about_donationHdr}" HorizontalAlignment="left">
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="{x:Static p:Resources.about_donationHdr}" HorizontalAlignment="left" VerticalAlignment="Bottom">
             <Button x:Name="btnDonate" HorizontalAlignment="Center" Click="BtnDonate_Click">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal" >
@@ -70,9 +129,9 @@
                 </Button.Content>
             </Button>
         </GroupBox>
-        <GroupBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static p:Resources.ChildHeaderNine_ChangeLog}">
+        <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Header="{x:Static p:Resources.ChildHeaderNine_ChangeLog}">
             <TreeView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
-                      MinWidth="800" MaxWidth="1000"
+                      MinWidth="600" MaxWidth="800"
                       MaxHeight="250" Padding="2"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
                       HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0" BorderThickness="0" Background="{x:Null}">
