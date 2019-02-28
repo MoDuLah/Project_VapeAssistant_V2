@@ -64,9 +64,11 @@ namespace Vape_Assistant.Views
         private void GetImagesInFolder()
         {
             int i = 0;
+            
             string v = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
             TextBox[] adlink = { adlink1, adlink2, adlink3, adlink4, adlink5, adlink6, adlink7, adlink8, adlink9, adlink10 };
             string BannerPath = AppDomain.CurrentDomain.BaseDirectory + @"Images\banners\";
+            Array.ForEach(Directory.GetFiles(BannerPath), File.Delete);
             string fileName = BannerPath + "update."+ v +"."+ CurrentCulture + ".txt";
             string timeStamp = DateTime.Now.ToString("yyyy.MM.dd");
             string remoteaddress = "https://vapeassistant.000webhostapp.com/updates/" + @"update." + CurrentCulture +".txt";

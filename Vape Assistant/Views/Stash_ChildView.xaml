@@ -35,7 +35,14 @@
                   >
             <!--MaxWidth="550" -->
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="ItemsIdColumn"     Binding="{Binding Id}"     Header="{x:Static p:Resources.warehouse_hdrId}"     MinWidth="70" MaxWidth="1000"/>
+                <DataGridTextColumn x:Name="ItemsIdColumn"     Binding="{Binding Id}"     Header="{x:Static p:Resources.warehouse_hdrId}"     MinWidth="70" MaxWidth="1000">
+                    <DataGridTextColumn.CellStyle>
+                        <Style>
+                            <Setter Property="TextBlock.Background" Value="#727272"/>
+                            <Setter Property="TextBlock.TextAlignment" Value="Right" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
                 <DataGridTextColumn x:Name="ItemsBrandColumn"  Binding="{Binding Brand}"  Header="{x:Static p:Resources.warehouse_hdrBrand}"  MinWidth="200" MaxWidth="1000"/>
                 <DataGridTextColumn x:Name="ItemsFlavorColumn" Binding="{Binding Flavor}" Header="{x:Static p:Resources.warehouse_hdrFlavor}" Width="*" MinWidth="300" MaxWidth="1000"/>
                 <DataGridTextColumn x:Name="ItemsAmountColumn" Binding="{Binding Amount}" Header="{x:Static p:Resources.warehouse_hdrAmount}" MinWidth="150" MaxWidth="1000">
