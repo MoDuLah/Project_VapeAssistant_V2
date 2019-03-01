@@ -1089,4 +1089,7 @@
   <data name="about_Translations" xml:space="preserve">
     <value>Μεταφράσεις</value>
   </data>
+  <data name="settings_export_tooltip" xml:space="preserve">
+    <value>Εάν είναι ανενεργό, επιλέξτε βάση δεδομένων από αριστερά.</value>
+  </data>
 </root>

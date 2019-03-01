@@ -1534,6 +1534,10 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Translations</source>
           <target state="final">Translations</target>
         </trans-unit>
+        <trans-unit id="settings_export_tooltip" translate="no" xml:space="preserve">
+          <source>If it's disabled, select a database from the combobox on the left.</source>
+          <target state="final">If it's disabled, select a database from the combobox on the left.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

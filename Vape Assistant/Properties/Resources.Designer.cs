@@ -2695,6 +2695,15 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If it&apos;s disabled, select a database from the combobox on the left..
+        /// </summary>
+        public static string settings_export_tooltip {
+            get {
+                return ResourceManager.GetString("settings_export_tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deutsche.
         /// </summary>
         public static string settings_LanguageDe {

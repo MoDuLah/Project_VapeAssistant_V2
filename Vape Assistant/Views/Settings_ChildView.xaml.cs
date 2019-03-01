@@ -47,6 +47,11 @@ namespace Vape_Assistant.Views
         {
             InitializeComponent();
             Settings_Language.SelectedIndex = Settings.Default.CultureIndex;
+            export.IsEnabled = false;
+            fileSelect.IsEnabled = false;
+            filePreview.IsEnabled = false;
+            Preview.Visibility = Visibility.Collapsed;
+            import_btn.Visibility = Visibility.Collapsed;
             if (IsPinEnabled == true)
             {
                 pin_Slider.Value = 1;
@@ -568,7 +573,6 @@ namespace Vape_Assistant.Views
 
         private void db_selector_LostFocus(object sender, RoutedEventArgs e)
         {
-
             if (CurrentCulture == de)
             {
                 if (db_selector.SelectedIndex < 0)
@@ -973,18 +977,21 @@ namespace Vape_Assistant.Views
             if (result == true)
             {
                 // Open document 
+                try { 
                 string filename = dlg.FileName;
                 hiddenpath.Text = filename;
                 int len = Path.Length;
-                string tmp = filename.Substring(len, filename.Length - len);
+                string tmp = filename.Substring(len, hiddenpath.Text.Length - len);
                 fileName.Text = tmp;
-                string tmp2 = tmp.Substring(0, tmp.Length - 15);
-                fileSelect.IsEnabled = true;
+                dbSelected.Text = tmp.Substring(0, tmp.Length - 15);
                 filePreview.IsEnabled = true;
-                filePreview.Visibility = Visibility.Visible;
                 Preview.Visibility = Visibility.Visible;
-                importTable.Visibility = Visibility.Visible;
                 import_btn.Visibility = Visibility.Visible;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -1027,6 +1034,10 @@ namespace Vape_Assistant.Views
             using (dbConn = new SQLiteConnection(connectionString))
             {
                 string fName = TruncateLongString(fileName.Text, (fileName.Text.Length - 15));
+                if (fName == "Stash")
+                {
+                    fName = "Warehouse";
+                }
                 using (var reader = new StreamReader(hiddenpath.Text))
                 {
                     List<string> listA = new List<string>();
@@ -1047,7 +1058,7 @@ namespace Vape_Assistant.Views
                         dbConn.Close();
                     }
 
-                    if (fName == "Warehouse")
+                    if (fName == "Warehouse" || fName == "Stash")
                     {
                         q = 8;
                     }
@@ -1130,7 +1141,7 @@ namespace Vape_Assistant.Views
                                 }
                                 else
                                 { 
-                                if (fName == "Warehouse")
+                                if (fName == "Warehouse" || fName == "Stash")
                                 {
                                     string myString = values[i]; //Can be of any length and with many '-'s
                                     string[] tagArray = line.Split('|');
@@ -1201,6 +1212,15 @@ namespace Vape_Assistant.Views
                 fileName.Text = "";
             }
 
+        }
+
+        private void Db_selector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (db_selector.SelectedIndex >= 0)
+            {
+                export.IsEnabled = true;
+                fileSelect.IsEnabled = true;
+            }
         }
 
         public void doCsvWrite(string sender, string TableName)

@@ -18,12 +18,16 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
 
         </Grid.RowDefinitions>
 
         <GroupBox x:Name="Lang_Label" Header="{x:Static p:Resources.Lang}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" MouseLeftButtonDown="Lang_Label_MouseLeftButtonDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <ComboBox Grid.Row="0" Grid.Column="1" MinWidth="120" VerticalAlignment="Stretch" Margin="10" x:Name="Settings_Language" SelectionChanged="Settings_Language_SelectionChanged" >
+                <ComboBox Grid.Row="0" Grid.Column="1" MinWidth="120" VerticalAlignment="Stretch" Margin="10" x:Name="Settings_Language" SelectionChanged="Settings_Language_SelectionChanged" HorizontalAlignment="Center" >
                     <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageDe}"/>
                     <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageEn}"/>
                     <ComboBoxItem Content="{x:Static p:Resources.settings_LanguageEs}"/>
@@ -67,7 +71,7 @@
         </GroupBox>
         <GroupBox x:Name="GroupBoxer" Grid.Row="5" Grid.Column="0" Header="Group">
             <StackPanel Orientation="Horizontal">
-        <ComboBox x:Name="db_selector" LostFocus="db_selector_LostFocus"  MinWidth="120" VerticalAlignment="Stretch" Margin="0,10">
+        <ComboBox x:Name="db_selector" LostFocus="db_selector_LostFocus"  MinWidth="120" VerticalAlignment="Stretch" Margin="0,10" SelectionChanged="Db_selector_SelectionChanged">
             <ComboBoxItem Content="Purchases"/>
             <ComboBoxItem Content="Warehouse"/>
             <ComboBoxItem Content="Recipes"/>
@@ -79,41 +83,20 @@
         </GroupBox>
         <GroupBox x:Name="GroupImport" Grid.Row="5" Grid.Column="2" Header="Export | Import" >
             <StackPanel Orientation="Horizontal">
-                    <Button x:Name="export" Content="{x:Static p:Resources.Alch_Backup_ExportBtN}" Click="Export_Click" VerticalAlignment="Center"/>
-                    <Button x:Name="fileSelect" Content="{x:Static p:Resources.Alch_Backup_SelectBtN}" Click="FilePicker_Click" VerticalAlignment="Center"/>
-                    <Button x:Name="filePreview" Content="{x:Static p:Resources.Alch_Backup_PreviewBtN}" IsEnabled="False" Click="Import_Click" VerticalAlignment="Center"/>
-                </StackPanel>
-            </GroupBox>
-        
+                <Button x:Name="export" Content="{x:Static p:Resources.Alch_Backup_ExportBtN}" Click="Export_Click" VerticalAlignment="Center" ToolTip="{x:Static p:Resources.settings_export_tooltip}"/>
+                <Button x:Name="fileSelect" Content="{x:Static p:Resources.Alch_Backup_SelectBtN}" Click="FilePicker_Click" VerticalAlignment="Center" ToolTip="{x:Static p:Resources.settings_export_tooltip}"/>
+                <Button x:Name="filePreview" Content="{x:Static p:Resources.Alch_Backup_PreviewBtN}" Click="Import_Click" VerticalAlignment="Center"/>
+            </StackPanel>
+        </GroupBox>
         <TextBox Grid.Row="8" Grid.Column="0" x:Name="fileName" Visibility="Collapsed" />
         <TextBox Grid.Row="8" Grid.Column="1" x:Name="hiddenpath" Visibility="Collapsed" />
-        <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="6" x:Name="Preview" Text="{x:Static p:Resources.Alch_Backup_PreviewData}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Visibility="Collapsed"/>
-        <DataGrid Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="6" x:Name="importTable" ItemsSource="{Binding}" MinWidth="300" MinHeight="300" MaxHeight="500" Visibility="Collapsed" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Grid.IsSharedSizeScope="True" IsReadOnly="True"/>
-        <Button Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2" x:Name="import_btn" Content="{x:Static p:Resources.Save_Button}" Visibility="Collapsed" Click="import_btn_Click" VerticalAlignment="Center">
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColor, Mode=TwoWay}"/>
-                    <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColor, Mode=TwoWay}"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}" CornerRadius="0,0,0,0" Padding="10,5" Margin="0">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
-                            <!-- -->
-                                               <Setter Property="Foreground" Value="{Binding Source={x:Static p:Settings.Default}, Path=ButtonFGColorHover, Mode=TwoWay}"/>
-                                               <!---->
-                       </Trigger>
-                    </Style.Triggers>
-                </Style>
-             </Button.Style>
-        </Button>
+        <TextBox Grid.Row="8" Grid.Column="2" x:Name="dbSelected" Visibility="Collapsed"/>
+
+        <GroupBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" x:Name="Preview" MinHeight="300" MaxHeight="500" Header="{x:Static p:Resources.Alch_Backup_PreviewData}" FontSize="10"  Visibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+            <DataGrid x:Name="importTable" ItemsSource="{Binding}" Visibility="Visible" Grid.IsSharedSizeScope="True" IsReadOnly="True"/>
+        </GroupBox>
+        <Button Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" x:Name="import_btn" Content="{x:Static p:Resources.Save_Button}" Visibility="Visible" Click="import_btn_Click" HorizontalAlignment="Center" MinWidth="120"/>
+
         <TextBox x:Name="x0" Grid.Row="11" Grid.Column="0" Visibility="Collapsed"/>
         <TextBox x:Name="x1" Grid.Row="11" Grid.Column="1" Visibility="Collapsed"/>
         <TextBox x:Name="x2" Grid.Row="11" Grid.Column="2" Visibility="Collapsed"/>

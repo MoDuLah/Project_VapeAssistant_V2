@@ -1533,6 +1533,10 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Translations</source>
           <target state="final">Μεταφράσεις</target>
         </trans-unit>
+        <trans-unit id="settings_export_tooltip" translate="yes" xml:space="preserve">
+          <source>If it's disabled, select a database from the combobox on the left.</source>
+          <target state="final">Εάν είναι ανενεργό, επιλέξτε βάση δεδομένων από αριστερά.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

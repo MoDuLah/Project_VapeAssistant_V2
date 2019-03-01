@@ -299,8 +299,8 @@
     </Compile>
     <Compile Include="ViewModels\BasesMix_ChildViewModel.cs" />
     <Compile Include="ViewModels\BoosterCost_ChildViewModel.cs" />
+    <Compile Include="ViewModels\Coils_ChildViewModel.cs" />
     <Compile Include="ViewModels\Flavors_ChildViewModel.cs" />
-    <Compile Include="ViewModels\Help_ChildViewModel.cs" />
     <Compile Include="ViewModels\JuiceLog_ChildViewModel.cs" />
     <Compile Include="ViewModels\OneShots_ChildViewModel.cs" />
     <Compile Include="ViewModels\Recipes_ChildViewModel.cs" />
@@ -314,11 +314,11 @@
       <DependentUpon>BoosterCost_ChildView.xaml</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Views\Coils_ChildView.xaml.cs">
+      <DependentUpon>Coils_ChildView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Flavors_ChildView.xaml.cs">
       <DependentUpon>Flavors_ChildView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Help_ChildView.xaml.cs">
-      <DependentUpon>Help_ChildView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -510,11 +510,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Flavors_ChildView.xaml">
+    <Page Include="Views\Coils_ChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Help_ChildView.xaml">
+    <Page Include="Views\Flavors_ChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -741,6 +741,7 @@
     <Resource Include="Images\Hover\Minimize Window_Hover_32px.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="banners\" />
     <Folder Include="Images\banners\" />
   </ItemGroup>
   <ItemGroup>

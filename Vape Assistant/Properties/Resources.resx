@@ -1246,4 +1246,7 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="about_Translations" xml:space="preserve">
     <value>Translations</value>
   </data>
+  <data name="settings_export_tooltip" xml:space="preserve">
+    <value>If it's disabled, select a database from the combobox on the left.</value>
+  </data>
 </root>
