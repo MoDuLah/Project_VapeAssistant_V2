@@ -107,8 +107,8 @@
           <target state="final">PIN</target>
         </trans-unit>
         <trans-unit id="LoginRemember" translate="yes" xml:space="preserve">
-          <source>Remember Me:</source>
-          <target state="final">Απομνημόνευση Στοιχείων:</target>
+          <source>Remember Me</source>
+          <target state="final">Απομνημόνευση Στοιχείων</target>
         </trans-unit>
         <trans-unit id="LoginTitle" translate="yes" xml:space="preserve">
           <source>LOGIN</source>
@@ -493,27 +493,27 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Προσθήκη Αρώματος</target>
         </trans-unit>
         <trans-unit id="add_flv_abbreviation" translate="yes" xml:space="preserve">
-          <source>Abbreviation: </source>
-          <target state="final">Συντομογραφία:</target>
+          <source>Abbreviation</source>
+          <target state="final">Συντομογραφία</target>
         </trans-unit>
         <trans-unit id="add_flv_amp" translate="yes" xml:space="preserve">
-          <source>Average Mixing Percentage: </source>
-          <target state="final">Ποσοστό ανάμιξης κατα μέσο όρο:</target>
+          <source>Average Mixing %</source>
+          <target state="final">Μέσος Όρος Aνάμιξης %</target>
         </trans-unit>
         <trans-unit id="add_flv_brandName" translate="yes" xml:space="preserve">
-          <source>Brand Name: </source>
-          <target state="final">Όνομα Εταιρίας:</target>
+          <source>Brand Name</source>
+          <target state="final">Όνομα Εταιρίας</target>
         </trans-unit>
         <trans-unit id="add_flv_flavorName" translate="yes" xml:space="preserve">
-          <source>Flavor Name: </source>
-          <target state="final">Ονομασία Αρώματος:</target>
+          <source>Flavor Name</source>
+          <target state="final">Ονομασία Αρώματος</target>
         </trans-unit>
         <trans-unit id="add_flv_manufacturerGravity" translate="yes" xml:space="preserve">
-          <source>Manufacturer specified Gravity: </source>
+          <source>Manufacturer specified Gravity</source>
           <target state="final">Ειδικό Βάρος (Κατασκευαστή)</target>
         </trans-unit>
         <trans-unit id="add_flv_notes" translate="yes" xml:space="preserve">
-          <source>Notes: </source>
+          <source>Notes</source>
           <target state="final">Σημειώσεις</target>
         </trans-unit>
         <trans-unit id="flv_Keep" translate="yes" xml:space="preserve">
@@ -553,8 +553,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Εισαγωγή Ποσότητας (ml)</target>
         </trans-unit>
         <trans-unit id="add_flv_WarehouseCount" translate="yes" xml:space="preserve">
-          <source>Items: </source>
-          <target state="final">Τεμάχια:</target>
+          <source>Items</source>
+          <target state="final">Τεμάχια</target>
         </trans-unit>
         <trans-unit id="add_flv_Owned" translate="yes" xml:space="preserve">
           <source>Have it? </source>
@@ -685,8 +685,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Εμπνευστής</target>
         </trans-unit>
         <trans-unit id="add_rec_flavquantity" translate="yes" xml:space="preserve">
-          <source>Quantity: </source>
-          <target state="final">Ποσότητα: </target>
+          <source>Quantity</source>
+          <target state="final">Ποσότητα</target>
         </trans-unit>
         <trans-unit id="add_rec_TimesMade" translate="yes" xml:space="preserve">
           <source>Times Made</source>
@@ -864,56 +864,56 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Αντίγραφα Ασφαλείας</target>
         </trans-unit>
         <trans-unit id="EntryDate" translate="yes" xml:space="preserve">
-          <source>Enter Date: </source>
-          <target state="final">Ημ/νία Παραγγελίας: </target>
+          <source>Enter Date</source>
+          <target state="final">Ημ/νία Παραγγελίας</target>
         </trans-unit>
         <trans-unit id="EntryDiscount" translate="yes" xml:space="preserve">
-          <source>Enter Discount: </source>
-          <target state="final">Έκπτωση (€): </target>
+          <source>Enter Discount</source>
+          <target state="final">Έκπτωση (€)</target>
         </trans-unit>
         <trans-unit id="EntryName" translate="yes" xml:space="preserve">
-          <source>Enter Vendor Name: </source>
-          <target state="final">Επων. Εταιρίας: </target>
+          <source>Enter Vendor Name</source>
+          <target state="final">Επων. Εταιρίας</target>
         </trans-unit>
         <trans-unit id="EntryPID" translate="yes" xml:space="preserve">
-          <source>Enter Product ID (SKU): </source>
-          <target state="final">Κωδ. Προϊόντος (SKU): </target>
+          <source>Enter Product ID (SKU)</source>
+          <target state="final">Κωδ. Προϊόντος (SKU)</target>
         </trans-unit>
         <trans-unit id="EntryPrice" translate="yes" xml:space="preserve">
-          <source>Enter Price: </source>
-          <target state="final">Τιμή (€): </target>
+          <source>Enter Price</source>
+          <target state="final">Τιμή (€)</target>
         </trans-unit>
         <trans-unit id="EntryProductDescription" translate="yes" xml:space="preserve">
-          <source>Enter Product Description: </source>
-          <target state="final">Περ. Προϊόντος: </target>
+          <source>Enter Product Description</source>
+          <target state="final">Περ. Προϊόντος</target>
         </trans-unit>
         <trans-unit id="EntryQuantity" translate="yes" xml:space="preserve">
-          <source>Enter Quantity: </source>
-          <target state="final">Ποσότητα: </target>
+          <source>Enter Quantity</source>
+          <target state="final">Ποσότητα</target>
         </trans-unit>
         <trans-unit id="EntryReference" translate="yes" xml:space="preserve">
-          <source>Enter Reference: </source>
-          <target state="final">Αρ. Παραστατικού: </target>
+          <source>Enter Reference</source>
+          <target state="final">Αρ. Παραστατικού</target>
         </trans-unit>
         <trans-unit id="EntryShipping" translate="yes" xml:space="preserve">
-          <source>Enter Shipping: </source>
-          <target state="final">Έξοδα Μεταφοράς (€): </target>
+          <source>Enter Shipping</source>
+          <target state="final">Έξοδα Μεταφοράς (€)</target>
         </trans-unit>
         <trans-unit id="EntryTotal" translate="yes" xml:space="preserve">
-          <source>Enter Total: </source>
-          <target state="final">Τελικό Κόστος (€): </target>
+          <source>Enter Total</source>
+          <target state="final">Τελικό Κόστος (€)</target>
         </trans-unit>
         <trans-unit id="EntryVID" translate="yes" xml:space="preserve">
-          <source>Enter Vendor ID: </source>
-          <target state="final">Κωδ. Εταίριας: </target>
+          <source>Enter Vendor ID</source>
+          <target state="final">Κωδ. Εταίριας</target>
         </trans-unit>
         <trans-unit id="EntryID" translate="yes" xml:space="preserve">
-          <source>Entry Id: </source>
-          <target state="final">Αρ. Αγοράς: </target>
+          <source>Entry Id</source>
+          <target state="final">Αρ. Αγοράς</target>
         </trans-unit>
         <trans-unit id="EditEntry" translate="yes" xml:space="preserve">
-          <source>Edit Entry: </source>
-          <target state="final">Επεξεργασία Εισαγωγής: </target>
+          <source>Edit Entry</source>
+          <target state="final">Επεξεργασία Εισαγωγής</target>
         </trans-unit>
         <trans-unit id="Alch_Backup_hdrDB" translate="yes" xml:space="preserve">
           <source>Database</source>
@@ -968,12 +968,12 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Προεπισκόπηση των δεδομένων σας</target>
         </trans-unit>
         <trans-unit id="Alch_Warehouse_AddFlv" translate="yes" xml:space="preserve">
-          <source>Add Flavor:</source>
-          <target state="final">Προσθήκη Αρώματος:</target>
+          <source>Add Flavor</source>
+          <target state="final">Προσθήκη Αρώματος</target>
         </trans-unit>
         <trans-unit id="Alch_Warehouse_FlvId" translate="yes" xml:space="preserve">
-          <source>Flavor Id:</source>
-          <target state="final">Κωδ. Αρώματος:</target>
+          <source>Flavor Id</source>
+          <target state="final">Κωδ. Αρώματος</target>
         </trans-unit>
         <trans-unit id="warehouse_hdrAmount" translate="yes" xml:space="preserve">
           <source>Amount</source>
@@ -1016,8 +1016,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">http://vape-assistant.com</target>
         </trans-unit>
         <trans-unit id="Alch_Warehouse_EditFlv" translate="yes" xml:space="preserve">
-          <source>Edit Flavor Amount:</source>
-          <target state="final">Επεξεργασία Ποσότητας:</target>
+          <source>Edit Flavor Amount</source>
+          <target state="final">Επεξεργασία Ποσότητας</target>
         </trans-unit>
         <trans-unit id="ChangePinTitle" translate="yes" xml:space="preserve">
           <source>Change Pin</source>
@@ -1210,8 +1210,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">_Έξοδος</target>
         </trans-unit>
         <trans-unit id="GFX" translate="yes" xml:space="preserve">
-          <source>Graphics:</source>
-          <target state="final">Γραφικά:</target>
+          <source>Graphics</source>
+          <target state="final">Γραφικά</target>
         </trans-unit>
         <trans-unit id="backup_Header_db" translate="yes" xml:space="preserve">
           <source>Database</source>

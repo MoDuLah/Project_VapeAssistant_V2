@@ -355,7 +355,6 @@
     <Compile Include="ViewModels\OhmsLaw_ChildViewModel.cs" />
     <Compile Include="ViewModels\About_ChildViewModel.cs" />
     <Compile Include="ViewModels\Statistics_ChildViewModel.cs" />
-    <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\Purchases_ChildViewModel.cs" />
     <Compile Include="ViewModels\TenthChildViewModel.cs" />
     <Compile Include="Views\Settings_ChildView.xaml.cs">

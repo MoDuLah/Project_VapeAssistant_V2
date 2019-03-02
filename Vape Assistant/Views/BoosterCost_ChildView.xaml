@@ -5,10 +5,9 @@
              xmlns:p="clr-namespace:Vape_Assistant.Properties"
              xmlns:local="clr-namespace:Vape_Assistant.Views"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
-             mc:Ignorable="d">
-    <Grid HorizontalAlignment="Center">
+             mc:Ignorable="d" HorizontalAlignment="Center">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using Vape_Assistant.Properties;
 
@@ -16,12 +18,16 @@ namespace Vape_Assistant.Views
         public BasesMix_ChildView()
         {
             InitializeComponent();
+            mb_submit.IsEnabled = true;
+            mb_reset.IsEnabled = false;
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
+        }
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
 
-            // ---Mix Base--- //
-            mixBase1_PG.Text = "50";
-            mixBase2_PG.Text = "50";
-            mixBase3_PG.Text = "50";
-            mixBase4_PG.Text = "50";
+            if (textBox != null && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
         }
 
         void ClearTextBoxes(DependencyObject obj)
@@ -108,80 +114,12 @@ namespace Vape_Assistant.Views
             }
         }
 
-        private void mixBase1_PG_TextChanged(object sender, TextChangedEventArgs e)
+         private void mb_submit_Click(object sender, RoutedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            if (string.IsNullOrEmpty(textBox.Text))
+            if  (mb_reset.IsEnabled == false)
             {
-                textBox.Text = "0";
-                return;
+                mb_reset.IsEnabled = true;
             }
-            else
-            {
-                int start = textBox.SelectionStart;
-                int length = textBox.SelectionLength;
-
-                // restore cursor position and selection
-                textBox.Select(start, length);
-                mixBase1_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
-            }
-        }
-        private void mixBase2_PG_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                textBox.Text = "0";
-                return;
-            }
-            else
-            {
-                int start = textBox.SelectionStart;
-                int length = textBox.SelectionLength;
-
-                // restore cursor position and selection
-                textBox.Select(start, length);
-                mixBase2_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
-            }
-        }
-        private void mixBase3_PG_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                textBox.Text = "0";
-                return;
-            }
-            else
-            {
-                int start = textBox.SelectionStart;
-                int length = textBox.SelectionLength;
-                // restore cursor position and selection
-                textBox.Select(start, length);
-                mixBase3_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
-            }
-        }
-        private void mixBase4_PG_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                textBox.Text = "0";
-                return;
-            }
-            else
-            {
-                int start = textBox.SelectionStart;
-                int length = textBox.SelectionLength;
-
-                // restore cursor position and selection
-                textBox.Select(start, length);
-                mixBase4_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
-            }
-        }
-
-        private void mb_submit_Click(object sender, RoutedEventArgs e)
-        {
             if (string.IsNullOrEmpty(mixNic_ml.Text) && string.IsNullOrEmpty(mixNic_PG.Text))
             {
                 mixNic_amount.Text = "0";
@@ -273,33 +211,365 @@ namespace Vape_Assistant.Views
             mix_pgvgratio.Text = Math.Round((mtpp * 100), 0) + "/" + Math.Round((mtvp * 100), 0);
             mix_pgvgvolume.Text = mtpml + "/" + mtvml;
             mix_totalvolume.Text = addm + "ml";
+
+            mixBase1_PG.IsTabStop = true;
+            mixBase1_VG.IsTabStop = true;
+            mixBase2_PG.IsTabStop = true;
+            mixBase2_VG.IsTabStop = true;
+            mixBase3_PG.IsTabStop = true;
+            mixBase3_VG.IsTabStop = true;
+            mixBase4_PG.IsTabStop = true;
+            mixBase4_VG.IsTabStop = true;
         }
 
         private void mb_reset_Click(object sender, RoutedEventArgs e)
         {
             ClearTextBoxes(this);
-            BaseMixnic_style.SelectedIndex = -1;
-            mixNic_amount.Text = "0";
-            mixNic_PG.Text = "50";
-            mixBase1.Text = "0";
-            mixBase2.Text = "0";
-            mixBase3.Text = "0";
-            mixBase4.Text = "0";
-            mixBase1_PG.Text = "50";
-            mixBase2_PG.Text = "50";
-            mixBase3_PG.Text = "50";
-            mixBase4_PG.Text = "50";
-            mixNicLevel.Text = "20";
-            mixBase1_Nic.Text = "0";
-            mixBase2_Nic.Text = "0";
-            mixBase3_Nic.Text = "0";
-            mixBase4_Nic.Text = "0";
-            mix_totalnic.Text = String.Empty;
-            mix_pgvgratio.Text = String.Empty;
-            mix_pgvgvolume.Text = String.Empty;
-            mix_totalvolume.Text = String.Empty;
             mb_submit.IsEnabled = true;
             mb_reset.IsEnabled = false;
+        }
+        private void MixBase1_PG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase1_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+
+        private void MixBase1_VG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDecAllowed(e.Text);
+
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase1_PG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+        private void MixBase2_PG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDecAllowed(e.Text);
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase2_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+
+        private void MixBase2_VG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDecAllowed(e.Text);
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase2_PG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+        private void MixBase3_PG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDecAllowed(e.Text);
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase3_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+
+        private void MixBase3_VG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDecAllowed(e.Text);
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase3_PG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+        private void MixBase4_PG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDecAllowed(e.Text);
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase4_VG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+
+        private void MixBase4_VG_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDecAllowed(e.Text);
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return;
+            }
+            else
+            {
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase4_PG.Text = Convert.ToString(100 - Convert.ToInt32(textBox.Text));
+            }
+        }
+        private static bool IsDecAllowed(string text)
+        {
+            string CurrentCulture = Settings.Default.Culture;
+            Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
+            return !regex.IsMatch(text);
+        }
+
+        private void MixBase1_PG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase1_VG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase1_VG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase1_VG.IsTabStop = false;
+            }
+        }
+
+        private void MixBase1_VG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase1_PG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase1_PG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase1_PG.IsTabStop = false;
+            }
+        }
+        private void MixBase2_PG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase2_VG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase2_VG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase2_VG.IsTabStop = false;
+            }
+        }
+
+        private void MixBase2_VG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase2_PG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase2_PG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase2_PG.IsTabStop = false;
+            }
+        }
+        private void MixBase3_PG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase3_VG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase3_VG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase3_VG.IsTabStop = false;
+            }
+        }
+
+        private void MixBase3_VG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase3_PG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase3_PG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase3_PG.IsTabStop = false;
+            }
+        }
+        private void MixBase4_PG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase4_VG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase4_VG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase4_VG.IsTabStop = false;
+            }
+        }
+
+        private void MixBase4_VG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text == "")
+            {
+                mixBase4_PG.IsTabStop = true;
+                return;
+            }
+            else
+            {
+
+                int start = textBox.SelectionStart;
+                int length = textBox.SelectionLength;
+                string value = textBox.Text;
+                //fixdec(value);
+                // update text
+                textBox.Text = value;
+
+                // restore cursor position and selection
+                textBox.Select(start, length);
+                mixBase4_PG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
+                mixBase4_PG.IsTabStop = false;
+            }
         }
     }
 }

@@ -10,6 +10,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
+using System.Net;
+using System.IO;
 
 namespace Vape_Assistant.Views
 {
@@ -164,6 +166,19 @@ namespace Vape_Assistant.Views
             {
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string fileName = "Temp.txt";
+
+            if (!File.Exists(fileName))
+            {
+                FileStream fs = new FileStream(fileName, FileMode.CreateNew);
+                fs.Close();
+            }
+            using (FileStream fsWHT = new FileStream(fileName, FileMode.Append, FileAccess.Write))
+            using (StreamWriter swT = new StreamWriter(fsWHT))
+            {
+                swT.WriteLine("Vendor;");
+            }
             childWindow.Closed += ChildWindowClosed;
             childWindow.Show();
         }

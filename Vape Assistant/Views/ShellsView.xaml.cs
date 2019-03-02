@@ -12,6 +12,8 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Collections.Generic;
 using System.Windows.Media;
+using System.Net;
+using System.IO;
 
 namespace Vape_Assistant.Views
 {
@@ -110,6 +112,56 @@ namespace Vape_Assistant.Views
             }
         }
         public static bool IsAdministrator => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
+
+        private void VapeAssistant_Closed(object sender, EventArgs e)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string fileName = "Temp.txt";
+            string fullPath = Path + fileName;
+            string temp2 = Path + "Temp2.txt";
+            string remoteaddress;
+            if (File.Exists(fullPath))
+            {
+                using (var reader = new StreamReader(fullPath))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            var values = line.Split(';');
+                            foreach (var value in values)
+                            {
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    remoteaddress = "https://bit.ly/" + value + "VA";
+                                    WebClient Client = new WebClient();
+                                    try
+                                    {
+                                        Client.DownloadFile(remoteaddress, temp2);
+                                    }
+                                    catch
+                                    {
+                                        return;
+                                    }
+                                    finally
+                                    {
+                                        if (File.Exists(temp2))
+                                        {
+                                            File.Delete(temp2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (File.Exists(fullPath))
+            {
+                File.Delete(fullPath);
+            }
+        }
 
         public object UI { get; private set; }
 

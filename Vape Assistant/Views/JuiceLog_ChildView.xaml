@@ -8,9 +8,9 @@
              xmlns:myCalendar="clr-namespace:Vape_Assistant"
              xmlns:cal="http://www.caliburnproject.org" x:Class="Vape_Assistant.Views.JuiceLog_ChildView"
              mc:Ignorable="d" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
-             Foreground="{Binding FGColor, Mode=TwoWay, Source={x:Static p:Settings.Default}}"
              FontFamily="{Binding FontFam, Mode=TwoWay, Source={x:Static p:Settings.Default}}"
-             BorderBrush="{x:Null}">
+             BorderBrush="{x:Null}"
+             HorizontalAlignment="Center">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" MinWidth="500"/>

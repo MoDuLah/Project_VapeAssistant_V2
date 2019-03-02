@@ -85,7 +85,7 @@
     <value>PIN</value>
   </data>
   <data name="LoginRemember" xml:space="preserve">
-    <value>Απομνημόνευση Στοιχείων:</value>
+    <value>Απομνημόνευση Στοιχείων</value>
   </data>
   <data name="LoginTitle" xml:space="preserve">
     <value>ΕΙΣΟΔΟΣ</value>
@@ -353,16 +353,16 @@
     <value>Προσθήκη Αρώματος</value>
   </data>
   <data name="add_flv_abbreviation" xml:space="preserve">
-    <value>Συντομογραφία:</value>
+    <value>Συντομογραφία</value>
   </data>
   <data name="add_flv_amp" xml:space="preserve">
-    <value>Ποσοστό ανάμιξης κατα μέσο όρο:</value>
+    <value>Μέσος Όρος Aνάμιξης %</value>
   </data>
   <data name="add_flv_brandName" xml:space="preserve">
-    <value>Όνομα Εταιρίας:</value>
+    <value>Όνομα Εταιρίας</value>
   </data>
   <data name="add_flv_flavorName" xml:space="preserve">
-    <value>Ονομασία Αρώματος:</value>
+    <value>Ονομασία Αρώματος</value>
   </data>
   <data name="add_flv_manufacturerGravity" xml:space="preserve">
     <value>Ειδικό Βάρος (Κατασκευαστή)</value>
@@ -398,7 +398,7 @@
     <value>Εισαγωγή Ποσότητας (ml)</value>
   </data>
   <data name="add_flv_WarehouseCount" xml:space="preserve">
-    <value>Τεμάχια:</value>
+    <value>Τεμάχια</value>
   </data>
   <data name="add_flv_Owned" xml:space="preserve">
     <value>Το κατέχεις; </value>
@@ -497,7 +497,7 @@
     <value>Εμπνευστής</value>
   </data>
   <data name="add_rec_flavquantity" xml:space="preserve">
-    <value>Ποσότητα: </value>
+    <value>Ποσότητα</value>
   </data>
   <data name="add_rec_TimesMade" xml:space="preserve">
     <value>Κατασκευάστηκε</value>
@@ -622,43 +622,43 @@
     <value>Αντίγραφα Ασφαλείας</value>
   </data>
   <data name="EntryDate" xml:space="preserve">
-    <value>Ημ/νία Παραγγελίας: </value>
+    <value>Ημ/νία Παραγγελίας</value>
   </data>
   <data name="EntryDiscount" xml:space="preserve">
-    <value>Έκπτωση (€): </value>
+    <value>Έκπτωση (€)</value>
   </data>
   <data name="EntryName" xml:space="preserve">
-    <value>Επων. Εταιρίας: </value>
+    <value>Επων. Εταιρίας</value>
   </data>
   <data name="EntryPID" xml:space="preserve">
-    <value>Κωδ. Προϊόντος (SKU): </value>
+    <value>Κωδ. Προϊόντος (SKU)</value>
   </data>
   <data name="EntryPrice" xml:space="preserve">
-    <value>Τιμή (€): </value>
+    <value>Τιμή (€)</value>
   </data>
   <data name="EntryProductDescription" xml:space="preserve">
-    <value>Περ. Προϊόντος: </value>
+    <value>Περ. Προϊόντος</value>
   </data>
   <data name="EntryQuantity" xml:space="preserve">
-    <value>Ποσότητα: </value>
+    <value>Ποσότητα</value>
   </data>
   <data name="EntryReference" xml:space="preserve">
-    <value>Αρ. Παραστατικού: </value>
+    <value>Αρ. Παραστατικού</value>
   </data>
   <data name="EntryShipping" xml:space="preserve">
-    <value>Έξοδα Μεταφοράς (€): </value>
+    <value>Έξοδα Μεταφοράς (€)</value>
   </data>
   <data name="EntryTotal" xml:space="preserve">
-    <value>Τελικό Κόστος (€): </value>
+    <value>Τελικό Κόστος (€)</value>
   </data>
   <data name="EntryVID" xml:space="preserve">
-    <value>Κωδ. Εταίριας: </value>
+    <value>Κωδ. Εταίριας</value>
   </data>
   <data name="EntryID" xml:space="preserve">
-    <value>Αρ. Αγοράς: </value>
+    <value>Αρ. Αγοράς</value>
   </data>
   <data name="EditEntry" xml:space="preserve">
-    <value>Επεξεργασία Εισαγωγής: </value>
+    <value>Επεξεργασία Εισαγωγής</value>
   </data>
   <data name="Alch_Backup_hdrDB" xml:space="preserve">
     <value>Βάση Δεδ/νων</value>
@@ -697,10 +697,10 @@
     <value>Προεπισκόπηση των δεδομένων σας</value>
   </data>
   <data name="Alch_Warehouse_AddFlv" xml:space="preserve">
-    <value>Προσθήκη Αρώματος:</value>
+    <value>Προσθήκη Αρώματος</value>
   </data>
   <data name="Alch_Warehouse_FlvId" xml:space="preserve">
-    <value>Κωδ. Αρώματος:</value>
+    <value>Κωδ. Αρώματος</value>
   </data>
   <data name="warehouse_hdrAmount" xml:space="preserve">
     <value>Ποσότητα</value>
@@ -733,7 +733,7 @@
     <value>http://vape-assistant.com</value>
   </data>
   <data name="Alch_Warehouse_EditFlv" xml:space="preserve">
-    <value>Επεξεργασία Ποσότητας:</value>
+    <value>Επεξεργασία Ποσότητας</value>
   </data>
   <data name="ChangePinTitle" xml:space="preserve">
     <value>Αλλαγή PIN</value>
@@ -871,7 +871,7 @@
     <value>_Έξοδος</value>
   </data>
   <data name="GFX" xml:space="preserve">
-    <value>Γραφικά:</value>
+    <value>Γραφικά</value>
   </data>
   <data name="backup_Header_db" xml:space="preserve">
     <value>Β.Δεδομένων</value>

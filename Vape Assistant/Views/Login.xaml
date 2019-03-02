@@ -5,11 +5,17 @@
         xmlns:p="clr-namespace:Vape_Assistant.Properties"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Vape_Assistant.Views"
-        x:Name="LoginForm" FontSize="18" HorizontalAlignment="Center" SizeToContent="WidthAndHeight"
-        ScrollViewer.VerticalScrollBarVisibility="Disabled" WindowStyle="None"
+        x:Name="LoginForm"
+        FontSize="18"
+        SizeToContent="WidthAndHeight"
+        ScrollViewer.VerticalScrollBarVisibility="Disabled"
+        WindowStyle="None"
         AllowsTransparency="True"
         FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
-        ResizeMode="NoResize" ShowInTaskbar="False" Background="{x:Null}">
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Background="{x:Null}" 
+        HorizontalAlignment="Center">
 
     <Border CornerRadius="10">
         <Border.Background>

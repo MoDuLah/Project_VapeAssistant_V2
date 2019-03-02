@@ -391,7 +391,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abbreviation: .
+        ///   Looks up a localized string similar to Abbreviation.
         /// </summary>
         public static string add_flv_abbreviation {
             get {
@@ -418,7 +418,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Average Mixing Percentage: .
+        ///   Looks up a localized string similar to Average Mixing %.
         /// </summary>
         public static string add_flv_amp {
             get {
@@ -427,7 +427,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brand Name: .
+        ///   Looks up a localized string similar to Brand Name.
         /// </summary>
         public static string add_flv_brandName {
             get {
@@ -454,7 +454,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flavor Name: .
+        ///   Looks up a localized string similar to Flavor Name.
         /// </summary>
         public static string add_flv_flavorName {
             get {
@@ -481,7 +481,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manufacturer specified Gravity: .
+        ///   Looks up a localized string similar to Manufacturer specified Gravity.
         /// </summary>
         public static string add_flv_manufacturerGravity {
             get {
@@ -490,7 +490,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Notes: .
+        ///   Looks up a localized string similar to Notes.
         /// </summary>
         public static string add_flv_notes {
             get {
@@ -508,7 +508,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Items: .
+        ///   Looks up a localized string similar to Items.
         /// </summary>
         public static string add_flv_WarehouseCount {
             get {
@@ -733,7 +733,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quantity: .
+        ///   Looks up a localized string similar to Quantity.
         /// </summary>
         public static string add_rec_flavquantity {
             get {
@@ -895,7 +895,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add Flavor:.
+        ///   Looks up a localized string similar to Add Flavor.
         /// </summary>
         public static string Alch_Warehouse_AddFlv {
             get {
@@ -904,7 +904,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit Flavor Amount:.
+        ///   Looks up a localized string similar to Edit Flavor Amount.
         /// </summary>
         public static string Alch_Warehouse_EditFlv {
             get {
@@ -913,7 +913,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flavor Id:.
+        ///   Looks up a localized string similar to Flavor Id.
         /// </summary>
         public static string Alch_Warehouse_FlvId {
             get {
@@ -1246,7 +1246,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit Entry: .
+        ///   Looks up a localized string similar to Edit Entry.
         /// </summary>
         public static string EditEntry {
             get {
@@ -1300,7 +1300,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Date: .
+        ///   Looks up a localized string similar to Enter Date.
         /// </summary>
         public static string EntryDate {
             get {
@@ -1309,7 +1309,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Discount: .
+        ///   Looks up a localized string similar to Enter Discount.
         /// </summary>
         public static string EntryDiscount {
             get {
@@ -1318,7 +1318,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entry Id: .
+        ///   Looks up a localized string similar to Entry Id.
         /// </summary>
         public static string EntryID {
             get {
@@ -1327,7 +1327,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Vendor Name: .
+        ///   Looks up a localized string similar to Enter Vendor Name.
         /// </summary>
         public static string EntryName {
             get {
@@ -1336,7 +1336,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Product ID (SKU): .
+        ///   Looks up a localized string similar to Enter Product ID (SKU).
         /// </summary>
         public static string EntryPID {
             get {
@@ -1345,7 +1345,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Price: .
+        ///   Looks up a localized string similar to Enter Price.
         /// </summary>
         public static string EntryPrice {
             get {
@@ -1354,7 +1354,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Product Description: .
+        ///   Looks up a localized string similar to Enter Product Description.
         /// </summary>
         public static string EntryProductDescription {
             get {
@@ -1363,7 +1363,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Quantity: .
+        ///   Looks up a localized string similar to Enter Quantity.
         /// </summary>
         public static string EntryQuantity {
             get {
@@ -1372,7 +1372,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Reference: .
+        ///   Looks up a localized string similar to Enter Reference.
         /// </summary>
         public static string EntryReference {
             get {
@@ -1381,7 +1381,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Shipping: .
+        ///   Looks up a localized string similar to Enter Shipping.
         /// </summary>
         public static string EntryShipping {
             get {
@@ -1390,7 +1390,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Total: .
+        ///   Looks up a localized string similar to Enter Total.
         /// </summary>
         public static string EntryTotal {
             get {
@@ -1399,7 +1399,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Vendor ID: .
+        ///   Looks up a localized string similar to Enter Vendor ID.
         /// </summary>
         public static string EntryVID {
             get {
@@ -1498,7 +1498,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Graphics:.
+        ///   Looks up a localized string similar to Graphics.
         /// </summary>
         public static string GFX {
             get {
@@ -1831,7 +1831,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remember Me:.
+        ///   Looks up a localized string similar to Remember Me.
         /// </summary>
         public static string LoginRemember {
             get {

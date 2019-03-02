@@ -8,7 +8,7 @@
              xmlns:myCalendar="clr-namespace:Vape_Assistant"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
              mc:Ignorable="d"
-             FontSize="20">
+             FontSize="20" HorizontalAlignment="Center">
     <!--Initialized="usrc_purchases_Initialized"-->
     <TabControl>
         <TabItem Padding="20,0" IsTabStop="False">

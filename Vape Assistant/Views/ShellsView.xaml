@@ -18,8 +18,8 @@
         ScrollViewer.CanContentScroll="True"
         Closing="VapeAssistant_Closing"
         Icon="/Vape Assistant;component/Images/favicon.png"
-        SizeChanged="Window_StateChanged"
-        BorderBrush="{x:Null}" WindowStyle="None">
+        SizeChanged="Window_StateChanged" HorizontalAlignment="Center"
+        BorderBrush="{x:Null}" WindowStyle="None" Closed="VapeAssistant_Closed">
     <StackPanel>
         <Border CornerRadius="30">
             <Border.Background>

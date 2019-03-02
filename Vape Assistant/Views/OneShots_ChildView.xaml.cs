@@ -44,7 +44,7 @@ namespace Vape_Assistant.Views
 
         void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            var textBox = sender as TextBox;
+            TextBox textBox = sender as TextBox;
 
             if (textBox != null && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
                 textBox.SelectAll();
@@ -87,7 +87,7 @@ namespace Vape_Assistant.Views
             TextBox textBox = (TextBox)sender;
             if (textBox.Text == "")
             {
-                snvFinal_VG.TabIndex = 2;
+                snvFinal_VG.IsTabStop = true;
                 return;
             }
             else
@@ -103,7 +103,7 @@ namespace Vape_Assistant.Views
                 // restore cursor position and selection
                 textBox.Select(start, length);
                 snvFinal_VG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
-                snvFinal_VG.TabIndex = snvFinal_VG.TabIndex + 100;
+                snvFinal_VG.IsTabStop = false;
             }
         }
         private void snvFinal_VG_TextChanged(object sender, TextChangedEventArgs e)

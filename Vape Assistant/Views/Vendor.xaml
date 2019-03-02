@@ -10,12 +10,13 @@
              mc:Ignorable="d" HorizontalAlignment="Center"
         HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinWidth="475" MinHeight="350"
         ShowInTaskbar="True" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight"
-        Topmost="True" WindowStyle="ToolWindow"
+        Topmost="True" WindowStyle="None"
         FontSize="18">
     <Window.Background>
         <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill" Opacity="0.99"/>
     </Window.Background>
-
+    <Grid>
+    <Image Panel.ZIndex="1" Width="24" Margin="10,10" Source="/Vape Assistant;component/Images/Hover/Close Window_Hover_32px.png" HorizontalAlignment="Right" VerticalAlignment="Top"/>
     <TabControl>
         <TabItem>
             <TabItem.Header>
@@ -69,7 +70,7 @@
                 <TextBox x:Name="add_txt_Id" Visibility="Collapsed" IsReadOnly="True"/>
                 <Button Grid.Row="2" Grid.Column="3" x:Name="Vendor_add" Cursor="Hand" MinWidth="100" Click="Vendor_add_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Vape Assistant;component/Images/menuIconsDark/Save_32px.png" VerticalAlignment="Center" Width="20"/>
+                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Admin_32px.png" VerticalAlignment="Center" Width="20"/>
                         <TextBlock Text="{x:Static p:Resources.Save_Button}" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
@@ -160,4 +161,5 @@
             </Grid>
         </TabItem>
     </TabControl>
+    </Grid>
 </Window>

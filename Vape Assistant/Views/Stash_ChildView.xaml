@@ -7,9 +7,10 @@
              xmlns:p="clr-namespace:Vape_Assistant.Properties"
              xmlns:myCalendar="clr-namespace:Vape_Assistant"
              mc:Ignorable="d" 
-             Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
-             ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+             ScrollViewer.CanContentScroll="True"
+             ScrollViewer.VerticalScrollBarVisibility="Auto"
+             HorizontalAlignment="Center">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" MinWidth="120"/>

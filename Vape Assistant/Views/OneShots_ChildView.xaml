@@ -6,10 +6,9 @@
              xmlns:local="clr-namespace:Vape_Assistant.Views"
              xmlns:myCalendar="clr-namespace:Vape_Assistant"
              xmlns:p="clr-namespace:Vape_Assistant.Properties"
-             Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
-             mc:Ignorable="d" MinWidth="500">
-    <Grid x:Name="MainGrid" HorizontalAlignment="Center">
+             mc:Ignorable="d" MinWidth="500" HorizontalAlignment="Center">
+    <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>

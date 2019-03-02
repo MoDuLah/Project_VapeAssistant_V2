@@ -7,8 +7,8 @@
              xmlns:p="clr-namespace:Vape_Assistant.Properties"
              xmlns:myCalendar="clr-namespace:Vape_Assistant"
              mc:Ignorable="d" 
-             Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
-             FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}">
+             FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
+             HorizontalAlignment="Center">
     <Grid Margin="20" VerticalAlignment="Bottom">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

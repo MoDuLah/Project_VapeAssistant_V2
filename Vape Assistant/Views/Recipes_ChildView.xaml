@@ -9,9 +9,9 @@
              Foreground="{Binding Source={x:Static p:Settings.Default}, Path=FGColor, Mode=TwoWay}"
              FontFamily="{Binding Source={x:Static p:Settings.Default}, Path=FontFam, Mode=TwoWay}"
              FontSize="18"
-             mc:Ignorable="d">
-    <ScrollViewer MinWidth="500" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center">
-        <Grid Margin="20">
+             mc:Ignorable="d" HorizontalAlignment="Center">
+    <ScrollViewer MinWidth="500" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
@@ -263,16 +263,16 @@
                 </GroupBox>
             </ScrollViewer>
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <GroupBox Grid.Row="2" Header="{x:Static p:Resources.add_rec_flavquantity}" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" >
+                <GroupBox Grid.Row="2" Header="{x:Static p:Resources.add_rec_flavquantity}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" >
                     <StackPanel Orientation="Horizontal">
                         <Button Grid.Row="2" Grid.Column="1" x:Name="Adder_flv" MinWidth="70" Content="{x:Static p:Resources.flavour_add}" Click="Adder_flv_Click" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         <TextBlock  x:Name="flavors_shown" Text="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,5,5"/>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Grid.Row="3" Grid.ColumnSpan="2" Header="{x:Static p:Resources.add_rec_author}" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <GroupBox Grid.Row="3" Grid.ColumnSpan="2" Header="{x:Static p:Resources.add_rec_author}" >
                     <TextBox x:Name="Author" MinWidth="80" MinHeight="24" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </GroupBox>
-                <GroupBox Grid.Row="4" Header="{x:Static p:Resources.add_rec_TimesMade}" HorizontalAlignment="Center" Margin="0,5" VerticalAlignment="Top">
+                <GroupBox Grid.Row="4" Header="{x:Static p:Resources.add_rec_TimesMade}" Margin="0,5">
                     <TextBox x:Name="TimesMade" IsReadOnly="True" MinWidth="80" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </GroupBox>
             </StackPanel>

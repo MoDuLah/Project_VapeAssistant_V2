@@ -151,8 +151,8 @@
           <target state="new">PIN</target>
         </trans-unit>
         <trans-unit id="LoginRemember" translate="yes" xml:space="preserve">
-          <source>Remember Me:</source>
-          <target state="new">Remember Me:</target>
+          <source>Remember Me</source>
+          <target state="new">Remember Me</target>
         </trans-unit>
         <trans-unit id="LoginTitle" translate="yes" xml:space="preserve">
           <source>LOGIN</source>
@@ -635,32 +635,32 @@ If you decline and keep the default pin-code you will be asked the next time you
 - Fix in Database.</target>
         </trans-unit>
         <trans-unit id="add_flv_abbreviation" translate="yes" xml:space="preserve">
-          <source>Abbreviation: </source>
-          <target state="new">Abbreviation: </target>
+          <source>Abbreviation</source>
+          <target state="new">Abbreviation</target>
         </trans-unit>
         <trans-unit id="add_flv_amp" translate="yes" xml:space="preserve">
-          <source>Average Mixing Percentage: </source>
-          <target state="new">Average Mixing Percentage: </target>
+          <source>Average Mixing %</source>
+          <target state="new">Average Mixing %</target>
         </trans-unit>
         <trans-unit id="add_flv_brandName" translate="yes" xml:space="preserve">
-          <source>Brand Name: </source>
-          <target state="new">Brand Name: </target>
+          <source>Brand Name</source>
+          <target state="new">Brand Name</target>
         </trans-unit>
         <trans-unit id="add_flv_flavorName" translate="yes" xml:space="preserve">
-          <source>Flavor Name: </source>
-          <target state="new">Flavor Name: </target>
+          <source>Flavor Name</source>
+          <target state="new">Flavor Name</target>
         </trans-unit>
         <trans-unit id="add_flv_header" translate="yes" xml:space="preserve">
           <source>Add a Flavor</source>
           <target state="new">Add a Flavor</target>
         </trans-unit>
         <trans-unit id="add_flv_manufacturerGravity" translate="yes" xml:space="preserve">
-          <source>Manufacturer specified Gravity: </source>
-          <target state="new">Manufacturer specified Gravity: </target>
+          <source>Manufacturer specified Gravity</source>
+          <target state="new">Manufacturer specified Gravity</target>
         </trans-unit>
         <trans-unit id="add_flv_notes" translate="yes" xml:space="preserve">
-          <source>Notes: </source>
-          <target state="new">Notes: </target>
+          <source>Notes</source>
+          <target state="new">Notes</target>
         </trans-unit>
         <trans-unit id="ChrisG" translate="yes" xml:space="preserve">
           <source>Christos Gleridis</source>
@@ -715,8 +715,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">Have it? </target>
         </trans-unit>
         <trans-unit id="add_flv_WarehouseCount" translate="yes" xml:space="preserve">
-          <source>Items: </source>
-          <target state="new">Items: </target>
+          <source>Items</source>
+          <target state="new">Items</target>
         </trans-unit>
         <trans-unit id="add_rec_header" translate="yes" xml:space="preserve">
           <source>Add/Edit/Delete a Recipe</source>
@@ -839,8 +839,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">Inspider</target>
         </trans-unit>
         <trans-unit id="add_rec_flavquantity" translate="yes" xml:space="preserve">
-          <source>Quantity: </source>
-          <target state="new">Quantity: </target>
+          <source>Quantity</source>
+          <target state="new">Quantity</target>
         </trans-unit>
         <trans-unit id="add_rec_TimesMade" translate="yes" xml:space="preserve">
           <source>Times Made</source>
@@ -1021,56 +1021,56 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">Backup</target>
         </trans-unit>
         <trans-unit id="EntryDate" translate="yes" xml:space="preserve">
-          <source>Enter Date: </source>
-          <target state="new">Enter Date: </target>
+          <source>Enter Date</source>
+          <target state="new">Enter Date</target>
         </trans-unit>
         <trans-unit id="EntryDiscount" translate="yes" xml:space="preserve">
-          <source>Enter Discount: </source>
-          <target state="new">Enter Discount: </target>
+          <source>Enter Discount</source>
+          <target state="new">Enter Discount</target>
         </trans-unit>
         <trans-unit id="EntryID" translate="yes" xml:space="preserve">
-          <source>Entry Id: </source>
-          <target state="new">Entry Id: </target>
+          <source>Entry Id</source>
+          <target state="new">Entry Id</target>
         </trans-unit>
         <trans-unit id="EntryName" translate="yes" xml:space="preserve">
-          <source>Enter Vendor Name: </source>
-          <target state="new">Enter Vendor Name: </target>
+          <source>Enter Vendor Name</source>
+          <target state="new">Enter Vendor Name</target>
         </trans-unit>
         <trans-unit id="EntryPID" translate="yes" xml:space="preserve">
-          <source>Enter Product ID (SKU): </source>
-          <target state="new">Enter Product ID (SKU): </target>
+          <source>Enter Product ID (SKU)</source>
+          <target state="new">Enter Product ID (SKU)</target>
         </trans-unit>
         <trans-unit id="EntryPrice" translate="yes" xml:space="preserve">
-          <source>Enter Price: </source>
-          <target state="new">Enter Price: </target>
+          <source>Enter Price</source>
+          <target state="new">Enter Price</target>
         </trans-unit>
         <trans-unit id="EntryProductDescription" translate="yes" xml:space="preserve">
-          <source>Enter Product Description: </source>
-          <target state="new">Enter Product Description: </target>
+          <source>Enter Product Description</source>
+          <target state="new">Enter Product Description</target>
         </trans-unit>
         <trans-unit id="EntryQuantity" translate="yes" xml:space="preserve">
-          <source>Enter Quantity: </source>
-          <target state="new">Enter Quantity: </target>
+          <source>Enter Quantity</source>
+          <target state="new">Enter Quantity</target>
         </trans-unit>
         <trans-unit id="EntryReference" translate="yes" xml:space="preserve">
-          <source>Enter Reference: </source>
-          <target state="new">Enter Reference: </target>
+          <source>Enter Reference</source>
+          <target state="new">Enter Reference</target>
         </trans-unit>
         <trans-unit id="EntryShipping" translate="yes" xml:space="preserve">
-          <source>Enter Shipping: </source>
-          <target state="new">Enter Shipping: </target>
+          <source>Enter Shipping</source>
+          <target state="new">Enter Shipping</target>
         </trans-unit>
         <trans-unit id="EntryTotal" translate="yes" xml:space="preserve">
-          <source>Enter Total: </source>
-          <target state="new">Enter Total: </target>
+          <source>Enter Total</source>
+          <target state="new">Enter Total</target>
         </trans-unit>
         <trans-unit id="EntryVID" translate="yes" xml:space="preserve">
-          <source>Enter Vendor ID: </source>
-          <target state="new">Enter Vendor ID: </target>
+          <source>Enter Vendor ID</source>
+          <target state="new">Enter Vendor ID</target>
         </trans-unit>
         <trans-unit id="EditEntry" translate="yes" xml:space="preserve">
-          <source>Edit Entry: </source>
-          <target state="new">Edit Entry: </target>
+          <source>Edit Entry</source>
+          <target state="new">Edit Entry</target>
         </trans-unit>
         <trans-unit id="Alch_Backup_Desc1" translate="yes" xml:space="preserve">
           <source>Includes the Flavors you have in your possession.</source>
@@ -1125,12 +1125,12 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">Select File</target>
         </trans-unit>
         <trans-unit id="Alch_Warehouse_AddFlv" translate="yes" xml:space="preserve">
-          <source>Add Flavor:</source>
-          <target state="new">Add Flavor:</target>
+          <source>Add Flavor</source>
+          <target state="new">Add Flavor</target>
         </trans-unit>
         <trans-unit id="Alch_Warehouse_FlvId" translate="yes" xml:space="preserve">
-          <source>Flavor Id:</source>
-          <target state="new">Flavor Id:</target>
+          <source>Flavor Id</source>
+          <target state="new">Flavor Id</target>
         </trans-unit>
         <trans-unit id="popup_Cancel" translate="yes" xml:space="preserve">
           <source>Cancel</source>
@@ -1173,8 +1173,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">http://vape-assistant.com</target>
         </trans-unit>
         <trans-unit id="Alch_Warehouse_EditFlv" translate="yes" xml:space="preserve">
-          <source>Edit Flavor Amount:</source>
-          <target state="new">Edit Flavor Amount:</target>
+          <source>Edit Flavor Amount</source>
+          <target state="new">Edit Flavor Amount</target>
         </trans-unit>
         <trans-unit id="log_Amount" translate="yes" xml:space="preserve">
           <source>Log Amount</source>
@@ -1303,8 +1303,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">Total</target>
         </trans-unit>
         <trans-unit id="GFX" translate="yes" xml:space="preserve">
-          <source>Graphics:</source>
-          <target state="new">Graphics:</target>
+          <source>Graphics</source>
+          <target state="new">Graphics</target>
         </trans-unit>
         <trans-unit id="menu_file_exit" translate="yes" xml:space="preserve">
           <source>_Exit</source>

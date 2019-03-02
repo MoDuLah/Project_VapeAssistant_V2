@@ -31,7 +31,6 @@ namespace Vape_Assistant
         DataSet ds;
         string dbName = "";
 
-
         public Vendor()
         {
             InitializeComponent();

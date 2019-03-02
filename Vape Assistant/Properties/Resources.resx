@@ -226,7 +226,7 @@
     <value>PIN</value>
   </data>
   <data name="LoginRemember" xml:space="preserve">
-    <value>Remember Me:</value>
+    <value>Remember Me</value>
   </data>
   <data name="LoginTitle" xml:space="preserve">
     <value>LOGIN</value>
@@ -589,25 +589,25 @@ If you decline and keep the default pin-code you will be asked the next time you
 - Fix in Database.</value>
   </data>
   <data name="add_flv_abbreviation" xml:space="preserve">
-    <value>Abbreviation: </value>
+    <value>Abbreviation</value>
   </data>
   <data name="add_flv_amp" xml:space="preserve">
-    <value>Average Mixing Percentage: </value>
+    <value>Average Mixing %</value>
   </data>
   <data name="add_flv_brandName" xml:space="preserve">
-    <value>Brand Name: </value>
+    <value>Brand Name</value>
   </data>
   <data name="add_flv_flavorName" xml:space="preserve">
-    <value>Flavor Name: </value>
+    <value>Flavor Name</value>
   </data>
   <data name="add_flv_header" xml:space="preserve">
     <value>Add a Flavor</value>
   </data>
   <data name="add_flv_manufacturerGravity" xml:space="preserve">
-    <value>Manufacturer specified Gravity: </value>
+    <value>Manufacturer specified Gravity</value>
   </data>
   <data name="add_flv_notes" xml:space="preserve">
-    <value>Notes: </value>
+    <value>Notes</value>
   </data>
   <data name="ChrisG" xml:space="preserve">
     <value>Christos Gleridis</value>
@@ -649,7 +649,7 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>Have it? </value>
   </data>
   <data name="add_flv_WarehouseCount" xml:space="preserve">
-    <value>Items: </value>
+    <value>Items</value>
   </data>
   <data name="add_rec_header" xml:space="preserve">
     <value>Add/Edit/Delete a Recipe</value>
@@ -742,7 +742,7 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>Inspider</value>
   </data>
   <data name="add_rec_flavquantity" xml:space="preserve">
-    <value>Quantity: </value>
+    <value>Quantity</value>
   </data>
   <data name="add_rec_TimesMade" xml:space="preserve">
     <value>Times Made</value>
@@ -872,43 +872,43 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>Backup</value>
   </data>
   <data name="EntryDate" xml:space="preserve">
-    <value>Enter Date: </value>
+    <value>Enter Date</value>
   </data>
   <data name="EntryDiscount" xml:space="preserve">
-    <value>Enter Discount: </value>
+    <value>Enter Discount</value>
   </data>
   <data name="EntryID" xml:space="preserve">
-    <value>Entry Id: </value>
+    <value>Entry Id</value>
   </data>
   <data name="EntryName" xml:space="preserve">
-    <value>Enter Vendor Name: </value>
+    <value>Enter Vendor Name</value>
   </data>
   <data name="EntryPID" xml:space="preserve">
-    <value>Enter Product ID (SKU): </value>
+    <value>Enter Product ID (SKU)</value>
   </data>
   <data name="EntryPrice" xml:space="preserve">
-    <value>Enter Price: </value>
+    <value>Enter Price</value>
   </data>
   <data name="EntryProductDescription" xml:space="preserve">
-    <value>Enter Product Description: </value>
+    <value>Enter Product Description</value>
   </data>
   <data name="EntryQuantity" xml:space="preserve">
-    <value>Enter Quantity: </value>
+    <value>Enter Quantity</value>
   </data>
   <data name="EntryReference" xml:space="preserve">
-    <value>Enter Reference: </value>
+    <value>Enter Reference</value>
   </data>
   <data name="EntryShipping" xml:space="preserve">
-    <value>Enter Shipping: </value>
+    <value>Enter Shipping</value>
   </data>
   <data name="EntryTotal" xml:space="preserve">
-    <value>Enter Total: </value>
+    <value>Enter Total</value>
   </data>
   <data name="EntryVID" xml:space="preserve">
-    <value>Enter Vendor ID: </value>
+    <value>Enter Vendor ID</value>
   </data>
   <data name="EditEntry" xml:space="preserve">
-    <value>Edit Entry: </value>
+    <value>Edit Entry</value>
   </data>
   <data name="Alch_Backup_Desc1" xml:space="preserve">
     <value>Includes the Flavors you have in your possession.</value>
@@ -950,10 +950,10 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>Select File</value>
   </data>
   <data name="Alch_Warehouse_AddFlv" xml:space="preserve">
-    <value>Add Flavor:</value>
+    <value>Add Flavor</value>
   </data>
   <data name="Alch_Warehouse_FlvId" xml:space="preserve">
-    <value>Flavor Id:</value>
+    <value>Flavor Id</value>
   </data>
   <data name="popup_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -986,7 +986,7 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>http://vape-assistant.com</value>
   </data>
   <data name="Alch_Warehouse_EditFlv" xml:space="preserve">
-    <value>Edit Flavor Amount:</value>
+    <value>Edit Flavor Amount</value>
   </data>
   <data name="log_Amount" xml:space="preserve">
     <value>Log Amount</value>
@@ -1085,7 +1085,7 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>Total</value>
   </data>
   <data name="GFX" xml:space="preserve">
-    <value>Graphics:</value>
+    <value>Graphics</value>
   </data>
   <data name="menu_file_exit" xml:space="preserve">
     <value>_Exit</value>

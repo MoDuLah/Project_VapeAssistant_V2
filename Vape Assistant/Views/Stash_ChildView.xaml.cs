@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SQLite;
-using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Shapes;
-using System.Collections;
-using System.Collections.Generic;
 using Vape_Assistant.Properties;
-using Microsoft.VisualBasic.FileIO;
-using System.Windows.Controls.Primitives;
 
 namespace Vape_Assistant.Views
 {
