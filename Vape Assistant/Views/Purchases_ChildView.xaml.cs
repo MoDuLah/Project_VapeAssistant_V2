@@ -167,7 +167,7 @@ namespace Vape_Assistant.Views
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {

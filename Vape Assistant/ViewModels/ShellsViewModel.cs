@@ -12,7 +12,7 @@ namespace Vape_Assistant.ViewModels
         public ShellsViewModel()
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -30,7 +30,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new OhmsLaw_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -48,7 +48,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new Statistics_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -66,7 +66,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new Settings_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -84,7 +84,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new About_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -102,7 +102,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new BoosterCost_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -126,7 +126,7 @@ namespace Vape_Assistant.ViewModels
             {
                 ActivateItem(new Purchases_ChildViewModel());
                 string Path = AppDomain.CurrentDomain.BaseDirectory;
-                string fileName = "Temp.txt";
+                string fileName = "temp.tmp";
 
                 if (!File.Exists(fileName))
                 {
@@ -144,7 +144,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new OneShots_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -161,7 +161,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new Warehouse_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -178,7 +178,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new JuiceLog_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -196,7 +196,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new Flavors_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -213,7 +213,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new BasesMix_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -231,7 +231,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new Recipes_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -248,7 +248,7 @@ namespace Vape_Assistant.ViewModels
         {
             ActivateItem(new Synthesize_ChildViewModel());
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {
@@ -269,7 +269,7 @@ namespace Vape_Assistant.ViewModels
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
 
             if (!File.Exists(fileName))
             {

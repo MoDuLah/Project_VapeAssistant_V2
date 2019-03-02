@@ -27,7 +27,7 @@ namespace Vape_Assistant.Views
 
         private void BtnDonate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            string url = "https://paypal.me/CGleridis";
+            string url = "https://bit.ly/DonateVA";
 
             Process.Start(url);
 

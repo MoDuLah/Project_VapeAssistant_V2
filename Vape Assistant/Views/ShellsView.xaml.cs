@@ -116,9 +116,9 @@ namespace Vape_Assistant.Views
         private void VapeAssistant_Closed(object sender, EventArgs e)
         {
             string Path = AppDomain.CurrentDomain.BaseDirectory;
-            string fileName = "Temp.txt";
+            string fileName = "temp.tmp";
             string fullPath = Path + fileName;
-            string temp2 = Path + "Temp2.txt";
+            string temp2 = Path + "Temp2.tmp";
             string remoteaddress;
             if (File.Exists(fullPath))
             {
@@ -156,10 +156,7 @@ namespace Vape_Assistant.Views
                         }
                     }
                 }
-            }
-            if (File.Exists(fullPath))
-            {
-                File.Delete(fullPath);
+            File.Delete(fullPath);
             }
         }
 
