@@ -144,29 +144,14 @@ namespace Vape_Assistant
                 website = add_Website.Text;
                 active = check;
                 orders = "0";
-
-                if (CurrentCulture == "el-GR")
-                {
-                    dbName = "Vendors_GR";
-                }
-                else
-                {
-                    dbName = "Vendors";
-                }
+                dbName = "Vendors";
 
                 if (dbConn.State == ConnectionState.Closed)
                 {
                     dbConn.Open();
                 }
                 string query = $"INSERT INTO [{dbName}] ";
-                if (CurrentCulture == "en-US")
-                { 
-                    query += "([Name], [Address], [PostCode], [City], [County], [Country], [Telephone], [Website], [Active], [Orders]) ";
-                }
-                if (CurrentCulture == "el-GR")
-                {
-                    query += "([Επωνυμία], [Διεύθυνση], [ΤΚ], [Πόλη], [Νομός], [Χώρα], [Τηλέφωνο], [Ιστοσελίδα], [Ενεργός], [Παραγγελίες]) ";
-                }
+                query += "([Name], [Address], [PostCode], [City], [County], [Country], [Telephone], [Website], [Active], [Orders]) ";
                 query += $"VALUES('{name}', '{address}', '{postcode}', '{city}', '{county}', '{country}', '{telephone}', '{website}', '{check}', '{orders}') ; ";
                 dbCmd = new SQLiteCommand(query, dbConn);
                 dbCmd.ExecuteNonQuery();
@@ -216,17 +201,8 @@ namespace Vape_Assistant
                 DataTable dt = null;
                 dbConn = new SQLiteConnection(connectionString);
                 string query = "";
-                if (CurrentCulture == "el-GR")
-                {
-                    dbName = "Vendors_GR";
-                    query = $"SELECT Επωνυμία,Ιστοσελίδα,Τηλέφωνο,Διεύθυνση,ΤΚ,Πόλη,Χώρα,Ενεργός FROM [{dbName}] WHERE Ενεργός = '1'";
-                }
-
-                if (CurrentCulture == "en-US")
-                {
-                    dbName = "Vendors";
-                    query = $"SELECT Name,Website,Address,Telephone,PostCode,City,Country,Active FROM [{dbName}] WHERE Active = '1'";
-                }
+                dbName = "Vendors";
+                query = $"SELECT Name,Website,Address,Telephone,PostCode,City,Country,Active FROM [{dbName}] WHERE Active = '1'";
 
                 if (dbConn.State == ConnectionState.Closed)
                 {
@@ -235,16 +211,7 @@ namespace Vape_Assistant
                 dbCmd = new SQLiteCommand(query, dbConn);
                 dbCmd.ExecuteNonQuery();
                 dbAdapter = new SQLiteDataAdapter(dbCmd);
-
-                if (CurrentCulture == "el-GR")
-                {
-                    dt = new DataTable("Vendors_GR");
-                }
-
-                if (CurrentCulture == "en-US")
-                {
-                    dt = new DataTable("Vendors");
-                }
+                dt = new DataTable("Vendors");
 
                 dbAdapter.Fill(dt);
                 ViewEntries.ItemsSource = dt.DefaultView;
@@ -274,17 +241,8 @@ namespace Vape_Assistant
         {
             string dbName = "";
             string companyName = "";
-
-            if (CurrentCulture == "el-GR")
-            {
-                dbName = "Vendors_GR";
-                companyName = "Επωνυμία";
-            }
-            else
-            {
-                dbName = "Vendors";
-                companyName = "Name";
-            }
+            dbName = "Vendors";
+            companyName = "Name";
             try
             {
                 dbConn = new SQLiteConnection(connectionString);
@@ -328,16 +286,9 @@ namespace Vape_Assistant
             string dbName = "";
             string companyName = "";
 
-            if (CurrentCulture == "el-GR")
-            {
-                dbName = "Vendors_GR";
-                companyName = "Επωνυμία";
-            }
-            else
-            {
                 dbName = "Vendors";
                 companyName = "Name";
-            }
+            
             if ((sender as ComboBox).SelectedIndex < 0 )
             {
                 return;
@@ -420,20 +371,6 @@ namespace Vape_Assistant
             string dbTelephone = "";
             string dbActive = "";
 
-            if (CurrentCulture == "el-GR")
-            {
-                dbName = "Vendors_GR";
-                dbCompanyName = "Επωνυμία";
-                dbAddress = "Διεύθυνση";
-                dbPostCode = "ΤΚ";
-                dbWebsite = "Ιστοσελίδα";
-                dbCountry = "Χώρα";
-                dbCity = "Πόλη";
-                dbTelephone = "Τηλέφωνο";
-                dbActive = "Ενεργός";
-            }
-            else
-            {
                 dbName = "Vendors";
                 dbCompanyName = "Name";
                 dbAddress = "Address";
@@ -443,7 +380,7 @@ namespace Vape_Assistant
                 dbCity = "City";
                 dbTelephone = "Telephone";
                 dbActive = "Active";
-            }
+
             string nameEN = "Field 'Name' can not be empty/blank.";
             string nameEL = "Το πεδίο 'Όνομα' δεν μπορεί να είναι κενό.";
             string countryEN = "Field 'Country' can not be empty/blank.";
@@ -545,14 +482,8 @@ namespace Vape_Assistant
         {
             string dbName = "";
 
-            if (CurrentCulture == "el-GR")
-            {
-                dbName = "Vendors_GR";
-            }
-            else
-            {
-                dbName = "Vendors";
-            }
+            dbName = "Vendors";
+
             string nameEN = "Field 'Name' can not be empty/blank.";
             string nameEL = "Το πεδίο 'Όνομα' δεν μπορεί να είναι κενό.";
             string countryEN = "Field 'Country' can not be empty/blank.";

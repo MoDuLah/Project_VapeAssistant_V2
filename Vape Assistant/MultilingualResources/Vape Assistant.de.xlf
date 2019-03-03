@@ -1538,6 +1538,14 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>If it's disabled, select a database from the combobox on the left.</source>
           <target state="new">If it's disabled, select a database from the combobox on the left.</target>
         </trans-unit>
+        <trans-unit id="FacebookPage" translate="yes" xml:space="preserve">
+          <source>https://fb.me/VapeAssistant</source>
+          <target state="new">https://fb.me/VapeAssistant</target>
+        </trans-unit>
+        <trans-unit id="Fb" translate="yes" xml:space="preserve">
+          <source>Facebook</source>
+          <target state="new">Facebook</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -36,11 +36,11 @@
         </GroupBox>
 
         <GroupBox x:Name="TotalPG_label" Grid.Row="0" Grid.Column="1" Header="{x:Static p:Resources.mixbase_HeaderPGPercent}" VerticalAlignment="Top" >
-            <TextBox x:Name="snvFinal_PG" TextAlignment="Center" MaxLength="2" TextChanged="snvFinal_PG_TextChanged" TabIndex="1"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="snvFinal_PG" TextAlignment="Center" MaxLength="2" TextChanged="snvFinal_PG_TextChanged" TabIndex="1"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="SnvFinal_PG_PreviewTextInput"/>
         </GroupBox>
 
         <GroupBox x:Name="TotalVG_label" Grid.Row="0" Grid.Column="2" Header="{x:Static p:Resources.mixbase_HeaderVGPercent}" VerticalAlignment="Top" >
-            <TextBox x:Name="snvFinal_VG" TextAlignment="Center" MaxLength="2" TextChanged="snvFinal_VG_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2"/>
+            <TextBox x:Name="snvFinal_VG" TextAlignment="Center" MaxLength="2" TextChanged="snvFinal_VG_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="2" PreviewTextInput="SnvFinal_VG_PreviewTextInput"/>
         </GroupBox>
 
 
@@ -52,14 +52,14 @@
         </GroupBox>
         <GroupBox x:Name="nicBooster_label" Grid.Row="0" Grid.Column="5" Header="{x:Static p:Resources.OneShotL_NicBooster}" VerticalAlignment="Top" Visibility="Visible">
             <StackPanel Orientation="Horizontal">
-                <ComboBox x:Name="nic_style" MinWidth="120" SelectionChanged="nic_style_SelectionChanged" TabIndex="5" MaxWidth="120" VerticalAlignment="Center">
+                <ComboBox x:Name="nic_style" MinWidth="120" SelectionChanged="nic_style_SelectionChanged" TabIndex="6" MaxWidth="120" VerticalAlignment="Center">
                     <ComboBoxItem Content="PG 100-0 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
                     <ComboBoxItem Content="PG 70-30 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
                     <ComboBoxItem Content="PG 50-50 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
                     <ComboBoxItem Content="PG 30-70 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
                     <ComboBoxItem Content="PG 0-100 VG" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" />
                 </ComboBox>
-                <TextBox x:Name="snvNicLevel" TextAlignment="Center" Text="20" MaxLength="3" TabIndex="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="snvNicLevel" TextAlignment="Center" Text="20" MaxLength="3" TabIndex="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </GroupBox>
 
@@ -126,7 +126,7 @@
         <!--Row 8-->
         <GroupBox Grid.Row="1" Grid.Column="5" x:Name="OS_Name_label" VerticalAlignment="Center" Header="{x:Static p:Resources.OneShotHeaderName}" Visibility="Visible">
             <StackPanel>
-                <TextBox x:Name="OS_Name" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="OS_Name" TextAlignment="Center" VerticalContentAlignment="Center" TabIndex="8"/>
                 <Button x:Name="insert_ShakeNVape" Content="{x:Static p:Resources.Save_Button}" TabIndex="7" Click="insert_ShakeNVape_Click" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
@@ -141,6 +141,6 @@
         <TextBox x:Name="errorcatcher" Grid.Row="4" Grid.Column="0" Visibility="Collapsed" />
         <TextBox x:Name="errorcatch" Grid.Row="4" Grid.Column="1"  Visibility="Collapsed"/>
         <Button x:Name="calc_ShakeNVape_reset" Grid.Column="3" Grid.Row="6" Content="{x:Static p:Resources.Clear_Button}" Click="calc_ShakeNVape_reset_Click" TabIndex="7" Margin="10,5"/>
-        <Button x:Name="calc_ShakeNVape" Grid.Column="4" Grid.Row="6" Content="{x:Static p:Resources.Calculate_Button}" Click="calc_ShakeNVape_Click" TabIndex="6" Margin="10,5"/>
+        <Button x:Name="calc_ShakeNVape" Grid.Column="4" Grid.Row="6" Content="{x:Static p:Resources.Calculate_Button}" Click="calc_ShakeNVape_Click" TabIndex="9" Margin="10,5"/>
     </Grid>
 </UserControl>

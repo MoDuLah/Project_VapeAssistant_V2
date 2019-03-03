@@ -1092,4 +1092,10 @@
   <data name="settings_export_tooltip" xml:space="preserve">
     <value>Εάν είναι ανενεργό, επιλέξτε βάση δεδομένων από αριστερά.</value>
   </data>
+  <data name="FacebookPage" xml:space="preserve">
+    <value>https://fb.me/VapeAssistant</value>
+  </data>
+  <data name="Fb" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
 </root>

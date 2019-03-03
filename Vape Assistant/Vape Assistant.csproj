@@ -299,7 +299,6 @@
     </Compile>
     <Compile Include="ViewModels\BasesMix_ChildViewModel.cs" />
     <Compile Include="ViewModels\BoosterCost_ChildViewModel.cs" />
-    <Compile Include="ViewModels\Coils_ChildViewModel.cs" />
     <Compile Include="ViewModels\Flavors_ChildViewModel.cs" />
     <Compile Include="ViewModels\JuiceLog_ChildViewModel.cs" />
     <Compile Include="ViewModels\OneShots_ChildViewModel.cs" />
@@ -314,9 +313,6 @@
       <DependentUpon>BoosterCost_ChildView.xaml</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Views\Coils_ChildView.xaml.cs">
-      <DependentUpon>Coils_ChildView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Flavors_ChildView.xaml.cs">
       <DependentUpon>Flavors_ChildView.xaml</DependentUpon>
     </Compile>
@@ -336,8 +332,8 @@
     <Compile Include="Views\ShellsView.xaml.cs">
       <DependentUpon>ShellsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Stash_ChildView.xaml.cs">
-      <DependentUpon>Stash_ChildView.xaml</DependentUpon>
+    <Compile Include="Views\Warehouse_ChildView.xaml.cs">
+      <DependentUpon>Warehouse_ChildView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Synthesize_ChildView.xaml.cs">
       <DependentUpon>Synthesize_ChildView.xaml</DependentUpon>
@@ -509,10 +505,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Coils_ChildView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Flavors_ChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -537,7 +529,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Stash_ChildView.xaml">
+    <Page Include="Views\Warehouse_ChildView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -739,10 +731,7 @@
     <Resource Include="Images\Hover\Close Window_Hover_32px.png" />
     <Resource Include="Images\Hover\Minimize Window_Hover_32px.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="banners\" />
-    <Folder Include="Images\banners\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\flags\de.png" />
     <Resource Include="Images\flags\es.png" />
@@ -754,6 +743,11 @@
   <ItemGroup>
     <Resource Include="Images\flags\ro.png" />
     <Resource Include="Images\flags\ru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\banners\readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />

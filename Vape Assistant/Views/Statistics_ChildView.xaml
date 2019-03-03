@@ -11,7 +11,7 @@
              FontSize="18"
              mc:Ignorable="d"
              HorizontalAlignment="Center">
-    <ScrollViewer MaxHeight="350">
+    <ScrollViewer MaxHeight="450">
         <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -42,7 +42,7 @@
         </GroupBox>
         <Border Grid.Column="2" Grid.Row="0" Grid.RowSpan="100" Width="1" Margin="5,0" Background="Black"/>
         <GroupBox Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="2" Header="{x:Static p:Resources.statistics_VapingStartDate}">
-            <myCalendar:ucCalendar x:Name="vap_start_date" TabIndex="6"
+            <myCalendar:ucCalendar x:Name="vap_start_date" TabIndex="4"
                                    LostFocus="vap_start_date_LostFocus" IsTabStop="True"
                                    HorizontalAlignment="Center"/>
         </GroupBox>
@@ -64,14 +64,14 @@
                      VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      AutoWordSelection="True" MaxLength="10" Padding="2"
                      PreviewTextInput="cig_quantity_pack_PreviewTextInput"
-                     TabIndex="3" MinWidth="120" HorizontalAlignment="Center" />
+                     TabIndex="1" MinWidth="120" HorizontalAlignment="Center" />
         </GroupBox>
         <GroupBox Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Header="{x:Static p:Resources.statistics_HardwareCost}">
             <TextBox x:Name="vap_hardware_cost" AutoWordSelection="True" MaxLength="10" Padding="2"
                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                      TextChanged="vap_hardware_cost_TextChanged" PreviewTextInput="vap_hardware_cost_PreviewTextInput"
-                     TabIndex="9" MinWidth="120" MaxWidth="120" IsReadOnly="True"
-                     HorizontalAlignment="Center">
+                     TabIndex="23232" MinWidth="120" MaxWidth="120" IsReadOnly="True"
+                     HorizontalAlignment="Center" IsTabStop="False">
                 <TextBox.ToolTip>
                     <StackPanel>
                         <TextBlock Text="{x:Static p:Resources.TooltipHardwareCost}"/>
@@ -80,14 +80,14 @@
             </TextBox>
         </GroupBox>
         <GroupBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Header="{x:Static p:Resources.statistics_PacketPrice}">
-            <TextBox x:Name="cig_price" AutoWordSelection="True" MaxLength="10" Padding="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="cig_price_TextChanged" PreviewTextInput="cig_price_PreviewTextInput" TabIndex="4" MinWidth="120" HorizontalAlignment="Center"/>
+            <TextBox x:Name="cig_price" AutoWordSelection="True" MaxLength="10" Padding="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="cig_price_TextChanged" PreviewTextInput="cig_price_PreviewTextInput" TabIndex="2" MinWidth="120" HorizontalAlignment="Center"/>
         </GroupBox>
         <GroupBox Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" Header="{x:Static p:Resources.EJuiceCosts}">
             <StackPanel Grid.Column="4" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Bottom">
                 <TextBox x:Name="Liq_ml" MinWidth="80" AutoWordSelection="True" Margin="15,5"
                          MaxLength="3" Padding="2" VerticalContentAlignment="Center"
                          TextChanged="Liq_ml_TextChanged" GotFocus="TxtBox_GotFocus" LostFocus="TxtBox_LostFocus"
-                         HorizontalContentAlignment="Center" >
+                         HorizontalContentAlignment="Center" TabIndex="5" >
                     <TextBox.ToolTip>
                         <TextBlock Text="{x:Static p:Resources.EJuiceCosts1}"/>
                     </TextBox.ToolTip>
@@ -95,7 +95,7 @@
                 <TextBox x:Name="Liq_cost" MinWidth="80" AutoWordSelection="True" Margin="15,5"
                          MaxLength="4" Padding="2" VerticalContentAlignment="Center"
                          TextChanged="Liq_cost_TextChanged" GotFocus="TxtBox_GotFocus" LostFocus="TxtBox_LostFocus"
-                         HorizontalContentAlignment="Center" >
+                         HorizontalContentAlignment="Center" TabIndex="6" >
                     <TextBox.ToolTip>
                         <TextBlock Text="{x:Static p:Resources.EJuiceCosts2}"/>
                     </TextBox.ToolTip>
@@ -103,7 +103,7 @@
                 <TextBox x:Name="Nic_cost" MinWidth="80" AutoWordSelection="True" Margin="15,5"
                          MaxLength="3" Padding="2" VerticalContentAlignment="Center"
                          TextChanged="Nic_cost_TextChanged" GotFocus="TxtBox_GotFocus" LostFocus="TxtBox_LostFocus"
-                         HorizontalContentAlignment="Center" >
+                         HorizontalContentAlignment="Center" TabIndex="7" >
                     <TextBox.ToolTip>
                         <TextBlock Text="{x:Static p:Resources.EJuiceCosts3}"/>
                     </TextBox.ToolTip>
@@ -115,13 +115,13 @@
             <TextBox x:Name="cig_per_day" AutoWordSelection="True" MaxLength="10" Padding="2"
                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                  TextChanged="cig_per_day_TextChanged" PreviewTextInput="cig_per_day_PreviewTextInput"
-                 TabIndex="5" MinWidth="120" HorizontalAlignment="Center" />
+                 TabIndex="3" MinWidth="120" HorizontalAlignment="Center" />
         </GroupBox>
         <GroupBox Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2" Header="{x:Static p:Resources.statistics_EjuiceMlCost}">
             <TextBox x:Name="vap_ejuiceml_cost" AutoWordSelection="True" MaxLength="10" Padding="2"
                      TextChanged="vap_ejuiceml_cost_TextChanged" PreviewTextInput="vap_ejuiceml_cost_PreviewTextInput"
                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                     TabIndex="10" MinWidth="120" IsReadOnly="True" HorizontalAlignment="Center">
+                     TabIndex="8" MinWidth="120" IsReadOnly="True" HorizontalAlignment="Center">
                 <TextBox.ToolTip>
                     <StackPanel>
                         <TextBlock Text="{x:Static p:Resources.TooltipEJuicemlCost1}"/>
@@ -138,7 +138,7 @@
         <GroupBox Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" Header="{x:Static p:Resources.statistics_JuicePerDay}" VerticalAlignment="Center">
         <TextBox x:Name="vap_juice_consumption" AutoWordSelection="True" MaxLength="10" Padding="2"
                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                 TabIndex="11" MinWidth="120" HorizontalAlignment="Center" 
+                 TabIndex="7" MinWidth="120" HorizontalAlignment="Center" 
                  LostFocus="TxtBox_LostFocus" GotFocus="TxtBox_GotFocus"
                  PreviewTextInput="vap_juice_consumption_PreviewTextInput" TextChanged="vap_juice_consumption_TextChanged"/>
         </GroupBox>
@@ -166,7 +166,7 @@
         <TextBox x:Name="vap_daily_cost" MaxLength="10" Padding="2"
                  IsReadOnly="True"
                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                 MinWidth="120" HorizontalAlignment="Center" />
+                 MinWidth="120" HorizontalAlignment="Center" IsTabStop="False" />
         </GroupBox>
         <!--Row 10-->
         <GroupBox Grid.Column="3" Grid.Row="9" Grid.ColumnSpan="2" Header="{x:Static p:Resources.statistics_YearlyVapingCost}">
@@ -178,11 +178,11 @@
         <!--Row 11-->
             <Button x:Name="stats_reset" Grid.Column="1" Grid.Row="10" Margin="10,5"
                 Content="{x:Static p:Resources.Clear_Button}" Click="stats_reset_Click"
-                TabIndex="13" VerticalAlignment="Top">
+                TabIndex="11" VerticalAlignment="Top" IsCancel="True">
             </Button>
             <Button x:Name="stats_submit" Grid.Column="3" Grid.Row="10" Margin="20,5"
                 Content="{x:Static p:Resources.Save_Button}" Click="stats_submit_Click"
-                TabIndex="12" VerticalAlignment="Top"/>
+                TabIndex="10" VerticalAlignment="Top" IsDefault="True"/>
         </Grid>
     </ScrollViewer>
 </UserControl>

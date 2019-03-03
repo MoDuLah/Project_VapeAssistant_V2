@@ -40,13 +40,12 @@ namespace Vape_Assistant.Views
             snvNicotine_label.Visibility = Visibility.Collapsed;
             OS_Name_label.Visibility = Visibility.Collapsed;
             nicBooster_label.Visibility = Visibility.Hidden;
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
         }
 
         void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-
-            if (textBox != null && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+            if (sender is TextBox textBox && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
                 textBox.SelectAll();
         }
 
@@ -87,7 +86,6 @@ namespace Vape_Assistant.Views
             TextBox textBox = (TextBox)sender;
             if (textBox.Text == "")
             {
-                snvFinal_VG.IsTabStop = true;
                 return;
             }
             else
@@ -103,7 +101,6 @@ namespace Vape_Assistant.Views
                 // restore cursor position and selection
                 textBox.Select(start, length);
                 snvFinal_VG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
-                snvFinal_VG.IsTabStop = false;
             }
         }
         private void snvFinal_VG_TextChanged(object sender, TextChangedEventArgs e)
@@ -111,7 +108,6 @@ namespace Vape_Assistant.Views
             TextBox textBox = (TextBox)sender;
             if (textBox.Text == "")
             {
-                snvFinal_PG.TabIndex = 1;
                 return;
             }
             else
@@ -127,13 +123,31 @@ namespace Vape_Assistant.Views
                 // restore cursor position and selection
                 textBox.Select(start, length);
                 snvFinal_PG.Text = Convert.ToString(100 - Convert.ToDouble(textBox.Text));
-                snvFinal_PG.TabIndex = snvFinal_PG.TabIndex + 100;
             }
         }
 
-        private void snvFinal_Nic_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        private void snvFinal_Nic_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !IsDecAllowed(e.Text);
+            double wantedNic, niclevel;
+            wantedNic = Convert.ToDouble(e.Text);
+            niclevel = Convert.ToDouble(snvNicLevel.Text);
+            if (wantedNic > niclevel)
+            {
+                if (CurrentCulture == "en-US")
+                {
+                    caption = "Error";
+                    message = "Wanted Nicotine can't be higher than your Nicotine's strength.";
+                }
+                if (CurrentCulture == "el-GR")
+                {
+                    caption = "Σφάλμα";
+                    message = "Η επιθυμητή νικοτίνη δεν μπορεί να είναι μεγαλύτερη από την Νικοτίνη σας.";
+                }
+                AutoClosingMessageBox.Show(message, caption, autotimeout);
+
+                return;
+            }
         }
 
         private void nic_style_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -291,6 +305,14 @@ namespace Vape_Assistant.Views
             ClearTextBoxes(this);
             pgBase_label.Visibility = Visibility.Collapsed;
             vgBase_label.Visibility = Visibility.Collapsed;
+            TotalGrams_label.Visibility = Visibility.Collapsed;
+            snvFlavor_Label.Visibility = Visibility.Collapsed;
+            snvNicotine_label.Visibility = Visibility.Collapsed;
+            OS_Name_label.Visibility = Visibility.Collapsed;
+            snvFinal_PG.IsTabStop = true;
+            snvFinal_VG.IsTabStop = true;
+            snvMlFlv.IsTabStop = true;
+            snvFinalFlv.IsTabStop = true;
             snvBasPG_ml.Text = "0";
             snvBasVG_ml.Text = "0";
             snvNic_ml.Text = "0";
@@ -313,12 +335,7 @@ namespace Vape_Assistant.Views
                 {
                     tb.Text = "";
                 }
-                if (tb.IsReadOnly == true)
-                {
-                    if (tb.Name != "snvFinal_VG") { 
-                    tb.Visibility = Visibility.Collapsed;
-                    }
-                }
+
             }
             if (obj is ComboBox cb)
             {
@@ -877,23 +894,42 @@ namespace Vape_Assistant.Views
                         title = "Σφάλμα";
                     }
                     AutoClosingMessageBox.Show(message, title, autotimeout);
+                    textBox.SelectAll();
                 }
+            }
+        }
+
+        private void SnvFinal_PG_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!string.IsNullOrEmpty(textBox.Text))
+            {
+                snvFinal_VG.IsTabStop = false;
+            }
+            else
+            {
+                snvFinal_VG.IsTabStop = true;
+            }
+        }
+
+        private void SnvFinal_VG_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (!string.IsNullOrEmpty(textBox.Text))
+            {
+                snvFinal_PG.IsTabStop = false;
+            }
+            else
+            {
+                snvFinal_PG.IsTabStop = true;
             }
         }
 
         private static bool IsDecAllowed(string text)
         {
             string CurrentCulture = Settings.Default.Culture;
-            if (CurrentCulture == "en-US")
-            {
-                Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
-                return !regex.IsMatch(text);
-            }
-            else
-            {
-                Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
-                return !regex.IsMatch(text);
-            }
+            Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
+            return !regex.IsMatch(text);
         }
     }
 }

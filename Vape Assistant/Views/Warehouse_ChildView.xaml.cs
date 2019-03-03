@@ -34,7 +34,15 @@ namespace Vape_Assistant.Views
             BindComboBox(add_Brand);
             FillDataGrid();
             Warehousecount();
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
         }
+
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (sender is TextBox textBox && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
+        }
+
         private static bool IsDecAllowed(string text)
         {
             string CurrentCulture = Settings.Default.Culture;

@@ -24,8 +24,14 @@ namespace Vape_Assistant.Views
                 //Handler attach - will not be done if not needed
                 PreviewKeyDown += new KeyEventHandler(ShellsView.ShellView_PreviewKeyDown);
             }
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
         }
 
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (sender is TextBox textBox && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
+        }
 
         private void ohm_reset_Click(object sender, RoutedEventArgs e)
         {
@@ -37,10 +43,10 @@ namespace Vape_Assistant.Views
             voltslider.IsEnabled = true;
             resslider.IsEnabled = true;
             wattslider.IsEnabled = true;
-            ampsv.IsEnabled = true;
-            voltv.IsEnabled = true;
-            resv.IsEnabled = true;
-            wattv.IsEnabled = true;
+            ampsv.IsReadOnly = false;
+            voltv.IsReadOnly = false;
+            resv.IsReadOnly = false;
+            wattv.IsReadOnly = false;
             ohm_submit.IsEnabled = true;
             ohm_reset.IsEnabled = false;
         }
@@ -144,10 +150,10 @@ namespace Vape_Assistant.Views
                     voltslider.IsEnabled = false;
                     resslider.IsEnabled = false;
                     wattslider.IsEnabled = false;
-                    ampsv.IsEnabled = false;
-                    voltv.IsEnabled = false;
-                    resv.IsEnabled = false;
-                    wattv.IsEnabled = false;
+                    ampsv.IsReadOnly = true;
+                    voltv.IsReadOnly = true;
+                    resv.IsReadOnly = true;
+                    wattv.IsReadOnly = true;
                     ohm_reset.IsEnabled = true;
                 }
             }

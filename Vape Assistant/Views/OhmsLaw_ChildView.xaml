@@ -40,7 +40,7 @@
                             AutoWordSelection="True" MaxLength="10" MinWidth="100"
                             Text="{Binding Source={x:Reference ampsslider}, Path=Value, StringFormat=0.##}"
                             HorizontalContentAlignment="Right" 
-                            LostFocus="ampsv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting"/>
+                            LostFocus="ampsv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting" TabIndex="0"/>
                     <TextBlock Text="A (Amperes)" TextAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Slider x:Name="ampsslider" Value="0" Maximum="60" TickPlacement="BottomRight" TickFrequency="1">
@@ -71,7 +71,7 @@
                   Text="{Binding Source={x:Reference voltslider}, Path=Value, StringFormat=0.##}"
                   HorizontalContentAlignment="Right"
                   VerticalContentAlignment="Stretch" LostFocus="voltv_LostFocus"
-                  PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting"/>
+                  PreviewTextInput="textBox_PreviewTextInput" DataObject.Pasting="TextBoxPasting" TabIndex="1"/>
                     <TextBlock Text="V (Volts)" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Slider Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" x:Name="voltslider" Value="0" Maximum="16.8" TickPlacement="BottomRight"
@@ -103,7 +103,7 @@
                   Background="{x:Null}"
                   HorizontalContentAlignment="Right"
                   VerticalContentAlignment="Stretch"
-                 LostFocus="resv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" />
+                 LostFocus="resv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" TabIndex="2" />
                     <TextBlock Text="Ω (Ohms)" VerticalAlignment="Center" />
                 </StackPanel>
                 <Slider Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" x:Name="resslider" Value="0" Minimum="0" Maximum="3" LargeChange="1" TickPlacement="BottomRight" TickFrequency="0.01">
@@ -132,7 +132,7 @@
                  Text="{Binding Source={x:Reference wattslider}, Path=Value, StringFormat=0.#}" x:Name="wattv" 
                  Background="{x:Null}" AutoWordSelection="True"
                  HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch"
-                 LostFocus="wattv_LostFocus" PreviewTextInput="textBox_PreviewTextInput"/>
+                 LostFocus="wattv_LostFocus" PreviewTextInput="textBox_PreviewTextInput" TabIndex="3"/>
                     <TextBlock Grid.Column="2" Grid.Row="7" Text="W (Watts)"  VerticalAlignment="Center"/>
                 </StackPanel>
                 <Slider Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3" x:Name="wattslider" Value="0" Minimum="0" Maximum="400" TickPlacement="BottomRight" TickFrequency="5" MaxHeight="30">
@@ -156,7 +156,7 @@
 
         <TextBlock Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="3" Text="{x:Static properties:Resources.FirstTip}" Margin="10" HorizontalAlignment="Center" MaxHeight="20" />
 
-        <Button Grid.Column="0" Grid.Row="10" Padding="10" x:Name="ohm_reset" Content="{x:Static properties:Resources.Clear_Button}" Click="ohm_reset_Click" IsEnabled="False"/>
-        <Button Grid.Column="2" Grid.Row="10" Padding="10" x:Name="ohm_submit" Content="{x:Static properties:Resources.Calculate_Button}" Click="ohm_submit_Click"/>
+        <Button Grid.Column="0" Grid.Row="10" Padding="10" x:Name="ohm_reset" Content="{x:Static properties:Resources.Clear_Button}" Click="ohm_reset_Click" IsEnabled="False" TabIndex="5" IsCancel="True"/>
+        <Button Grid.Column="2" Grid.Row="10" Padding="10" x:Name="ohm_submit" Content="{x:Static properties:Resources.Calculate_Button}" Click="ohm_submit_Click" TabIndex="4" IsDefault="True"/>
     </Grid>
 </UserControl>

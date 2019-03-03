@@ -292,10 +292,6 @@ namespace Vape_Assistant.ViewModels
             {
                 ActivateItem(new Purchases_ChildViewModel());
             }
-            else
-            {
-                //ActivateItem(new TenthChildViewModel());
-            }
         }
     }
 }

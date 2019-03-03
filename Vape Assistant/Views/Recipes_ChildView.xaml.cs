@@ -38,7 +38,15 @@ namespace Vape_Assistant.Views
             }
             dbConn = new SQLiteConnection(connectionString);
             HideTheRest();
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
         }
+
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (sender is TextBox textBox && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
+        }
+
         public void RecipeBrandComboBox(ComboBox comboBoxName)
         {
             dbConn = new SQLiteConnection(connectionString);

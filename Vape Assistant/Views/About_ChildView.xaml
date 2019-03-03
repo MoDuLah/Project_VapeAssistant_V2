@@ -102,13 +102,22 @@
         </GroupBox>
         <GroupBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
             <GroupBox.Header>
-                <TextBlock Grid.Row="5" Grid.Column="1" Text="{x:Static p:Resources.vendor_Website}"/>
+                <TextBlock Grid.Row="5" Grid.Column="1" Text="{x:Static p:Resources.Fb}"/>
             </GroupBox.Header>
-            <TextBlock Margin="10,5">
-                    <Hyperlink NavigateUri="https://vape-assistant.com" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
-                <Run Text="{x:Static p:Resources.Website}" Foreground="White" TextDecorations="underline" />
+            <StackPanel>
+            <TextBlock Margin="10,5" HorizontalAlignment="Left">
+                    <Hyperlink NavigateUri="https://www.facebook.com/VapeAssistant" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
+                            <Image Source="/Vape Assistant;component/Images/Facebook_96px.png" Width="24"/>
+                            <Run Text="Vape Assistant Page" Foreground="White" TextDecorations="Underline"/>
                 </Hyperlink>
             </TextBlock>
+            <TextBlock Margin="10,5" HorizontalAlignment="Right">
+                    <Hyperlink NavigateUri="https://www.facebook.com/groups/VapeAssistant/" RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="{x:Null}">
+                            <Image Source="/Vape Assistant;component/Images/Facebook_96px.png" Width="24"/>
+                            <Run Text="Vape Assistant Group" Foreground="White" TextDecorations="Underline"/>
+                </Hyperlink>
+            </TextBlock>
+            </StackPanel>
         </GroupBox>
         <GroupBox Grid.Row="1" Grid.Column="0" Header="{x:Static p:Resources.about_donationHdr}" HorizontalAlignment="left" VerticalAlignment="Bottom">
             <Button x:Name="btnDonate" HorizontalAlignment="Center" Click="BtnDonate_Click">

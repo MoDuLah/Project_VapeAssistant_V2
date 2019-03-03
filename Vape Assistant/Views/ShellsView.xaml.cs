@@ -53,18 +53,8 @@ namespace Vape_Assistant.Views
             MyNotifyIcon.MouseDoubleClick +=
                 new System.Windows.Forms.MouseEventHandler
                     (MyNotifyIcon_MouseDoubleClick);
-            if (IsAdministrator == true)
+            if (IsAdministrator == false)
             {
-                titlebar.Text = titlebar.Text + " [Administrator]";
-            }
-            else
-            {
-                if (CurrentCulture == eng)
-                {
-                    message = "To avoid any problems you should run this program as Administrator.";
-                    message += "\n\nTo do that do:\nRight-Click on the shortcut and select [Run As Administrator]";
-                    caption = "Error";
-                }
                 if (CurrentCulture == gr)
                 {
                     message = "Για την αποφυγή προβλημάτων το πρόγραμμα θα πρέπει να εκτελέστει σαν Διαχειριστής.";
@@ -72,9 +62,13 @@ namespace Vape_Assistant.Views
                     message += "\n[Εκτέλεση ως Διαχειριστής].";
                     caption = "Σφάλμα";
                 }
+                else
+                {
+                        message = "To avoid any problems you should run this program as Administrator.";
+                        message += "\n\nTo do that do:\nRight-Click on the shortcut and select [Run As Administrator]";
+                        caption = "Error";
+                }
                 MessageBox.Show(message, caption, MessageBoxButton.OK, MessageBoxImage.Warning);
-                Application.Current.Shutdown();
-                return;
             }
             string CustomVersion = VapeAssistant.Title;
 

@@ -22,6 +22,7 @@ namespace Vape_Assistant.Views
             gb_nicml.Visibility = Visibility.Collapsed;
             gb_nicbtl.Visibility = Visibility.Collapsed;
             gb_totcost.Visibility = Visibility.Collapsed;
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
         }
         private static string fixdec(string value)
         {
@@ -174,12 +175,18 @@ namespace Vape_Assistant.Views
             // restore cursor position and selection
             textBox.Select(start, length);
         }
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+
+            if (textBox != null && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
+        }
 
         private static bool IsTextAllowed(string text)
         {
             int count = 0;
             int autotimeout = 5000;
-
 
 
             string CurrentCulture = Settings.Default.Culture;

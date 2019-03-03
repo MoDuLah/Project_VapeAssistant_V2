@@ -1325,20 +1325,8 @@ namespace Vape_Assistant.Views
 
         private static bool IsDecAllowed(string text)
         {
-
-            string CurrentCulture = Settings.Default.Culture;
-            if (CurrentCulture == "en-US")
-            {
-                Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
-                Regex re = new Regex("^\\d{1,2}([.]\\d{1})$");
-                return !re.IsMatch(text);
-            }
-            else
-            {
-                //Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
-                Regex re = new Regex("^\\d{1,2}([,]\\d{1})$");
-                return !re.IsMatch(text);
-            }
+            Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
+            return !regex.IsMatch(text);
         }
 
         private void Change_Total(object sender, KeyEventArgs e)

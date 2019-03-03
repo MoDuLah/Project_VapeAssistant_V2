@@ -1408,6 +1408,24 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://fb.me/VapeAssistant.
+        /// </summary>
+        public static string FacebookPage {
+            get {
+                return ResourceManager.GetString("FacebookPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facebook.
+        /// </summary>
+        public static string Fb {
+            get {
+                return ResourceManager.GetString("Fb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Facebook Group.
         /// </summary>
         public static string FbGroup {

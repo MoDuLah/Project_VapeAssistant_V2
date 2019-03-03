@@ -40,7 +40,15 @@ namespace Vape_Assistant.Views
             getRecipes();
             HideFlavs();
             HideNic();
+            EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
         }
+
+        void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (sender is TextBox textBox && !textBox.IsReadOnly && e.KeyboardDevice.IsKeyDown(Key.Tab))
+                textBox.SelectAll();
+        }
+
         private void HideFlavs()
         {
             RecScroll.Visibility = Visibility.Hidden;

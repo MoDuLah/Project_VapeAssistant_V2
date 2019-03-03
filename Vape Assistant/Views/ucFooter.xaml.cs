@@ -29,7 +29,7 @@ namespace Vape_Assistant.Views
         private List<ImageSource> Images = new List<ImageSource>();
         private static string[] ValidImageExtensions = new[] { ".png", ".jpg", ".jpeg", ".bmp", ".gif" };
         private static string[] TransitionEffects = new[] { "Fade" };
-        private string TransitionType, strImagePath = "";
+        private string TransitionType;
         private int CurrentSourceIndex, CurrentCtrlIndex, EffectIndex = 0, IntervalTimer = 1;
         public string removeString = "";
         public int index = 0;
@@ -38,6 +38,7 @@ namespace Vape_Assistant.Views
         public bool clicked = false;
         public bool pause = false;
         public string CurrentCulture = Settings.Default.Culture;
+        string strImagePath = Settings.Default.ImagePath;
         DirectoryInfo ch;
 
         public ucFooter()
@@ -49,7 +50,21 @@ namespace Vape_Assistant.Views
 
             //Initialize Image control, Image directory path and Image timer.
             IntervalTimer = Convert.ToInt32(Settings.Default.IntervalTime);
-            strImagePath = Settings.Default.ImagePath;
+
+            string path = AppDomain.CurrentDomain.BaseDirectory + strImagePath;
+            if (!Directory.Exists(path))
+            {
+                ch = Directory.CreateDirectory(path);
+                ch.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+            }
+            else
+            {
+                ch = new DirectoryInfo(path)
+                {
+                    Attributes = FileAttributes.Directory | FileAttributes.Hidden
+                };
+
+            }
             ImageControls = new[] { myImage, myImage2 };
 
             LoadImageFolder(strImagePath);
@@ -64,15 +79,29 @@ namespace Vape_Assistant.Views
         private void GetImagesInFolder()
         {
             int i = 0;
+            string path = AppDomain.CurrentDomain.BaseDirectory + strImagePath;
+            if (!Directory.Exists(path))
+            {
+                ch = Directory.CreateDirectory(path);
+                ch.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+            }
+            else
+            {
+                ch = new DirectoryInfo(path)
+                {
+                    Attributes = FileAttributes.Directory | FileAttributes.Hidden
+                };
+
+            }
             
             string v = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
             TextBox[] adlink = { adlink1, adlink2, adlink3, adlink4, adlink5, adlink6, adlink7, adlink8, adlink9, adlink10 };
-            string BannerPath = AppDomain.CurrentDomain.BaseDirectory + @"Images\banners\";
+            string BannerPath = path;
             Array.ForEach(Directory.GetFiles(BannerPath), File.Delete);
-            string fileName = BannerPath + "update."+ v +"."+ CurrentCulture + ".txt";
+            string fileName = BannerPath + @"\update."+ v +"."+ CurrentCulture + ".txt";
             string timeStamp = DateTime.Now.ToString("yyyy.MM.dd");
             string remoteaddress = "https://vapeassistant.000webhostapp.com/updates/" + @"update." + CurrentCulture +".txt";
-            string localpath = BannerPath + @"update." + v + "." + CurrentCulture + ".txt";
+            string localpath = BannerPath + @"\update." + v + "." + CurrentCulture + ".txt";
             string extension = ".png";
             WebClient Client = new WebClient();
             if (!File.Exists(fileName))
@@ -103,11 +132,11 @@ namespace Vape_Assistant.Views
                             {
                                 if (value.StartsWith("https://vapeassistant"))
                                 {
-                                    if (!File.Exists(BannerPath + i + extension))
+                                    if (!File.Exists(BannerPath + @"\" + i + extension))
                                     {
                                         try
                                         {
-                                            Client.DownloadFile(value, BannerPath + i + extension);
+                                            Client.DownloadFile(value, BannerPath + @"\" + i + extension);
                                         }
                                         catch (Exception dx)
                                         {
