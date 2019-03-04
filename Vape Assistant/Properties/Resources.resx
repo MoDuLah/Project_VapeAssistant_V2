@@ -1255,4 +1255,7 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="Fb" xml:space="preserve">
     <value>Facebook</value>
   </data>
+  <data name="vendor_Add" xml:space="preserve">
+    <value>Add Vendor</value>
+  </data>
 </root>

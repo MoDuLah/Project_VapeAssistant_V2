@@ -3190,6 +3190,15 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Vendor.
+        /// </summary>
+        public static string vendor_Add {
+            get {
+                return ResourceManager.GetString("vendor_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
         public static string vendor_Address {

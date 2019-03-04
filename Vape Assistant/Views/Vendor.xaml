@@ -16,150 +16,179 @@
         <ImageBrush ImageSource="/Vape Assistant;component/Images/BG2.png" Stretch="UniformToFill" Opacity="0.99"/>
     </Window.Background>
     <Grid>
-    <Image Panel.ZIndex="1" Width="24" Margin="10,10" Source="/Vape Assistant;component/Images/Hover/Close Window_Hover_32px.png" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-    <TabControl>
-        <TabItem>
-            <TabItem.Header>
-                <StackPanel Orientation="Vertical" Margin="5,0">
-                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Admin_32px.png" VerticalAlignment="Center" Width="25"/>
-                    <TextBlock Text="{x:Static p:Resources.vendor_tabitem1}" VerticalAlignment="Center"/>
-                </StackPanel>
-            </TabItem.Header>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="26"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border  Background="#FF424242" Grid.Row="0" Margin="0,0,0,0"  CornerRadius="5,5,0,0" >
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="35"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="26"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <GroupBox x:Name="vendor_Name" Header="{x:Static p:Resources.vendor_Name}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <TextBox x:Name="add_vendorName" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Column="1" x:Name="vendor_Address" Header="{x:Static p:Resources.vendor_Address}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <TextBox x:Name="add_Address" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Column="2" x:Name="vendor_PostCode" Header="{x:Static p:Resources.vendor_PostCode}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <TextBox x:Name="add_PostCode" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Column="3" x:Name="vendor_Website" Header="{x:Static p:Resources.vendor_Website}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <TextBox Grid.Row="2" Grid.Column="4" x:Name="add_Website" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-
-                <GroupBox Grid.Row="1" Grid.Column="0" x:Name="vendor_Country" Header="{x:Static p:Resources.vendor_Country}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <ComboBox x:Name="add_Country" MinWidth="120" VerticalAlignment="Center" HorizontalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="1" Grid.Column="1" x:Name="vendor_City" Header="{x:Static p:Resources.vendor_City}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <TextBox x:Name="add_City"  MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="1" Grid.Column="2" x:Name="vendor_Telephone" Header="{x:Static p:Resources.vendor_Telephone}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <TextBox x:Name="add_Telephone" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="1" Grid.Column="3" x:Name="vendor_County" Header="{x:Static p:Resources.vendor_County}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                    <TextBox x:Name="add_County" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="2" x:Name="vendor_Active" Header="{x:Static p:Resources.vendor_Active}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                    <CheckBox x:Name="add_Active" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </GroupBox>
-                <TextBox x:Name="add_txt_Id" Visibility="Collapsed" IsReadOnly="True"/>
-                <Button Grid.Row="2" Grid.Column="3" x:Name="Vendor_add" Cursor="Hand" MinWidth="100" Click="Vendor_add_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Admin_32px.png" VerticalAlignment="Center" Width="20"/>
-                        <TextBlock Text="{x:Static p:Resources.Save_Button}" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
-                <!-- Click="Button_Click"-->
-                <TextBox x:Name="add_errorcatch" Visibility="Hidden" />
+                <Image Grid.Column="0" Source="pack://siteoforigin:,,,/favicon.ico" Width="24" HorizontalAlignment="left" Margin="5,2" MaxWidth="24" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" x:Name="titlebar" Text="{x:Static p:Resources.vendor_Add}" Foreground="White" FontSize="14" Margin="5,0,0,0" VerticalAlignment="Center" MouseDown="Titlebar_MouseDown"/>
+                <Image Grid.Column="3" x:Name="btn_Close" Width="24" MouseLeftButtonUp="btn_Close_MouseLeftButtonUp" VerticalAlignment="Center">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_32px.png"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_Hover_32px.png"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.ToolTip>
+                        <TextBlock Text="{x:Static p:Resources.btn_CloseWindow}"/>
+                    </Image.ToolTip>
+                </Image>
             </Grid>
-        </TabItem>
-        <TabItem Padding="20,0" IsTabStop="False">
-            <TabItem.Header>
-                <StackPanel Orientation="Vertical" Margin="5,0">
-                    <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" VerticalAlignment="Center" Width="25"/>
-                    <TextBlock Text="{x:Static p:Resources.vendor_tabitem2}" VerticalAlignment="Center"/>
-                </StackPanel>
-            </TabItem.Header>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="0*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <GroupBox Grid.Column="0" Header="{x:Static p:Resources.vendor_Vendor}">
-                    <ComboBox x:Name="purchase_vendor" SelectedValuePath="Content" DisplayMemberPath="Vendors" ItemsSource="{Binding}" HorizontalAlignment="Center" MinWidth="120" 
+        </Border>
+        <TabControl Grid.Row="1">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Vertical" Margin="5,0">
+                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Admin_32px.png" VerticalAlignment="Center" Width="25"/>
+                        <TextBlock Text="{x:Static p:Resources.vendor_tabitem1}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox x:Name="vendor_Name" Header="{x:Static p:Resources.vendor_Name}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <TextBox x:Name="add_vendorName" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" x:Name="vendor_Address" Header="{x:Static p:Resources.vendor_Address}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <TextBox x:Name="add_Address" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Column="2" x:Name="vendor_PostCode" Header="{x:Static p:Resources.vendor_PostCode}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <TextBox x:Name="add_PostCode" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Column="3" x:Name="vendor_Website" Header="{x:Static p:Resources.vendor_Website}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <TextBox Grid.Row="2" Grid.Column="4" x:Name="add_Website" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Grid.Column="0" x:Name="vendor_Country" Header="{x:Static p:Resources.vendor_Country}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <ComboBox x:Name="add_Country" MinWidth="120" VerticalAlignment="Center" HorizontalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.Column="1" x:Name="vendor_City" Header="{x:Static p:Resources.vendor_City}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <TextBox x:Name="add_City"  MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.Column="2" x:Name="vendor_Telephone" Header="{x:Static p:Resources.vendor_Telephone}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <TextBox x:Name="add_Telephone" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.Column="3" x:Name="vendor_County" Header="{x:Static p:Resources.vendor_County}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        <TextBox x:Name="add_County" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="2" Grid.Column="2" x:Name="vendor_Active" Header="{x:Static p:Resources.vendor_Active}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <CheckBox x:Name="add_Active" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </GroupBox>
+                    <TextBox x:Name="add_txt_Id" Visibility="Collapsed" IsReadOnly="True"/>
+                    <Button Grid.Row="2" Grid.Column="3" x:Name="Vendor_add" Cursor="Hand" MinWidth="100" Click="Vendor_add_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Vape Assistant;component/Images/menuIconsLight/Admin_32px.png" VerticalAlignment="Center" Width="20"/>
+                            <TextBlock Text="{x:Static p:Resources.Save_Button}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <!-- Click="Button_Click"-->
+                    <TextBox x:Name="add_errorcatch" Visibility="Hidden" />
+                </Grid>
+            </TabItem>
+            <TabItem Padding="20,0" IsTabStop="False">
+                <TabItem.Header>
+                    <StackPanel Orientation="Vertical" Margin="5,0">
+                        <Image Source="/Vape Assistant;component/Images/menuIconsLight/Edit File_32px.png" VerticalAlignment="Center" Width="25"/>
+                        <TextBlock Text="{x:Static p:Resources.vendor_tabitem2}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Grid.Column="0" Header="{x:Static p:Resources.vendor_Vendor}">
+                        <ComboBox x:Name="purchase_vendor" SelectedValuePath="Content" DisplayMemberPath="Vendors" ItemsSource="{Binding}" HorizontalAlignment="Center" MinWidth="120" 
                           VerticalContentAlignment="Center" VerticalAlignment="Center" SelectionChanged="purchase_vendor_SelectionChanged"/>
-                </GroupBox>
-                <TextBox Grid.Row="1" Grid.Column="2" x:Name="edit_txt_Id" Margin="0,0,0,0" IsReadOnly="True" VerticalAlignment="Center"
+                    </GroupBox>
+                    <TextBox Grid.Row="1" Grid.Column="2" x:Name="edit_txt_Id" Margin="0,0,0,0" IsReadOnly="True" VerticalAlignment="Center"
                          VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" BorderThickness="2" Visibility="Hidden" />
 
-                <Button Grid.Column="2" x:Name="edit_Submit" MinWidth="100" Content="{x:Static p:Resources.vendor_edit}" Click="edit_Submit_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Button Grid.Column="2" x:Name="edit_Submit" MinWidth="100" Content="{x:Static p:Resources.vendor_edit}" Click="edit_Submit_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <Button Grid.Column="3" x:Name="edit_delete" MinWidth="100" Content="{x:Static p:Resources.vendor_delete}" Margin="5,0"  Click="edit_delete_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Button Grid.Column="3" x:Name="edit_delete" MinWidth="100" Content="{x:Static p:Resources.vendor_delete}" Margin="5,0"  Click="edit_delete_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                <GroupBox Grid.Row="1" Grid.Column="0" Header="{x:Static p:Resources.vendor_Name}">
-                    <TextBox x:Name="edit_vendorName" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="1" Grid.Column="1" Header="{x:Static p:Resources.vendor_Address}" >
-                    <TextBox x:Name="edit_Address" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="1" Grid.Column="2" Header="{x:Static p:Resources.vendor_PostCode}" >
-                    <TextBox x:Name="edit_PostCode" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="1" Grid.Column="3" Header="{x:Static p:Resources.vendor_Website}" HorizontalAlignment="Center">
-                    <TextBox x:Name="edit_Website" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.Column="0" Header="{x:Static p:Resources.vendor_Name}">
+                        <TextBox x:Name="edit_vendorName" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.Column="1" Header="{x:Static p:Resources.vendor_Address}" >
+                        <TextBox x:Name="edit_Address" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.Column="2" Header="{x:Static p:Resources.vendor_PostCode}" >
+                        <TextBox x:Name="edit_PostCode" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.Column="3" Header="{x:Static p:Resources.vendor_Website}" HorizontalAlignment="Center">
+                        <TextBox x:Name="edit_Website" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
 
-                <GroupBox Grid.Row="2" Grid.Column="0" Header="{x:Static p:Resources.vendor_Country}" >
-                    <ComboBox x:Name="edit_Country" MinWidth="120" SelectedValuePath="Content"/>
-                </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="1" Header="{x:Static p:Resources.vendor_City}">
-                    <TextBox  x:Name="edit_City" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="2" Header="{x:Static p:Resources.vendor_Telephone}">
-                    <TextBox  x:Name="edit_Telephone" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="3" Header="{x:Static p:Resources.vendor_Active}">
-                    <CheckBox x:Name="edit_Active" VerticalAlignment="Center" HorizontalAlignment="Center" Width="16" />
-                </GroupBox>
+                    <GroupBox Grid.Row="2" Grid.Column="0" Header="{x:Static p:Resources.vendor_Country}" >
+                        <ComboBox x:Name="edit_Country" MinWidth="120" SelectedValuePath="Content"/>
+                    </GroupBox>
+                    <GroupBox Grid.Row="2" Grid.Column="1" Header="{x:Static p:Resources.vendor_City}">
+                        <TextBox  x:Name="edit_City" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="2" Grid.Column="2" Header="{x:Static p:Resources.vendor_Telephone}">
+                        <TextBox  x:Name="edit_Telephone" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </GroupBox>
+                    <GroupBox Grid.Row="2" Grid.Column="3" Header="{x:Static p:Resources.vendor_Active}">
+                        <CheckBox x:Name="edit_Active" VerticalAlignment="Center" HorizontalAlignment="Center" Width="16" />
+                    </GroupBox>
 
-                <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Load_table_txt" Content="{x:Static p:Resources.vendor_Load}"
+                    <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Load_table_txt" Content="{x:Static p:Resources.vendor_Load}"
                             Click="Load_table" MinWidth="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,0"/>
 
 
-                <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Top" x:Name="ViewEntries" AutoGenerateColumns="True" MinHeight="100"
+                    <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Top" x:Name="ViewEntries" AutoGenerateColumns="True" MinHeight="100"
                               Height="300" 
                     LoadingRow="DataGrid_LoadingRow" 
                   EnableColumnVirtualization="True" IsReadOnly="True"
                   Background="#FF242424" MaxHeight="500"
                   AlternatingRowBackground="#FF424242"  AlternationCount="-1"
                   FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101">
-                    <DataGrid.Resources>
-                        <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
-                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                        </Style>
-                    </DataGrid.Resources>
-                </DataGrid>
-            </Grid>
-        </TabItem>
-    </TabControl>
+                        <DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </DataGrid.Resources>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

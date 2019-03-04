@@ -1546,6 +1546,10 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Facebook</source>
           <target state="final">Facebook</target>
         </trans-unit>
+        <trans-unit id="vendor_Add" translate="yes" xml:space="preserve">
+          <source>Add Vendor</source>
+          <target state="new">Add Vendor</target>
+        </trans-unit>
       </group>
     </body>
   </file>

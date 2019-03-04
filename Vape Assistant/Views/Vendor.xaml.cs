@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Vape_Assistant.Properties;
 
 namespace Vape_Assistant
@@ -476,6 +477,19 @@ namespace Vape_Assistant
                     edit_Active.IsChecked = false;
             }
 
+        }
+
+        private void btn_Close_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Close(); //closing this splash screen
+        }
+
+        private void Titlebar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
         }
 
         private void edit_delete_Click(object sender, RoutedEventArgs e)
