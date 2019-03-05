@@ -1143,8 +1143,10 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Nicotine Cost</target>
         </trans-unit>
         <trans-unit id="about_change_0028" translate="no" xml:space="preserve">
-          <source></source>
-          <target state="final"></target>
+          <source>- Recipes increased MinHeight Percentage entry.
+- Synthesize increased mg/ml Minheight.</source>
+          <target state="final">- Recipes increased MinHeight Percentage entry.
+- Synthesize increased mg/ml Minheight.</target>
         </trans-unit>
         <trans-unit id="synth_Total" translate="no" xml:space="preserve">
           <source>Total</source>
@@ -1546,9 +1548,43 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Facebook</source>
           <target state="final">Facebook</target>
         </trans-unit>
-        <trans-unit id="vendor_Add" translate="yes" xml:space="preserve">
+        <trans-unit id="vendor_Add" translate="no" xml:space="preserve">
           <source>Add Vendor</source>
-          <target state="new">Add Vendor</target>
+          <target state="final">Add Vendor</target>
+        </trans-unit>
+        <trans-unit id="about_change_0029" translate="no" xml:space="preserve">
+          <source>- Purchases fix Order ID Textbox, Datagrid On View issues.
+- Warehouse/Joice Log Fixes on MaxHeight on Datagrid.
+- Juice Log reduce Amount column width, Ratio column width.
+- Juice Log Increase Name Width.</source>
+          <target state="final">- Purchases fix Order ID Textbox, Datagrid On View issues.
+- Warehouse/Joice Log Fixes on MaxHeight on Datagrid.
+- Juice Log reduce Amount column width, Ratio column width.
+- Juice Log Increase Name Width.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0030" translate="no" xml:space="preserve">
+          <source>- Warehouse reduce Amount column width.
+- Synthesize Fix top row and buttons.
+- Added translations Credit in About.</source>
+          <target state="final">- Warehouse reduce Amount column width.
+- Synthesize Fix top row and buttons.
+- Added translations Credit in About.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0031" translate="no" xml:space="preserve">
+          <source>- Flavors Owned sqlite crash fix.
+- Fixed Have it? checkbox after save to reset to initial state.
+- Bases Mix: Adjust Total Mix values Formatting.
+- Bases Mix: Fixed values in Total Mix not reseting after Clear.
+- Juice Log fixed appearence of Add/Edit panel.
+- Recipes: Removed a Messagebox on Flavor delete.
+- Synthesize: Fixed a display issue after synthesize.</source>
+          <target state="final">- Flavors Owned sqlite crash fix.
+- Fixed Have it? checkbox after save to reset to initial state.
+- Bases Mix: Adjust Total Mix values Formatting.
+- Bases Mix: Fixed values in Total Mix not reseting after Clear.
+- Juice Log fixed appearence of Add/Edit panel.
+- Recipes: Removed a Messagebox on Flavor delete.
+- Synthesize: Fixed a display issue after synthesize.</target>
         </trans-unit>
       </group>
     </body>

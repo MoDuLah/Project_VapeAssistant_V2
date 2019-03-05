@@ -225,6 +225,10 @@ namespace Vape_Assistant.Views
         private void mb_reset_Click(object sender, RoutedEventArgs e)
         {
             ClearTextBoxes(this);
+            mix_totalnic.Text = null;
+            mix_pgvgratio.Text = null;
+            mix_pgvgvolume.Text = null;
+            mix_totalvolume.Text = null;
             mb_submit.IsEnabled = true;
             mb_reset.IsEnabled = false;
         }

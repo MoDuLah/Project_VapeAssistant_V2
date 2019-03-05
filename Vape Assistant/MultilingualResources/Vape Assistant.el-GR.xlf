@@ -1142,8 +1142,10 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Κόστος Νικοτίνης</target>
         </trans-unit>
         <trans-unit id="about_change_0028" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="final"></target>
+          <source>- Recipes increased MinHeight Percentage entry.
+- Synthesize increased mg/ml Minheight.</source>
+          <target state="final">- Συνταγές: Αυξηση στο ελάχιστο ύψος στο πεδίο %.
+- Σύνθεση: Αυξηση στο ελάχιστο ύψος στο πεδίο mg/ml.</target>
         </trans-unit>
         <trans-unit id="synth_Total" translate="yes" xml:space="preserve">
           <source>Total</source>
@@ -1547,7 +1549,41 @@ If you decline and keep the default pin-code you will be asked the next time you
         </trans-unit>
         <trans-unit id="vendor_Add" translate="yes" xml:space="preserve">
           <source>Add Vendor</source>
-          <target state="new">Add Vendor</target>
+          <target state="final">Προσθήκη Πωλητή</target>
+        </trans-unit>
+        <trans-unit id="about_change_0029" translate="yes" xml:space="preserve">
+          <source>- Purchases fix Order ID Textbox, Datagrid On View issues.
+- Warehouse/Joice Log Fixes on MaxHeight on Datagrid.
+- Juice Log reduce Amount column width, Ratio column width.
+- Juice Log Increase Name Width.</source>
+          <target state="final">- Αγορές: Διόρθωση στο πεδίο Αρ. Παραγγελίας, Διορθώσεις στην εμφάνηση των στοιχείων.
+- Αποθήκη/Ιστορικό υγρών: Διορθώσεις στο μέγιστο ύψος.
+- Ιστορικό υγρών: Μείωση στο μήκος της στήλης των Ποσότητα, Αναλογία.
+- Ιστορικό υγρών: Juice Log Increase Name Width.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0030" translate="yes" xml:space="preserve">
+          <source>- Warehouse reduce Amount column width.
+- Synthesize Fix top row and buttons.
+- Added translations Credit in About.</source>
+          <target state="final">- Αποθήκη: Μείωση στο μήκος της στήλης Ποσότητα.
+- Σύνθεση: Διόρθωση της πρώτης σειράς και των κουμπιών.
+- Σχετικά: Προσθήκη επαίνου στους Μεταφραστές.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0031" translate="yes" xml:space="preserve">
+          <source>- Flavors Owned sqlite crash fix.
+- Fixed Have it? checkbox after save to reset to initial state.
+- Bases Mix: Adjust Total Mix values Formatting.
+- Bases Mix: Fixed values in Total Mix not reseting after Clear.
+- Juice Log fixed appearence of Add/Edit panel.
+- Recipes: Removed a Messagebox on Flavor delete.
+- Synthesize: Fixed a display issue after synthesize.</source>
+          <target state="final">- Αρώματα: Διόρθωση σφάλματος κατά την καταχώρηση.
+- Αρώματα: Διόρθωση του Checkbox μετά την αποθήκευση.
+- Μίξη Βάσεων: Προσαρμογή των τιμών Συνολικού Μείγματος.
+- Μίξη Βάσεων: Διόρθωση στις επαναφορά των τιμών του Συνολικού Μείγματος μετά τον καθαρισμό.
+- Ιστορικό Υγρών: Διόθρωση στην εμφάνιση στον πίνακα Προσθήκη/Επεξεργασία.
+- Συνταγές: Αφαιρέθηκε ένα πλαίσιο μηνυμάτων κατά τη διαγραφή γεύσης.
+- Σύνθεση: Διορθώθηκε ένα ζήτημα εμφάνησης μετά τη σύνθεση.</target>
         </trans-unit>
       </group>
     </body>

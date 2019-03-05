@@ -135,7 +135,18 @@
                       MaxHeight="250" Padding="2"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
                       HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0" BorderThickness="0" Background="{x:Null}">
-                
+                <TreeViewItem Header="2019/03/03 - 2.3.7003">
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0031}" TextWrapping="Wrap"/>
+                </TreeViewItem>
+                <TreeViewItem Header="2019/03/02 - 2.3.7002">
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0030}" TextWrapping="Wrap"/>
+                </TreeViewItem>
+                <TreeViewItem Header="2019/03/02 - 2.3.7001">
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0029}" TextWrapping="Wrap"/>
+                </TreeViewItem>
+                <TreeViewItem Header="2019/03/01 - 2.3.7000">
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0028}" TextWrapping="Wrap"/>
+                </TreeViewItem>
                 <TreeViewItem Header="2019/01/26 - 2.3.6965">
                     <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0027}" TextWrapping="Wrap"/>
                 </TreeViewItem>

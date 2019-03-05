@@ -232,6 +232,7 @@ namespace Vape_Assistant.Views
 
         private void app_restart_Click(object sender, RoutedEventArgs e)
         {
+            Settings.Default.Save();
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
         }

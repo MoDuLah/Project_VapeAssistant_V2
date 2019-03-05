@@ -82,7 +82,7 @@
             <CheckBox x:Name="Owned_y_n" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
         </GroupBox>
 
-        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="flv_add" MinWidth="100" Content="{x:Static p:Resources.Save_Button}" Click="flv_add_Click" IsDefault="True" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="flv_add" MinWidth="100" Content="{x:Static p:Resources.Save_Button}" Click="flv_add_Click" IsDefault="True" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
         <TextBox Grid.Row="10" Grid.Column="2" x:Name="add_flv_id" Visibility="Collapsed"/>
     </Grid>

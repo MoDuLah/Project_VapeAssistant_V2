@@ -160,7 +160,7 @@
                 </StackPanel>
             </Border>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="EditLogElementInputBox" Visibility="Collapsed">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="EditLogElementInputBox" Visibility="Visible">
             <Grid Background="#4c4c4c" Opacity="0.6">
             </Grid>
             <Border MinWidth="300"
@@ -168,10 +168,11 @@
                     HorizontalAlignment="Center" 
                     VerticalAlignment="Center">
                 <StackPanel Margin="20">
-                    <GroupBox Header="{x:Static p:Resources.log_Edit}">
+                    <GroupBox Header="{x:Static p:Resources.log_Edit}" HorizontalAlignment="Center">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition />
+                                <RowDefinition MinHeight="30"/>
                                 <RowDefinition MinHeight="30"/>
                                 <RowDefinition MinHeight="30"/>
                                 <RowDefinition MinHeight="30"/>
@@ -207,12 +208,12 @@
                             <TextBlock Text="{x:Static p:Resources.log_Notes}" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center"/>
                             <TextBox x:Name="Edit_LogNotes" Grid.Row="6" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TabIndex="6" MaxLength="128" TextChanged="Edit_LogNotes_TextChanged"/>
                             <TextBlock x:Name="Edit_LogNotesLimit" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10" Margin="0,0,10,0" Text="(128)"/>
+                            <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button x:Name="EditLogCancelButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="EditLogCancelButton_Click"/>
+                                <Button x:Name="EditLogUpdateButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="EditLogUpdateButton_Click"/>
+                            </StackPanel>
                         </Grid>
                     </GroupBox>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="EditLogCancelButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="EditLogCancelButton_Click"/>
-                        <Button x:Name="EditLogUpdateButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="EditLogUpdateButton_Click"/>
-                    </StackPanel>
                 </StackPanel>
             </Border>
 

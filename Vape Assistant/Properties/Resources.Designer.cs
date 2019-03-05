@@ -355,11 +355,50 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to - Recipes increased MinHeight Percentage entry.
+        ///- Synthesize increased mg/ml Minheight..
         /// </summary>
         public static string about_change_0028 {
             get {
                 return ResourceManager.GetString("about_change_0028", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Purchases fix Order ID Textbox, Datagrid On View issues.
+        ///- Warehouse/Joice Log Fixes on MaxHeight on Datagrid.
+        ///- Juice Log reduce Amount column width, Ratio column width.
+        ///- Juice Log Increase Name Width..
+        /// </summary>
+        public static string about_change_0029 {
+            get {
+                return ResourceManager.GetString("about_change_0029", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Warehouse reduce Amount column width.
+        ///- Synthesize Fix top row and buttons.
+        ///- Added translations Credit in About..
+        /// </summary>
+        public static string about_change_0030 {
+            get {
+                return ResourceManager.GetString("about_change_0030", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Flavors Owned sqlite crash fix.
+        ///- Fixed Have it? checkbox after save to reset to initial state.
+        ///- Bases Mix: Adjust Total Mix values Formatting.
+        ///- Bases Mix: Fixed values in Total Mix not reseting after Clear.
+        ///- Juice Log fixed appearence of Add/Edit panel.
+        ///- Recipes: Removed a Messagebox on Flavor delete.
+        ///- Synthesize: Fixed a display issue after synthesize..
+        /// </summary>
+        public static string about_change_0031 {
+            get {
+                return ResourceManager.GetString("about_change_0031", resourceCulture);
             }
         }
         

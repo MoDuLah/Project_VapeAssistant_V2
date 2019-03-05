@@ -481,7 +481,6 @@ namespace Vape_Assistant.Views
         private void delflv_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Image img = (Image)sender;
-            MessageBox.Show(img.Name);
             StackPanel[] flv = { flv0, flv1, flv2, flv3, flv4, flv5, flv6, flv7, flv8, flv9, flv10, flv11, flv12, flv13, flv14, flv15, flv16, flv17, flv18, flv19, flv20 };
             Image[] delflv = { delflv0, delflv1, delflv2, delflv3, delflv4, delflv5, delflv6, delflv7, delflv8, delflv9, delflv10, delflv11, delflv12, delflv13, delflv14, delflv15, delflv16, delflv17, delflv18, delflv19, delflv20 };
             ComboBox[] brnd = { brand0, brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20 };

@@ -151,7 +151,7 @@ namespace Vape_Assistant.Views
                     query += $"Flavor ='{ flv_Name.Text.Replace("'", "''") }', ";
                     query += $"M_Spec_Grav ='{ MsG.Text.Replace(",", ".") }', ";
                     query += $"Notes ='{ Notes.Text.Replace("'", "''") }', ";
-                    query += $"Average_Mixing ='{ AmP.Text.Replace(",", ".")  }' ";
+                    query += $"Average_Mixing ='{ AmP.Text.Replace(",", ".")  }', ";
                     query += $"Owned ='{ owned }' ";
                     query += $"Where Id ='{ add_flv_id.Text }'; ";
                     dbCmd = new SQLiteCommand(query, dbConn);
@@ -201,6 +201,7 @@ namespace Vape_Assistant.Views
                 MsG.Text = "";
                 Notes.Text = "";
                 AmP.Text = "";
+                Owned_y_n.IsChecked = false;
             }
         }
 

@@ -981,14 +981,8 @@ namespace Vape_Assistant.Views
                         flav_ml[i].Text = "";
                         flav_gr[i].Text = "";
                         mlwarehouse[i].Text = "";
-                        fl_id[i].Visibility = Visibility.Collapsed;
-                        flv[i].Visibility = Visibility.Collapsed;
-                        percentage[i].Visibility = Visibility.Collapsed;
-                        flav_ml[i].Visibility = Visibility.Collapsed;
-                        flav_gr[i].Visibility = Visibility.Collapsed;
-                        mlwarehouse[i].Visibility = Visibility.Collapsed;
                     }
-                    RecScroll.Visibility = Visibility.Collapsed;
+                    HideFlavs();
                 }
             }
         }

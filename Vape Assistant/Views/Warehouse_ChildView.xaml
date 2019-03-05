@@ -79,10 +79,10 @@
             </GroupBox>
         </StackPanel>
         <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! Visibility="Visible" -->
-        <Grid Grid.RowSpan="15" Grid.ColumnSpan="6" x:Name="add_Popup" Visibility="Collapsed">
+        <Grid Grid.RowSpan="15" Grid.ColumnSpan="6" x:Name="add_Popup" Visibility="Visible">
             <Grid Background="Black" Opacity="0.6"/>
                 <StackPanel Margin="20">
-                    <GroupBox Header="{x:Static p:Resources.log_Add}">
+                    <GroupBox Header="{x:Static p:Resources.log_Add}" HorizontalAlignment="Center">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition MinHeight="30"/>
@@ -97,12 +97,12 @@
                             <TextBlock Text="{x:Static p:Resources.Alch_Warehouse_FlvId}" Grid.Row="0" Grid.Column="0" Visibility="Collapsed"/>
                             <TextBox x:Name="add_Id" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Collapsed"/>
                             <TextBlock Text="{x:Static p:Resources.add_flv_brandSelect}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0"/>
-                            <ComboBox x:Name="add_Brand" Grid.Row="0" Grid.Column="1" Padding="5" MinWidth="200" IsEditable="False" IsTextSearchEnabled="True" LostFocus="add_Brand_LostFocus" SelectionChanged="add_Brand_SelectionChanged" TabIndex="0" Margin="5,0" VerticalAlignment="Center" />
+                            <ComboBox x:Name="add_Brand" Grid.Row="0" Grid.Column="1" Padding="5" MinWidth="200" IsEditable="False" IsTextSearchEnabled="True" LostFocus="add_Brand_LostFocus" SelectionChanged="add_Brand_SelectionChanged" TabIndex="0" VerticalAlignment="Center" HorizontalAlignment="Center" />
                             <TextBlock Text="{x:Static p:Resources.add_flv_flavorSelect}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0"/>
-                            <ComboBox x:Name="add_Flavor" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="5" LostFocus="add_Flavor_LostFocus" TabIndex="1" Margin="5,0" VerticalAlignment="Center" />
+                            <ComboBox x:Name="add_Flavor" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Padding="5" MinWidth="200" LostFocus="add_Flavor_LostFocus" TabIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
                             <TextBlock Text="{x:Static p:Resources.add_flv_amountEnter}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0"/>
-                            <TextBox x:Name="add_Amount" MinWidth="80" MinHeight="24" Grid.Row="2" Grid.Column="1" AutoWordSelection="True" TabIndex="2" PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp" GotFocus="Amount_GotFocus" TextChanged="Amount_TextChanged" LostFocus="Amount_LostFocus" Margin="10,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            <StackPanel Grid.Row="3" Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBox x:Name="add_Amount" MinWidth="80" MinHeight="24" Grid.Row="2" Grid.Column="1" AutoWordSelection="True" TabIndex="2" PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp" GotFocus="Amount_GotFocus" TextChanged="Amount_TextChanged" LostFocus="Amount_LostFocus" Margin="10,5" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Button x:Name="add_Cancel" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="add_Cancel_Click" IsCancel="True" TabIndex="4" />
                                 <Button x:Name="add_Submit" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="add_Submit_Click" IsDefault="True" TabIndex="3"/>
                             </StackPanel>
@@ -122,14 +122,16 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Enter Id:" Grid.Row="0" Grid.Column="0" Visibility="Hidden"/>
                     <TextBox x:Name="edit_Id" Width="100" Grid.Row="0" Grid.Column="1" Visibility="Hidden"/>
-                    <TextBlock Text="{x:Static p:Resources.add_flv_amountEnter}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-                    <TextBox x:Name="edit_Amount" Width="100" MinHeight="24" Grid.Row="1" Grid.Column="1" AutoWordSelection="True" TabIndex="0" PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp" GotFocus="Amount_GotFocus" LostFocus="Amount_LostFocus" TextChanged="Amount_TextChanged" />
+                    <TextBlock Text="{x:Static p:Resources.add_flv_amountEnter}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0"/>
+                    <TextBox x:Name="edit_Amount" Width="100" MinHeight="24" Grid.Row="1" Grid.Column="1" AutoWordSelection="True" TabIndex="0"
+                             PreviewTextInput="Amount_PreviewTextInput" MouseLeftButtonUp="Amount_MouseLeftButtonUp"
+                             GotFocus="Amount_GotFocus" LostFocus="Amount_LostFocus" TextChanged="Amount_TextChanged"/>
                     <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="edit_Cancel" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Cancel}" Background="{x:Null}" Click="edit_Cancel_Click" />
                         <Button x:Name="edit_Submit" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="edit_Submit_Click"/>

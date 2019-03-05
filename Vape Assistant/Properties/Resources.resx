@@ -1076,7 +1076,8 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>This is calculated from the Purchases tab fill your purchases to continue.</value>
   </data>
   <data name="about_change_0028" xml:space="preserve">
-    <value />
+    <value>- Recipes increased MinHeight Percentage entry.
+- Synthesize increased mg/ml Minheight.</value>
   </data>
   <data name="settings_PurchasesPIN" xml:space="preserve">
     <value>PIN (Purchases)</value>
@@ -1257,5 +1258,25 @@ If you decline and keep the default pin-code you will be asked the next time you
   </data>
   <data name="vendor_Add" xml:space="preserve">
     <value>Add Vendor</value>
+  </data>
+  <data name="about_change_0029" xml:space="preserve">
+    <value>- Purchases fix Order ID Textbox, Datagrid On View issues.
+- Warehouse/Joice Log Fixes on MaxHeight on Datagrid.
+- Juice Log reduce Amount column width, Ratio column width.
+- Juice Log Increase Name Width.</value>
+  </data>
+  <data name="about_change_0030" xml:space="preserve">
+    <value>- Warehouse reduce Amount column width.
+- Synthesize Fix top row and buttons.
+- Added translations Credit in About.</value>
+  </data>
+  <data name="about_change_0031" xml:space="preserve">
+    <value>- Flavors Owned sqlite crash fix.
+- Fixed Have it? checkbox after save to reset to initial state.
+- Bases Mix: Adjust Total Mix values Formatting.
+- Bases Mix: Fixed values in Total Mix not reseting after Clear.
+- Juice Log fixed appearence of Add/Edit panel.
+- Recipes: Removed a Messagebox on Flavor delete.
+- Synthesize: Fixed a display issue after synthesize.</value>
   </data>
 </root>
