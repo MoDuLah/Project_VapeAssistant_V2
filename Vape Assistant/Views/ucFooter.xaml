@@ -52,6 +52,10 @@
             <TextBox x:Name="adlink8" Visibility="Collapsed"/>
             <TextBox x:Name="adlink9" Visibility="Collapsed"/>
             <TextBox x:Name="adlink10" Visibility="Collapsed"/>
+            <ListBox x:Name="listBox" Visibility="Collapsed"/>
         </Canvas>
     </Hyperlink>
+    
+
+
 </UserControl>

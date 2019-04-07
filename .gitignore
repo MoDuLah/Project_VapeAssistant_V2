@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Vape Assistant/MultilingualResources
+/Vape Assistant/dataBase.Mine.db

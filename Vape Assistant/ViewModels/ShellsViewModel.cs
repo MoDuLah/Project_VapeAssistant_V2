@@ -19,6 +19,13 @@ namespace Vape_Assistant.ViewModels
                 FileStream fs = new FileStream(fileName, FileMode.CreateNew);
                 fs.Close();
             }
+            else
+            {
+                string Pather = AppDomain.CurrentDomain.BaseDirectory;
+                string fileNamez = "temp.tmp";
+                string fullPath = Pather + fileNamez;
+                File.Delete(fullPath);
+            }
             using (FileStream fsWHT = new FileStream(fileName, FileMode.Append, FileAccess.Write))
             using (StreamWriter swT = new StreamWriter(fsWHT))
             {

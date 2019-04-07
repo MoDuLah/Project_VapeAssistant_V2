@@ -127,7 +127,7 @@
     <value>Calculate</value>
   </data>
   <data name="statistics_SmokingCessationDate" xml:space="preserve">
-    <value>Smokin Cessation Date</value>
+    <value>Smoking Cessation Date</value>
   </data>
   <data name="ChildHeaderEight" xml:space="preserve">
     <value>Settings</value>
@@ -637,13 +637,13 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>Warehouse</value>
   </data>
   <data name="add_flv_amountEnter" xml:space="preserve">
-    <value>Enter Amount (ml)</value>
+    <value>Amount (ml)</value>
   </data>
   <data name="add_flv_brandSelect" xml:space="preserve">
-    <value>Choose Brand</value>
+    <value>Brand</value>
   </data>
   <data name="add_flv_flavorSelect" xml:space="preserve">
-    <value>Choose Flavor</value>
+    <value>Flavor</value>
   </data>
   <data name="add_flv_Owned" xml:space="preserve">
     <value>Have it? </value>
@@ -786,14 +786,8 @@ If you decline and keep the default pin-code you will be asked the next time you
   <data name="flv_tab_JuiceLog" xml:space="preserve">
     <value>Juice Log</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Activate</value>
-  </data>
   <data name="SN" xml:space="preserve">
     <value>Vape Assistant Activation</value>
-  </data>
-  <data name="Dtrial" xml:space="preserve">
-    <value>7 Days Left</value>
   </data>
   <data name="vendor_SumOrders" xml:space="preserve">
     <value>Orders Sum</value>
@@ -1236,7 +1230,7 @@ If you decline and keep the default pin-code you will be asked the next time you
     <value>Current PIN</value>
   </data>
   <data name="btn_CloseWindow" xml:space="preserve">
-    <value>Closes the window.</value>
+    <value>Closes the Window.</value>
   </data>
   <data name="oneshot_grams" xml:space="preserve">
     <value>Grams</value>
@@ -1278,5 +1272,37 @@ If you decline and keep the default pin-code you will be asked the next time you
 - Juice Log fixed appearence of Add/Edit panel.
 - Recipes: Removed a Messagebox on Flavor delete.
 - Synthesize: Fixed a display issue after synthesize.</value>
+  </data>
+  <data name="flavors_deleteBrand_tooltip" xml:space="preserve">
+    <value>Delete this Brand</value>
+  </data>
+  <data name="flavors_deleteFlavor_tooltip" xml:space="preserve">
+    <value>Delete this Flavor</value>
+  </data>
+  <data name="about_change_0032" xml:space="preserve">
+    <value>- Synthesize: Fix in Total Flavor Weight Calculation.
+- Flavors: Fix Have it? checkbox after save to reset to initial position.</value>
+  </data>
+  <data name="about_change_0033" xml:space="preserve">
+    <value>- Flavors: Add Flavor/Brand Delete option.
+- Settings: Fix Set Pin doesn't hide Import Groupbox.</value>
+  </data>
+  <data name="settings_LanguageTr" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="btn_MinimizeToTaskBar" xml:space="preserve">
+    <value>Minimize to TaskBar.</value>
+  </data>
+  <data name="warehouse_hdrCostPerML" xml:space="preserve">
+    <value>Cost/ml</value>
+  </data>
+  <data name="warehouse_hdrTotalCost" xml:space="preserve">
+    <value>Flavor Cost</value>
+  </data>
+  <data name="warehouse_hdrTotalML" xml:space="preserve">
+    <value>Total ml</value>
+  </data>
+  <data name="settings_LanguageNl" xml:space="preserve">
+    <value>Dutch</value>
   </data>
 </root>

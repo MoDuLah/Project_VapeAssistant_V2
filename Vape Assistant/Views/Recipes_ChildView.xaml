@@ -56,8 +56,8 @@
                     <TextBox x:Name="recipeid" Visibility="Collapsed" IsTabStop="False"/>
                 </StackPanel>
             </GroupBox>
-            <ScrollViewer x:Name="FlavorScroller" Grid.Row="1" Height="Auto" MinHeight="250" MaxHeight="250" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center"  Margin="5,0" Padding="0,0,2,2">
-                <GroupBox>
+            <GroupBox x:Name="FlavorsBox"  Grid.Row="1">
+            <ScrollViewer x:Name="FlavorScroller" Height="Auto" MinHeight="250" MaxHeight="250" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center"  Margin="5,0" Padding="0,0,2,2">
                     <Grid x:Name="RecipesList">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
@@ -260,8 +260,8 @@
                             <TextBox x:Name="flavor_id20" IsEnabled="False" Visibility="Collapsed" TextChanged="flavor_id_TextChanged"/>
                         </StackPanel>
                     </Grid>
-                </GroupBox>
-            </ScrollViewer>
+                </ScrollViewer>
+            </GroupBox>
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
                 <GroupBox Grid.Row="2" Header="{x:Static p:Resources.add_rec_flavquantity}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" >
                     <StackPanel Orientation="Horizontal">
@@ -281,6 +281,7 @@
                 <Button x:Name="recipeSave" Content="{x:Static p:Resources.Save_Button}" Click="recipeSave_Click" IsDefault="True" Margin="5,0,0,0" />
             </StackPanel>
             <TextBlock x:Name="temp" Visibility="Collapsed" />
+            <TextBox x:Name="ChildTextBox" Visibility="Collapsed" />
         </Grid>
     </ScrollViewer>
 </UserControl>

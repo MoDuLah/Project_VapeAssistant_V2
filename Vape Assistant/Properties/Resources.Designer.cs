@@ -403,6 +403,26 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to - Synthesize: Fix in Total Flavor Weight Calculation.
+        ///- Flavors: Fix Have it? checkbox after save to reset to initial position..
+        /// </summary>
+        public static string about_change_0032 {
+            get {
+                return ResourceManager.GetString("about_change_0032", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - Flavors: Add Flavor/Brand Delete option.
+        ///- Settings: Fix Set Pin doesn&apos;t hide Import Groupbox..
+        /// </summary>
+        public static string about_change_0033 {
+            get {
+                return ResourceManager.GetString("about_change_0033", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you like this application?.
         /// </summary>
         public static string about_donationHdr {
@@ -448,7 +468,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter Amount (ml).
+        ///   Looks up a localized string similar to Amount (ml).
         /// </summary>
         public static string add_flv_amountEnter {
             get {
@@ -475,7 +495,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose Brand.
+        ///   Looks up a localized string similar to Brand.
         /// </summary>
         public static string add_flv_brandSelect {
             get {
@@ -502,7 +522,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose Flavor.
+        ///   Looks up a localized string similar to Flavor.
         /// </summary>
         public static string add_flv_flavorSelect {
             get {
@@ -1024,11 +1044,20 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Closes the window..
+        ///   Looks up a localized string similar to Closes the Window..
         /// </summary>
         public static string btn_CloseWindow {
             get {
                 return ResourceManager.GetString("btn_CloseWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimize to TaskBar..
+        /// </summary>
+        public static string btn_MinimizeToTaskBar {
+            get {
+                return ResourceManager.GetString("btn_MinimizeToTaskBar", resourceCulture);
             }
         }
         
@@ -1276,15 +1305,6 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 7 Days Left.
-        /// </summary>
-        public static string Dtrial {
-            get {
-                return ResourceManager.GetString("Dtrial", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Edit Entry.
         /// </summary>
         public static string EditEntry {
@@ -1488,6 +1508,24 @@ namespace Vape_Assistant.Properties {
         public static string FirstTip {
             get {
                 return ResourceManager.GetString("FirstTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete this Brand.
+        /// </summary>
+        public static string flavors_deleteBrand_tooltip {
+            get {
+                return ResourceManager.GetString("flavors_deleteBrand_tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete this Flavor.
+        /// </summary>
+        public static string flavors_deleteFlavor_tooltip {
+            get {
+                return ResourceManager.GetString("flavors_deleteFlavor_tooltip", resourceCulture);
             }
         }
         
@@ -2707,15 +2745,6 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Activate.
-        /// </summary>
-        public static string Register {
-            get {
-                return ResourceManager.GetString("Register", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Remove Flavor from Warehouse.
         /// </summary>
         public static string rem_Flv_fromwarehouse {
@@ -2815,6 +2844,15 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dutch.
+        /// </summary>
+        public static string settings_LanguageNl {
+            get {
+                return ResourceManager.GetString("settings_LanguageNl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Romanian.
         /// </summary>
         public static string settings_LanguageRo {
@@ -2829,6 +2867,15 @@ namespace Vape_Assistant.Properties {
         public static string settings_LanguageRu {
             get {
                 return ResourceManager.GetString("settings_LanguageRu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turkish.
+        /// </summary>
+        public static string settings_LanguageTr {
+            get {
+                return ResourceManager.GetString("settings_LanguageTr", resourceCulture);
             }
         }
         
@@ -3004,7 +3051,7 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Smokin Cessation Date.
+        ///   Looks up a localized string similar to Smoking Cessation Date.
         /// </summary>
         public static string statistics_SmokingCessationDate {
             get {
@@ -3409,6 +3456,15 @@ namespace Vape_Assistant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cost/ml.
+        /// </summary>
+        public static string warehouse_hdrCostPerML {
+            get {
+                return ResourceManager.GetString("warehouse_hdrCostPerML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flavor.
         /// </summary>
         public static string warehouse_hdrFlavor {
@@ -3423,6 +3479,24 @@ namespace Vape_Assistant.Properties {
         public static string warehouse_hdrId {
             get {
                 return ResourceManager.GetString("warehouse_hdrId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flavor Cost.
+        /// </summary>
+        public static string warehouse_hdrTotalCost {
+            get {
+                return ResourceManager.GetString("warehouse_hdrTotalCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total ml.
+        /// </summary>
+        public static string warehouse_hdrTotalML {
+            get {
+                return ResourceManager.GetString("warehouse_hdrTotalML", resourceCulture);
             }
         }
         

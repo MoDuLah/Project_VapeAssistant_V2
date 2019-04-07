@@ -25,7 +25,7 @@ namespace Vape_Assistant.Views
         public string CurrentCulture = Settings.Default.Culture;
         public string query;
         public int autotimeout = 5000;
-        string edititemid, edititemAmount;
+        string edititemid, edititemAmount,editTotalCost,editTotalML,editCostML;
 
 
         public Warehouse_ChildView()
@@ -35,6 +35,13 @@ namespace Vape_Assistant.Views
             FillDataGrid();
             Warehousecount();
             EventManager.RegisterClassHandler(typeof(TextBox), GotKeyboardFocusEvent, new KeyboardFocusChangedEventHandler(OnGotKeyboardFocus));
+            if (WarehouseCount.Text == "0") {
+                warehouse.IsEnabled = false;
+            }
+            else
+            {
+                warehouse.IsEnabled = true;
+            }
         }
 
         void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -46,16 +53,8 @@ namespace Vape_Assistant.Views
         private static bool IsDecAllowed(string text)
         {
             string CurrentCulture = Settings.Default.Culture;
-            if (CurrentCulture == "en-US")
-            {
-                Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
-                return !regex.IsMatch(text);
-            }
-            else
-            {
-                Regex regex = new Regex("[^0-9,]+"); //regex that matches disallowed text
-                return !regex.IsMatch(text);
-            }
+            Regex regex = new Regex("[^0-9.]+"); //regex that matches disallowed text
+            return !regex.IsMatch(text);
         }
         public void BindComboBox(ComboBox comboBoxName)
         {
@@ -80,29 +79,35 @@ namespace Vape_Assistant.Views
         }
         private void FillDataGrid()
         {
-            string hdr0 = "", hdr1 = "", hdr2 = "", hdr3 = "";
-            string dbTables = "Flavors";
-            if (CurrentCulture == "en-US")
-            {
-                hdr0 = "Id";
-                hdr1 = "Brand";
-                hdr2 = "Flavor";
-                hdr3 = "Amount (ml)";
-            }
-            if (CurrentCulture == "el-GR")
-            {
-                hdr0 = "Id";
-                hdr1 = "Εταιρία";
-                hdr2 = "Άρωμα";
-                hdr3 = "Ποσότητα (ml)";
-            }
+            //string hdr0 = "", hdr1 = "", hdr2 = "", hdr3 = "", hdr4 = "", hdr5 = "", hdr6 = "";
+            string dbTables = "[Flavors]";
+            //if (CurrentCulture == "en-US")
+            //{
+            //    hdr0 = "Id";
+            //    hdr1 = "Brand";
+            //    hdr2 = "Flavor";
+            //    hdr3 = "Amount (ml)";
+            //    hdr4 = "Total ml";
+            //    hdr5 = "Flavor Cost";
+            //    hdr6 = "Cost/ml";
+            //}
+            //if (CurrentCulture == "el-GR")
+            //{
+            //    hdr0 = "Id";
+            //    hdr1 = "Εταιρία";
+            //    hdr2 = "Άρωμα";
+            //    hdr3 = "Ποσότητα (ml)";
+            //    hdr4 = "Συνολική Ποσότητα";
+            //    hdr5 = "Κόστος Υγρού";
+            //    hdr6 = "Κόστος/ml";
+            //}
             try
             {
                 using (dbConn = new SQLiteConnection(connectionString))
                 {
                     dbConn.Open();
                     //Select Command
-                    query = $"SELECT Id, Brand, Flavor, Amount FROM {dbTables} where Amount NOT LIKE '0.0' order by Brand and Flavor ; ";
+                    query = $"SELECT Id, Brand, Flavor, Amount, Total_ML, Total_Cost, Cost_Per_ML FROM {dbTables} where Amount NOT LIKE '0.0' order by Brand and Flavor ; ";
                     dbCmd = new SQLiteCommand(query, dbConn);
                     dbCmd.ExecuteNonQuery();
                     dbAdapter = new SQLiteDataAdapter(dbCmd);
@@ -113,16 +118,19 @@ namespace Vape_Assistant.Views
                     warehouse.ItemsSource = dbTable.DefaultView;
                     dbAdapter.Update(dbTable);
 
-                    warehouse.Columns[0].Header = hdr0;
-                    warehouse.Columns[1].Header = hdr1;
-                    warehouse.Columns[2].Header = hdr2;
-                    warehouse.Columns[3].Header = hdr3;
+                    //warehouse.Columns[0].Header = hdr0;
+                    //warehouse.Columns[1].Header = hdr1;
+                    //warehouse.Columns[2].Header = hdr2;
+                    //warehouse.Columns[3].Header = hdr3;
+                    //warehouse.Columns[4].Header = hdr4;
+                    //warehouse.Columns[5].Header = hdr5;
+                    //warehouse.Columns[6].Header = hdr6;
 
                 }
             }
             catch (Exception ex)
             {
-                AutoClosingMessageBox.Show("Message: " + ex, "", autotimeout);
+                AutoClosingMessageBox.Show(ex.Message, "Exception Error", autotimeout);
             }
         }
 
@@ -221,20 +229,26 @@ namespace Vape_Assistant.Views
 
         private void warehouse_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try
+            if (warehouse.SelectedItem != null)
             {
-                if (warehouse.SelectedItem != null)
+                try
                 {
                     item = warehouse.SelectedItem;
                     edititemid = (warehouse.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
-                    edit_Id.Text = edititemid;
+                    //edit_Id.Text = edititemid;
                     edititemAmount = (warehouse.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text;
-                    edit_Amount.Text = edititemAmount;
+                    //edit_Amount.Text = edititemAmount;
+                    editTotalML = (warehouse.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
+                    //edit_TotalML.Text = editTotalML;
+                    editTotalCost = (warehouse.SelectedCells[5].Column.GetCellContent(item) as TextBlock).Text;
+                    //edit_TotalCost.Text = editTotalCost;
+                    editCostML = (warehouse.SelectedCells[6].Column.GetCellContent(item) as TextBlock).Text;
+                    //edit_CostML.Text = editCostML;
                 }
-            }
-            catch (Exception ex)
-            {
-                AutoClosingMessageBox.Show("Message: " + ex,"",autotimeout);
+                catch (Exception ex)
+                {
+                    AutoClosingMessageBox.Show(ex.Message,"Selection Exception",autotimeout);
+                }
             }
         }
 
@@ -249,8 +263,11 @@ namespace Vape_Assistant.Views
             if (warehouse.SelectedItem == null) { return; }
             edit_Id.Text = edititemid;
             edit_Amount.Text = edititemAmount;
-            edit_Popup.Visibility = Visibility.Visible;
+            edit_TotalCost.Text = editTotalCost;
+            edit_TotalML.Text = editTotalML;
+            edit_CostML.Text = editCostML;
             edit_Amount.Select(0, edit_Amount.Text.Length);
+            edit_Popup.Visibility = Visibility.Visible;
         }
 
         private void Delete_Item_Click(object sender, RoutedEventArgs e)
@@ -282,7 +299,7 @@ namespace Vape_Assistant.Views
                         {
                             dbConn.Open();
                             //Insert Command
-                            dbCmd = new SQLiteCommand("Update Flavors SET Owned = '0', Amount = '0.0' Where Id = " + Int32.Parse(edititemid), dbConn);
+                            dbCmd = new SQLiteCommand("Update Flavors SET Owned = '0', Amount = '0.0', Total_Cost = '0.0', Total_ML = '0.0', Cost_Per_ML = '0.0'  Where Id = " + Int32.Parse(edititemid), dbConn);
                             dbCmd.ExecuteNonQuery();
                             dbCmd = null;
                             //Select Command
@@ -446,16 +463,27 @@ namespace Vape_Assistant.Views
             add_Brand.SelectedIndex = -1;
             add_Flavor.SelectedIndex = -1;
             add_Amount.Text = String.Empty;
+            edit_TotalCost.Text = String.Empty;
+            edit_TotalML.Text = String.Empty;
+            edit_CostML.Text = String.Empty;
         }
 
         private void add_Submit_Click(object sender, RoutedEventArgs e)
         {
-            if ((string.IsNullOrEmpty(add_Brand.Text)) ||
-                (string.IsNullOrEmpty(add_Flavor.Text)) ||
-                (string.IsNullOrEmpty(add_Amount.Text)) ||
+            if (string.IsNullOrEmpty(add_Brand.Text) ||
+                string.IsNullOrEmpty(add_Flavor.Text) ||
+                string.IsNullOrEmpty(add_Amount.Text) ||
                 (add_Amount.Text == "0"))
             {
                 return;
+            }
+            if (string.IsNullOrEmpty(add_TotalCost.Text))
+            {
+                add_TotalCost.Text = "0";
+            }
+            if (string.IsNullOrEmpty(add_TotalML.Text))
+            {
+                add_TotalML.Text = "0";
             }
             //Do Something Here
             try
@@ -464,7 +492,13 @@ namespace Vape_Assistant.Views
                 {
                     dbConn.Open();
                     //Insert Command
-                    dbCmd = new SQLiteCommand("UPDATE Flavors SET Amount ='" + double.Parse(add_Amount.Text.ToString()) + "', Owned = '1' where Id =" + Int32.Parse(add_Id.Text.ToString()), dbConn);
+                    query = "UPDATE Flavors SET ";
+                    query += $"Amount ='{ double.Parse(add_Amount.Text.ToString()) } ', ";
+                    query += $"Total_ML = '{ double.Parse(add_TotalML.Text.ToString()) }', ";
+                    query += $"Total_Cost = '{ double.Parse(add_TotalCost.Text.ToString()) }', ";
+                    query += $"Cost_Per_ML = '" + double.Parse(add_CostML.Text.ToString()) + "', ";
+                    query += $"Owned = '1' where Id ='{ Int32.Parse(add_Id.Text.ToString()) }' ; ";
+                    dbCmd = new SQLiteCommand(query, dbConn);
                     dbCmd.ExecuteNonQuery();
                     dbCmd = null;
                     //Select Command
@@ -479,12 +513,15 @@ namespace Vape_Assistant.Views
             //ENd Here
             add_Popup.Visibility = Visibility.Collapsed;
             ClearTextBoxes(this);
-            //add_Id.Text = String.Empty;
-            //add_Brand.SelectedIndex = -1;
-            //add_Flavor.SelectedIndex = -1;
-            //add_Amount.Text = String.Empty;
             Warehousecount();
-            //checkIfWarehouseIsNotEmpty();
+            if (WarehouseCount.Text == "0")
+            {
+                warehouse.IsEnabled = false;
+            }
+            else
+            {
+                warehouse.IsEnabled = true;
+            }
         }
 
         private void edit_Cancel_Click(object sender, RoutedEventArgs e)
@@ -520,9 +557,9 @@ namespace Vape_Assistant.Views
         private void edit_Submit_Click(object sender, RoutedEventArgs e)
         {
             //Do Something 
-            if (!edit_Id.Text.Equals(edititemid) || !edit_Amount.Text.Equals(edititemAmount))
+            if (!edit_Id.Text.Equals(edititemid) || !edit_Amount.Text.Equals(edititemAmount) || !edit_CostML.Text.Equals(editCostML)
+                || !edit_TotalCost.Text.Equals(editTotalCost) || !edit_TotalML.Text.Equals(editTotalML))
             {
-
                 //Do Something Here
                 try
                 {
@@ -531,7 +568,10 @@ namespace Vape_Assistant.Views
                         dbConn.Open();
                         //Insert Command
                         query = $"UPDATE Flavors SET Amount = " +
-                            $"'" + Double.Parse(edit_Amount.Text.ToString()) + "' " +
+                            $"'" + double.Parse(edit_Amount.Text.ToString()) + "', Total_Cost = " +
+                            $"'" + double.Parse(edit_TotalCost.Text.ToString()) + "', Total_ML = " +
+                            $"'" + double.Parse(edit_TotalML.Text.ToString()) + "', Cost_Per_ML = " +
+                            $"'" + double.Parse(edit_CostML.Text.ToString()) + "' " +
                             "WHERE Id = '" + Int32.Parse(edit_Id.Text.ToString()) + "' ; ";
                         dbCmd = new SQLiteCommand(query, dbConn);
                         dbCmd.ExecuteNonQuery();
@@ -547,17 +587,176 @@ namespace Vape_Assistant.Views
             }
             else
             {
-                AutoClosingMessageBox.Show("No Entry Changed.", "", autotimeout);
+                AutoClosingMessageBox.Show("No Data Changed.", "", autotimeout);
             }
             //ENd Here
             edit_Popup.Visibility = Visibility.Collapsed;
             ClearTextBoxes(this);
-            //edit_Id.Text = String.Empty;
-            //edit_Amount.Text = String.Empty;
-            //edititemid = String.Empty;
-            //edititemAmount = String.Empty;
             Warehousecount();
         }
+
+        private void UPArrow_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_Amount.Text)) { add_Amount.Text = "0"; }
+
+            add_Amount.Text = Convert.ToString(Convert.ToDouble(add_Amount.Text) + 0.5);
+        }
+
+        private void DOWNArrow_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_Amount.Text)) { add_Amount.Text = "0"; }
+            if (Convert.ToDouble(add_Amount.Text) > 0.5)
+            {
+                add_Amount.Text = Convert.ToString(Convert.ToDouble(add_Amount.Text) - 0.5);
+            }
+        }
+
+        private void UPArrow_TC_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_TotalCost.Text)) { add_TotalCost.Text = "0"; }
+
+            add_TotalCost.Text = Convert.ToString(Convert.ToDouble(add_TotalCost.Text) + 0.5);
+        }
+
+        private void DOWNArrow_TC_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_TotalCost.Text)) { add_TotalCost.Text = "0"; }
+            if (Convert.ToDouble(add_TotalCost.Text) > 0.5)
+            {
+                add_TotalCost.Text = Convert.ToString(Convert.ToDouble(add_TotalCost.Text) - 0.5);
+            }
+        }
+        private void UPArrow_TML_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_TotalML.Text)) { add_TotalML.Text = "0"; }
+
+            add_TotalML.Text = Convert.ToString(Convert.ToDouble(add_TotalML.Text) + 0.5);
+        }
+
+        private void DOWNArrow_TML_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_TotalML.Text)) { add_TotalML.Text = "0"; }
+            if (Convert.ToDouble(add_TotalML.Text) > 0.5)
+            {
+                add_TotalML.Text = Convert.ToString(Convert.ToDouble(add_TotalML.Text) - 0.5);
+            }
+        }
+
+        private void Add_TotalCost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_TotalML.Text) || string.IsNullOrEmpty(add_TotalCost.Text))
+            {
+                return;
+            }
+
+            double Total_Cost = Convert.ToDouble(add_TotalCost.Text);
+            double Total_ML = Convert.ToDouble(add_TotalML.Text);
+            {
+                add_CostML.Text = Convert.ToString(Math.Round(Total_Cost / Total_ML, 2));
+            }
+        }
+
+        private void Add_TotalML_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(add_TotalML.Text) || string.IsNullOrEmpty(add_TotalCost.Text))
+            {
+                return;
+            }
+
+            double Total_Cost = Convert.ToDouble(add_TotalCost.Text);
+            double Total_ML = Convert.ToDouble(add_TotalML.Text);
+            {
+                add_CostML.Text = Convert.ToString(Math.Round(Total_Cost / Total_ML, 2));
+            }
+        }
+
+
+        private void edit_UPArrow_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_Amount.Text)) { edit_Amount.Text = "0"; }
+
+            edit_Amount.Text = Convert.ToString(Convert.ToDouble(edit_Amount.Text) + 0.5);
+        }
+
+        private void edit_DOWNArrow_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_Amount.Text)) { edit_Amount.Text = "0"; }
+            if (Convert.ToDouble(edit_Amount.Text) > 0.5)
+            {
+                edit_Amount.Text = Convert.ToString(Convert.ToDouble(edit_Amount.Text) - 0.5);
+            }
+        }
+
+        private void edit_UPArrow_TC_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_TotalCost.Text)) { edit_TotalCost.Text = "0"; }
+
+            edit_TotalCost.Text = Convert.ToString(Convert.ToDouble(edit_TotalCost.Text) + 0.5);
+        }
+
+        private void edit_DOWNArrow_TC_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_TotalCost.Text)) { edit_TotalCost.Text = "0"; }
+            if (Convert.ToDouble(edit_TotalCost.Text) > 0.5)
+            {
+                edit_TotalCost.Text = Convert.ToString(Convert.ToDouble(edit_TotalCost.Text) - 0.5);
+            }
+        }
+        private void edit_TotalCost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_TotalML.Text) || string.IsNullOrEmpty(edit_TotalCost.Text))
+            {
+                return;
+            }
+
+            double Total_Cost = Convert.ToDouble(edit_TotalCost.Text);
+            double Total_ML = Convert.ToDouble(edit_TotalML.Text);
+            {
+                edit_CostML.Text = Convert.ToString(Math.Round(Total_Cost / Total_ML, 2));
+            }
+        }
+
+        private void Warehouse_Loaded(object sender, RoutedEventArgs e)
+        {
+                var dataGrid = (DataGrid)sender;
+                var border = (Border)VisualTreeHelper.GetChild(dataGrid, 0);
+                var scrollViewer = (ScrollViewer)VisualTreeHelper.GetChild(border, 0);
+                var grid = (Grid)VisualTreeHelper.GetChild(scrollViewer, 0);
+                var button = (Button)VisualTreeHelper.GetChild(grid, 0);
+                button.IsEnabled = false;
+                button.Visibility = Visibility.Hidden;
+        }
+
+        private void edit_TotalML_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_TotalML.Text) || string.IsNullOrEmpty(edit_TotalCost.Text))
+            {
+                return;
+            }
+
+            double Total_Cost = Convert.ToDouble(edit_TotalCost.Text);
+            double Total_ML = Convert.ToDouble(edit_TotalML.Text);
+            {
+                edit_CostML.Text = Convert.ToString(Math.Round(Total_Cost / Total_ML, 2));
+            }
+        }
+
+        private void edit_UPArrow_TML_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_TotalML.Text)) { edit_TotalML.Text = "0"; }
+
+            edit_TotalML.Text = Convert.ToString(Convert.ToDouble(edit_TotalML.Text) + 0.5);
+        }
+
+        private void edit_DOWNArrow_TML_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(edit_TotalML.Text)) { edit_TotalML.Text = "0"; }
+            if (Convert.ToDouble(edit_TotalML.Text) > 0.5)
+            {
+                edit_TotalML.Text = Convert.ToString(Convert.ToDouble(edit_TotalML.Text) - 0.5);
+            }
+        }
+
         void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             e.Row.Header = (e.Row.GetIndex() + 1).ToString();

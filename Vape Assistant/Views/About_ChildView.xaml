@@ -45,7 +45,7 @@
                 <StackPanel Orientation="Horizontal" Margin="5,5" HorizontalAlignment="Right">
                     <TextBlock Text="German" VerticalAlignment="Center"/>
                     <Image Source="/Vape Assistant;component/Images/flags/de.png" Width="24" Height="20" Stretch="Fill" Margin="5,0,0,0"/>
-                    <TextBlock Text="" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock Text="S.Balanasios" MinWidth="120" TextAlignment="Right" VerticalAlignment="Center"/>
                 </StackPanel>
                 <Separator/>
                 <StackPanel Orientation="Horizontal" Margin="5,5" HorizontalAlignment="Right">
@@ -135,16 +135,22 @@
                       MaxHeight="250" Padding="2"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
                       HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0" BorderThickness="0" Background="{x:Null}">
-                <TreeViewItem Header="2019/03/03 - 2.3.7003">
+                <TreeViewItem Header="2019/03/07 - 2.3.7005">
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0032}" TextWrapping="Wrap"/>
+                </TreeViewItem>
+                <TreeViewItem Header="2019/03/06 - 2.3.7004">
+                    <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0032}" TextWrapping="Wrap"/>
+                </TreeViewItem>
+                <TreeViewItem Header="2019/03/05 - 2.3.7003">
                     <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0031}" TextWrapping="Wrap"/>
                 </TreeViewItem>
-                <TreeViewItem Header="2019/03/02 - 2.3.7002">
+                <TreeViewItem Header="2019/03/04 - 2.3.7002">
                     <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0030}" TextWrapping="Wrap"/>
                 </TreeViewItem>
-                <TreeViewItem Header="2019/03/02 - 2.3.7001">
+                <TreeViewItem Header="2019/03/03 - 2.3.7001">
                     <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0029}" TextWrapping="Wrap"/>
                 </TreeViewItem>
-                <TreeViewItem Header="2019/03/01 - 2.3.7000">
+                <TreeViewItem Header="2019/03/02 - 2.3.7000">
                     <TextBlock FontSize="14" Text="{x:Static p:Resources.about_change_0028}" TextWrapping="Wrap"/>
                 </TreeViewItem>
                 <TreeViewItem Header="2019/01/26 - 2.3.6965">

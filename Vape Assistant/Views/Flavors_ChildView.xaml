@@ -36,11 +36,25 @@
 
         <GroupBox Header="{x:Static p:Resources.add_flv_brandName}" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox x:Name="brandName" VerticalContentAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="brandName" VerticalContentAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center" VerticalAlignment="Center" LostFocus="BrandName_LostFocus" TextChanged="BrandName_TextChanged"/>
                 <GroupBox Header="{x:Static p:Resources.add_flv_ComboBoxheader}">
                     <StackPanel>
-                        <ComboBox MinWidth="120" x:Name="cmb_brandname" LostFocus="cmb_brandname_LostFocus"
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox MinWidth="120" x:Name="cmb_brandname" LostFocus="cmb_brandname_LostFocus"
                         IsEditable="False" IsTextSearchEnabled="True" SelectionChanged="cmb_brandname_SelectionChanged"/>
+                            <Image x:Name="delBrandImage" Width="20" ToolTip="{x:Static p:Resources.flavors_deleteBrand_tooltip}" MouseLeftButtonUp="DelBrandImage_MouseLeftButtonUp">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_Hover_32px.png"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_32px.png"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
                             <TextBlock Text="{x:Static p:Resources.flv_Keep}" VerticalAlignment="Center"/>
                             <CheckBox x:Name="brandKeeper" IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0"/>
@@ -52,33 +66,47 @@
 
         
 
-        <GroupBox Grid.Row="0" Header="{x:Static p:Resources.add_flv_abbreviation}" Grid.Column="2">
+        <GroupBox x:Name="BRANDSHORT" Grid.Row="0" Header="{x:Static p:Resources.add_flv_abbreviation}" Grid.Column="2">
             <TextBox x:Name="brandShort" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="80"/>
         </GroupBox>
 
-        <GroupBox Header="{x:Static p:Resources.add_flv_flavorName}" Grid.Column="3">
+        <GroupBox x:Name="FLAVOR" Header="{x:Static p:Resources.add_flv_flavorName}" Grid.Column="3">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox x:Name="flv_Name" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" MinWidth="80" />
-                <GroupBox Header="{x:Static p:Resources.add_flv_ComboBoxheader}">
-                    <ComboBox MinWidth="120" x:Name="cmb_flavname" IsEditable="False" IsTextSearchEnabled="True" LostFocus="cmb_flavname_LostFocus"/>
+                <GroupBox Header="{x:Static p:Resources.add_flv_ComboBoxheader}" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox MinWidth="120" x:Name="cmb_flavname" IsEditable="False" IsTextSearchEnabled="True" LostFocus="cmb_flavname_LostFocus" SelectionChanged="cmb_flavname_SelectionChanged"/>
+                        <Image x:Name="delFlavorImage" Width="20" VerticalAlignment="Center" ToolTip="{x:Static p:Resources.flavors_deleteFlavor_tooltip}" MouseLeftButtonUp="DelFlavorImage_MouseLeftButtonUp">
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_Hover_32px.png"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Source" Value="/Vape Assistant;component/Images/Hover/Close Window_32px.png"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                    </StackPanel>
                 </GroupBox>
             </StackPanel>
         </GroupBox>
 
 
-        <GroupBox Header="{x:Static p:Resources.add_flv_manufacturerGravity}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+        <GroupBox x:Name="MSG" Header="{x:Static p:Resources.add_flv_manufacturerGravity}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             <TextBox x:Name="MsG" VerticalContentAlignment="Center" PreviewTextInput="MsG_PreviewTextInput" HorizontalContentAlignment="Center" MinWidth="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Header="{x:Static p:Resources.add_flv_notes}" Grid.Column="2">
-            <TextBox x:Name="Notes" VerticalContentAlignment="Center" MaxWidth="300" TextWrapping="Wrap" HorizontalContentAlignment="Center" MinWidth="80"/>
-        </GroupBox>
-
-        <GroupBox Grid.Row="1" Header="{x:Static p:Resources.add_flv_amp}" Grid.Column="1" >
+        <GroupBox x:Name="AMP" Grid.Row="1" Header="{x:Static p:Resources.add_flv_amp}" Grid.Column="1" >
             <TextBox x:Name="AmP" VerticalContentAlignment="Center" PreviewTextInput="AmP_PreviewTextInput" HorizontalContentAlignment="Center" MinWidth="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Header="{x:Static p:Resources.add_flv_Owned}" Grid.Column="3" HorizontalAlignment="Left">
+        <GroupBox x:Name="NOTES" Grid.Row="1" Header="{x:Static p:Resources.add_flv_notes}" Grid.Column="2">
+            <TextBox x:Name="Notes" VerticalContentAlignment="Center" MaxWidth="300" TextWrapping="Wrap" HorizontalContentAlignment="Center" MinWidth="80"/>
+        </GroupBox>
+
+        <GroupBox x:Name="OWNED" Grid.Row="1" Header="{x:Static p:Resources.add_flv_Owned}" Grid.Column="3" HorizontalAlignment="Left">
             <CheckBox x:Name="Owned_y_n" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
         </GroupBox>
 

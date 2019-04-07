@@ -29,6 +29,7 @@ namespace Vape_Assistant.Views
 
         public Recipes_ChildView()
         {
+
             InitializeComponent();
             RecipesComboBox(RecipeName);
             ComboBox[] brand = { brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20 };
@@ -90,7 +91,7 @@ namespace Vape_Assistant.Views
             TextBox[] percentage = { percentage0, percentage1, percentage2, percentage3, percentage4, percentage5, percentage6, percentage7, percentage8, percentage9, percentage10, percentage11, percentage12, percentage13, percentage14, percentage15, percentage16, percentage17, percentage18, percentage19, percentage20 };
             TextBox[] flavor_id = { flavor_id0, flavor_id1, flavor_id2, flavor_id3, flavor_id4, flavor_id5, flavor_id6, flavor_id7, flavor_id8, flavor_id9, flavor_id10, flavor_id11, flavor_id12, flavor_id13, flavor_id14, flavor_id15, flavor_id16, flavor_id17, flavor_id18, flavor_id19, flavor_id20 };
             if (RecipeName.SelectedIndex < 0 ) { return; }
-
+            if (FlavorsBox.Visibility == Visibility.Hidden) { FlavorsBox.Visibility = Visibility.Visible; }
             //Reset the controls
             for (int y = 0; y < brand.Length; y++)
             {
@@ -199,7 +200,6 @@ namespace Vape_Assistant.Views
                     dbConn.Close();
                 }
             }
-            
         }
 
 
@@ -355,6 +355,7 @@ namespace Vape_Assistant.Views
             flavors_shown.Text = "1";
             Author.Text = "";
             HideTheRest();
+            FlavorsBox.Visibility = Visibility.Visible;
         }
 
         public void TakeBrandGiveFlavor(ComboBox senderBox)
@@ -523,6 +524,14 @@ namespace Vape_Assistant.Views
                 }
             }
             flavors_shown.Text = xyz.ToString();
+            if (xyz == 0)
+            {
+                FlavorsBox.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                FlavorsBox.Visibility = Visibility.Visible;
+            }
             if (Adder_flv.IsEnabled == false)
             {
                 Adder_flv.IsEnabled = true;
@@ -927,7 +936,7 @@ namespace Vape_Assistant.Views
                 dbConn.Open();
                 try
                 {
-                    string query = $"SELECT Id FROM [Flavors] WHERE BrandShort='{ comboBox.Text }' AND Flavor='{ tombo.Text }'";
+                    string query = $"SELECT Id FROM [Flavors] WHERE BrandShort='{ comboBox.Text }' AND Flavor='{ tombo.Text.Replace("'","''") }'";
                     if (dbConn.State == ConnectionState.Closed)
                     {
                         dbConn.Open();
@@ -937,7 +946,6 @@ namespace Vape_Assistant.Views
                     while (reader.Read())
                     {
                         int Id_Brand = int.Parse(reader[0].ToString());
-                        //MessageBox.Show(Id_Brand.ToString());
                         int i = 0;
                         if (tombo.Name.Length == 7)
                         {
@@ -969,9 +977,130 @@ namespace Vape_Assistant.Views
             }
         }
 
+        private void RecipeName_DropDownClosed(object sender, KeyEventArgs e)
+        {
+            StackPanel[] flv = { flv0, flv1, flv2, flv3, flv4, flv5, flv6, flv7, flv8, flv9, flv10, flv11, flv12, flv13, flv14, flv15, flv16, flv17, flv18, flv19, flv20 };
+            ComboBox[] brand = { brand0, brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20 };
+            ComboBox[] flavor = { flavor0, flavor1, flavor2, flavor3, flavor4, flavor5, flavor6, flavor7, flavor8, flavor9, flavor10, flavor11, flavor12, flavor13, flavor14, flavor15, flavor16, flavor17, flavor18, flavor19, flavor20 };
+            TextBox[] percentage = { percentage0, percentage1, percentage2, percentage3, percentage4, percentage5, percentage6, percentage7, percentage8, percentage9, percentage10, percentage11, percentage12, percentage13, percentage14, percentage15, percentage16, percentage17, percentage18, percentage19, percentage20 };
+            TextBox[] flavor_id = { flavor_id0, flavor_id1, flavor_id2, flavor_id3, flavor_id4, flavor_id5, flavor_id6, flavor_id7, flavor_id8, flavor_id9, flavor_id10, flavor_id11, flavor_id12, flavor_id13, flavor_id14, flavor_id15, flavor_id16, flavor_id17, flavor_id18, flavor_id19, flavor_id20 };
+            if (RecipeName.SelectedIndex < 0) { return; }
+            if (FlavorsBox.Visibility == Visibility.Hidden) { FlavorsBox.Visibility = Visibility.Visible; }
+            //Reset the controls
+            for (int y = 0; y < brand.Length; y++)
+            {
+                brand[y].SelectedIndex = -1;
+                flavor[y].SelectedIndex = -1;
+                percentage[y].Text = "";
+                flavor_id[y].Text = "";
+            }
+
+            dbConn.Open();
+            try
+            {
+                string query = $"SELECT * FROM [RecipeBook] WHERE Recipename='" + RecipeName.Text.Replace("'", "''") + "' ";
+                if (dbConn.State == ConnectionState.Closed)
+                {
+                    dbConn.Open();
+                }
+                dbCmd = new SQLiteCommand(query, dbConn);
+                reader = dbCmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int Id_Brand = reader.GetInt32(0);
+                    int TimeMade = reader.GetInt32(2);
+                    string authname = reader.GetString(3);
+                    recipeid.Text = Id_Brand.ToString();
+                    TimesMade.Text = TimeMade.ToString();
+                    Author.Text = authname;
+                }
+                reader.Close();
+                dbCmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                AutoClosingMessageBox.Show(ex.Message, "Error", autotimeout);
+                if (dbConn.State == ConnectionState.Open)
+                {
+                    dbConn.Close();
+                }
+            }
+            finally
+            {
+                temp.Text = "";
+                string query = $"select Count(*) from [hash] where RECIPE_ID = '{ recipeid.Text }';";
+                dbCmd = new SQLiteCommand(query, dbConn);
+                reader = dbCmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    flavors_shown.Text = reader.GetInt32(0).ToString();
+                }
+                reader.Close();
+                query = $"Select * from [hash] where RECIPE_ID = '{ recipeid.Text }';";
+                dbCmd = new SQLiteCommand(query, dbConn);
+                reader = dbCmd.ExecuteReader();
+                int i = 0;
+                while (reader.Read())
+                {
+                    i = i + 1;
+                    string fid = reader.GetInt32(2).ToString();
+                    string per = reader.GetDouble(3).ToString();
+                    flv[i].Visibility = Visibility.Visible;
+                    //flv[i].Height = 24;
+                    flavor_id[i].Text = fid;
+                    percentage[i].Text = per;
+                    string fuery = $"Select BrandShort, Flavor from [Flavors] Where Id = '{ flavor_id[i].Text }'";
+                    dbCmd = new SQLiteCommand(fuery, dbConn);
+                    SQLiteDataReader freader = dbCmd.ExecuteReader();
+                    while (freader.Read())
+                    {
+                        brand[i].Text = freader[0].ToString();
+                    }
+                    freader.Close();
+                    dbCmd.Dispose();
+                }
+                reader.Close();
+                dbCmd.Dispose();
+                int y = Convert.ToInt32(flavors_shown.Text);
+                if (y < 11)
+                {
+                    FlavorScroller.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+                }
+                else
+                {
+                    FlavorScroller.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+                }
+                for (i = 1; i <= y; i++)
+                {
+                    TakeBrandGiveFlavor(brand[i]);
+                    if (dbConn.State == ConnectionState.Closed)
+                    {
+
+                        dbConn.Open();
+                    }
+                    query = $"Select Flavor,Amount from [Flavors] where Id = '{ flavor_id[i].Text }'";
+                    dbCmd = new SQLiteCommand(query, dbConn);
+                    reader = dbCmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        flavor[i].Text = reader[0].ToString();
+                    }
+                }
+                reader.Close();
+                dbCmd.Dispose();
+                HideTheRest();
+                if (dbConn.State == ConnectionState.Open)
+                {
+
+                    dbConn.Close();
+                }
+            }
+        }
+
         private void Adder_flv_Click(object sender, RoutedEventArgs e)
         {
             int i = Convert.ToInt32(flavors_shown.Text);
+            if (i > 0) { FlavorsBox.Visibility = Visibility.Visible; }
             #region Switch
             switch (i)
             {

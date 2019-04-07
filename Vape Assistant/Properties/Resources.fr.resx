@@ -12,19 +12,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BaseMixErrorMsg" xml:space="preserve">
-    <value>Die Mischung muss mehr als 0 ml sein.</value>
-  </data>
-  <data name="BaseMixNicBoosterError" xml:space="preserve">
-    <value>Wählen Sie Nic Booster-Typ</value>
-  </data>
-  <data name="Calculate_Button" xml:space="preserve">
-    <value>Berechnen</value>
-  </data>
-  <data name="ChrisG" xml:space="preserve">
-    <value>Christos Gleridis</value>
-  </data>
-  <data name="mg_ml" xml:space="preserve">
-    <value>mg/ml</value>
-  </data>
 </root>

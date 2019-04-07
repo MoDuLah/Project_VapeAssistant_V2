@@ -29,6 +29,13 @@ namespace Vape_Assistant.Views
             InitializeComponent();
             BindComboBox(cmb_brandname);
             NextID();
+            BRANDSHORT.Visibility = Visibility.Hidden;
+            FLAVOR.Visibility = Visibility.Hidden;
+            MSG.Visibility = Visibility.Hidden;
+            AMP.Visibility = Visibility.Hidden;
+            NOTES.Visibility = Visibility.Hidden;
+            OWNED.Visibility = Visibility.Hidden;
+            flv_add.Visibility = Visibility.Hidden;
         }
 
         private void flv_add_Click(object sender, RoutedEventArgs e)
@@ -84,7 +91,7 @@ namespace Vape_Assistant.Views
                         }
                     }
                 }
-                query = "SELECT Count(*) FROM Flavors WHERE Brand = '" + brandName.Text.Replace("'", "''") + "' and Flavor = '" + flv_Name.Text + "' ;";
+                query = "SELECT Count(*) FROM Flavors WHERE Brand = '" + brandName.Text.Replace("'", "''") + "' and Flavor = '" + flv_Name.Text.Replace("'", "''") + "' ;";
 
                 if (dbConn.State == ConnectionState.Closed) { dbConn.Open(); }
 
@@ -132,6 +139,28 @@ namespace Vape_Assistant.Views
                     }
                     else
                     {
+                        query = "Update Flavors SET ";
+                        query += $"Brand ='{ brandName.Text.Replace("'", "''") }', ";
+                        query += $"BrandShort ='{ brandShort.Text }', ";
+                        query += $"Flavor ='{ flv_Name.Text.Replace("'", "''") }', ";
+                        query += $"M_Spec_Grav ='{ MsG.Text.Replace(",", ".") }', ";
+                        query += $"Notes ='{ Notes.Text.Replace("'", "''") }', ";
+                        query += $"Average_Mixing ='{ AmP.Text.Replace(",", ".")  }', ";
+                        query += $"Owned ='{ owned }' ";
+                        query += $"Where Id ='{ add_flv_id.Text }'; ";
+                        dbCmd = new SQLiteCommand(query, dbConn);
+                        if (dbConn.State == ConnectionState.Closed) { dbConn.Open(); }
+                        int resultAffectedRows = dbCmd.ExecuteNonQuery();
+                        dbConn.Close();
+                        if (CurrentCulture == "en-US")
+                        {
+                            AutoClosingMessageBox.Show("Updated successfully " + resultAffectedRows + " entry!", "Success", 1500);
+                        }
+                        if (CurrentCulture == "el-GR")
+                        {
+                            AutoClosingMessageBox.Show("Ενημερώθηκε επιτυχώς " + resultAffectedRows + " εγγραφή!", "Επιτυχία", 1500);
+                        }
+
                         string qquery = "UPDATE FlavorBrands SET Flavor_count = Flavor_count + 1 WHERE ShortName = '" + brandShort.Text + "'; ";
 
                         if (dbConn.State == ConnectionState.Closed) { dbConn.Open(); }
@@ -141,30 +170,6 @@ namespace Vape_Assistant.Views
                         dbCmd.ExecuteNonQuery();
 
                         dbConn.Close();
-                    }
-                }
-                else
-                {
-                    query = "Update Flavors SET ";
-                    query += $"Brand ='{ brandName.Text.Replace("'", "''") }', ";
-                    query += $"BrandShort ='{ brandShort.Text }', ";
-                    query += $"Flavor ='{ flv_Name.Text.Replace("'", "''") }', ";
-                    query += $"M_Spec_Grav ='{ MsG.Text.Replace(",", ".") }', ";
-                    query += $"Notes ='{ Notes.Text.Replace("'", "''") }', ";
-                    query += $"Average_Mixing ='{ AmP.Text.Replace(",", ".")  }', ";
-                    query += $"Owned ='{ owned }' ";
-                    query += $"Where Id ='{ add_flv_id.Text }'; ";
-                    dbCmd = new SQLiteCommand(query, dbConn);
-                    if (dbConn.State == ConnectionState.Closed) { dbConn.Open(); }
-                    int resultAffectedRows = dbCmd.ExecuteNonQuery();
-                    dbConn.Close();
-                    if (CurrentCulture == "en-US")
-                    {
-                        AutoClosingMessageBox.Show("Updated successfully " + resultAffectedRows + " entry!", "Success", 1500);
-                    }
-                    if (CurrentCulture == "el-GR")
-                    {
-                        AutoClosingMessageBox.Show("Ενημερώθηκε επιτυχώς " + resultAffectedRows + " εγγραφή!", "Επιτυχία", 1500);
                     }
                 }
                 query = "";
@@ -195,6 +200,13 @@ namespace Vape_Assistant.Views
                     BindComboBox(cmb_brandname);
                     brandName.Text = "";
                     brandShort.Text = "";
+                    BRANDSHORT.Visibility = Visibility.Hidden;
+                    FLAVOR.Visibility = Visibility.Hidden;
+                    MSG.Visibility = Visibility.Hidden;
+                    AMP.Visibility = Visibility.Hidden;
+                    NOTES.Visibility = Visibility.Hidden;
+                    OWNED.Visibility = Visibility.Hidden;
+                    flv_add.Visibility = Visibility.Hidden;
                 }
                 cmb_flavname.SelectedIndex = -1;
                 flv_Name.Text = "";
@@ -280,12 +292,20 @@ namespace Vape_Assistant.Views
                 }
                 finally
                 {
+                    BRANDSHORT.Visibility = Visibility.Visible;
+                    FLAVOR.Visibility = Visibility.Visible;
+                    MSG.Visibility = Visibility.Visible;
+                    AMP.Visibility = Visibility.Visible;
+                    NOTES.Visibility = Visibility.Visible;
+                    OWNED.Visibility = Visibility.Visible;
+                    flv_add.Visibility = Visibility.Visible;
                     BlindComboBox(cmb_flavname);
                     if (dbConn.State == ConnectionState.Open)
                     {
 
                         dbConn.Close();
                     }
+
                 }
             }
         }
@@ -378,8 +398,6 @@ namespace Vape_Assistant.Views
             SQLiteConnection dbConn; // Declare the SQLiteConnection-Object
             dbConn = new SQLiteConnection(connectionString);
             dbConn.Open();
-            SQLiteConnection con = dbConn;
-            SQLiteCommand sqlcmd = new SQLiteCommand();
             try
             {
                 string query = "SELECT seq FROM [sqlite_sequence] WHERE NAME='Flavors'";
@@ -424,6 +442,188 @@ namespace Vape_Assistant.Views
             {
                 Regex regex = new Regex("[^0-9,]+"); //regex that matches disallowed text
                 return !regex.IsMatch(text);
+            }
+        }
+
+        private void DelBrandImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            string message, caption;
+            if (cmb_brandname.SelectedIndex < 0) { return; }
+            SQLiteConnection dbConn; // Declare the SQLiteConnection-Object
+            dbConn = new SQLiteConnection(connectionString);
+            dbConn.Open();
+
+            if (CurrentCulture == "el-GR")
+            {
+                message = "Είστε σίγουρος/η;";
+                caption = "Ερώτηση";
+            }
+            else
+            {
+                message = "Are you sure?";
+                caption = "Question";
+            }
+            if (MessageBox.Show(message, caption, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+                return;
+            }
+            else
+            {
+                query = $"Delete From [FlavorBrands] Where Name = '{ cmb_brandname.Text }' ;";
+                query += $"Delete From [Flavors] Where Brand ='{ cmb_brandname.Text }' ;";
+                dbCmd = new SQLiteCommand(query, dbConn);
+                dbCmd.ExecuteNonQuery();
+            }
+
+            cmb_brandname.SelectedIndex = -1;
+            cmb_brandname.Text = "";
+
+            if (dbConn.State == ConnectionState.Open)
+            {
+
+                dbConn.Close();
+            }
+            BindComboBox(cmb_brandname);
+
+        }
+
+        private void DelFlavorImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            string message, caption;
+            if (cmb_flavname.SelectedIndex < 0) { return; }
+            SQLiteConnection dbConn; // Declare the SQLiteConnection-Object
+            dbConn = new SQLiteConnection(connectionString);
+            dbConn.Open();
+
+            if (CurrentCulture == "el-GR")
+            {
+                message = "Είστε σίγουρος/η;";
+                caption = "Ερώτηση";
+            }
+            else
+            {
+                message = "Are you sure?";
+                caption = "Question";
+            }
+            if (MessageBox.Show(message, caption, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+                return;
+            }
+            else
+            {
+                query += $"Delete From [Flavors] Where Flavor ='{ cmb_flavname.Text }' ;";
+                dbCmd = new SQLiteCommand(query, dbConn);
+                dbCmd.ExecuteNonQuery();
+            }
+
+            if (dbConn.State == ConnectionState.Open)
+            {
+
+                dbConn.Close();
+            }
+
+            cmb_flavname.SelectedIndex = -1;
+            cmb_flavname.Text = "";
+
+            cmb_brandname_LostFocus(sender, null);
+
+        }
+
+        private void BrandName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(brandName.Text))
+            {
+                BRANDSHORT.Visibility = Visibility.Visible;
+                FLAVOR.Visibility = Visibility.Visible;
+                MSG.Visibility = Visibility.Visible;
+                AMP.Visibility = Visibility.Visible;
+                NOTES.Visibility = Visibility.Visible;
+                OWNED.Visibility = Visibility.Visible;
+                flv_add.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BRANDSHORT.Visibility = Visibility.Hidden;
+                FLAVOR.Visibility = Visibility.Hidden;
+                MSG.Visibility = Visibility.Hidden;
+                AMP.Visibility = Visibility.Hidden;
+                NOTES.Visibility = Visibility.Hidden;
+                OWNED.Visibility = Visibility.Hidden;
+                flv_add.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void BrandName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(brandName.Text))
+            {
+                BRANDSHORT.Visibility = Visibility.Visible;
+                FLAVOR.Visibility = Visibility.Visible;
+                MSG.Visibility = Visibility.Visible;
+                AMP.Visibility = Visibility.Visible;
+                NOTES.Visibility = Visibility.Visible;
+                OWNED.Visibility = Visibility.Visible;
+                flv_add.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BRANDSHORT.Visibility = Visibility.Hidden;
+                FLAVOR.Visibility = Visibility.Hidden;
+                MSG.Visibility = Visibility.Hidden;
+                AMP.Visibility = Visibility.Hidden;
+                NOTES.Visibility = Visibility.Hidden;
+                OWNED.Visibility = Visibility.Hidden;
+                flv_add.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void cmb_flavname_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmb_brandname.SelectedIndex >= 0)
+            {
+                SQLiteConnection dbConn;
+                dbConn = new SQLiteConnection(connectionString);
+                dbConn.Open();
+                SQLiteConnection con = dbConn;
+                SQLiteCommand sqlcmd = new SQLiteCommand();
+                try
+                {
+                    string query = $"SELECT * FROM [Flavors] WHERE BrandShort='" + brandShort.Text + "' And Flavor ='" + cmb_flavname.Text.Replace("'", "''") + "' ";
+                    if (dbConn.State == ConnectionState.Closed)
+                    {
+                        dbConn.Open();
+                    }
+                    dbCmd = new SQLiteCommand(query, dbConn);
+                    reader = dbCmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int Id_Flv = int.Parse(reader[0].ToString());
+                        flv_Name.Text = cmb_flavname.Text;
+                        add_flv_id.Text = Id_Flv.ToString();
+                        string MsGz = reader[4].ToString();
+                        MsG.Text = MsGz;
+                        string Notez = reader[5].ToString();
+                        Notes.Text = Notez;
+                        string AMP = reader[6].ToString();
+                        AmP.Text = AMP;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    AutoClosingMessageBox.Show(ex.ToString(), "Error", autotimeout);
+                    if (dbConn.State == ConnectionState.Open)
+                    {
+                        dbConn.Close();
+                    }
+                }
+                finally
+                {
+                    if (dbConn.State == ConnectionState.Open)
+                    {
+
+                        dbConn.Close();
+                    }
+                }
             }
         }
     }

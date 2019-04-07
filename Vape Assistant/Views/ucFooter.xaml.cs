@@ -24,6 +24,7 @@ namespace Vape_Assistant.Views
         Version version = Assembly.GetExecutingAssembly().GetName().Version;
         public static List<string> listA = new List<string>();
         public static List<string> listB = new List<string>();
+        public static List<string> listC = new List<string>();
         private DispatcherTimer timerImageChange;
         private Image[] ImageControls;
         private List<ImageSource> Images = new List<ImageSource>();
@@ -32,14 +33,14 @@ namespace Vape_Assistant.Views
         private string TransitionType;
         private int CurrentSourceIndex, CurrentCtrlIndex, EffectIndex = 0, IntervalTimer = 1;
         public string removeString = "";
-        public int index = 0;
-        public string MyURL,MyURL2;
+        public int index = 0, count = 0;
+        public string MyURL, MyURL2;
         public int y = 0;
         public bool clicked = false;
         public bool pause = false;
         public string CurrentCulture = Settings.Default.Culture;
         string strImagePath = Settings.Default.ImagePath;
-        DirectoryInfo ch;
+        private DirectoryInfo ch;
 
         public ucFooter()
         {
@@ -91,16 +92,15 @@ namespace Vape_Assistant.Views
                 {
                     Attributes = FileAttributes.Directory | FileAttributes.Hidden
                 };
-
             }
-            
+
             string v = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
             TextBox[] adlink = { adlink1, adlink2, adlink3, adlink4, adlink5, adlink6, adlink7, adlink8, adlink9, adlink10 };
             string BannerPath = path;
-            Array.ForEach(Directory.GetFiles(BannerPath), File.Delete);
-            string fileName = BannerPath + @"\update."+ v +"."+ CurrentCulture + ".txt";
+
+            string fileName = BannerPath + @"\update." + v + "." + CurrentCulture + ".txt";
             string timeStamp = DateTime.Now.ToString("yyyy.MM.dd");
-            string remoteaddress = "https://vapeassistant.000webhostapp.com/updates/" + @"update." + CurrentCulture +".txt";
+            string remoteaddress = "https://vapeassistant.000webhostapp.com/updates/" + @"update." + CurrentCulture + ".txt";
             string localpath = BannerPath + @"\update." + v + "." + CurrentCulture + ".txt";
             string extension = ".png";
             WebClient Client = new WebClient();
@@ -108,6 +108,7 @@ namespace Vape_Assistant.Views
             {
                 try
                 {
+                    Array.ForEach(Directory.GetFiles(BannerPath), File.Delete);
                     Client.DownloadFile(remoteaddress, localpath);
                 }
                 catch (Exception ex)
@@ -155,7 +156,6 @@ namespace Vape_Assistant.Views
                                 }
                             }
                         }
-
                     }
                 }
             }
@@ -172,8 +172,9 @@ namespace Vape_Assistant.Views
             pause = true;
             string s = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             clickedToday(y);
-            if (!string.IsNullOrEmpty(MyURL) && clicked == false) { 
-            Process.Start(new ProcessStartInfo(MyURL));
+            if (!string.IsNullOrEmpty(MyURL) && clicked == false)
+            {
+                Process.Start(new ProcessStartInfo(MyURL));
                 //Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
                 switch (y)
                 {
@@ -220,7 +221,7 @@ namespace Vape_Assistant.Views
                         MessageBox.Show("Error");
                         return;
                 }
-                
+
                 e.Handled = true;
                 pause = false;
             }
@@ -254,7 +255,7 @@ namespace Vape_Assistant.Views
             string date8 = Settings.Default.link8clickeddate;
             string date9 = Settings.Default.link9clickeddate;
             string date10 = Settings.Default.link10clickeddate;
-            string[] date = { date0, date1, date2, date3, date4,date5, date6, date7, date8, date9, date10 };
+            string[] date = { date0, date1, date2, date3, date4, date5, date6, date7, date8, date9, date10 };
 
             string s = Convert.ToString(DateTime.Now.ToString("yyyy-MM-dd"));
             string test = date[y];
@@ -354,7 +355,8 @@ namespace Vape_Assistant.Views
         {
             try
             {
-                if (Images.Count == 0) { 
+                if (Images.Count == 0)
+                {
                     return;
                 }
                 int oldCtrlIndex = CurrentCtrlIndex;
@@ -372,8 +374,9 @@ namespace Vape_Assistant.Views
                 StboardFadeOut.Begin(imgFadeOut);
                 Storyboard StboardFadeIn = Resources[string.Format("{0}In", TransitionType.ToString())] as Storyboard;
                 StboardFadeIn.Begin(imgFadeIn);
-                if (y < Images.Count) { 
-                y++;
+                if (y < Images.Count)
+                {
+                    y++;
                 }
                 else
                 {
@@ -384,7 +387,8 @@ namespace Vape_Assistant.Views
                 MyURL2 = listB[y];
 
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }

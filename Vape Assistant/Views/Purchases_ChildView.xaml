@@ -41,25 +41,25 @@
                 </GroupBox>
                 <GroupBox x:Name="purchase_vendor_lbl" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Header="{x:Static p:Resources.purchase_VendorName}" Margin="4">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <ComboBox MinWidth="120" x:Name="purchase_vendor_add" TabIndex="1" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" VerticalContentAlignment="Stretch"/>
+                        <ComboBox MinWidth="120" x:Name="purchase_vendor_add" TabIndex="1" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Margin="5,0" VerticalContentAlignment="Stretch"/>
                         <Button x:Name="Add_V" Click="Add_V_Click" Content="{x:Static p:Resources.AddShop}" AutomationProperties.AcceleratorKey="A" FontSize="12" Margin="0" VerticalAlignment="Center"/>
                     </StackPanel>
                 </GroupBox>
                 <GroupBox Grid.Row="0" Grid.Column="3" x:Name="purchase_ord_num_lbl" Header="{x:Static p:Resources.purchase_OrderId}">
-                    <TextBox x:Name="purchase_ord_num" AllowDrop="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="2" HorizontalAlignment="Center" MinWidth="80"/>
+                    <TextBox x:Name="purchase_ord_num" AllowDrop="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="2" MinWidth="80"/>
                 </GroupBox>
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" x:Name="ItemsHeader" MinWidth="800">
-                    <Grid HorizontalAlignment="Center" MinWidth="800">
+                    <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="35"/>
-                            <ColumnDefinition Width="130"  ToolTip="{x:Static p:Resources.purchase_Product}"/>
-                            <ColumnDefinition Width="120"  ToolTip="{x:Static p:Resources.purchase_SKU}"/>
-                            <ColumnDefinition Width="110"  ToolTip="{x:Static p:Resources.purchase_Quantity}"/>
-                            <ColumnDefinition Width="110"  ToolTip="{x:Static p:Resources.purchase_Price}"/>
-                            <ColumnDefinition Width="110"  ToolTip="{x:Static p:Resources.purchase_Discount}"/>
-                            <ColumnDefinition Width="110"  ToolTip="{x:Static p:Resources.purchase_Shipping}"/>
-                            <ColumnDefinition Width="110"  ToolTip="{x:Static p:Resources.purchase_Total}" />
+                            <ColumnDefinition Width="38" x:Name="Spacer"/>
+                            <ColumnDefinition Width="130" ToolTip="{x:Static p:Resources.purchase_Product}"/>
+                            <ColumnDefinition Width="120" ToolTip="{x:Static p:Resources.purchase_SKU}"/>
+                            <ColumnDefinition Width="140" MaxWidth="150" ToolTip="{x:Static p:Resources.purchase_Quantity}"/>
+                            <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Price}"/>
+                            <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Discount}"/>
+                            <ColumnDefinition Width="140" ToolTip="{x:Static p:Resources.purchase_Shipping}"/>
+                            <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Total}" />
                             <ColumnDefinition Width="17"/>
 
                         </Grid.ColumnDefinitions>
@@ -113,18 +113,18 @@
                                 <TextBlock FontSize="9" Text="{x:Static p:Resources.currency}"/>
                             </StackPanel>
                         </GroupBox>
-                        <ScrollViewer x:Name="ProductScroller" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="9" Height="Auto" MinHeight="250" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" MaxHeight="250" Margin="0,0" Padding="0,0,2,0">
+                        <ScrollViewer x:Name="ProductScroller" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="9" Height="Auto" MinHeight="250" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Center" MaxHeight="250" Padding="0,0,2,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="38"/>
                                     <ColumnDefinition Width="130" ToolTip="{x:Static p:Resources.purchase_Product}"/>
                                     <ColumnDefinition Width="120" ToolTip="{x:Static p:Resources.purchase_SKU}"/>
-                                    <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Quantity}"/>
+                                    <ColumnDefinition Width="140"  ToolTip="{x:Static p:Resources.purchase_Quantity}"/>
                                     <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Price}"/>
                                     <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Discount}"/>
-                                    <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Shipping}"/>
+                                    <ColumnDefinition Width="140" ToolTip="{x:Static p:Resources.purchase_Shipping}"/>
                                     <ColumnDefinition Width="110" ToolTip="{x:Static p:Resources.purchase_Total}" />
-                                    <ColumnDefinition Width="35"/>
+
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -153,7 +153,7 @@
                                 <TextBlock Grid.Column="0" Grid.Row="1" Text="1." TextAlignment="Right" x:Name="sn1" Margin="0,0,2,0" VerticalAlignment="Center"/>
                                 <TextBox Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" x:Name="product1" LostFocus="emptyTextBoxColoring" SelectionBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}"/>
                                 <TextBox Grid.Column="2" Grid.Row="1" GotFocus="Dash_GotFocus" LostFocus="Dash_LostFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="sku1" Text="-" SelectionBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" BorderBrush="{x:Null}"/>
-                                <TextBox Grid.Column="3" Grid.Row="1" KeyUp="Change_Total" PreviewTextInput="EditBox_PreviewTextInput" GotFocus="Quantity_GotFocus" LostFocus="Quantity_LostFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="quantity1" Text="0" SelectionBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" BorderBrush="{x:Null}"/>
+                                <TextBox Grid.Column="3" Grid.Row="1" KeyUp="Change_Total" PreviewTextInput="EditBox_PreviewTextInput" GotFocus="Quantity_GotFocus" LostFocus="Quantity_LostFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="quantity1" Text="0" SelectionBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" BorderBrush="{x:Null}" MinWidth="130"/>
                                 <TextBox Grid.Column="4" Grid.Row="1" KeyUp="Change_Total"  PreviewTextInput="EditBox_PreviewTextInput" GotFocus="DoubleDigit_GotFocus" LostFocus="DoubleDigit_LostFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="price1"    Text="0.0" SelectionBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" MaxLength="6" BorderBrush="{x:Null}" />
                                 <TextBox Grid.Column="5" Grid.Row="1" KeyUp="Change_Total" PreviewTextInput="EditBox_PreviewTextInput" GotFocus="DoubleDigit_GotFocus" LostFocus="DoubleDigit_LostFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="discount1" Text="0.0" SelectionBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" MaxLength="6" BorderBrush="{x:Null}"/>
                                 <TextBox Grid.Column="6" Grid.Row="1" KeyUp="Change_Total" PreviewTextInput="EditBox_PreviewTextInput" GotFocus="DoubleDigit_GotFocus" LostFocus="DoubleDigit_LostFocus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="shipping1" Text="0.0" SelectionBrush="{Binding Source={x:Static p:Settings.Default}, Path=ButtonBGColorHover, Mode=TwoWay}" MaxLength="6" BorderBrush="{x:Null}"/>
@@ -386,9 +386,9 @@
                 </GroupBox>
 
 
-                <Button x:Name="purchase_Reset" Grid.Column="2" Grid.Row="3" Content="{x:Static p:Resources.purchase_Clear}" Click="purchase_Reset_Click" VerticalAlignment="Top" Margin="10,5"/>
-                <Button x:Name="purchase_additem" Grid.Column="1" Grid.Row="3" Content="{x:Static p:Resources.purchases_tabitem1}" Click="purchase_additem_Click" VerticalAlignment="Top" Margin="10,5" />
-                <Button x:Name="purchase_submit" Grid.Column="3" Grid.Row="3" Content="{x:Static p:Resources.Save_Button}" Click="purchase_submit_Click" IsDefault="True" VerticalAlignment="Top" Margin="10,5" />
+                <Button x:Name="purchase_Reset" Grid.Column="2" Grid.Row="3" Content="{x:Static p:Resources.purchase_Clear}" Click="purchase_Reset_Click" Margin="10,5"/>
+                <Button x:Name="purchase_additem" Grid.Column="1" Grid.Row="3" Content="{x:Static p:Resources.purchases_tabitem1}" Click="purchase_additem_Click" Margin="10,5" />
+                <Button x:Name="purchase_submit" Grid.Column="3" Grid.Row="3" Content="{x:Static p:Resources.Save_Button}" Click="purchase_submit_Click" IsDefault="True" Margin="10,5" />
 
                 <TextBox x:Name="purchase_error_catch" Visibility="Collapsed" IsTabStop="False"/>
                 <TextBlock  x:Name="retrievedID" MinWidth="40" Visibility="Collapsed" HorizontalAlignment="Right"/>
@@ -421,34 +421,34 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <GroupBox Grid.Row="0" Grid.Column="0" Header="{x:Static p:Resources.purchase_ViewSince}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="4,5,4,0">
+                <GroupBox Grid.Row="0" Grid.Column="0" Header="{x:Static p:Resources.purchase_ViewSince}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="4,5,4,0">
                     <myCalendar:ucCalendar Grid.Row="1" Grid.Column="0" x:Name="datepSince" Width="Auto" TabIndex="0" HorizontalAlignment="Center"/>
                 </GroupBox>
-                <GroupBox Grid.Row="0" Grid.Column="1" Header="{x:Static p:Resources.purchase_ViewUntil}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="4,5,4,0">
+                <GroupBox Grid.Row="0" Grid.Column="1" Header="{x:Static p:Resources.purchase_ViewUntil}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="4,5,4,0">
                     <myCalendar:ucCalendar Grid.Row="1" Grid.Column="1" x:Name="datepUntil" Width="Auto" TabIndex="1" />
                 </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="0" Margin="4,4,4,0" Header="{x:Static p:Resources.purchase_ViewVendor}" HorizontalAlignment="Center" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
-                    <StackPanel Orientation="Horizontal">
+                <GroupBox Grid.Row="2" Grid.Column="0" Header="{x:Static p:Resources.purchase_ViewVendor}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <ComboBox  MinWidth="200" MaxWidth="200" x:Name="purchase_vendor_view" TabIndex="2" LostFocus="purchase_vendor_view_LostFocus" VerticalAlignment="Center" Margin="5,0,0,0" />
                         <Button x:Name="Load_table_txt" Content="{x:Static p:Resources.vendor_Load}" Click="Load_table" HorizontalAlignment="Center" FontSize="12"/>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="1" Margin="4,4,4,0" Header="{x:Static p:Resources.vendor_Reference}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom">
-                    <StackPanel Orientation="Horizontal">
+                <GroupBox Grid.Row="2" Grid.Column="1" Header="{x:Static p:Resources.vendor_Reference}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <ComboBox  MinWidth="200" MaxWidth="200" x:Name="purchase_reference" TabIndex="2" VerticalAlignment="Center" Margin="5,0,0,0" />
                         <Button x:Name="Load_by_reference" Content="{x:Static p:Resources.vendor_Load}" Click="Load_tabled" HorizontalAlignment="Center" FontSize="12"/>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Header="{x:Static p:Resources.purchase_Selection}" VerticalAlignment="Bottom" Margin="4,4,4,0">
+                <GroupBox Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Header="{x:Static p:Resources.purchase_Selection}" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button x:Name="EntryEdit" Content="{x:Static p:Resources.vendor_edit}" Click="Button_Edit_Element_Click" FontSize="12"/>
                         <Button x:Name="EntryDelete" Content="{x:Static p:Resources.vendor_delete}" Click="EntryDelete_Click" FontSize="12"/>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="3" x:Name="orderslbl" Header="{x:Static p:Resources.vendor_TotalOrders}" VerticalAlignment="Center" Margin="4,1,4,0">
+                <GroupBox Grid.Row="2" Grid.Column="3" x:Name="orderslbl" Header="{x:Static p:Resources.vendor_TotalOrders}">
                     <TextBox x:Name="Orders" MinWidth="20" Width="Auto" Text="0" IsTabStop="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" IsReadOnly="True"/>
                 </GroupBox>
-                <GroupBox Grid.Row="2" Grid.Column="4" x:Name="orderstotlbl" Header="{x:Static p:Resources.vendor_SumOrders}"  VerticalAlignment="Bottom" Margin="4,4,4,0">
+                <GroupBox Grid.Row="2" Grid.Column="4" x:Name="orderstotlbl" Header="{x:Static p:Resources.vendor_SumOrders}">
                     <TextBox x:Name="sumOrders" MinWidth="40" Width="Auto" Text="0" IsTabStop="False" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
                 </GroupBox>
                 <DataGrid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" 
@@ -457,9 +457,9 @@
                           Background="#FF242424"
                           AlternatingRowBackground="#FF424242"  AlternationCount="-1" AutoGenerateColumns="False"
                           FontSize="16" Foreground="White" HorizontalGridLinesBrush="#FFB00101" VerticalGridLinesBrush="#FFB00101" 
-                          Margin="0,5,0,0" IsReadOnly="True"  VerticalAlignment="Top"
+                          Margin="0,5,0,0" IsReadOnly="True"
                           TabIndex="4" SelectionChanged="ViewEntries_SelectionChanged"
-                          SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BorderThickness="2">
+                          SelectedItem="{Binding txtbox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BorderThickness="2" GridLinesVisibility="Horizontal">
                     <DataGrid.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF464646" Offset="0"/>
@@ -467,42 +467,27 @@
                         </LinearGradientBrush>
                     </DataGrid.BorderBrush>
                     <DataGrid.Columns>
-                        <DataGridTextColumn x:Name="IdColumn" Binding="{Binding Id}" Header=" # " Width="Auto"/>
-                        <DataGridTextColumn x:Name="DateColumn" Binding="{Binding Date}" Header=" Order Date " Width="Auto" MaxWidth="200"/>
-                        <DataGridTextColumn x:Name="ReferenceColumn" Binding="{Binding Reference}" Header="Order Ref." MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="NameColumn" Binding="{Binding Name}" Header=" Company " MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="VIDColumn" Binding="{Binding VID}" Header=" Company ID " MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="DescriptionColumn" Binding="{Binding Description}" Header=" Product Desc. " Width="Auto"/>
-                        <DataGridTextColumn x:Name="PIDColumn" Binding="{Binding PID}" Header=" Product Id (SKU) " MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="QuantityColumn" Binding="{Binding Quantity}" Header=" Quantity " MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="PriceColumn" Binding="{Binding Price}" Header=" Price ($) " MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="DiscountColumn" Binding="{Binding Discount}" Header=" Discount ($) " MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="ShippingColumn" Binding="{Binding Shipping}" Header=" Shipping ($) " MaxWidth="200" Width="Auto"/>
-                        <DataGridTextColumn x:Name="TotalColumn" Binding="{Binding Total}" Header=" Total Cost ($) " MaxWidth="200" Width="Auto"/>
+                        <DataGridTextColumn x:Name="IdColumn" Binding="{Binding Id}" Header=" # " Width="Auto" CanUserResize="False"/>
+                        <DataGridTextColumn x:Name="DateColumn" Binding="{Binding Date}" Header="{x:Static p:Resources.purchase_DateOfPurchase}" Width="Auto" MaxWidth="200"/>
+                        <DataGridTextColumn x:Name="ReferenceColumn" Binding="{Binding Reference}" Header="{x:Static p:Resources.purchase_OrderId}" MaxWidth="200" Width="Auto"/>
+                        <DataGridTextColumn x:Name="NameColumn" Binding="{Binding Name}" Header="{x:Static p:Resources.purchase_VendorName}" MaxWidth="300" Width="Auto"/>
+                        <DataGridTextColumn x:Name="VIDColumn" Binding="{Binding VID}" Header="Vendor ID" Width="0" CanUserSort="False" CanUserResize="False"/>
+                        <DataGridTextColumn x:Name="DescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.purchase_Product}" Width="Auto"/>
+                        <DataGridTextColumn x:Name="PIDColumn" Binding="{Binding PID}" Header="{x:Static p:Resources.purchase_OrderId}" MaxWidth="200" Width="Auto"/>
+                        <DataGridTextColumn x:Name="QuantityColumn" Binding="{Binding Quantity}" Header="{x:Static p:Resources.purchase_Quantity}" MaxWidth="200" Width="Auto"/>
+                        <DataGridTextColumn x:Name="PriceColumn" Binding="{Binding Price}" Header="{x:Static p:Resources.purchase_Price}" MaxWidth="200" Width="Auto"/>
+                        <DataGridTextColumn x:Name="DiscountColumn" Binding="{Binding Discount}" Header="{x:Static p:Resources.purchase_Discount}" MaxWidth="200" Width="Auto"/>
+                        <DataGridTextColumn x:Name="ShippingColumn" Binding="{Binding Shipping}" Header="{x:Static p:Resources.purchase_Shipping}" MaxWidth="200" Width="Auto"/>
+                        <DataGridTextColumn x:Name="TotalColumn" Binding="{Binding Total}" Header="{x:Static p:Resources.purchase_Total}" MaxWidth="200" Width="Auto"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Grid Grid.Row="6" Grid.RowSpan="1" Grid.ColumnSpan="5" x:Name="EditElementInputBox" Visibility="Collapsed">
+                <Grid Grid.Row="0" Grid.RowSpan="99" Grid.ColumnSpan="99" x:Name="EditElementInputBox" Visibility="Collapsed">
                     <Grid Background="Black" Opacity="0.6"/>
-                    <Border
-                            MinWidth="250"
-                            Background="{Binding Source={x:Static p:Settings.Default}, Path=innerBGColor, Mode=TwoWay}"
-                            BorderBrush="Black" 
-                            BorderThickness="2" 
-                            CornerRadius="5,5,5,5" 
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center">
+                    <GroupBox Header="{x:Static p:Resources.EditEntry}" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel >
-                            <TextBlock Margin="20,10,0,0" Text="{x:Static p:Resources.EditEntry}" FontWeight="Bold" />
-                            <ScrollViewer MaxHeight="220">
+                            <ScrollViewer MaxHeight="330">
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
-                                        <RowDefinition />
                                         <RowDefinition />
                                         <RowDefinition />
                                         <RowDefinition />
@@ -515,38 +500,66 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryID}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditIdBox"  Margin="5,5,0,5" Width="200" Grid.Row="0" Grid.Column="1" IsEnabled="False"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryDate}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditDateBox" Margin="5,5,0,5" Width="200" Grid.Row="1" Grid.Column="1" ToolTip="{x:Static p:Resources.TooltipDateFormat}"/>
-                                    <TextBlock Grid.Row="1" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryReference}" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditReferenceBox" Margin="5,5,0,5" Width="200" Grid.Row="2" Grid.Column="1"/>
-                                    <TextBlock Grid.Row="2" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryName}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <ComboBox x:Name="EditNameBox" Margin="5,5,0,5" Width="200" Grid.Row="3" Grid.Column="1" LostFocus="EditNameBox_LostFocus" />
-                                    <TextBlock Grid.Row="3" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryVID}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" IsEnabled="False"/>
-                                    <TextBox x:Name="EditVIDBox" Margin="5,5,0,5" Width="200" Grid.Row="4" Grid.Column="1" IsEnabled="False"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryProductDescription}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditDescriptionBox" Margin="5,5,0,5" Width="200" Grid.Row="5" Grid.Column="1"/>
-                                    <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryPID}" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditPIDBox" Margin="5,5,0,5" Width="200" Grid.Row="6" Grid.Column="1"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryQuantity}" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditQuantityBox" Margin="5,5,0,5" Width="200" Grid.Row="7" Grid.Column="1" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged" />
-                                    <TextBlock Grid.Row="7" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryPrice}" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditPriceBox" Margin="5,5,0,5" Width="200" Grid.Row="8" Grid.Column="1" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged" />
-                                    <TextBlock Grid.Row="8" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryDiscount}" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditDiscountBox" Margin="5,5,0,5" Width="200" Grid.Row="9" Grid.Column="1" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged" />
-                                    <TextBlock Grid.Row="9" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryShipping}" Grid.Row="10" Grid.Column="0" HorizontalAlignment="Right"/>
-                                    <TextBox x:Name="EditShippingBox" Margin="5,5,0,5" Width="200" Grid.Row="10" Grid.Column="1" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged"/>
-                                    <TextBlock Grid.Row="10" Grid.Column="2" Text="*" Foreground="Red" Margin="0,5,20,0" VerticalAlignment="Center"/>
-                                    <TextBlock Margin="5,5,0,5" Text="{x:Static p:Resources.EntryTotal}" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Right" IsEnabled="False"/>
-                                    <TextBox x:Name="EditTotalBox" Margin="5,5,0,5" Width="200" Grid.Row="11" Grid.Column="1"/>
+                                    <GroupBox Header="{x:Static p:Resources.EntryID}" Grid.Row="0" Grid.Column="0" Visibility="Collapsed">
+                                        <TextBox x:Name="EditIdBox" IsEnabled="False"/>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryDate}" Grid.Row="1" Grid.Column="0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="EditDateBox" Width="200" ToolTip="{x:Static p:Resources.TooltipDateFormat}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryReference}" Grid.Row="1" Grid.Column="1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="EditReferenceBox" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryName}" Grid.Row="2" Grid.Column="0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <ComboBox x:Name="EditNameBox" Width="200" LostFocus="EditNameBox_LostFocus" Margin="5" />
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryVID}" Grid.Row="2" Grid.Column="1" IsEnabled="False" Visibility="Collapsed">
+                                        <TextBox x:Name="EditVIDBox" Margin="5,5,0,5" Width="200" Grid.Row="4" Grid.Column="1" IsEnabled="False"/>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryProductDescription}" Grid.Row="2" Grid.Column="1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="EditDescriptionBox" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryPID}" Grid.Row="3" Grid.Column="0">
+                                        <TextBox x:Name="EditPIDBox" Margin="5,5,0,5" Width="200" Grid.Row="6" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryQuantity}" Grid.Row="3" Grid.Column="1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="EditQuantityBox" Width="200" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryPrice}" Grid.Row="4" Grid.Column="0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="EditPriceBox" Width="200" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryDiscount}" Grid.Row="4" Grid.Column="1">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="EditDiscountBox" Width="200" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryShipping}" Grid.Row="5" Grid.Column="0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="EditShippingBox" Width="200" PreviewTextInput="EditBox_PreviewTextInput" TextChanged="EditBox_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                            <TextBlock Text="*" Foreground="Red" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Header="{x:Static p:Resources.EntryTotal}" Grid.Row="5" Grid.Column="1">
+                                        <TextBox x:Name="EditTotalBox" Grid.Row="11" Grid.Column="1" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                    </GroupBox>
                                 </Grid>
                             </ScrollViewer>
 
@@ -555,7 +568,7 @@
                                 <Button x:Name="EditUpdateButton" Margin="5" Padding="10,5" Content="{x:Static p:Resources.popup_Submit}" Background="{x:Null}" Click="ButtonEdit_Update" IsDefault="True" />
                             </StackPanel>
                         </StackPanel>
-                    </Border>
+                    </GroupBox>
                 </Grid>
             </Grid>
         </TabItem>

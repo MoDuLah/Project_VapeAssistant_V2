@@ -646,12 +646,8 @@ namespace Vape_Assistant.Views
                 synthNic_Grams.Text = Convert.ToString(Math.Round(npgg + nvgg, 2));
                 double fpgg = FlvPG_ml * pg;
                 double fvgg = FlvVG_ml * vg;
-                synthFlv_Grams.Text = Convert.ToString(Math.Round(fpgg + fvgg, 2));
-                double TotalPG = (snv_BasPG_ml * pg) + npgg + (FlvPG_ml * pg);
-                double TotalVG = (snv_BasVG_ml * vg) + nvgg + (FlvVG_ml * vg);
 
                 totalML.Text = Convert.ToString(snv_BasPG_ml + snv_BasVG_ml + snv_Nic_ml + snv_Flv_ml);
-                totalGr.Text = Convert.ToString(Math.Round(TotalPG + TotalVG,2));
                 totalPercent.Text = Convert.ToString(Convert.ToDouble(synth_pgperc.Text) + Convert.ToDouble(synth_vgperc.Text) + 
                     Convert.ToDouble(synth_nicperc.Text) + Convert.ToDouble(flvpercent.Text));
 
@@ -665,6 +661,7 @@ namespace Vape_Assistant.Views
                 int messagelessLength = 0;
                 int messageLength = 0;
                 autotimeout = 20000;
+
                 bool errors = false;
                 if (CurrentCulture == "en-US")
                 {
@@ -684,6 +681,7 @@ namespace Vape_Assistant.Views
                 messageLength = message.Length;
                 messagelessLength = messageless.Length;
                 int fry = Convert.ToInt32(synth_flavors_shown.Text) + 1;
+                synthFlv_Grams.Text = "0";
                 for (int i = 1; i < fry; i++)
                 {
                     weight = Convert.ToDouble(flv_weight[i].Text);
@@ -701,6 +699,7 @@ namespace Vape_Assistant.Views
                     }
                     flav_ml[i].Text = Convert.ToString(flavmls);
                     flav_gr[i].Text = Convert.ToString(flavgrams);
+                    synthFlv_Grams.Text = Convert.ToString(Convert.ToDouble(synthFlv_Grams.Text) + Convert.ToDouble(flav_gr[i].Text));
                     if (mlwarehouse[i].Text == "0" || ownml < flavmls)
                     {
                         if (mlwarehouse[i].Text == "0")
@@ -740,6 +739,10 @@ namespace Vape_Assistant.Views
                         mlwarehouse[i].Foreground = fgbrush;
                     }
                 }
+                //synthFlv_Grams.Text = Convert.ToString(Math.Round(fpgg + fvgg, 2));
+                double TotalPG = (snv_BasPG_ml * pg) + npgg + Convert.ToDouble(synthFlv_Grams.Text);
+                double TotalVG = (snv_BasVG_ml * vg) + nvgg;
+                totalGr.Text = Convert.ToString(Math.Round(TotalPG + TotalVG, 2));
                 if (errors == true) {
                     string finalMessage = "";
                     if (message.Length > messageLength)

@@ -1800,9 +1800,10 @@ namespace Vape_Assistant.Views
                 shippingArray[y].Text = "0.0";
                 totalArray[y].Text = "0.0";
             }
-            ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Hidden);
+            //ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Hidden);
             order_sum.Text = "0";
             additems_Count.Text = "1";
+            purchase_additem.IsEnabled = true;  
             HideTheRest();
 
         }
@@ -1840,14 +1841,16 @@ namespace Vape_Assistant.Views
             if (i <= 19)
             {
                 i++;
-                if (i <= 6)
-                {
-                    ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Hidden);
-                }
-                else
-                {
-                    ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Visible);
-                }
+                //if (i <= 6)
+                //{
+                //    //Spacer.Width = new GridLength(37, GridUnitType.Pixel);
+                //    ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Hidden);
+                //}
+                //else
+                //{
+                //    Spacer.Width = new GridLength(37, GridUnitType.Pixel);
+                //    ScrollViewer.SetVerticalScrollBarVisibility(ProductScroller, ScrollBarVisibility.Visible);
+                //}
             }
             else
             {
@@ -2010,30 +2013,30 @@ namespace Vape_Assistant.Views
 
 
                             //Select Command
-                            
-                            query = $"SELECT * FROM [{dbTable}] WHERE Id > 0 order by id DESC ; ";
-                            dbCmd = new SQLiteCommand(query, dbConn);
-                            dbCmd.ExecuteNonQuery();
-                            dbAdapter = new SQLiteDataAdapter(dbCmd);
-                            mTable = new DataTable(dbTable);
+                            FillDataGrid();
+                            //query = $"SELECT * FROM [{dbTable}] WHERE Id > 0 order by id DESC ; ";
+                            //dbCmd = new SQLiteCommand(query, dbConn);
+                            //dbCmd.ExecuteNonQuery();
+                            //dbAdapter = new SQLiteDataAdapter(dbCmd);
+                            //mTable = new DataTable(dbTable);
 
-                            dbAdapter.Fill(mTable);
-                            dbConn.Close();
-                            ViewEntries.ItemsSource = mTable.DefaultView;
-                            dbAdapter.Update(mTable);
+                            //dbAdapter.Fill(mTable);
+                            //dbConn.Close();
+                            //ViewEntries.ItemsSource = mTable.DefaultView;
+                            //dbAdapter.Update(mTable);
 
-                            ViewEntries.Columns[0].Header = hdr0;
-                            ViewEntries.Columns[1].Header = hdr1;
-                            ViewEntries.Columns[2].Header = hdr2;
-                            ViewEntries.Columns[3].Header = hdr3;
-                            ViewEntries.Columns[4].Header = hdr4;
-                            ViewEntries.Columns[5].Header = hdr5;
-                            ViewEntries.Columns[6].Header = hdr6;
-                            ViewEntries.Columns[7].Header = hdr7;
-                            ViewEntries.Columns[8].Header = hdr8;
-                            ViewEntries.Columns[9].Header = hdr9;
-                            ViewEntries.Columns[10].Header = hdr10;
-                            ViewEntries.Columns[11].Header = hdr11;
+                            //ViewEntries.Columns[0].Header = hdr0;
+                            //ViewEntries.Columns[1].Header = hdr1;
+                            //ViewEntries.Columns[2].Header = hdr2;
+                            //ViewEntries.Columns[3].Header = hdr3;
+                            //ViewEntries.Columns[4].Header = hdr4;
+                            //ViewEntries.Columns[5].Header = hdr5;
+                            //ViewEntries.Columns[6].Header = hdr6;
+                            //ViewEntries.Columns[7].Header = hdr7;
+                            //ViewEntries.Columns[8].Header = hdr8;
+                            //ViewEntries.Columns[9].Header = hdr9;
+                            //ViewEntries.Columns[10].Header = hdr10;
+                            //ViewEntries.Columns[11].Header = hdr11;
                             Ordercount();
                         }
                     }

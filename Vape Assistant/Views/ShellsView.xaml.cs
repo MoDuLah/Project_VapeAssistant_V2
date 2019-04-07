@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.Windows.Media;
 using System.Net;
 using System.IO;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Vape_Assistant.Views
 {
@@ -23,12 +25,13 @@ namespace Vape_Assistant.Views
     public partial class ShellsView : Window
     {
         Version version = Assembly.GetExecutingAssembly().GetName().Version;
+        private static List<string> listA = new List<string>();
         public string CurrentCulture = Settings.Default.Culture;
         public string message, errmsg;
         public string caption;
         public string title;
         public int autotimeout = 5000;
-        string eng = "en-US";
+        private int count = 0;
         string gr = "el-GR";
         private System.Windows.Forms.NotifyIcon MyNotifyIcon;
         public bool IsAdmin { get; set; } = false;
@@ -150,16 +153,91 @@ namespace Vape_Assistant.Views
                         }
                     }
                 }
-            File.Delete(fullPath);
             }
         }
 
-        public object UI { get; private set; }
+        private async void VapeAssistant_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           await senddataAsync();   //Donate sw = new Donate();
+        }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Btn_Minimize_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private async Task senddataAsync()
         {
             Settings.Default.Save();
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string fileName = "temp.tmp";
+            string fullPath = Path + fileName;
+
+            string remoteaddress;
+            if (File.Exists(fullPath))
+            {
+                using (var reader = new StreamReader(fullPath))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            var values = line.Split(';');
+                            foreach (var value in values)
+                            {
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    remoteaddress = "https://bit.ly/" + value + "VA";
+                                    listA.Add(remoteaddress);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            await DownloadFiles(listA);
+            File.Delete(fullPath);
+            Settings.Default.Save();
+            GC.Collect();
+            Close();
         }
+        private async Task DownloadFile(string url)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string temp2 = Path + "temp2.tmp";
+            using (var client = new WebClient())
+            {
+                int nextIndex = Interlocked.Increment(ref count);
+
+                try
+                {
+                    await client.DownloadFileTaskAsync(url, temp2);
+                }
+                catch (Exception e)
+                {
+                    AutoClosingMessageBox.Show(e.Message, "Error", autotimeout);
+                }
+                finally
+                {
+                    if (File.Exists(temp2))
+                    {
+                        File.Delete(temp2);
+                    }
+                }
+            }
+            Settings.Default.Save();
+            Application.Current.Shutdown();
+        }
+        private async Task DownloadFiles(IEnumerable<string> urlList)
+        {
+            foreach (var url in urlList)
+            {
+                await DownloadFile(url);
+            }
+        }
+        public object UI { get; private set; }
+
 
         public static void ShellView_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -183,12 +261,6 @@ namespace Vape_Assistant.Views
             }
         }
 
-        private void VapeAssistant_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //Donate sw = new Donate();
-            Settings.Default.Save();
-            GC.Collect();
-        }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -196,19 +268,22 @@ namespace Vape_Assistant.Views
             e.Handled = true;
         }
 
-        private void ActiveItem_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-                this.DragMove();
-        }
-
         private void MainW_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            var variable = sender.GetType().ToString();
             if (e.ChangedButton == MouseButton.Left)
-                DragMove();
+            {
+                MessageBox.Show(variable + "\n" + e.ToString());
+                if (variable != "Image")
+                {
+
+                    DragMove();
+                }
+            }
+            
         }
 
-         private void btn_Minimize_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+         private void btn_MinimizeToTray_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             WindowState = WindowState.Minimized;
             ShowInTaskbar = false;
@@ -218,11 +293,9 @@ namespace Vape_Assistant.Views
             MyNotifyIcon.Visible = true;
         }
 
-        private void btn_Close_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private async void btn_Close_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            Settings.Default.Save();
-            GC.Collect();
-            Close();
+            await senddataAsync();
         }
 
 

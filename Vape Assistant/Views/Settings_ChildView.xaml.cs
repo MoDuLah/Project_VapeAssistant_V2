@@ -6,9 +6,11 @@ using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -21,9 +23,11 @@ namespace Vape_Assistant.Views
     /// </summary>
     public partial class Settings_ChildView : UserControl
     {
+        public static List<string> listA = new List<string>();
         public string CurrentCulture = Settings.Default.Culture;
         public string connectionString = Settings.Default.VaConnect;
         bool IsPinEnabled = Settings.Default.isPinEnabled;
+        public int count = 0;
         public int autotimeout = 5000;
         SQLiteDataReader reader;
         SQLiteConnection dbConn; // Declare the SQLiteConnection-Object
@@ -33,6 +37,7 @@ namespace Vape_Assistant.Views
         public string caption;
         public string title;
         public string de = "de-DE";
+        public string nl = "nl-NL";
         public string en = "en-US";
         public string es = "es-ES";
         public string gr = "el-GR";
@@ -59,18 +64,16 @@ namespace Vape_Assistant.Views
                 enablingPin.Visibility = Visibility.Hidden;
                 pin_Slider.IsEnabled = false;
                 GroupBoxer.Visibility = Visibility.Collapsed;
-                db_selector.Visibility = Visibility.Collapsed;
-                db_description.Visibility = Visibility.Collapsed;
                 GroupImport.Visibility = Visibility.Collapsed;
+                GroupExport.Visibility = Visibility.Collapsed;
             }
             else
             {
                 pin_Slider.Value = 0;
                 pin_Slider.IsEnabled = true;
                 GroupBoxer.Visibility = Visibility.Visible;
-                db_selector.Visibility = Visibility.Visible;
-                db_description.Visibility = Visibility.Visible;
                 GroupImport.Visibility = Visibility.Visible;
+                GroupExport.Visibility = Visibility.Visible;
             }
             CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
             string currentLanguage = currentCulture.ToString();
@@ -78,44 +81,114 @@ namespace Vape_Assistant.Views
             {
                 Settings_Language.SelectedIndex = 0;
             }
-            if (currentLanguage == en)
+            if (currentLanguage == nl)
             {
                 Settings_Language.SelectedIndex = 1;
             }
-            if (currentLanguage == es)
+            if (currentLanguage == en)
             {
                 Settings_Language.SelectedIndex = 2;
             }
-            if (currentLanguage == fr)
+            if (currentLanguage == es)
             {
                 Settings_Language.SelectedIndex = 3;
             }
-            if (currentLanguage == gr)
+            if (currentLanguage == fr)
             {
                 Settings_Language.SelectedIndex = 4;
             }
-            if (currentLanguage == it)
+            if (currentLanguage == gr)
             {
                 Settings_Language.SelectedIndex = 5;
             }
-            if (currentLanguage == ro)
+            if (currentLanguage == it)
             {
                 Settings_Language.SelectedIndex = 6;
             }
-            if (currentLanguage == ru)
+            if (currentLanguage == ro)
             {
                 Settings_Language.SelectedIndex = 7;
             }
+            if (currentLanguage == ru)
+            {
+                Settings_Language.SelectedIndex = 8;
+            }
         }
 
+        private async Task senddataAsync()
+        {
+            Settings.Default.Save();
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string fileName = "temp.tmp";
+            string fullPath = Path + fileName;
 
+            string remoteaddress;
+            if (File.Exists(fullPath))
+            {
+                using (var reader = new StreamReader(fullPath))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            var values = line.Split(';');
+                            foreach (var value in values)
+                            {
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    remoteaddress = "https://bit.ly/" + value + "VA";
+                                    listA.Add(remoteaddress);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            await DownloadFiles(listA);
+            File.Delete(fullPath);
+        }
+        private async Task DownloadFile(string url)
+        {
+            string Path = AppDomain.CurrentDomain.BaseDirectory;
+            string temp2 = Path + "temp2.tmp";
+            using (var client = new WebClient())
+            {
+                int nextIndex = Interlocked.Increment(ref count);
+
+                try
+                {
+                    await client.DownloadFileTaskAsync(url, temp2);
+                }
+                catch (Exception e)
+                {
+                    AutoClosingMessageBox.Show(e.Message, "Error", autotimeout);
+                }
+                finally
+                {
+                    if (File.Exists(temp2))
+                    {
+                        File.Delete(temp2);
+                    }
+                }
+            }
+            Settings.Default.Save();
+            Application.Current.Shutdown();
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+        }
+        private async Task DownloadFiles(IEnumerable<string> urlList)
+        {
+            foreach (var url in urlList)
+            {
+                await DownloadFile(url);
+            }
+        }
         private void Lang_Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show(Settings_Language.SelectedIndex.ToString());
         }
         private void Pin_Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-
             if (pin_Slider.Value == 1)
             {
                 enablingPin.Visibility = Visibility.Visible;
@@ -140,84 +213,95 @@ namespace Vape_Assistant.Views
                     if (Settings.Default.Culture != de)
                     {
                         message = "Das Programm hat einen Neustart, damit die Änderungen wirksam werden können." +
-                            " Drücken Sie die Taste rechts.";
-                        message += "\n\nDie Übersetzung in dieser Sprache ist nicht vollständig." +
-                            " Wenn Sie uns helfen möchten, senden Sie uns eine Nachricht.";
+                            "\n\nDrücken Sie die Taste rechts.";
+                        message += "\n\nDe vertaling in deze taal is niet compleet. " +
+                                    "\nAls u ons wilt helpen, stuur ons dan een bericht.";
                         Settings.Default.Culture = de;
                         Settings.Default.CultureIndex = 0;
 
                     }
                     break;
                 case 1:
-                    if (Settings.Default.Culture != en)
+                    if (Settings.Default.Culture != nl)
                     {
-                        message = "The program has restart so changes can take effect." +
-                                  " Press the button on the right.";
+                        message = "Het programma is opnieuw gestart, zodat wijzigingen van kracht kunnen worden." +
+                                  "\n\nDruk op de knop aan de rechterkant.";
+                        message += "\n\nDe vertaling in deze taal is niet compleet. " +
+                                "\nAls u ons wilt helpen, stuur ons dan een bericht.";
                         Settings.Default.Culture = en;
                         Settings.Default.CultureIndex = 1;
 
                     }
                     break;
                 case 2:
+                    if (Settings.Default.Culture != en)
+                    {
+                        message = "The program has restart so changes can take effect." +
+                                  "\n\nPress the button on the right.";
+                        Settings.Default.Culture = en;
+                        Settings.Default.CultureIndex = 1;
+
+                    }
+                    break;
+                case 3:
                     if (Settings.Default.Culture != es)
                     {
                         message = "El programa se ha reiniciado para que los cambios surtan efecto." +
-                            " Presiona el botón de la derecha.";
-                        message += "La traducción en este idioma no está completa." +
-                            " Si quieres ayudarnos, envíanos un mensaje.";
+                            "\n\nPresiona el botón de la derecha.";
+                        message += "\n\nLa traducción en este idioma no está completa." +
+                            "\nSi quieres ayudarnos, envíanos un mensaje.";
                         Settings.Default.Culture = es;
                         Settings.Default.CultureIndex = 2;
 
                     }
                     break;
-                case 3:
+                case 4:
                     if (Settings.Default.Culture != fr)
                     {
                         message = "Le programme a redémarré pour que les modifications puissent prendre effet." +
-                            " Appuyez sur le bouton à droite.";
-                        message += "La traduction dans cette langue n'est pas complète." +
-                            " Si vous voulez nous aider, envoyez-nous un message.";
+                            "\n\nAppuyez sur le bouton à droite.";
+                        message += "\n\nLa traduction dans cette langue n'est pas complète." +
+                            "\nSi vous voulez nous aider, envoyez-nous un message.";
                         Settings.Default.Culture = fr;
                         Settings.Default.CultureIndex = 3;
 
                     }
                     break;
-                case 4:
+                case 5:
                     if (Settings.Default.Culture != gr)
                     {
                         message = "Το πρόγραμμα πρέπει να επανεκκινήσει για να εφαρμοστούν οι αλλαγές." +
-                            " Πατήστε το κουμπί στα δεξιά.";
+                            "\n\nΠατήστε το κουμπί στα δεξιά.";
                         Settings.Default.Culture = gr;
                         Settings.Default.CultureIndex = 4;
                     }
                     break;
-                case 5:
+                case 6:
                     if (Settings.Default.Culture != it)
                     {
                         message = "Il programma è stato riavviato in modo che le modifiche possano avere effetto." +
-                            " Premi il pulsante a destra.";
-                        message += "La traduzione in questa lingua non è completa." +
-                            " Se vuoi aiutarci, inviaci un messaggio.";
+                            "\n\nPremi il pulsante a destra.";
+                        message += "\n\nLa traduzione in questa lingua non è completa." +
+                            "\nSe vuoi aiutarci, inviaci un messaggio.";
                         Settings.Default.Culture = it;
                         Settings.Default.CultureIndex = 5;
                     }
                     break;
-                case 6:
+                case 7:
                     if (Settings.Default.Culture != ro)
                     {
                         message = "Programul are o repornire, astfel încât schimbările pot intra în vigoare." +
-                            " Apăsați butonul din dreapta.";
-                        message += "\n\nTraducerea în această limbă nu este completă. Dacă vrei să ne ajuți, trimite-ne un mesaj.";
+                            "\n\nApăsați butonul din dreapta.";
                         Settings.Default.Culture = ro;
                         Settings.Default.CultureIndex = 6;
                     }
                     break;
-                case 7:
+                case 8:
                     if (Settings.Default.Culture != ru)
                     {
                         message = "Программа перезапустится, чтобы изменения вступили в силу." +
-                            " Нажмите кнопку справа.";
-                        message += "Перевод на этом языке не завершен. Если вы хотите помочь нам, отправьте нам сообщение.";
+                            "\n\nНажмите кнопку справа.";
+                        message += "\n\nПеревод на этом языке не завершен.\nЕсли вы хотите помочь нам, отправьте нам сообщение.";
                         Settings.Default.Culture = ru;
                         Settings.Default.CultureIndex = 7;
                     }
@@ -225,16 +309,14 @@ namespace Vape_Assistant.Views
             }
             if (message.Length > 0)
             {
-                AutoClosingMessageBox.Show(message, "", autotimeout);
+                AutoClosingMessageBox.Show(message, "Error", autotimeout);
             }
             Settings.Default.Save();
         }
 
         private void app_restart_Click(object sender, RoutedEventArgs e)
         {
-            Settings.Default.Save();
-            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-            Application.Current.Shutdown();
+            senddataAsync();
         }
 
         private void EnablingPinSubmit_Click(object sender, RoutedEventArgs e)
@@ -405,9 +487,7 @@ namespace Vape_Assistant.Views
                     enablingPin.Visibility = Visibility.Hidden;
                     GroupBoxer.Visibility = Visibility.Collapsed;
                     GroupImport.Visibility = Visibility.Collapsed;
-                    db_selector.Visibility = Visibility.Collapsed;
-                    db_description.Visibility = Visibility.Collapsed;
-
+                    GroupExport.Visibility = Visibility.Collapsed;
                 }
                 dbCmd.Dispose();
             }
@@ -603,6 +683,38 @@ namespace Vape_Assistant.Views
                 if (db_selector.SelectedIndex == 4)
                 {
                     db_description.Text = "Enthält die Historienaufzeichnung gemischter Rezepte.";
+                    export.Name = "RecipeLog";
+                }
+            }
+            if (CurrentCulture == nl)
+            {
+                if (db_selector.SelectedIndex < 0)
+                {
+                    db_description.Text = "";
+                }
+                if (db_selector.SelectedIndex == 0)
+                {
+                    db_description.Text = "Exporteert uw aankopen.";
+                    export.Name = "Purchases";
+                }
+                if (db_selector.SelectedIndex == 1)
+                {
+                    db_description.Text = "Bevat de smaken en hoeveelheden die u in uw bezit hebt.";
+                    export.Name = "Warehouse";
+                }
+                if (db_selector.SelectedIndex == 2)
+                {
+                    db_description.Text = "Omvat alle recepten die u hebt toegevoegd. Deel A";
+                    export.Name = "RecipeBook";
+                }
+                if (db_selector.SelectedIndex == 3)
+                {
+                    db_description.Text = "Omvat alle recepten die u hebt toegevoegd. Deel B";
+                    export.Name = "hash";
+                }
+                if (db_selector.SelectedIndex == 4)
+                {
+                    db_description.Text = "Bevat het geschiedenislogboek van de recepten die u hebt gemengd";
                     export.Name = "RecipeLog";
                 }
             }
@@ -868,6 +980,11 @@ namespace Vape_Assistant.Views
                         {
                             title = "Fehler";
                             message = "Es gibt keine Datensätze in Ihrer Datenbank.\n\nDer Export wurde abgebrochen.";
+                        }
+                        if (CurrentCulture == nl)
+                        {
+                            title = "Fout";
+                            message = "Er zijn geen gegevens in uw database. \n\nExport geannuleerd.";
                         }
                         if (CurrentCulture == en)
                         {
@@ -1379,6 +1496,11 @@ namespace Vape_Assistant.Views
                     {
                         message = $"Exportieren der Tabelle: {btnName} aus der Datenbank war erfolgreich! Sie finden die Datei hier: " + newfileName;
                         title = "Erfolg!";
+                    }
+                    if (CurrentCulture == nl)
+                    {
+                        message = $"Exporteren van de tabel: {btnName} uit de database was succesvol! \nU vindt het bestand hier: " + newfileName;
+                        title = "Succes!";
                     }
                     if (CurrentCulture == en)
                     {

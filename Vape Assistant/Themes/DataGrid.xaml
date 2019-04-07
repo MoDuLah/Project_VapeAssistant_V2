@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:myLocal="clr-namespace:Vape_Assistant.Themes">
 
-    <SolidColorBrush x:Key="BorderBrush" Color="#cfcfcf" />
+    <SolidColorBrush x:Key="BorderBrush" Color="#00FFFFFF" />
 
     <LinearGradientBrush x:Key="GlassBrush" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="#96FFFFFF" Offset="0"/>
@@ -22,7 +22,7 @@
 
     <SolidColorBrush x:Key="ArrowBrush" Color="#cfcfcf" />
 
-    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#FF919191" />
+    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#00919191" />
 
     <LinearGradientBrush x:Key="DisabledBackground" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="#f4f4f4" Offset="0"/>
@@ -32,7 +32,7 @@
 
     <SolidColorBrush x:Key="DisabledForeground" Color="#aaaaaa" />
 
-    <SolidColorBrush x:Key="HoverBorderBrush" Color="#d12e27" />
+    <SolidColorBrush x:Key="HoverBorderBrush" Color="#00d12e27" />
 
     <LinearGradientBrush x:Key="HoverBackground" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="#da5e69" Offset="0"/>
@@ -48,14 +48,11 @@
         <Setter Property="Background"
                       Value="{StaticResource BackgroundBrush}"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}" />
-        <Setter Property="BorderThickness" Value="5" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
-        <Setter Property="ScrollViewer.CanContentScroll"
-                      Value="true"/>
-        <Setter Property="ScrollViewer.PanningMode"
-                Value="Both"/>
-        <Setter Property="Stylus.IsFlicksEnabled"
-                Value="False"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -111,14 +108,15 @@
     <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridCell}">
                     <Border Background="{TemplateBinding Background}"
                       BorderBrush="{TemplateBinding BorderBrush}"
-                      BorderThickness="{TemplateBinding BorderThickness}"
+                      BorderThickness="0"
                       SnapsToDevicePixels="True">
                         <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Border>
@@ -127,21 +125,21 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="#FFA12B2B" />
-                <Setter Property="Foreground" Value="White" />
-                <Setter Property="BorderBrush" Value="#FF424242" />
+                <Setter Property="Background" Value="#00A12B2B" />
+                <Setter Property="Foreground" Value="#FFA12B2B" />
+                <Setter Property="BorderBrush" Value="Transparent" />
             </Trigger>
             <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                <Setter Property="BorderBrush" Value="#FF424242" />
+                <Setter Property="BorderBrush" Value="Transparent" />
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsSelected" Value="true"/>
                     <Condition Property="Selector.IsSelectionActive" Value="false"/>
                 </MultiTrigger.Conditions>
-                <Setter Property="Background" Value="#FFA12B2B" />
-                <Setter Property="Foreground" Value="White" />
-                <Setter Property="BorderBrush" Value="#FF424242" />
+                <Setter Property="Background" Value="#00A12B2B" />
+                <Setter Property="Foreground" Value="#FFA12B2B" />
+                <Setter Property="BorderBrush" Value="Transparent" />
             </MultiTrigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
@@ -154,10 +152,10 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Height" Value="30"/>
-        <Setter Property="Margin" Value="5,0,0,0"/>
+        <Setter Property="Margin" Value="25,0"/>
         <Setter Property="Padding" Value="25"/>
-        <Setter Property="BorderBrush" Value="#FFFF0000"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#00FF0000"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
@@ -187,8 +185,8 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0,0,0,0"/>
-        <Setter Property="BorderBrush" Value="#FFA12B2B"/>
-        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="#00A12B2B"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Padding" Value="5,0"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -205,4 +203,5 @@
             </Setter.Value>
         </Setter>
     </Style>
+
 </ResourceDictionary>

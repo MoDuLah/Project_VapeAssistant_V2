@@ -535,14 +535,8 @@
   <data name="flv_tab_JuiceLog" xml:space="preserve">
     <value>Ιστορικό Υγρών</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Ενεργοποίηση</value>
-  </data>
   <data name="SN" xml:space="preserve">
     <value>Ενεργοποίηση Βοηθού Ατμιστή</value>
-  </data>
-  <data name="Dtrial" xml:space="preserve">
-    <value>Απομένουν 7 ημέρες </value>
   </data>
   <data name="vendor_SumOrders" xml:space="preserve">
     <value>Σύνολο Παραγγελιών</value>
@@ -1121,5 +1115,19 @@
 - Ιστορικό Υγρών: Διόθρωση στην εμφάνιση στον πίνακα Προσθήκη/Επεξεργασία.
 - Συνταγές: Αφαιρέθηκε ένα πλαίσιο μηνυμάτων κατά τη διαγραφή γεύσης.
 - Σύνθεση: Διορθώθηκε ένα ζήτημα εμφάνησης μετά τη σύνθεση.</value>
+  </data>
+  <data name="flavors_deleteBrand_tooltip" xml:space="preserve">
+    <value>Διαγραφή αυτής της Εταιρίας.</value>
+  </data>
+  <data name="flavors_deleteFlavor_tooltip" xml:space="preserve">
+    <value>Διαγραφή αυτής της Γεύσης</value>
+  </data>
+  <data name="about_change_0032" xml:space="preserve">
+    <value>- Σύνθεση: Διόρθωση στον υπολογισμού τελικού βάρους αρωμάτων.
+- Αρώματα: Διόρθωση στο checkbox "Το Κατέχεις;" να επαναφέρετε στην αρχική του ρύθμιση κατα την εκκαθάριση.</value>
+  </data>
+  <data name="about_change_0033" xml:space="preserve">
+    <value>- Αρώματα: Προσθήκη επιλογής διαγραφής Εταιρίας/Αρώματος.
+- Ρυθμίσεις: Διόρθωση στην εμφάνηση μετά τον ορισμό PIN.</value>
   </data>
 </root>
