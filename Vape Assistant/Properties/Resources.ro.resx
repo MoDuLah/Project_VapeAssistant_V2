@@ -16,7 +16,7 @@
     <value>Amestecul trebuie sa aiba o cantitate mai mare de 0ml.</value>
   </data>
   <data name="BaseMixNicBoosterError" xml:space="preserve">
-    <value>Alege tipul de Nic Booster</value>
+    <value>Alege tipul Nic Booster</value>
   </data>
   <data name="Calculate_Button" xml:space="preserve">
     <value>Calculeaza</value>
@@ -49,7 +49,7 @@
     <value>Curata</value>
   </data>
   <data name="FirstTip" xml:space="preserve">
-    <value>Introdu oricare doua valori cunoscute si apasa Calculeaza.</value>
+    <value>Introdu oricare doua valori cunoscute si apasa Calculati.</value>
   </data>
   <data name="Lang" xml:space="preserve">
     <value>Limba</value>
@@ -82,7 +82,7 @@
     <value>PIN</value>
   </data>
   <data name="LoginRemember" xml:space="preserve">
-    <value>Tine-ma minte:</value>
+    <value>TINE-MA MINTE:</value>
   </data>
   <data name="LoginTitle" xml:space="preserve">
     <value>LOGARE</value>
@@ -118,10 +118,10 @@
     <value>Vrei sa faci</value>
   </data>
   <data name="OneShotErrorMsg1" xml:space="preserve">
-    <value>Trebuie sa ajustezi nivelurile de PG/VG, Nic sau Aroma.</value>
+    <value>Trebuie sa ajustati nivelurile de PG/VG, Nic sau Aroma.</value>
   </data>
   <data name="OneShotErrorMsg2" xml:space="preserve">
-    <value>Nu se pot folosi numere Negative. Recalculeaza.</value>
+    <value>Nu se pot folosi numere Negative. Recalculati.</value>
   </data>
   <data name="OneShotErrorTitle" xml:space="preserve">
     <value>Eroare</value>
@@ -138,6 +138,9 @@
   <data name="OneShotL_Flavor" xml:space="preserve">
     <value>Aroma</value>
   </data>
+  <data name="OneShotL_NicBooster" xml:space="preserve">
+    <value>Amplificator de Nic</value>
+  </data>
   <data name="Save_Button" xml:space="preserve">
     <value>Salveaza</value>
   </data>
@@ -151,10 +154,10 @@
     <value>Baza (ml)</value>
   </data>
   <data name="TargetBoosterLevel" xml:space="preserve">
-    <value>Nivel Booster(mg/ml)</value>
+    <value>Nivel amplificator de Nic (mg/ml)</value>
   </data>
   <data name="Targetbottles" xml:space="preserve">
-    <value>Sticle</value>
+    <value>Sticle de Nicotina</value>
   </data>
   <data name="Targetml" xml:space="preserve">
     <value>Obiectiv ml</value>
@@ -178,10 +181,10 @@
     <value>Pretul de ml Ejuice este calculat impartind pretul sticlei la cati ml are sticla.</value>
   </data>
   <data name="TooltipEJuicemlCost2" xml:space="preserve">
-    <value>De examplu: 15$/30ml=0.5$/ml deci introduci 0.5</value>
+    <value>De examplu: 15$/30ml=0.5$/ml deci introduceti 0.5</value>
   </data>
   <data name="purchase_DateOfPurchase" xml:space="preserve">
-    <value>Data achizitiei</value>
+    <value>Data achizitiei (aaaa/ll/zz)</value>
   </data>
   <data name="purchase_VendorName" xml:space="preserve">
     <value>Comerciant</value>
@@ -190,7 +193,7 @@
     <value>Id Comanda (#)</value>
   </data>
   <data name="daymonthyear" xml:space="preserve">
-    <value>zz/ll/aaaa</value>
+    <value>zz/ll/aaa</value>
   </data>
   <data name="vendor_Active" xml:space="preserve">
     <value>Activ</value>
@@ -256,7 +259,7 @@
     <value>Comerciant</value>
   </data>
   <data name="vendor_Load" xml:space="preserve">
-    <value>Incarca</value>
+    <value>Incarca Datele din Tabel</value>
   </data>
   <data name="purchases_tabitem1" xml:space="preserve">
     <value>Adauga</value>
@@ -286,7 +289,7 @@
     <value>Schimba Jurnalul</value>
   </data>
   <data name="about_change_0001" xml:space="preserve">
-    <value>Repara "Legea lui Ohm" pentru punctul decimal.</value>
+    <value>Reparatii la "Legea lui Ohm" pentru punctul decimal.</value>
   </data>
   <data name="about_change_0002" xml:space="preserve">
     <value>- S-a adaugat sectiunea "Statistici".
@@ -301,7 +304,7 @@
 - S-a inlaturat coloana Valuta / ml  de la "Costul Nicotinei".</value>
   </data>
   <data name="about_change_0005" xml:space="preserve">
-    <value>- S-a adaugat sectiunea "Amesteca bazele".</value>
+    <value>- S-a adaugat sectiunea "Amestecarea bazelor".</value>
   </data>
   <data name="about_change_0006" xml:space="preserve">
     <value>- S-au adaugat Cursoare in 'Legea lui Ohm'.</value>
@@ -324,12 +327,12 @@
 - Multiple reparatii de bug-uri.</value>
   </data>
   <data name="about_change_0010" xml:space="preserve">
-    <value>- Imbunatatirea Temelor.</value>
+    <value>- Imbunatatire a Temelor.</value>
   </data>
   <data name="about_change_0011" xml:space="preserve">
     <value>- S-au adaugat Icoane pentru fiecare sectiune.
 - S-a adaugat greutate la sectiunea "Oneshot".
-- S-a adaugat Selectarea Limbii, mai multe teme, mai multe optiuni de colorare free-for-all.
+- S-a adaugat Selectarea Limbii, mai multe teme, optiuni de colorare prelungite free-for-all.
 - S-au imbunatatit anumite formule de calcul.
 - Imbunatatiri in sectiunea "Amestec de Baza".</value>
   </data>
@@ -339,16 +342,16 @@
 (Codul-Pin se poate gasi in installer la sectiunea Informatii). Dupa ce te loghezi prima oara, ti se cere sa schimbi parola implicita. 
 Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand rulezi programul.
 - Imbunatatiri la metoda de introducere a datelor in campuri, cu casute dropdown in loc de casute textbox.
-- Permite campuri text in sectiunea "Legea lui Ohm" (Astfel incat sa poti defini valoarea exacta, spre exemplu la rezistenta 0.235Ω)
-- Din moment ce majoritatea utilizatorilor sunt deocamdata greci, limba implicita a fost schimbata in Greaca.</value>
+- Permite campuri text la sectiunea "Legea lui Ohm" (Astfel incat sa poti defini valoarea exacta, spre examplu la rezistenta 0.235Ω)
+- Din moment ce majoritatea utilizatorilor sunt deocamdata greci, limba implicita a fost setata pe Greaca.</value>
   </data>
   <data name="about_change_0013" xml:space="preserve">
-    <value>- Installer nou.
+    <value>- Instalare Noua.
 - Scurtatura pe Desktop.
-- Scurtatura in Meniul de Start, optiuni de suport si dezinstalare.</value>
+- Scurtatura in Meniul Start, optiuni de suport si dezinstalare.</value>
   </data>
   <data name="about_change_0014" xml:space="preserve">
-    <value>- Mica remediere de Bug-uri.
+    <value>- Mica remediere de Bug.
 - Remediere in Baza de date.</value>
   </data>
   <data name="Codebehind" xml:space="preserve">
@@ -364,7 +367,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>Abreviere: </value>
   </data>
   <data name="add_flv_amp" xml:space="preserve">
-    <value>% Mediu de Amestec: </value>
+    <value>Procent Mediu de Amestec: </value>
   </data>
   <data name="add_flv_brandName" xml:space="preserve">
     <value>Numele Marcii: </value>
@@ -475,7 +478,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>Daca exista deja</value>
   </data>
   <data name="flavour_add" xml:space="preserve">
-    <value>Adauga Aroma</value>
+    <value>Adauga o aroma</value>
   </data>
   <data name="gridColumnHeader1" xml:space="preserve">
     <value>Marca</value>
@@ -505,7 +508,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>- S-a adaugat sectiunea Despre.</value>
   </data>
   <data name="synth_TargetMl" xml:space="preserve">
-    <value>Obiectiv ML</value>
+    <value>Tinta ML</value>
   </data>
   <data name="synth_RecipeName" xml:space="preserve">
     <value>Numele Retetei</value>
@@ -554,7 +557,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
   </data>
   <data name="about_change_0019" xml:space="preserve">
     <value>- S-a adaugat Alerta pentru mai mult decat 20A la 'Legea lui Ohm'.
-- S-a adaugat ML de Aroma la 'OneShots'.
+- S-au adaugat ML de Aroma la 'OneShots'.
 - Imbunatatiri Vizuale.</value>
   </data>
   <data name="about_change_0020" xml:space="preserve">
@@ -576,7 +579,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
   <data name="about_change_0024" xml:space="preserve">
     <value>- S-a fixat numarul Problemelor pe PG in Oneshots.
 - Creste durata Puterii Nicotinei de la 2 la 5 caractere la Oneshots.
-- S-au adaugat mai multe optiuni booster (30/70 &amp; 70/30).
+- S-au adaugat mai multe optiuni de impulsionare (booster) (30/70 &amp; 70/30).
 - S-a adaugat optiunea de a salva oneshots in Jurnalul de Juice.</value>
   </data>
   <data name="about_change_0025" xml:space="preserve">
@@ -608,43 +611,43 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>Rezerva</value>
   </data>
   <data name="EntryDate" xml:space="preserve">
-    <value>Introdu Data</value>
+    <value>Introdu Data: </value>
   </data>
   <data name="EntryDiscount" xml:space="preserve">
-    <value>Introdu Reducerea</value>
+    <value>Introdu Reducerea: </value>
   </data>
   <data name="EntryName" xml:space="preserve">
-    <value>Introdu Numele Furnizorului</value>
+    <value>Introdu Numele Furnizorului: </value>
   </data>
   <data name="EntryPID" xml:space="preserve">
-    <value>Introdu ID-ul Produsului (SKU)</value>
+    <value>Introdu ID-ul Produsului (SKU): </value>
   </data>
   <data name="EntryPrice" xml:space="preserve">
-    <value>Introdu Pretul</value>
+    <value>Introdu Pretul: </value>
   </data>
   <data name="EntryProductDescription" xml:space="preserve">
-    <value>Introdu Descrierea Produsului</value>
+    <value>Introdu Descrierea Produsului: </value>
   </data>
   <data name="EntryQuantity" xml:space="preserve">
-    <value>Introdu Cantitatea</value>
+    <value>Introdu Cantitatea: </value>
   </data>
   <data name="EntryReference" xml:space="preserve">
-    <value>Introdu Referinta</value>
+    <value>Introdu Referinta: </value>
   </data>
   <data name="EntryShipping" xml:space="preserve">
-    <value>Introdu Livrarea</value>
+    <value>Introdu Livrarea: </value>
   </data>
   <data name="EntryTotal" xml:space="preserve">
-    <value>Introdu Totalul</value>
+    <value>Introdu Totalul: </value>
   </data>
   <data name="EntryVID" xml:space="preserve">
-    <value>Introdu ID-ul Furnizorului</value>
+    <value>Introdu ID-ul Furnizorului: </value>
   </data>
   <data name="EntryID" xml:space="preserve">
-    <value>Id de Intrare</value>
+    <value>Id de Intrare: </value>
   </data>
   <data name="EditEntry" xml:space="preserve">
-    <value>Editeaza Intrarea</value>
+    <value>Editeaza Intrarea: </value>
   </data>
   <data name="Alch_Backup_hdrDB" xml:space="preserve">
     <value>Baza de date</value>
@@ -659,7 +662,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>Import</value>
   </data>
   <data name="Alch_Backup_Row3" xml:space="preserve">
-    <value>hash</value>
+    <value>hasis</value>
   </data>
   <data name="Alch_Backup_Desc1" xml:space="preserve">
     <value>Include Aromele pe care le detii.</value>
@@ -793,10 +796,6 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
   <data name="EJuiceCosts3" xml:space="preserve">
     <value>Costul Nicotinei</value>
   </data>
-  <data name="about_change_0028" xml:space="preserve">
-    <value>- Retetele au crescut inregistrarea Procentului de MinHeight
-- Sintetizarea a crescut mg/ml la Minheight.</value>
-  </data>
   <data name="synth_Total" xml:space="preserve">
     <value>Total</value>
   </data>
@@ -900,7 +899,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>Costul Zilnic al Fumatului</value>
   </data>
   <data name="statistics_DaysWithoutCigarette" xml:space="preserve">
-    <value>Zile fara tigari</value>
+    <value>Days w/o cigarette</value>
   </data>
   <data name="statistics_EjuiceMlCost" xml:space="preserve">
     <value>Costul unui ml de E-Juice</value>
@@ -963,7 +962,7 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>Grame</value>
   </data>
   <data name="mixbase_HeaderNicBottleAmount" xml:space="preserve">
-    <value>Cantitatea de Sticle cu Nic</value>
+    <value>Cantitatea de Sticle cu Nicotina</value>
   </data>
   <data name="mixbase_HeaderNicLevel" xml:space="preserve">
     <value>Nicotina (mg/ml)</value>
@@ -978,13 +977,13 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
     <value>Totalul Amestecului</value>
   </data>
   <data name="mixbase_LeftMixRatioPGVG" xml:space="preserve">
-    <value>Raportul de Amestec PG / VG</value>
+    <value>Amestec de Raport PG / VG</value>
   </data>
   <data name="mixbase_LeftMixTotalVolume" xml:space="preserve">
     <value>Volum</value>
   </data>
   <data name="mixbase_LeftMixVolumePGVG" xml:space="preserve">
-    <value>Volum PG / VG</value>
+    <value>Volum PG / VG (ml)</value>
   </data>
   <data name="mixbase_LeftResultmlToolTip" xml:space="preserve">
     <value>Raportul este in ml</value>
@@ -1010,131 +1009,34 @@ Daca refuzi si pastrezi codul-pin implicit, ti se va cere urmatoarea data cand r
   <data name="currency" xml:space="preserve">
     <value>$</value>
   </data>
-  <data name="settings_Restart" xml:space="preserve">
-    <value>Restart</value>
+  <data name="settings_LanguageEn" xml:space="preserve">
+    <value>English</value>
   </data>
-  <data name="flv_tab_Warehouse" xml:space="preserve">
-    <value>Depozit</value>
+  <data name="settings_LanguageGr" xml:space="preserve">
+    <value>Ελληνικά</value>
   </data>
-  <data name="warehouse_header" xml:space="preserve">
-    <value>Depozit</value>
+  <data name="settings_LanguageDe" xml:space="preserve">
+    <value>Deutsche</value>
   </data>
-  <data name="add_flv_WarehouseCount" xml:space="preserve">
-    <value>Articole</value>
+  <data name="settings_LanguageEs" xml:space="preserve">
+    <value>Español</value>
   </data>
-  <data name="rem_Flv_fromwarehouse" xml:space="preserve">
-    <value>Scoate Aroma din Depozit</value>
+  <data name="settings_LanguageIt" xml:space="preserve">
+    <value>Italiano</value>
   </data>
-  <data name="mlinwarehouse" xml:space="preserve">
-    <value>ml in Depozit</value>
+  <data name="settings_LanguageRo" xml:space="preserve">
+    <value>Romanian</value>
   </data>
-  <data name="Alch_Warehouse_AddFlv" xml:space="preserve">
-    <value>Adauga Aroma</value>
+  <data name="settings_LanguageRu" xml:space="preserve">
+    <value>Pусский</value>
   </data>
-  <data name="Alch_Warehouse_FlvId" xml:space="preserve">
-    <value>Id Aroma</value>
-  </data>
-  <data name="warehouse_hdrAmount" xml:space="preserve">
-    <value>Cantitate</value>
-  </data>
-  <data name="warehouse_hdrBrand" xml:space="preserve">
-    <value>Marca</value>
-  </data>
-  <data name="warehouse_hdrFlavor" xml:space="preserve">
-    <value>Aroma</value>
-  </data>
-  <data name="warehouse_hdrId" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="Alch_Warehouse_EditFlv" xml:space="preserve">
-    <value>Modifica Cantitatea de Aroma</value>
-  </data>
-  <data name="settings_PurchasesPIN" xml:space="preserve">
-    <value>PIN (Achizitii)</value>
-  </data>
-  <data name="menu_tools_Alchemy_Warehouse" xml:space="preserve">
-    <value>_Depozit</value>
-  </data>
-  <data name="btn_MinimizeToTray" xml:space="preserve">
-    <value>Minimizeaza in Bara.</value>
-  </data>
-  <data name="settings_Setpin" xml:space="preserve">
-    <value>Seteaza Pin</value>
-  </data>
-  <data name="about_donationHdr" xml:space="preserve">
-    <value>Iti place aceasta aplicatie?</value>
-  </data>
-  <data name="about_donationTxt" xml:space="preserve">
-    <value>Fa-mi cinste cu o bere!</value>
-  </data>
-  <data name="purchases_amountInCurrency" xml:space="preserve">
-    <value>Cantitate in </value>
-  </data>
-  <data name="purchases_Items" xml:space="preserve">
-    <value>Articole</value>
-  </data>
-  <data name="purchases_TotalCost" xml:space="preserve">
-    <value>Cost Total(€)</value>
-  </data>
-  <data name="required" xml:space="preserve">
-    <value>Necesar</value>
-  </data>
-  <data name="settings_CurrentPin" xml:space="preserve">
-    <value>PIN actual</value>
-  </data>
-  <data name="btn_CloseWindow" xml:space="preserve">
-    <value>Inchide fereastra.</value>
-  </data>
-  <data name="oneshot_grams" xml:space="preserve">
-    <value>Grame</value>
-  </data>
-  <data name="oneshot_ml" xml:space="preserve">
-    <value>ml</value>
-  </data>
-  <data name="about_Translations" xml:space="preserve">
-    <value>Traduceri</value>
-  </data>
-  <data name="settings_export_tooltip" xml:space="preserve">
-    <value>Daca este dezafectat, selecteaza un combobox din stanga.</value>
-  </data>
-  <data name="vendor_Add" xml:space="preserve">
-    <value>Adauga Comerciant</value>
-  </data>
-  <data name="about_change_0029" xml:space="preserve">
-    <value>- Reparatii la Achizitii pentru problemele cu Order ID Textbox, Datagrid On View.
-- Reparatii la Jurnalul Depozit/Joice pe MaxHeight pe Datagrid.
-- Reduce latimea coloanei Cantitate, si latimea coloanei Raport.
-- Creste Latimea Numelui in Jurnalul de Juice.</value>
-  </data>
-  <data name="about_change_0030" xml:space="preserve">
-    <value>- Reduce latimea coloanei Cantitate in Depozit.
-- Synthesize Fix top row and buttons.
-- Added translations Credit in About.</value>
-  </data>
-  <data name="about_change_0031" xml:space="preserve">
-    <value>- S-a reparat crash-ul sqlite de la Arome Detinute.
-- S-a reparat "O ai?" checkbox dupa salvare pentru a reseta la pozitia initiala.
-- Amestecul Bazelor: Ajusteaza Formatarea valorilor Amestecului Total.
-- Amestecul Bazelor: S-au reparat valorile din Amestecul Total care nu se resetau dupa Curatare.
-- S-a reparat aspectul panoului Adauga/Editeaza din Jurnalul de Juice.
-- Retete: S-a inlaturat un Messagebox de la Stergerea unei Arome.
-- Sintetizare: S-a reparat o problema de afisare dupa sintetizare.</value>
-  </data>
-  <data name="flavors_deleteBrand_tooltip" xml:space="preserve">
-    <value>Sterge aceasta Marca</value>
-  </data>
-  <data name="flavors_deleteFlavor_tooltip" xml:space="preserve">
-    <value>Sterge aceasta Aroma</value>
-  </data>
-  <data name="about_change_0032" xml:space="preserve">
-    <value>- Sintetizare: Reparatii la Calcularea Greutatii Totale a Aromelor.
-- Arome: S-a reparat "O ai?" checkbox dupa salvare pentru a reseta la pozitia initiala.</value>
-  </data>
-  <data name="about_change_0033" xml:space="preserve">
-    <value>- Arome: Adauga optiune de Stergere Aroma/Marca.
-- Settings: Fix Set Pin doesn't hide Import Groupbox.</value>
+  <data name="settings_LanguageFr" xml:space="preserve">
+    <value>Français</value>
   </data>
   <data name="settings_LanguageTr" xml:space="preserve">
-    <value>Turca</value>
+    <value>Turkish</value>
+  </data>
+  <data name="settings_LanguageNl" xml:space="preserve">
+    <value>Dutch</value>
   </data>
 </root>

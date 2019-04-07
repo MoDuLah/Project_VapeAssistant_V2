@@ -19,8 +19,8 @@
           <target state="new">Calculate</target>
         </trans-unit>
         <trans-unit id="statistics_SmokingCessationDate" translate="yes" xml:space="preserve">
-          <source>Smokin Cessation Date</source>
-          <target state="new">Smokin Cessation Date</target>
+          <source>Smoking Cessation Date</source>
+          <target state="new">Smoking Cessation Date</target>
         </trans-unit>
         <trans-unit id="ChildHeaderEight" translate="yes" xml:space="preserve">
           <source>Settings</source>
@@ -699,16 +699,16 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">Warehouse</target>
         </trans-unit>
         <trans-unit id="add_flv_amountEnter" translate="yes" xml:space="preserve">
-          <source>Enter Amount (ml)</source>
-          <target state="new">Enter Amount (ml)</target>
+          <source>Amount (ml)</source>
+          <target state="new">Amount (ml)</target>
         </trans-unit>
         <trans-unit id="add_flv_brandSelect" translate="yes" xml:space="preserve">
-          <source>Choose Brand</source>
-          <target state="new">Choose Brand</target>
+          <source>Brand</source>
+          <target state="new">Brand</target>
         </trans-unit>
         <trans-unit id="add_flv_flavorSelect" translate="yes" xml:space="preserve">
-          <source>Choose Flavor</source>
-          <target state="new">Choose Flavor</target>
+          <source>Flavor</source>
+          <target state="new">Flavor</target>
         </trans-unit>
         <trans-unit id="add_flv_Owned" translate="yes" xml:space="preserve">
           <source>Have it? </source>
@@ -898,17 +898,9 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Juice Log</source>
           <target state="new">Juice Log</target>
         </trans-unit>
-        <trans-unit id="Register" translate="yes" xml:space="preserve">
-          <source>Activate</source>
-          <target state="new">Activate</target>
-        </trans-unit>
         <trans-unit id="SN" translate="yes" xml:space="preserve">
           <source>Vape Assistant Activation</source>
           <target state="new">Vape Assistant Activation</target>
-        </trans-unit>
-        <trans-unit id="Dtrial" translate="yes" xml:space="preserve">
-          <source>7 Days Left</source>
-          <target state="new">7 Days Left</target>
         </trans-unit>
         <trans-unit id="vendor_SumOrders" translate="yes" xml:space="preserve">
           <source>Orders Sum</source>
@@ -1521,8 +1513,8 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="new">Minimize To Tray.</target>
         </trans-unit>
         <trans-unit id="btn_CloseWindow" translate="yes" xml:space="preserve">
-          <source>Closes the window.</source>
-          <target state="new">Closes the window.</target>
+          <source>Closes the Window.</source>
+          <target state="new">Closes the Window.</target>
         </trans-unit>
         <trans-unit id="oneshot_grams" translate="yes" xml:space="preserve">
           <source>Grams</source>
@@ -1585,6 +1577,50 @@ If you decline and keep the default pin-code you will be asked the next time you
 - Juice Log fixed appearence of Add/Edit panel.
 - Recipes: Removed a Messagebox on Flavor delete.
 - Synthesize: Fixed a display issue after synthesize.</target>
+        </trans-unit>
+        <trans-unit id="flavors_deleteBrand_tooltip" translate="yes" xml:space="preserve">
+          <source>Delete this Brand</source>
+          <target state="new">Delete this Brand</target>
+        </trans-unit>
+        <trans-unit id="flavors_deleteFlavor_tooltip" translate="yes" xml:space="preserve">
+          <source>Delete this Flavor</source>
+          <target state="new">Delete this Flavor</target>
+        </trans-unit>
+        <trans-unit id="about_change_0032" translate="yes" xml:space="preserve">
+          <source>- Synthesize: Fix in Total Flavor Weight Calculation.
+- Flavors: Fix Have it? checkbox after save to reset to initial position.</source>
+          <target state="new">- Synthesize: Fix in Total Flavor Weight Calculation.
+- Flavors: Fix Have it? checkbox after save to reset to initial position.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0033" translate="yes" xml:space="preserve">
+          <source>- Flavors: Add Flavor/Brand Delete option.
+- Settings: Fix Set Pin doesn't hide Import Groupbox.</source>
+          <target state="new">- Flavors: Add Flavor/Brand Delete option.
+- Settings: Fix Set Pin doesn't hide Import Groupbox.</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageTr" translate="yes" xml:space="preserve">
+          <source>Turkish</source>
+          <target state="new">Turkish</target>
+        </trans-unit>
+        <trans-unit id="btn_MinimizeToTaskBar" translate="yes" xml:space="preserve">
+          <source>Minimize to TaskBar.</source>
+          <target state="new">Minimize to TaskBar.</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrCostPerML" translate="yes" xml:space="preserve">
+          <source>Cost/ml</source>
+          <target state="new">Cost/ml</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrTotalCost" translate="yes" xml:space="preserve">
+          <source>Flavor Cost</source>
+          <target state="new">Flavor Cost</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrTotalML" translate="yes" xml:space="preserve">
+          <source>Total ml</source>
+          <target state="new">Total ml</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageNl" translate="yes" xml:space="preserve">
+          <source>Dutch</source>
+          <target state="new">Dutch</target>
         </trans-unit>
       </group>
     </body>

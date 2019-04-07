@@ -389,13 +389,13 @@
     <value>Αποθήκη</value>
   </data>
   <data name="add_flv_brandSelect" xml:space="preserve">
-    <value>Επέλεξε Εταιρία</value>
+    <value>Εταιρία</value>
   </data>
   <data name="add_flv_flavorSelect" xml:space="preserve">
-    <value>Επέλεξε Άρωμα</value>
+    <value>Άρωμα</value>
   </data>
   <data name="add_flv_amountEnter" xml:space="preserve">
-    <value>Εισαγωγή Ποσότητας (ml)</value>
+    <value>Ποσότητα (ml)</value>
   </data>
   <data name="add_flv_WarehouseCount" xml:space="preserve">
     <value>Τεμάχια</value>
@@ -1117,17 +1117,32 @@
 - Σύνθεση: Διορθώθηκε ένα ζήτημα εμφάνησης μετά τη σύνθεση.</value>
   </data>
   <data name="flavors_deleteBrand_tooltip" xml:space="preserve">
-    <value>Διαγραφή αυτής της Εταιρίας.</value>
+    <value>Διαγραφή εταιρίας</value>
   </data>
   <data name="flavors_deleteFlavor_tooltip" xml:space="preserve">
-    <value>Διαγραφή αυτής της Γεύσης</value>
+    <value>Διαγραφή αρώματος</value>
   </data>
   <data name="about_change_0032" xml:space="preserve">
-    <value>- Σύνθεση: Διόρθωση στον υπολογισμού τελικού βάρους αρωμάτων.
-- Αρώματα: Διόρθωση στο checkbox "Το Κατέχεις;" να επαναφέρετε στην αρχική του ρύθμιση κατα την εκκαθάριση.</value>
+    <value>- Σύνθεση: Διόρθωση στο τελικό υπολογισμό βάρους.
+- Αρώματα: Διόρθωση του "Το κατέχεις" κατά τον καθαρισμό.</value>
   </data>
   <data name="about_change_0033" xml:space="preserve">
-    <value>- Αρώματα: Προσθήκη επιλογής διαγραφής Εταιρίας/Αρώματος.
-- Ρυθμίσεις: Διόρθωση στην εμφάνηση μετά τον ορισμό PIN.</value>
+    <value>- Αρώματα: Προσθήκη Αρώματος/Εταρίας.
+- Ρυθμίσεις: Διόρθωση στον ορισμό PIN.</value>
+  </data>
+  <data name="btn_MinimizeToTaskBar" xml:space="preserve">
+    <value>Ελαχιστοποίηση στη μπάρα εργασιών.</value>
+  </data>
+  <data name="warehouse_hdrCostPerML" xml:space="preserve">
+    <value>Κόστος/ml</value>
+  </data>
+  <data name="warehouse_hdrTotalCost" xml:space="preserve">
+    <value>Κόστος Αρώματος</value>
+  </data>
+  <data name="warehouse_hdrTotalML" xml:space="preserve">
+    <value>Συνολικά ml</value>
+  </data>
+  <data name="settings_LanguageNl" xml:space="preserve">
+    <value>Dutch</value>
   </data>
 </root>

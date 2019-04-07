@@ -541,16 +541,16 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Αποθήκη</target>
         </trans-unit>
         <trans-unit id="add_flv_brandSelect" translate="yes" xml:space="preserve">
-          <source>Choose Brand</source>
-          <target state="final">Επέλεξε Εταιρία</target>
+          <source>Brand</source>
+          <target state="final">Εταιρία</target>
         </trans-unit>
         <trans-unit id="add_flv_flavorSelect" translate="yes" xml:space="preserve">
-          <source>Choose Flavor</source>
-          <target state="final">Επέλεξε Άρωμα</target>
+          <source>Flavor</source>
+          <target state="final">Άρωμα</target>
         </trans-unit>
         <trans-unit id="add_flv_amountEnter" translate="yes" xml:space="preserve">
-          <source>Enter Amount (ml)</source>
-          <target state="final">Εισαγωγή Ποσότητας (ml)</target>
+          <source>Amount (ml)</source>
+          <target state="final">Ποσότητα (ml)</target>
         </trans-unit>
         <trans-unit id="add_flv_WarehouseCount" translate="yes" xml:space="preserve">
           <source>Items</source>
@@ -740,17 +740,9 @@ If you decline and keep the default pin-code you will be asked the next time you
           <source>Juice Log</source>
           <target state="final">Ιστορικό Υγρών</target>
         </trans-unit>
-        <trans-unit id="Register" translate="yes" xml:space="preserve">
-          <source>Activate</source>
-          <target state="final">Ενεργοποίηση</target>
-        </trans-unit>
         <trans-unit id="SN" translate="yes" xml:space="preserve">
           <source>Vape Assistant Activation</source>
           <target state="final">Ενεργοποίηση Βοηθού Ατμιστή</target>
-        </trans-unit>
-        <trans-unit id="Dtrial" translate="yes" xml:space="preserve">
-          <source>7 Days Left</source>
-          <target state="final">Απομένουν 7 ημέρες </target>
         </trans-unit>
         <trans-unit id="vendor_SumOrders" translate="yes" xml:space="preserve">
           <source>Orders Sum</source>
@@ -1328,7 +1320,7 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Ετήσιο Κόστος Ατμίσματος</target>
         </trans-unit>
         <trans-unit id="statistics_SmokingCessationDate" translate="yes" xml:space="preserve">
-          <source>Smokin Cessation Date</source>
+          <source>Smoking Cessation Date</source>
           <target state="final">Ημ/νία Διακοπής Καπνίσματος</target>
         </trans-unit>
         <trans-unit id="statistics_VapingStartDate" translate="yes" xml:space="preserve">
@@ -1520,7 +1512,7 @@ If you decline and keep the default pin-code you will be asked the next time you
           <target state="final">Ελαχιστοποίηση στο Tray.</target>
         </trans-unit>
         <trans-unit id="btn_CloseWindow" translate="yes" xml:space="preserve">
-          <source>Closes the window.</source>
+          <source>Closes the Window.</source>
           <target state="final">Κλείνει το παράθυρο.</target>
         </trans-unit>
         <trans-unit id="oneshot_grams" translate="yes" xml:space="preserve">
@@ -1584,6 +1576,50 @@ If you decline and keep the default pin-code you will be asked the next time you
 - Ιστορικό Υγρών: Διόθρωση στην εμφάνιση στον πίνακα Προσθήκη/Επεξεργασία.
 - Συνταγές: Αφαιρέθηκε ένα πλαίσιο μηνυμάτων κατά τη διαγραφή γεύσης.
 - Σύνθεση: Διορθώθηκε ένα ζήτημα εμφάνησης μετά τη σύνθεση.</target>
+        </trans-unit>
+        <trans-unit id="flavors_deleteBrand_tooltip" translate="yes" xml:space="preserve">
+          <source>Delete this Brand</source>
+          <target state="final">Διαγραφή εταιρίας</target>
+        </trans-unit>
+        <trans-unit id="flavors_deleteFlavor_tooltip" translate="yes" xml:space="preserve">
+          <source>Delete this Flavor</source>
+          <target state="final">Διαγραφή αρώματος</target>
+        </trans-unit>
+        <trans-unit id="about_change_0032" translate="yes" xml:space="preserve">
+          <source>- Synthesize: Fix in Total Flavor Weight Calculation.
+- Flavors: Fix Have it? checkbox after save to reset to initial position.</source>
+          <target state="final">- Σύνθεση: Διόρθωση στο τελικό υπολογισμό βάρους.
+- Αρώματα: Διόρθωση του "Το κατέχεις" κατά τον καθαρισμό.</target>
+        </trans-unit>
+        <trans-unit id="about_change_0033" translate="yes" xml:space="preserve">
+          <source>- Flavors: Add Flavor/Brand Delete option.
+- Settings: Fix Set Pin doesn't hide Import Groupbox.</source>
+          <target state="final">- Αρώματα: Προσθήκη Αρώματος/Εταρίας.
+- Ρυθμίσεις: Διόρθωση στον ορισμό PIN.</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageTr" translate="no" xml:space="preserve">
+          <source>Turkish</source>
+          <target state="final">Turkish</target>
+        </trans-unit>
+        <trans-unit id="btn_MinimizeToTaskBar" translate="yes" xml:space="preserve">
+          <source>Minimize to TaskBar.</source>
+          <target state="final">Ελαχιστοποίηση στη μπάρα εργασιών.</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrCostPerML" translate="yes" xml:space="preserve">
+          <source>Cost/ml</source>
+          <target state="final">Κόστος/ml</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrTotalCost" translate="yes" xml:space="preserve">
+          <source>Flavor Cost</source>
+          <target state="final">Κόστος Αρώματος</target>
+        </trans-unit>
+        <trans-unit id="warehouse_hdrTotalML" translate="yes" xml:space="preserve">
+          <source>Total ml</source>
+          <target state="final">Συνολικά ml</target>
+        </trans-unit>
+        <trans-unit id="settings_LanguageNl" translate="yes" xml:space="preserve">
+          <source>Dutch</source>
+          <target state="final">Dutch</target>
         </trans-unit>
       </group>
     </body>
